@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Us | EACC</title>
+  <meta name="description" content="Explore EACC's campus through a clean image gallery." />
+  <link rel="icon" type="image/png" href="../assets/images/logo-crop.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style id="eacc-campus-gallery-style">
+    :root{--navy:#1a237e;--navy-dark:#07034e;--gold:#f5a623;--gold-light:#ffd54f;--white:#fff;--off-white:#f8f9ff;--gray:#76809f;--text:#1a1d2e;--heading-font:'Playfair Display',serif;--body-font:'DM Sans',sans-serif;--shadow:0 20px 60px rgba(13,20,87,.12)}
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--body-font);color:var(--text);background:#fff;overflow-x:hidden}body.loading{overflow:hidden}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{font:inherit}.container{width:min(1180px,92%);margin:auto}h1,h2,h3,h4{font-family:var(--heading-font)}
+    .site-loader{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at top,rgba(40,53,147,.92),var(--navy-dark) 58%);color:var(--white);transition:opacity .55s ease,visibility .55s ease}.site-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}.loader-content{width:min(360px,82vw);display:flex;flex-direction:column;align-items:center;text-align:center}.loader-content img{width:138px;margin-bottom:24px}.loader-content h2{font-size:30px;line-height:1.2;margin-bottom:24px}.loader-bar{position:relative;width:100%;height:4px;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.16)}.loader-bar::before{content:'';position:absolute;inset:0;width:45%;border-radius:inherit;background:linear-gradient(90deg,var(--gold),var(--gold-light));animation:loaderMove 1.2s ease-in-out infinite}@keyframes loaderMove{0%{transform:translateX(-110%)}100%{transform:translateX(230%)}}
+    header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:transparent;border-bottom:1px solid transparent;transition:.35s ease}header.scrolled{background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-bottom-color:rgba(13,20,87,.08);box-shadow:0 14px 36px rgba(13,20,87,.08)}.navbar{height:90px;display:flex;align-items:center;justify-content:space-between;transition:height .35s ease}header.scrolled .navbar{height:72px}.logo img{width:115px;transition:.35s ease}header.scrolled .logo img{width:98px}.nav-links{display:flex;align-items:center;gap:6px}.nav-links a,.dropdown>a{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:12px 14px;border-radius:999px;color:var(--white);font-size:14px;font-weight:800;transition:.3s ease}.nav-links a:hover,.dropdown:hover>a{color:var(--gold-light);transform:translateY(-2px)}header.scrolled .nav-links a,header.scrolled .dropdown>a{color:var(--navy-dark)}header.scrolled .nav-links a:hover,header.scrolled .dropdown:hover>a{color:var(--navy)}.dropdown{position:relative}.dropdown-menu{position:absolute;top:calc(100% + 12px);left:0;min-width:230px;padding:12px;border-radius:18px;background:var(--white);border:1px solid rgba(13,20,87,.08);box-shadow:0 20px 40px rgba(13,20,87,.14);opacity:0;visibility:hidden;transform:translateY(10px);transition:.3s ease}.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}.dropdown-menu a{display:block;color:var(--navy-dark);padding:13px 15px;border-radius:12px;font-weight:800}.dropdown-menu a:hover,.dropdown-menu a.active{background:#eef0f8;color:var(--navy);transform:none}.nav-apply{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy-dark)!important;box-shadow:0 10px 24px rgba(245,166,35,.24)}.language-toggle{min-width:46px;min-height:38px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.1);color:var(--white);font-weight:800;cursor:pointer}header.scrolled .language-toggle{color:var(--navy-dark);border-color:rgba(13,20,87,.14);background:rgba(13,20,87,.05)}.mobile-toggle{width:46px;height:46px;display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;border:1px solid rgba(255,255,255,.22);border-radius:16px;background:rgba(255,255,255,.1);color:var(--white);cursor:pointer}header.scrolled .mobile-toggle{color:var(--navy-dark);background:rgba(255,255,255,.9);border-color:rgba(13,20,87,.1)}.mobile-toggle-line{width:21px;height:2px;border-radius:999px;background:currentColor;transition:.3s ease}.mobile-toggle.active{color:var(--navy-dark);background:linear-gradient(135deg,var(--gold),var(--gold-light));border-color:transparent}.mobile-toggle.active .mobile-toggle-line:nth-child(1){transform:translateY(7px) rotate(45deg)}.mobile-toggle.active .mobile-toggle-line:nth-child(2){opacity:0}.mobile-toggle.active .mobile-toggle-line:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .campus-title-band{background:var(--navy-dark);color:#fff;padding:clamp(115px,13vw,155px) 0 clamp(66px,8vw,90px)}.campus-title-band h1{font-size:clamp(52px,7vw,92px);line-height:1;text-align:center;letter-spacing:0}
+    .campus-gallery{padding:46px 0 70px;background:#fff}.gallery-shell{width:min(980px,92vw);margin:0 auto}.gallery-stage{position:relative;overflow:hidden;background:#f2f4fb}.gallery-stage img{width:100%;height:clamp(310px,46vw,560px);object-fit:cover}.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);width:56px;height:70px;border:0;background:rgba(255,255,255,.78);color:var(--navy-dark);font-size:48px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s ease;box-shadow:0 12px 30px rgba(13,20,87,.14)}.gallery-arrow:hover{background:#fff;color:var(--gold);transform:translateY(-50%) scale(1.04)}.gallery-arrow.prev{left:0}.gallery-arrow.next{right:0}.campus-thumbs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(112px,1fr);gap:12px;margin-top:18px;overflow-x:auto;padding:2px 0 8px;scrollbar-width:thin}.campus-thumb{height:100px;border:0;background:#eef0f8;opacity:.58;cursor:pointer;overflow:hidden;transition:.22s ease}.campus-thumb img{width:100%;height:100%;object-fit:cover}.campus-thumb:hover,.campus-thumb.active{opacity:1;box-shadow:0 0 0 4px rgba(245,166,35,.26)}
+    footer{background:var(--navy-dark);color:var(--white);padding-top:70px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}.footer-logo img{width:110px;margin-bottom:20px}.footer-about p{color:rgba(255,255,255,.76);line-height:1.8;font-size:15px}.footer-col h4{color:var(--gold);margin-bottom:18px}.footer-links{display:flex;flex-direction:column;gap:12px}.footer-links a{color:rgba(255,255,255,.76);transition:.3s ease;font-size:14px;line-height:1.6}.footer-links a:hover{color:var(--gold)}.socials{display:flex;gap:12px;margin-top:24px}.socials a{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.08);transition:.3s ease;font-weight:800}.socials a:hover{background:var(--gold);color:var(--navy-dark)}.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:50px;padding:20px 0;text-align:center;color:rgba(255,255,255,.65);font-size:14px}
+    html[dir="rtl"] body{direction:rtl}html[dir="rtl"] .navbar,html[dir="rtl"] .nav-links,html[dir="rtl"] .footer-grid{direction:rtl}html[dir="rtl"] .dropdown-menu{right:0;left:auto;text-align:right}html[dir="rtl"] .footer-col,html[dir="rtl"] .footer-about{text-align:right}
+    @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}.gallery-shell{width:min(100% - 28px,980px)}.campus-thumbs{grid-auto-columns:126px}.campus-thumb{height:86px}}
+    @media(max-width:768px){.container{width:min(100% - 24px,1180px)}.navbar{height:78px}header.scrolled .navbar{height:68px}.logo img,header.scrolled .logo img{width:92px}.mobile-toggle{display:flex}.nav-links{position:fixed;top:78px;right:-100%;width:100%;height:calc(100vh - 78px);overflow-y:auto;flex-direction:column;align-items:stretch;gap:14px;padding:32px 24px;background:var(--white);transition:.35s ease}.nav-links.active{right:0}header.scrolled .nav-links{top:68px;height:calc(100vh - 68px)}.nav-links a,.dropdown>a,.language-toggle,.nav-apply{width:100%;justify-content:flex-start;color:var(--navy-dark);border-bottom:1px solid rgba(13,20,87,.08)}.dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;background:transparent;padding:4px 0 0 16px}.campus-title-band{padding-top:112px}.campus-title-band h1{text-align:left}.gallery-stage img{height:58vw;min-height:280px}.gallery-arrow{width:46px;height:58px;font-size:38px}.footer-grid{grid-template-columns:1fr}}
+    @media(max-width:480px){.campus-title-band h1{font-size:44px}.campus-gallery{padding:28px 0 52px}.gallery-shell{width:100%}.gallery-stage img{height:64vw;min-height:240px}.campus-thumbs{padding-inline:12px;grid-auto-columns:110px}.campus-thumb{height:78px}}
+  </style>
+<style id="eacc-shared-layout-polish">
+  .fa-solid, .fab { display: inline-flex; align-items: center; justify-content: center; font-style: normal; font-variant: normal; line-height: 1; text-rendering: auto; }
+  .fa-solid::before, .fab::before { display: inline-block; }
+  .fa-chevron-down::before { content: "\2304"; }
+  .fa-bars::before { content: "\2630"; }
+  .fa-globe::before { content: "\25C9"; }
+  .fa-laptop::before { content: "\25AD"; }
+  .fa-check::before { content: "\2713"; }
+  .fa-facebook-f::before { content: "f"; font-family: Arial, sans-serif; font-weight: 700; }
+  .fa-whatsapp::before { content: "W"; font-family: Arial, sans-serif; font-weight: 800; }
+  .fa-instagram::before { content: "\25CE"; }
+  .fa-youtube::before { content: "\25B6"; }
+  .fa-tiktok::before { content: "\266A"; }
+  header { position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; background: transparent; border-bottom: 1px solid transparent; transition: 0.4s ease; }
+  header.scrolled { background: rgba(255,255,255,0.9); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(0,0,0,0.05); box-shadow: 0 14px 36px rgba(13,20,87,0.08); }
+  header .navbar { height: 88px; display: flex; align-items: center; justify-content: space-between; transition: height 0.35s ease; }
+  header.scrolled .navbar { height: 72px; }
+  header .logo img { width: 120px; transition: 0.35s ease; }
+  header.scrolled .logo img { width: 98px; }
+  header nav.nav-links { position: static; height: auto; padding: 0; background: transparent; box-shadow: none; display: flex; align-items: center; justify-content: flex-start; gap: 6px; overflow: visible; }
+  header .nav-links a, header .dropdown > a { position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 12px 14px; border-radius: 999px; font-size: 14px; font-weight: 700; color: #fff; transition: 0.35s ease; text-decoration: none; }
+  header .nav-links a:hover, header .dropdown:hover > a { color: var(--gold-light, var(--gd, #ffd54f)); transform: translateY(-2px); }
+  header.scrolled .nav-links a, header.scrolled .dropdown > a { color: var(--navy-dark, var(--nv, #0d1457)); }
+  header .dropdown { position: relative; }
+  header .dropdown-menu { position: absolute; top: calc(100% + 12px); left: 0; min-width: 230px; padding: 12px; border-radius: 18px; background: #fff; border: 1px solid rgba(13,20,87,0.08); box-shadow: 0 20px 40px rgba(13,20,87,0.14); opacity: 0; visibility: hidden; transform: translateY(10px); transition: 0.3s ease; z-index: 1001; }
+  header .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  header .dropdown-menu a { display: block; color: var(--navy-dark, var(--nv, #0d1457)); padding: 13px 15px; border-radius: 12px; font-weight: 800; min-height: auto; }
+  header .dropdown-menu a:hover { background: var(--gray-light, var(--lt, #eef0f8)); color: var(--navy, var(--nv, #1a237e)); transform: none; }
+  .nav-cta-group { display: inline-flex; align-items: center; gap: 10px; margin-left: 4px; }
+  header .nav-apply { background: linear-gradient(135deg, var(--gold, var(--gd2, #f5a623)), var(--gold-light, var(--gd, #ffd54f))); color: var(--navy-dark, var(--nv, #0d1457)) !important; box-shadow: 0 14px 32px rgba(245,166,35,0.28); }
+  .nav-lms { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 0 16px; border: 1px solid rgba(255,255,255,0.22); border-radius: 999px; background: rgba(255,255,255,0.08); color: #fff; font-size: 14px; font-weight: 800; transition: 0.3s ease; }
+  .nav-lms:hover { background: rgba(255,255,255,0.16); color: var(--gold-light, var(--gd, #ffd54f)); transform: translateY(-2px); }
+  header.scrolled .nav-lms { color: var(--navy-dark, var(--nv, #0d1457)); border-color: rgba(13,20,87,0.14); background: rgba(13,20,87,0.05); }
+  header .eacc-language-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-width: 46px; min-height: 38px; padding: 0 14px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; background: rgba(255,255,255,.1); color: #fff; font: 800 .82rem/1 inherit; letter-spacing: 0; cursor: pointer; transition: background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease; }
+  header.scrolled .eacc-language-toggle { color: var(--navy-dark, var(--nv, #0d1457)); border-color: rgba(13,20,87,0.14); background: rgba(13,20,87,0.05); }
+  .mobile-toggle { width: 46px; height: 46px; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 5px; border: 1px solid rgba(255,255,255,0.22); border-radius: 16px; background: rgba(255,255,255,0.1); color: #fff; cursor: pointer; }
+  .mobile-toggle-line { width: 21px; height: 2px; border-radius: 999px; background: currentColor; transition: transform 0.3s ease, opacity 0.22s ease, width 0.3s ease; }
+  header.scrolled .mobile-toggle { color: var(--navy-dark, var(--nv, #0d1457)); background: #fff; }
+  .mobile-toggle.active { background: linear-gradient(135deg, var(--gold, var(--gd2, #f5a623)), var(--gold-light, var(--gd, #ffd54f))); color: var(--navy-dark, var(--nv, #0d1457)); }
+  .mobile-toggle.active .mobile-toggle-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .mobile-toggle.active .mobile-toggle-line:nth-child(2) { opacity: 0; transform: scaleX(0.2); }
+  .mobile-toggle.active .mobile-toggle-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .socials { flex-wrap: wrap; }
+  .socials a, .contact-socials a { flex: 0 0 auto; }
+  .form-feedback { display: flex; gap: 14px; align-items: flex-start; margin-top: 20px; padding: 18px 20px; border-radius: 22px; background: linear-gradient(135deg, rgba(24,128,74,0.10), rgba(245,166,35,0.12)); border: 1px solid rgba(24,128,74,0.24); box-shadow: 0 18px 42px rgba(13,20,87,0.08); color: var(--text, var(--tx, #1a1d2e)); }
+  .form-feedback[hidden] { display: none; }
+  .form-feedback-icon { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; border-radius: 14px; background: #18804a; color: #fff; font-weight: 900; }
+  .form-feedback h4 { margin: 0 0 4px; color: var(--navy-dark, var(--nv, #0d1457)); font-size: 20px; }
+  .form-feedback p { margin: 0; color: var(--gray, var(--mu, #75809d)); line-height: 1.6; }
+  .form-feedback.is-error { background: linear-gradient(135deg, rgba(181,54,54,0.10), rgba(245,166,35,0.10)); border-color: rgba(181,54,54,0.24); }
+  .form-feedback.is-error .form-feedback-icon { background: #b53636; }
+  @media (max-width: 768px) { header .navbar { height: 78px; } header .logo img, header.scrolled .logo img { width: 92px; } .mobile-toggle { display: flex; } header nav.nav-links { position: fixed; top: 78px; right: -100%; width: 100%; height: calc(100vh - 78px); overflow-y: auto; flex-direction: column; align-items: stretch; gap: 14px; padding: 32px 24px; background: #fff; transition: 0.35s ease; box-shadow: none; } header nav.nav-links.active { right: 0; } header.scrolled nav.nav-links { top: 68px; height: calc(100vh - 68px); } header .nav-links a, header .dropdown > a, header .eacc-language-toggle, header .nav-apply, header .nav-lms { width: 100%; justify-content: flex-start; color: var(--navy-dark, var(--nv, #0d1457)); border-bottom: 1px solid rgba(13,20,87,0.08); } header .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: 0; background: transparent; padding: 4px 0 0 16px; } .nav-cta-group { width: 100%; flex-direction: column; align-items: stretch; margin: 0; } .nav-cta-group .nav-apply, .nav-cta-group .nav-lms { width: 100%; justify-content: flex-start; } .form-feedback { padding: 16px; } }
+
+  .footer-social-list { gap: 10px !important; }
+  .footer-social-list a { display: flex !important; align-items: center; gap: 12px; min-height: 44px; width: 100%; padding: 8px 10px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.055); color: rgba(255,255,255,0.86) !important; font-weight: 800; line-height: 1.2 !important; transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease; }
+  .footer-social-list a:hover { background: rgba(245,166,35,0.14); border-color: rgba(245,166,35,0.34); color: var(--eacc-gold-light, var(--gold-light, #ffd54f)) !important; transform: translateX(4px); }
+  .footer-social-icon-wrap { width: 30px; height: 30px; flex: 0 0 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 10px; background: rgba(255,255,255,0.10); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); }
+  .footer-social-icon-wrap img { width: 18px; height: 18px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.96; }
+  html[dir="rtl"] .footer-social-list a:hover { transform: translateX(-4px); }
+  @media (max-width: 768px) { .footer-social-list a { max-width: 320px; } }
+</style>
+<style id="eacc-premium-footer-style">
+  .site-footer { position: relative; overflow: hidden; margin-top: 0; padding: clamp(56px,7vw,82px) 0 0 !important; background: var(--eacc-navy-dark, var(--navy-dark, #0d1457)) !important; color: #fff !important; }
+  .footer-shell { position: relative; z-index: 1; }
+  .site-footer .footer-grid { display: grid !important; grid-template-columns: minmax(260px,1.45fr) minmax(190px,1fr) minmax(140px,.72fr) minmax(145px,.72fr) minmax(190px,.9fr) !important; gap: clamp(24px,4vw,48px) !important; align-items: start; }
+  .footer-brand-block p, .site-footer .footer-links a, .site-footer .footer-bottom { color: rgba(255,255,255,0.76) !important; }
+  .footer-logo img { width: 122px !important; margin-bottom: 22px !important; }
+  .footer-brand-block p { max-width: 360px; font-size: 15px; line-height: 1.75; margin: 0 0 22px; font-family: var(--body-font, var(--body, inherit)); }
+  .footer-apply-link { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 0 18px; border-radius: 999px; background: linear-gradient(135deg, var(--eacc-gold, var(--gold, #f5a623)), var(--eacc-gold-light, var(--gold-light, #ffd54f))); color: var(--eacc-navy-dark, var(--navy-dark, #0d1457)) !important; font-family: var(--body-font, var(--body, inherit)); font-weight: 900; box-shadow: 0 14px 30px rgba(245,166,35,0.24); }
+  .site-footer .footer-col h4 { position: relative; color: var(--eacc-gold, var(--gold, #f5a623)) !important; margin: 0 0 24px !important; font-family: var(--heading-font, var(--heading, inherit)); font-size: 18px; line-height: 1.2; }
+  .site-footer .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 32px; height: 3px; border-radius: 999px; background: linear-gradient(90deg, var(--eacc-gold, var(--gold, #f5a623)), var(--eacc-gold-light, var(--gold-light, #ffd54f))); }
+  .site-footer .footer-links { display: flex !important; flex-direction: column; gap: 11px !important; }
+  .site-footer .footer-links a { font-family: var(--body-font, var(--body, inherit)); font-size: 14px !important; line-height: 1.55 !important; transition: color .25s ease, transform .25s ease; }
+  .site-footer .footer-links a:hover { color: var(--eacc-gold, var(--gold, #f5a623)) !important; transform: translateX(4px); }
+  .footer-office .footer-links a:first-child { max-width: 250px; }
+  .footer-social-list { display: grid !important; grid-template-columns: 1fr; gap: 10px !important; }
+  .footer-social-list a { display: flex !important; align-items: center; gap: 12px; min-height: 42px; padding: 7px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.88) !important; font-family: var(--body-font, var(--body, inherit)); font-weight: 800; line-height: 1.2 !important; transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease; }
+  .footer-social-list a:hover { background: var(--eacc-gold, var(--gold, #f5a623)); border-color: transparent; color: var(--eacc-navy-dark, var(--navy-dark, #0d1457)) !important; transform: translateX(4px); }
+  .footer-social-icon-wrap { width: 30px; height: 30px; flex: 0 0 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #fff; box-shadow: 0 10px 22px rgba(0,0,0,0.18); }
+  .footer-social-icon-wrap img { width: 17px; height: 17px; object-fit: contain; filter: none; opacity: 1; }
+  .site-footer .footer-bottom { display: flex !important; align-items: center; justify-content: space-between; gap: 18px; margin-top: clamp(42px,5vw,58px) !important; padding: 22px 0 !important; border-top: 1px solid rgba(255,255,255,0.10) !important; text-align: left !important; font-family: var(--body-font, var(--body, inherit)); font-size: 14px; }
+  .footer-bottom-links { display: inline-flex; gap: 16px; align-items: center; }
+  .footer-bottom-links a { color: rgba(255,255,255,0.72) !important; font-weight: 800; }
+  .footer-bottom-links a:hover { color: var(--eacc-gold, var(--gold, #f5a623)) !important; }
+  html[dir="rtl"] .site-footer .footer-col h4::after { left: auto; right: 0; }
+  html[dir="rtl"] .site-footer .footer-links a:hover, html[dir="rtl"] .footer-social-list a:hover { transform: translateX(-4px); }
+  @media (max-width: 1120px) { .site-footer .footer-grid { grid-template-columns: 1.4fr 1fr 1fr !important; } .footer-follow { grid-column: span 2; } }
+  @media (max-width: 768px) {
+    .site-footer { padding-top: 48px !important; }
+    .site-footer .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 30px 18px !important; }
+    .footer-brand-block { grid-column: 1 / -1; padding-bottom: 26px; border-bottom: 1px solid rgba(255,255,255,0.10); }
+    .footer-brand-block p { max-width: 100%; margin-bottom: 18px; }
+    .footer-office { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: 14px; align-items: start; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.10); }
+    .footer-office h4 { margin-bottom: 0 !important; }
+    .footer-office h4::after { bottom: -11px; }
+    .footer-office .footer-links a:first-child { max-width: none; }
+    .site-footer .footer-col:not(.footer-office):not(.footer-follow) { min-width: 0; padding: 16px 14px; border-radius: 18px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .footer-follow { grid-column: 1 / -1; padding: 18px 14px; border-radius: 18px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .footer-social-list { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+    .footer-social-list a { max-width: none; min-height: 44px; padding: 7px 9px; gap: 9px; }
+    .footer-social-icon-wrap { width: 28px; height: 28px; flex-basis: 28px; }
+    .footer-social-icon-wrap img { width: 16px; height: 16px; }
+    .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 34px !important; }
+  }
+  @media (max-width: 420px) {
+    .site-footer .footer-grid { gap: 24px 12px !important; }
+    .site-footer .footer-col:not(.footer-office):not(.footer-follow), .footer-follow { padding: 14px 12px; }
+    .site-footer .footer-links a { font-size: 13px !important; }
+    .footer-social-list a span:last-child { font-size: 13px; }
+  }
+</style>
+</head>
+<body class="loading">
+  <div class="site-loader" id="siteLoader" aria-label="Loading website">
+    <div class="loader-content">
+      <img src="../assets/images/logo-white.png" alt="EACC Logo">
+      <h2 data-en="Loading website" data-ar="جاري تحميل الموقع">Loading website</h2>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+      <header>
+
+    <div class="container navbar">
+
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo-white.png" alt="EACC Logo">
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+
+        <a href="../index.html">
+          <span>Home</span>
+        </a>
+
+        <div class="dropdown">
+
+          <a href="../aboutus/who-we-are.html">
+            <span>Who We Are </span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="../aboutus/who-we-are.html">
+              About EACC
+            </a>
+
+            <a href="../aboutus/explore-our-camps.html">
+              Explore Our Camps
+            </a>
+
+            <a href="../aboutus/faqs.html">
+              FAQs
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="dropdown">
+
+          <a href="../index.html#programs">
+            <span>Our Courses</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="../programs/summer-camp-2026.html">Summer Camp 2026</a>
+            <a href="../programs/language.html">Languages</a>
+            <a href="../programs/activities.html">Activities</a>
+          </div>
+
+        </div>
+        <div class="dropdown">
+
+          <a href="../index.html#test-prep">
+            <span>Preparation Courses</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="../prep-courses/tofel.html">TOEFL</a>
+            <a href="../prep-courses/ielts.html">IELTS</a>
+            <a href="../prep-courses/oet.html">OET</a>
+            <a href="../prep-courses/pte.html">PTE</a>
+          </div>
+
+        </div>
+<a href="../contactus.html">
+          <span>Contact</span>
+        </a>
+
+        <button type="button" class="language-toggle eacc-language-toggle" id="languageToggle" aria-label="Switch website language to Arabic">
+          <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          <span id="languageToggleText">AR</span>
+        </button>
+
+        <div class="nav-cta-group">
+
+          <a href="../contactus.html#contact" class="nav-apply">
+            <span>Apply Now</span>
+          </a>
+
+          <a href="https://lms.eacc-egy.com/login.php" class="nav-lms" target="_blank" rel="noopener">
+            <i class="fa-solid fa-laptop" aria-hidden="true"></i>
+            <span>LMS Login</span>
+          </a>
+
+        </div>
+
+      </nav>
+
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="mobile-toggle-line"></span>
+        <span class="mobile-toggle-line"></span>
+        <span class="mobile-toggle-line"></span>
+      </button>
+
+    </div>
+
+  </header>
+
+  <main>
+    <section class="campus-title-band">
+      <div class="container">
+        <h1 data-en="EACC's Campus" data-ar="حرم EACC">EACC's Campus</h1>
+      </div>
+    </section>
+
+    <section class="campus-gallery" aria-label="EACC campus image gallery">
+      <div class="gallery-shell">
+        <div class="gallery-stage">
+          <button type="button" class="gallery-arrow prev" id="prevCampusImage" aria-label="Previous campus image">‹</button>
+          <img id="campusMainImage" src="../assets/images/explore-our-campus/Screenshot 2026-05-10 203529.png" alt="EACC campus image 1">
+          <button type="button" class="gallery-arrow next" id="nextCampusImage" aria-label="Next campus image">›</button>
+        </div>
+        <div class="campus-thumbs" aria-label="Campus gallery thumbnails">
+
+          <button class="campus-thumb active" type="button" data-gallery-index="0" aria-label="Show campus image 1">
+            <img src="../assets/images/explore-our-campus/Screenshot 2026-05-10 203529.png" alt="EACC campus thumbnail 1">
+          </button>
+          <button class="campus-thumb" type="button" data-gallery-index="1" aria-label="Show campus image 2">
+            <img src="../assets/images/explore-our-campus/Screenshot 2026-05-10 203451.png" alt="EACC campus thumbnail 2">
+          </button>
+          <button class="campus-thumb" type="button" data-gallery-index="2" aria-label="Show campus image 3">
+            <img src="../assets/images/explore-our-campus/Screenshot 2026-05-10 203459.png" alt="EACC campus thumbnail 3">
+          </button>
+          <button class="campus-thumb" type="button" data-gallery-index="3" aria-label="Show campus image 4">
+            <img src="../assets/images/explore-our-campus/Screenshot 2026-05-10 203508.png" alt="EACC campus thumbnail 4">
+          </button>
+          <button class="campus-thumb" type="button" data-gallery-index="4" aria-label="Show campus image 5">
+            <img src="../assets/images/explore-our-campus/Screenshot 2026-05-10 203516.png" alt="EACC campus thumbnail 5">
+          </button>
+          <!-- <button class="campus-thumb" type="button" data-gallery-index="5" aria-label="Show campus image 6">
+            <img src="../assets/images/explore-our-campus/Screenshot 2026-05-10 203438.png" alt="EACC campus thumbnail 6">
+          </button> -->
+          <button class="campus-thumb" type="button" data-gallery-index="6" aria-label="Show campus image 7">
+            <img src="../assets/images/explore-our-campus/Screenshot 2026-05-10 203548.png" alt="EACC campus thumbnail 7">
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+          <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-grid">
+        <div class="footer-brand-block">
+          <div class="footer-logo">
+            <img src="../assets/images/logo-white.png" alt="EACC White Logo">
+          </div>
+          <p>
+            Egyptian American Cultural Center offers premium language education,
+            preparation courses, camps, and international learning experiences.
+          </p>
+          <a class="footer-apply-link" href="../contactus.html#contact">Apply Now</a>
+        </div>
+
+        <div class="footer-col footer-office">
+          <h4>Office</h4>
+          <div class="footer-links">
+            <a href="https://www.google.com/maps/search/?api=1&query=117%20Ahmed%20Shawqi%2C%20Mustafa%20Kamel%20WA%20Bolkli%2C%20Sidi%20Gaber%2C%20Alexandria%20Governorate%205433141" target="_blank" rel="noopener">
+              117 Ahmed Shawqi, Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria
+            </a>
+            <a href="mailto:info_eacc@eacc-egy.com">info_eacc@eacc-egy.com</a>
+            <a href="tel:+201065533240">+20106 553 3240</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Links</h4>
+          <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../aboutus/who-we-are.html">About EACC</a>
+            <a href="../programs/language.html">Languages</a>
+            <a href="../programs/activities.html">Activities</a>
+            <a href="../contactus.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <div class="footer-links">
+            <a href="../terms-and-conditions.html">Terms &amp; Conditions</a>
+            <a href="../privacy-policy.html">Privacy Policy</a>
+            <a href="../aboutus/faqs.html">FAQs</a>
+          </div>
+        </div>
+
+        <div class="footer-col footer-follow">
+          <h4>Follow Us</h4>
+          <div class="footer-social-list">
+            <a href="https://www.facebook.com/Egyptian.American.Center/" target="_blank" rel="noopener" aria-label="Facebook">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/facebook.png" alt="" aria-hidden="true"></span>
+              <span>Facebook</span>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=%2B201065533240&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3Nzg4MzIwMTksInBob25lIjoiKzIwMTA2NTUzMzI0MCIsImNvbnRleHQiOiJBZmd6cl9sa2hzY2s2YW5ER1hFXzliY19YV0NXWDU2VWEzM2xnd2FaQUFxS2tUNlBteDM3c3VNcUFrdWNLMVNOUjFUTjBHNTE0UGhtSUlfNzVPTEpCWGZxY19CSUhGS2NFSk1OSVFUZVNKUFo5RV84c2RMck43aWhvUEZuV29XOEV5ZGpaRUlIdmh5ZG1OYTJ3LVBCOFZmWVNnIiwic291cmNlIjoiRkJfUGFnZSIsImFwcCI6ImZhY2Vib29rIiwiZW50cnlfcG9pbnQiOiJwYWdlX2N0YSJ9.03driferbSmPgKUHBgkwE-uBYVLX9fNVYLwOvG-JsnBPHSPSoiNt7ZKVUu05bq8cfjHnybXK52UrIH8BEmg2aQ&fbclid=IwY2xjawRyYI1leHRuA2FlbQIxMABicmlkETFTOE56aE00ZXBZQkxmN3FQc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHgdzut8C8wGbFJh3GQdN1xD6wtIJoTTCq2Tj9gHoOJRcAaAw_Amsg5us60ag_aem_YWdncwBlv9_nYufc6-AOw0JCkNrX&brid=YWdncwEHpdr5OyZQSOIvAJJPqTkm" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/whatsapp.png" alt="" aria-hidden="true"></span>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://www.instagram.com/EgyptianAmericanCenter/" target="_blank" rel="noopener" aria-label="Instagram">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/instagram-logo.png" alt="" aria-hidden="true"></span>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.youtube.com/@egyptianamericancentereacc" target="_blank" rel="noopener" aria-label="YouTube">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/youtube.png" alt="" aria-hidden="true"></span>
+              <span>YouTube</span>
+            </a>
+            <a href="https://www.tiktok.com/@eaccegy?_t=8sbRXLekzn5&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/tik-tok.png" alt="" aria-hidden="true"></span>
+              <span>TikTok</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 Egyptian American Cultural Center. All rights reserved.</span>
+        <span class="footer-bottom-links">
+          <a href="../terms-and-conditions.html">Terms</a>
+          <a href="../privacy-policy.html">Privacy</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script id="eacc-campus-gallery-script">
+    const siteLoader = document.getElementById('siteLoader');
+    const header = document.querySelector('header');
+    const logoImg = document.querySelector('.logo img');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    const languageToggle = document.getElementById('languageToggle');
+    const languageToggleText = document.getElementById('languageToggleText');
+    const storageKey = 'eacc-language';
+    const galleryImages = ["../assets/images/explore-our-campus/Screenshot 2026-05-10 203438.png","../assets/images/explore-our-campus/Screenshot 2026-05-10 203451.png","../assets/images/explore-our-campus/Screenshot 2026-05-10 203459.png","../assets/images/explore-our-campus/Screenshot 2026-05-10 203508.png","../assets/images/explore-our-campus/Screenshot 2026-05-10 203516.png","../assets/images/explore-our-campus/Screenshot 2026-05-10 203529.png","../assets/images/explore-our-campus/Screenshot 2026-05-10 203548.png"];
+    const mainImage = document.getElementById('campusMainImage');
+    const thumbs = document.querySelectorAll('.campus-thumb');
+    let currentLanguage = 'en';
+    let currentImage = 0;
+
+    function updateHeaderState(){
+      const scrolled = window.scrollY > 30;
+      header.classList.toggle('scrolled', scrolled);
+      logoImg.src = scrolled ? '../assets/images/logo.png' : '../assets/images/logo-white.png';
+    }
+
+    function applyLanguage(language){
+      currentLanguage = language === 'ar' ? 'ar' : 'en';
+      document.documentElement.lang = currentLanguage;
+      document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
+      document.querySelectorAll('[data-en][data-ar]').forEach((element) => { element.innerHTML = element.dataset[currentLanguage]; });
+      languageToggleText.textContent = currentLanguage === 'ar' ? 'EN' : 'AR';
+      languageToggle.setAttribute('aria-label', currentLanguage === 'ar' ? 'Switch website language to English' : 'Switch website language to Arabic');
+      try { localStorage.setItem(storageKey, currentLanguage); } catch (error) {}
+    }
+
+    function showCampusImage(index){
+      currentImage = (index + galleryImages.length) % galleryImages.length;
+      mainImage.src = galleryImages[currentImage];
+      mainImage.alt = 'EACC campus image ' + (currentImage + 1);
+      thumbs.forEach((thumb, thumbIndex) => {
+        thumb.classList.toggle('active', thumbIndex === currentImage);
+      });
+      const activeThumb = thumbs[currentImage];
+      if (activeThumb) activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(() => { siteLoader.classList.add('hidden'); document.body.classList.remove('loading'); }, 550);
+    });
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+
+    mobileToggle.addEventListener('click', () => {
+      const active = navLinks.classList.toggle('active');
+      mobileToggle.classList.toggle('active', active);
+      mobileToggle.setAttribute('aria-expanded', String(active));
+    });
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.getElementById('prevCampusImage').addEventListener('click', () => showCampusImage(currentImage - 1));
+    document.getElementById('nextCampusImage').addEventListener('click', () => showCampusImage(currentImage + 1));
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener('click', () => showCampusImage(Number(thumb.dataset.galleryIndex)));
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') showCampusImage(currentImage - 1);
+      if (event.key === 'ArrowRight') showCampusImage(currentImage + 1);
+    });
+
+    languageToggle.addEventListener('click', () => applyLanguage(currentLanguage === 'ar' ? 'en' : 'ar'));
+    updateHeaderState();
+    try { applyLanguage(localStorage.getItem(storageKey) === 'ar' ? 'ar' : 'en'); } catch (error) { applyLanguage('en'); }
+  </script>
+</body>
+</html>

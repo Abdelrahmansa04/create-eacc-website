@@ -1,0 +1,915 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs | EACC</title>
+  <meta name="description" content="Frequently asked questions about EACC TOEFL iBT, IELTS, PTE, and OET preparation, score reports, test structure, scoring, and English exam support." />
+  <link rel="icon" type="image/png" href="../assets/images/logo-crop.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style id="eacc-design-consistency">
+    :root {
+      --navy: #1a237e;
+      --navy-dark: #0d1457;
+      --navy-mid: #283593;
+      --gold: #f5a623;
+      --gold-light: #ffd54f;
+      --white: #ffffff;
+      --off-white: #f8f9ff;
+      --gray-light: #eef0f8;
+      --gray: #76809f;
+      --text: #1a1d2e;
+      --heading-font: 'Playfair Display', serif;
+      --body-font: 'DM Sans', sans-serif;
+      --shadow: 0 20px 60px rgba(17, 25, 75, 0.10);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body-font); color: var(--text); background: var(--off-white); overflow-x: hidden; }
+    body.loading { overflow: hidden; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    .container { width: min(1180px, 92%); margin: auto; }
+    section { padding: 100px 0; }
+    h1, h2, h3, h4 { font-family: var(--heading-font); }
+
+    .site-loader { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top, rgba(40,53,147,0.92), var(--navy-dark) 58%); color: var(--white); transition: opacity .55s ease, visibility .55s ease; }
+    .site-loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loader-content { width: min(360px, 82vw); display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .loader-content img { width: 138px; margin-bottom: 24px; }
+    .loader-content h2 { font-size: 30px; line-height: 1.2; margin-bottom: 24px; color: var(--white); }
+    .loader-bar { position: relative; width: 100%; height: 4px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,.16); }
+    .loader-bar::before { content: ''; position: absolute; inset: 0; width: 45%; border-radius: inherit; background: linear-gradient(90deg, var(--gold), var(--gold-light)); animation: loaderMove 1.2s ease-in-out infinite; }
+    @keyframes loaderMove { 0% { transform: translateX(-110%); } 100% { transform: translateX(230%); } }
+
+    header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: transparent; border-bottom: 1px solid transparent; transition: .35s ease; }
+    header.scrolled { background: rgba(255,255,255,.92); backdrop-filter: blur(18px); border-bottom-color: rgba(13,20,87,.08); box-shadow: 0 14px 36px rgba(13,20,87,.08); }
+    .navbar { height: 90px; display: flex; align-items: center; justify-content: space-between; transition: height .35s ease; }
+    header.scrolled .navbar { height: 72px; }
+    .logo img { width: 115px; transition: .35s ease; }
+    header.scrolled .logo img { width: 98px; }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a, .dropdown > a { position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 12px 14px; border-radius: 999px; color: var(--white); font-size: 14px; font-weight: 800; transition: .3s ease; }
+    .nav-links a:hover, .dropdown:hover > a { color: var(--gold-light); transform: translateY(-2px); }
+    header.scrolled .nav-links a, header.scrolled .dropdown > a { color: var(--navy-dark); }
+    header.scrolled .nav-links a:hover, header.scrolled .dropdown:hover > a { color: var(--navy); }
+    .dropdown { position: relative; }
+    .dropdown-menu { position: absolute; top: calc(100% + 12px); left: 0; min-width: 230px; padding: 12px; border-radius: 18px; background: var(--white); border: 1px solid rgba(13,20,87,.08); box-shadow: 0 20px 40px rgba(13,20,87,.14); opacity: 0; visibility: hidden; transform: translateY(10px); transition: .3s ease; }
+    .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown-menu a { display: block; color: var(--navy-dark); padding: 13px 15px; border-radius: 12px; font-weight: 800; }
+    .dropdown-menu a:hover, .dropdown-menu a.active { background: var(--gray-light); color: var(--navy); transform: none; }
+    .nav-apply { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy-dark) !important; box-shadow: 0 10px 24px rgba(245,166,35,.24); }
+    .language-toggle { min-width: 46px; min-height: 38px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; background: rgba(255,255,255,.10); color: var(--white); font-weight: 800; cursor: pointer; }
+    header.scrolled .language-toggle { color: var(--navy-dark); border-color: rgba(13,20,87,.14); background: rgba(13,20,87,.05); }
+    .mobile-toggle { width: 46px; height: 46px; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 5px; border: 1px solid rgba(255,255,255,.22); border-radius: 16px; background: rgba(255,255,255,.1); color: var(--white); cursor: pointer; }
+    header.scrolled .mobile-toggle { color: var(--navy-dark); background: rgba(255,255,255,.9); border-color: rgba(13,20,87,.10); }
+    .mobile-toggle-line { width: 21px; height: 2px; border-radius: 999px; background: currentColor; transition: .3s ease; }
+    .mobile-toggle.active { color: var(--navy-dark); background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-color: transparent; }
+    .mobile-toggle.active .mobile-toggle-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mobile-toggle.active .mobile-toggle-line:nth-child(2) { opacity: 0; }
+    .mobile-toggle.active .mobile-toggle-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .page-hero { position: relative; min-height: 72vh; display: flex; align-items: center; overflow: hidden; color: var(--white); padding-top: 120px; background: linear-gradient(90deg, rgba(13,20,87,.94), rgba(13,20,87,.58)), url('../assets/images/whoweare.avif') center / cover no-repeat; }
+    .hero-content { max-width: 780px; }
+    .breadcrumb { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 10px 16px; border-radius: 999px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); margin-bottom: 24px; color: rgba(255,255,255,.84); font-size: 14px; font-weight: 800; }
+    .breadcrumb a { color: var(--gold-light); }
+    .page-hero h1 { font-size: clamp(46px, 7vw, 78px); line-height: 1.04; margin-bottom: 22px; }
+    .page-hero p { max-width: 720px; color: rgba(255,255,255,.88); font-size: 18px; line-height: 1.9; }
+
+    .faq-intro { padding-bottom: 55px; }
+    .intro-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 38px; align-items: center; }
+    .intro-copy h2 { font-size: clamp(36px, 5vw, 56px); color: var(--navy-dark); margin-bottom: 18px; }
+    .intro-copy p { color: var(--gray); line-height: 1.85; font-size: 17px; max-width: 680px; }
+    .intro-image { position: relative; min-height: 390px; border-radius: 30px; overflow: hidden; box-shadow: var(--shadow); }
+    .intro-image img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+    .intro-card { position: absolute; left: 22px; right: 22px; bottom: 22px; padding: 22px; border-radius: 22px; color: var(--white); background: rgba(13,20,87,.82); backdrop-filter: blur(16px); }
+    .intro-card span { color: var(--gold-light); font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+    .intro-card h3 { font-size: 27px; margin-top: 6px; }
+
+    .faq-shell { padding-top: 50px; }
+    .faq-toolbar { position: sticky; top: 84px; z-index: 20; display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; padding: 16px; border: 1px solid rgba(13,20,87,.08); border-radius: 24px; background: rgba(255,255,255,.88); backdrop-filter: blur(18px); box-shadow: 0 14px 38px rgba(13,20,87,.08); margin-bottom: 28px; }
+    .search-box { display: flex; align-items: center; gap: 12px; min-height: 54px; padding: 0 18px; border: 1px solid rgba(13,20,87,.10); border-radius: 18px; background: var(--white); }
+    .search-box span { color: var(--gold); font-weight: 900; }
+    .search-box input { width: 100%; border: 0; outline: none; color: var(--navy-dark); font-weight: 700; background: transparent; }
+    .topic-tabs { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+    .topic-tab { min-height: 44px; padding: 0 18px; border: 1px solid rgba(13,20,87,.10); border-radius: 999px; background: var(--white); color: var(--navy-dark); font-weight: 800; cursor: pointer; transition: .25s ease; }
+    .topic-tab:hover, .topic-tab.active { background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-color: transparent; color: var(--navy-dark); transform: translateY(-1px); }
+
+    .faq-layout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 28px; align-items: start; }
+    .faq-side { position: sticky; top: 185px; padding: 24px; border-radius: 24px; background: var(--navy-dark); color: var(--white); box-shadow: var(--shadow); }
+    .faq-side h3 { font-size: 28px; margin-bottom: 14px; }
+    .faq-side p { color: rgba(255,255,255,.76); line-height: 1.75; margin-bottom: 20px; }
+    .quick-list { display: grid; gap: 10px; }
+    .quick-list button { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(255,255,255,.14); border-radius: 14px; background: rgba(255,255,255,.08); color: var(--white); cursor: pointer; font-weight: 800; text-align: left; }
+    .quick-list button:hover { background: rgba(245,166,35,.18); border-color: rgba(245,166,35,.42); }
+
+    .faq-panel { display: none; }
+    .faq-panel.active { display: block; }
+    .panel-heading { margin-bottom: 22px; }
+    .panel-heading h2 { font-size: clamp(34px, 5vw, 54px); color: var(--navy-dark); margin-bottom: 12px; }
+    .panel-heading p { color: var(--gray); line-height: 1.75; max-width: 780px; }
+    .faq-list { display: grid; gap: 14px; }
+    .faq-item { border: 1px solid rgba(13,20,87,.08); border-radius: 22px; background: var(--white); box-shadow: 0 14px 42px rgba(13,20,87,.06); overflow: hidden; }
+    .faq-question { width: 100%; display: grid; grid-template-columns: 64px 1fr 42px; gap: 16px; align-items: center; padding: 22px 24px; border: 0; background: transparent; color: var(--navy-dark); cursor: pointer; text-align: left; }
+    .faq-number { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 16px; background: rgba(245,166,35,.14); color: var(--gold); font-weight: 900; }
+    .faq-question strong { font-size: 17px; line-height: 1.5; }
+    .faq-icon { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--gray-light); color: var(--navy); font-size: 24px; transition: .25s ease; }
+    .faq-item.open .faq-icon { background: var(--navy); color: var(--white); transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .answer-inner { padding: 0 24px 26px 104px; color: #4d5570; line-height: 1.85; }
+    .answer-inner p + p { margin-top: 14px; }
+    .answer-inner h4 { margin: 18px 0 8px; color: var(--navy-dark); font-family: var(--body-font); font-size: 16px; font-weight: 900; }
+    .answer-inner ul { display: grid; gap: 8px; margin: 12px 0 0 18px; }
+    .score-table { width: min(560px, 100%); margin-top: 18px; border-collapse: collapse; overflow: hidden; border-radius: 18px; box-shadow: 0 12px 34px rgba(13,20,87,.08); }
+    .score-table th, .score-table td { padding: 13px 16px; border-bottom: 1px solid rgba(13,20,87,.08); text-align: center; }
+    .score-table th { background: var(--navy-dark); color: var(--white); font-weight: 800; }
+    .score-table tr:nth-child(even) td { background: #fbfcff; }
+    .empty-state { display: none; padding: 28px; border: 1px dashed rgba(13,20,87,.22); border-radius: 20px; color: var(--gray); background: var(--white); text-align: center; }
+    .coming-soon { padding: 34px; border-radius: 24px; background: var(--white); box-shadow: var(--shadow); border: 1px solid rgba(13,20,87,.08); }
+    .coming-soon h3 { color: var(--navy-dark); font-size: 32px; margin-bottom: 12px; }
+    .coming-soon p { color: var(--gray); line-height: 1.8; }
+    .cta-strip { margin-top: 34px; display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 28px; border-radius: 26px; background: linear-gradient(135deg, var(--navy), var(--navy-dark)); color: var(--white); }
+    .cta-strip h3 { font-size: 30px; margin-bottom: 6px; }
+    .cta-strip p { color: rgba(255,255,255,.78); line-height: 1.7; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 28px; border-radius: 999px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy-dark); font-weight: 900; white-space: nowrap; }
+
+    footer { background: var(--navy-dark); color: var(--white); padding-top: 70px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 35px; }
+    .footer-logo img { width: 110px; margin-bottom: 20px; }
+    .footer-about p { color: rgba(255,255,255,.76); line-height: 1.8; font-size: 15px; }
+    .footer-col h4 { color: var(--gold); margin-bottom: 18px; }
+    .footer-links { display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { color: rgba(255,255,255,.76); transition: .3s ease; font-size: 14px; line-height: 1.6; }
+    .footer-links a:hover { color: var(--gold); }
+    .socials { display: flex; gap: 12px; margin-top: 24px; }
+    .socials a { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,.08); transition: .3s ease; font-weight: 800; }
+    .socials a:hover { background: var(--gold); color: var(--navy-dark); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.10); margin-top: 50px; padding: 20px 0; text-align: center; color: rgba(255,255,255,.65); font-size: 14px; }
+
+    html[dir="rtl"] body { direction: rtl; }
+    html[dir="rtl"] .nav-links, html[dir="rtl"] .navbar, html[dir="rtl"] .footer-grid, html[dir="rtl"] .faq-layout, html[dir="rtl"] .intro-grid { direction: rtl; }
+    html[dir="rtl"] .dropdown-menu { right: 0; left: auto; text-align: right; }
+    html[dir="rtl"] .hero-content, html[dir="rtl"] .intro-copy, html[dir="rtl"] .panel-heading, html[dir="rtl"] .faq-side, html[dir="rtl"] .faq-question, html[dir="rtl"] .coming-soon, html[dir="rtl"] .footer-col, html[dir="rtl"] .footer-about { text-align: right; }
+    html[dir="rtl"] .answer-inner { padding: 0 104px 26px 24px; }
+    html[dir="rtl"] .quick-list button { text-align: right; }
+    html[dir="rtl"] .search-box input { text-align: right; }
+
+    @media (max-width: 1100px) {
+      .intro-grid, .faq-layout { grid-template-columns: 1fr; }
+      .faq-side, .faq-toolbar { position: static; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 72px 0; }
+      .container { width: min(100% - 24px, 1180px); }
+      .navbar { height: 78px; }
+      header.scrolled .navbar { height: 68px; }
+      .logo img, header.scrolled .logo img { width: 92px; }
+      .mobile-toggle { display: flex; }
+      .nav-links { position: fixed; top: 78px; right: -100%; width: 100%; height: calc(100vh - 78px); overflow-y: auto; flex-direction: column; align-items: stretch; gap: 14px; padding: 32px 24px; background: var(--white); transition: .35s ease; }
+      .nav-links.active { right: 0; }
+      header.scrolled .nav-links { top: 68px; height: calc(100vh - 68px); }
+      .nav-links a, .dropdown > a, .language-toggle, .nav-apply { width: 100%; justify-content: flex-start; color: var(--navy-dark); border-bottom: 1px solid rgba(13,20,87,.08); }
+      .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: 0; background: transparent; padding: 4px 0 0 16px; }
+      .page-hero { min-height: auto; padding: 118px 0 70px; text-align: center; }
+      .breadcrumb { justify-content: center; }
+      .page-hero h1 { font-size: clamp(36px, 12vw, 58px); }
+      .intro-image { min-height: 300px; }
+      .faq-toolbar { grid-template-columns: 1fr; }
+      .topic-tabs { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
+      .topic-tab { flex: 0 0 auto; }
+      .faq-question { grid-template-columns: 48px 1fr 36px; gap: 12px; padding: 18px 16px; }
+      .faq-number { width: 42px; height: 42px; border-radius: 14px; }
+      .faq-question strong { font-size: 15px; }
+      .answer-inner, html[dir="rtl"] .answer-inner { padding: 0 16px 22px 76px; }
+      html[dir="rtl"] .answer-inner { padding: 0 76px 22px 16px; }
+      .cta-strip { flex-direction: column; align-items: stretch; text-align: center; }
+      .btn { width: 100%; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <style id="eacc-section-title-centering-fix">
+  .section-title,
+  .section-header,
+  .program-heading,
+  .related-title,
+  .panel-heading {
+    width: min(100%, 900px) !important;
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .section-title h1,
+  .section-title h2,
+  .section-title h3,
+  .section-header h1,
+  .section-header h2,
+  .section-header h3,
+  .program-heading h1,
+  .program-heading h2,
+  .program-heading h3,
+  .related-title h1,
+  .related-title h2,
+  .related-title h3,
+  .panel-heading h1,
+  .panel-heading h2,
+  .panel-heading h3,
+  .section-title p,
+  .section-header p,
+  .program-heading p,
+  .related-title p,
+  .panel-heading p {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .section-title p,
+  .section-header p,
+  .program-heading p,
+  .related-title p,
+  .panel-heading p {
+    max-width: 760px !important;
+  }
+
+  html[dir="rtl"] .section-title,
+  html[dir="rtl"] .section-header,
+  html[dir="rtl"] .program-heading,
+  html[dir="rtl"] .related-title,
+  html[dir="rtl"] .panel-heading,
+  html[dir="rtl"] .section-title h1,
+  html[dir="rtl"] .section-title h2,
+  html[dir="rtl"] .section-title h3,
+  html[dir="rtl"] .section-header h1,
+  html[dir="rtl"] .section-header h2,
+  html[dir="rtl"] .section-header h3,
+  html[dir="rtl"] .program-heading h1,
+  html[dir="rtl"] .program-heading h2,
+  html[dir="rtl"] .program-heading h3,
+  html[dir="rtl"] .related-title h1,
+  html[dir="rtl"] .related-title h2,
+  html[dir="rtl"] .related-title h3,
+  html[dir="rtl"] .panel-heading h1,
+  html[dir="rtl"] .panel-heading h2,
+  html[dir="rtl"] .panel-heading h3,
+  html[dir="rtl"] .section-title p,
+  html[dir="rtl"] .section-header p,
+  html[dir="rtl"] .program-heading p,
+  html[dir="rtl"] .related-title p,
+  html[dir="rtl"] .panel-heading p {
+    text-align: center !important;
+  }
+</style>
+<style id="eacc-shared-layout-polish">
+  .fa-solid, .fab { display: inline-flex; align-items: center; justify-content: center; font-style: normal; font-variant: normal; line-height: 1; text-rendering: auto; }
+  .fa-solid::before, .fab::before { display: inline-block; }
+  .fa-chevron-down::before { content: "\2304"; }
+  .fa-bars::before { content: "\2630"; }
+  .fa-globe::before { content: "\25C9"; }
+  .fa-laptop::before { content: "\25AD"; }
+  .fa-check::before { content: "\2713"; }
+  .fa-facebook-f::before { content: "f"; font-family: Arial, sans-serif; font-weight: 700; }
+  .fa-whatsapp::before { content: "W"; font-family: Arial, sans-serif; font-weight: 800; }
+  .fa-instagram::before { content: "\25CE"; }
+  .fa-youtube::before { content: "\25B6"; }
+  .fa-tiktok::before { content: "\266A"; }
+  header { position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; background: transparent; border-bottom: 1px solid transparent; transition: 0.4s ease; }
+  header.scrolled { background: rgba(255,255,255,0.9); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(0,0,0,0.05); box-shadow: 0 14px 36px rgba(13,20,87,0.08); }
+  header .navbar { height: 88px; display: flex; align-items: center; justify-content: space-between; transition: height 0.35s ease; }
+  header.scrolled .navbar { height: 72px; }
+  header .logo img { width: 120px; transition: 0.35s ease; }
+  header.scrolled .logo img { width: 98px; }
+  header nav.nav-links { position: static; height: auto; padding: 0; background: transparent; box-shadow: none; display: flex; align-items: center; justify-content: flex-start; gap: 6px; overflow: visible; }
+  header .nav-links a, header .dropdown > a { position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 12px 14px; border-radius: 999px; font-size: 14px; font-weight: 700; color: #fff; transition: 0.35s ease; text-decoration: none; }
+  header .nav-links a:hover, header .dropdown:hover > a { color: var(--gold-light, var(--gd, #ffd54f)); transform: translateY(-2px); }
+  header.scrolled .nav-links a, header.scrolled .dropdown > a { color: var(--navy-dark, var(--nv, #0d1457)); }
+  header .dropdown { position: relative; }
+  header .dropdown-menu { position: absolute; top: calc(100% + 12px); left: 0; min-width: 230px; padding: 12px; border-radius: 18px; background: #fff; border: 1px solid rgba(13,20,87,0.08); box-shadow: 0 20px 40px rgba(13,20,87,0.14); opacity: 0; visibility: hidden; transform: translateY(10px); transition: 0.3s ease; z-index: 1001; }
+  header .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  header .dropdown-menu a { display: block; color: var(--navy-dark, var(--nv, #0d1457)); padding: 13px 15px; border-radius: 12px; font-weight: 800; min-height: auto; }
+  header .dropdown-menu a:hover { background: var(--gray-light, var(--lt, #eef0f8)); color: var(--navy, var(--nv, #1a237e)); transform: none; }
+  .nav-cta-group { display: inline-flex; align-items: center; gap: 10px; margin-left: 4px; }
+  header .nav-apply { background: linear-gradient(135deg, var(--gold, var(--gd2, #f5a623)), var(--gold-light, var(--gd, #ffd54f))); color: var(--navy-dark, var(--nv, #0d1457)) !important; box-shadow: 0 14px 32px rgba(245,166,35,0.28); }
+  .nav-lms { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 0 16px; border: 1px solid rgba(255,255,255,0.22); border-radius: 999px; background: rgba(255,255,255,0.08); color: #fff; font-size: 14px; font-weight: 800; transition: 0.3s ease; }
+  .nav-lms:hover { background: rgba(255,255,255,0.16); color: var(--gold-light, var(--gd, #ffd54f)); transform: translateY(-2px); }
+  header.scrolled .nav-lms { color: var(--navy-dark, var(--nv, #0d1457)); border-color: rgba(13,20,87,0.14); background: rgba(13,20,87,0.05); }
+  header .eacc-language-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-width: 46px; min-height: 38px; padding: 0 14px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; background: rgba(255,255,255,.1); color: #fff; font: 800 .82rem/1 inherit; letter-spacing: 0; cursor: pointer; transition: background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease; }
+  header.scrolled .eacc-language-toggle { color: var(--navy-dark, var(--nv, #0d1457)); border-color: rgba(13,20,87,0.14); background: rgba(13,20,87,0.05); }
+  .mobile-toggle { width: 46px; height: 46px; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 5px; border: 1px solid rgba(255,255,255,0.22); border-radius: 16px; background: rgba(255,255,255,0.1); color: #fff; cursor: pointer; }
+  .mobile-toggle-line { width: 21px; height: 2px; border-radius: 999px; background: currentColor; transition: transform 0.3s ease, opacity 0.22s ease, width 0.3s ease; }
+  header.scrolled .mobile-toggle { color: var(--navy-dark, var(--nv, #0d1457)); background: #fff; }
+  .mobile-toggle.active { background: linear-gradient(135deg, var(--gold, var(--gd2, #f5a623)), var(--gold-light, var(--gd, #ffd54f))); color: var(--navy-dark, var(--nv, #0d1457)); }
+  .mobile-toggle.active .mobile-toggle-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .mobile-toggle.active .mobile-toggle-line:nth-child(2) { opacity: 0; transform: scaleX(0.2); }
+  .mobile-toggle.active .mobile-toggle-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .socials { flex-wrap: wrap; }
+  .socials a, .contact-socials a { flex: 0 0 auto; }
+  .form-feedback { display: flex; gap: 14px; align-items: flex-start; margin-top: 20px; padding: 18px 20px; border-radius: 22px; background: linear-gradient(135deg, rgba(24,128,74,0.10), rgba(245,166,35,0.12)); border: 1px solid rgba(24,128,74,0.24); box-shadow: 0 18px 42px rgba(13,20,87,0.08); color: var(--text, var(--tx, #1a1d2e)); }
+  .form-feedback[hidden] { display: none; }
+  .form-feedback-icon { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; border-radius: 14px; background: #18804a; color: #fff; font-weight: 900; }
+  .form-feedback h4 { margin: 0 0 4px; color: var(--navy-dark, var(--nv, #0d1457)); font-size: 20px; }
+  .form-feedback p { margin: 0; color: var(--gray, var(--mu, #75809d)); line-height: 1.6; }
+  .form-feedback.is-error { background: linear-gradient(135deg, rgba(181,54,54,0.10), rgba(245,166,35,0.10)); border-color: rgba(181,54,54,0.24); }
+  .form-feedback.is-error .form-feedback-icon { background: #b53636; }
+  @media (max-width: 768px) { header .navbar { height: 78px; } header .logo img, header.scrolled .logo img { width: 92px; } .mobile-toggle { display: flex; } header nav.nav-links { position: fixed; top: 78px; right: -100%; width: 100%; height: calc(100vh - 78px); overflow-y: auto; flex-direction: column; align-items: stretch; gap: 14px; padding: 32px 24px; background: #fff; transition: 0.35s ease; box-shadow: none; } header nav.nav-links.active { right: 0; } header.scrolled nav.nav-links { top: 68px; height: calc(100vh - 68px); } header .nav-links a, header .dropdown > a, header .eacc-language-toggle, header .nav-apply, header .nav-lms { width: 100%; justify-content: flex-start; color: var(--navy-dark, var(--nv, #0d1457)); border-bottom: 1px solid rgba(13,20,87,0.08); } header .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: 0; background: transparent; padding: 4px 0 0 16px; } .nav-cta-group { width: 100%; flex-direction: column; align-items: stretch; margin: 0; } .nav-cta-group .nav-apply, .nav-cta-group .nav-lms { width: 100%; justify-content: flex-start; } .form-feedback { padding: 16px; } }
+
+  .footer-social-list { gap: 10px !important; }
+  .footer-social-list a { display: flex !important; align-items: center; gap: 12px; min-height: 44px; width: 100%; padding: 8px 10px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.055); color: rgba(255,255,255,0.86) !important; font-weight: 800; line-height: 1.2 !important; transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease; }
+  .footer-social-list a:hover { background: rgba(245,166,35,0.14); border-color: rgba(245,166,35,0.34); color: var(--eacc-gold-light, var(--gold-light, #ffd54f)) !important; transform: translateX(4px); }
+  .footer-social-icon-wrap { width: 30px; height: 30px; flex: 0 0 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 10px; background: rgba(255,255,255,0.10); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); }
+  .footer-social-icon-wrap img { width: 18px; height: 18px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.96; }
+  html[dir="rtl"] .footer-social-list a:hover { transform: translateX(-4px); }
+  @media (max-width: 768px) { .footer-social-list a { max-width: 320px; } }
+</style>
+<style id="eacc-premium-footer-style">
+  .site-footer { position: relative; overflow: hidden; margin-top: 0; padding: clamp(56px,7vw,82px) 0 0 !important; background: var(--eacc-navy-dark, var(--navy-dark, #0d1457)) !important; color: #fff !important; }
+  .footer-shell { position: relative; z-index: 1; }
+  .site-footer .footer-grid { display: grid !important; grid-template-columns: minmax(260px,1.45fr) minmax(190px,1fr) minmax(140px,.72fr) minmax(145px,.72fr) minmax(190px,.9fr) !important; gap: clamp(24px,4vw,48px) !important; align-items: start; }
+  .footer-brand-block p, .site-footer .footer-links a, .site-footer .footer-bottom { color: rgba(255,255,255,0.76) !important; }
+  .footer-logo img { width: 122px !important; margin-bottom: 22px !important; }
+  .footer-brand-block p { max-width: 360px; font-size: 15px; line-height: 1.75; margin: 0 0 22px; font-family: var(--body-font, var(--body, inherit)); }
+  .footer-apply-link { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 0 18px; border-radius: 999px; background: linear-gradient(135deg, var(--eacc-gold, var(--gold, #f5a623)), var(--eacc-gold-light, var(--gold-light, #ffd54f))); color: var(--eacc-navy-dark, var(--navy-dark, #0d1457)) !important; font-family: var(--body-font, var(--body, inherit)); font-weight: 900; box-shadow: 0 14px 30px rgba(245,166,35,0.24); }
+  .site-footer .footer-col h4 { position: relative; color: var(--eacc-gold, var(--gold, #f5a623)) !important; margin: 0 0 24px !important; font-family: var(--heading-font, var(--heading, inherit)); font-size: 18px; line-height: 1.2; }
+  .site-footer .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 32px; height: 3px; border-radius: 999px; background: linear-gradient(90deg, var(--eacc-gold, var(--gold, #f5a623)), var(--eacc-gold-light, var(--gold-light, #ffd54f))); }
+  .site-footer .footer-links { display: flex !important; flex-direction: column; gap: 11px !important; }
+  .site-footer .footer-links a { font-family: var(--body-font, var(--body, inherit)); font-size: 14px !important; line-height: 1.55 !important; transition: color .25s ease, transform .25s ease; }
+  .site-footer .footer-links a:hover { color: var(--eacc-gold, var(--gold, #f5a623)) !important; transform: translateX(4px); }
+  .footer-office .footer-links a:first-child { max-width: 250px; }
+  .footer-social-list { display: grid !important; grid-template-columns: 1fr; gap: 10px !important; }
+  .footer-social-list a { display: flex !important; align-items: center; gap: 12px; min-height: 42px; padding: 7px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.88) !important; font-family: var(--body-font, var(--body, inherit)); font-weight: 800; line-height: 1.2 !important; transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease; }
+  .footer-social-list a:hover { background: var(--eacc-gold, var(--gold, #f5a623)); border-color: transparent; color: var(--eacc-navy-dark, var(--navy-dark, #0d1457)) !important; transform: translateX(4px); }
+  .footer-social-icon-wrap { width: 30px; height: 30px; flex: 0 0 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #fff; box-shadow: 0 10px 22px rgba(0,0,0,0.18); }
+  .footer-social-icon-wrap img { width: 17px; height: 17px; object-fit: contain; filter: none; opacity: 1; }
+  .site-footer .footer-bottom { display: flex !important; align-items: center; justify-content: space-between; gap: 18px; margin-top: clamp(42px,5vw,58px) !important; padding: 22px 0 !important; border-top: 1px solid rgba(255,255,255,0.10) !important; text-align: left !important; font-family: var(--body-font, var(--body, inherit)); font-size: 14px; }
+  .footer-bottom-links { display: inline-flex; gap: 16px; align-items: center; }
+  .footer-bottom-links a { color: rgba(255,255,255,0.72) !important; font-weight: 800; }
+  .footer-bottom-links a:hover { color: var(--eacc-gold, var(--gold, #f5a623)) !important; }
+  html[dir="rtl"] .site-footer .footer-col h4::after { left: auto; right: 0; }
+  html[dir="rtl"] .site-footer .footer-links a:hover, html[dir="rtl"] .footer-social-list a:hover { transform: translateX(-4px); }
+  @media (max-width: 1120px) { .site-footer .footer-grid { grid-template-columns: 1.4fr 1fr 1fr !important; } .footer-follow { grid-column: span 2; } }
+  @media (max-width: 768px) {
+    .site-footer { padding-top: 48px !important; }
+    .site-footer .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 30px 18px !important; }
+    .footer-brand-block { grid-column: 1 / -1; padding-bottom: 26px; border-bottom: 1px solid rgba(255,255,255,0.10); }
+    .footer-brand-block p { max-width: 100%; margin-bottom: 18px; }
+    .footer-office { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: 14px; align-items: start; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.10); }
+    .footer-office h4 { margin-bottom: 0 !important; }
+    .footer-office h4::after { bottom: -11px; }
+    .footer-office .footer-links a:first-child { max-width: none; }
+    .site-footer .footer-col:not(.footer-office):not(.footer-follow) { min-width: 0; padding: 16px 14px; border-radius: 18px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .footer-follow { grid-column: 1 / -1; padding: 18px 14px; border-radius: 18px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .footer-social-list { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+    .footer-social-list a { max-width: none; min-height: 44px; padding: 7px 9px; gap: 9px; }
+    .footer-social-icon-wrap { width: 28px; height: 28px; flex-basis: 28px; }
+    .footer-social-icon-wrap img { width: 16px; height: 16px; }
+    .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 34px !important; }
+  }
+  @media (max-width: 420px) {
+    .site-footer .footer-grid { gap: 24px 12px !important; }
+    .site-footer .footer-col:not(.footer-office):not(.footer-follow), .footer-follow { padding: 14px 12px; }
+    .site-footer .footer-links a { font-size: 13px !important; }
+    .footer-social-list a span:last-child { font-size: 13px; }
+  }
+</style>
+</head>
+
+<body class="loading">
+  <div class="site-loader" id="siteLoader" aria-label="Loading website">
+    <div class="loader-content">
+      <img src="../assets/images/logo-white.png" alt="EACC Logo">
+      <h2 data-en="Egyptian American Center" data-ar="المركز المصري الأمريكي">Egyptian American Center</h2>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+      <header>
+
+    <div class="container navbar">
+
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo-white.png" alt="EACC Logo">
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+
+        <a href="../index.html">
+          <span>Home</span>
+        </a>
+
+        <div class="dropdown">
+
+          <a href="../aboutus/who-we-are.html">
+            <span>Who We Are </span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="../aboutus/who-we-are.html">
+              About EACC
+            </a>
+
+            <a href="../aboutus/explore-our-camps.html">
+              Explore Our Camps
+            </a>
+
+            <a href="../aboutus/faqs.html">
+              FAQs
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="dropdown">
+
+          <a href="../index.html#programs">
+            <span>Our Courses</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="../programs/summer-camp-2026.html">Summer Camp 2026</a>
+            <a href="../programs/language.html">Languages</a>
+            <a href="../programs/activities.html">Activities</a>
+          </div>
+
+        </div>
+        <div class="dropdown">
+
+          <a href="../index.html#test-prep">
+            <span>Preparation Courses</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="../prep-courses/tofel.html">TOEFL</a>
+            <a href="../prep-courses/ielts.html">IELTS</a>
+            <a href="../prep-courses/oet.html">OET</a>
+            <a href="../prep-courses/pte.html">PTE</a>
+          </div>
+
+        </div>
+<a href="../contactus.html">
+          <span>Contact</span>
+        </a>
+
+        <button type="button" class="language-toggle eacc-language-toggle" id="languageToggle" aria-label="Switch website language to Arabic">
+          <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          <span id="languageToggleText">AR</span>
+        </button>
+
+        <div class="nav-cta-group">
+
+          <a href="../contactus.html#contact" class="nav-apply">
+            <span>Apply Now</span>
+          </a>
+
+          <a href="https://lms.eacc-egy.com/login.php" class="nav-lms" target="_blank" rel="noopener">
+            <i class="fa-solid fa-laptop" aria-hidden="true"></i>
+            <span>LMS Login</span>
+          </a>
+
+        </div>
+
+      </nav>
+
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="mobile-toggle-line"></span>
+        <span class="mobile-toggle-line"></span>
+        <span class="mobile-toggle-line"></span>
+      </button>
+
+    </div>
+
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+          <span>›</span>
+          <span data-en="About Us" data-ar="من نحن">About Us</span>
+          <span>›</span>
+          <span data-en="FAQs" data-ar="الأسئلة الشائعة">FAQs</span>
+        </div>
+        <h1 data-en="EACC's FAQ" data-ar="الأسئلة الشائعة في EACC">EACC's FAQ</h1>
+        <p data-en="Whether you’re looking to improve your English skills or prepare for an international exam, EACC provides all the essential details to help you get started. If you need further assistance, feel free to contact us." data-ar="سواء كنت ترغب في تحسين مهاراتك في اللغة الإنجليزية أو الاستعداد لاختبار دولي، توفر EACC كل التفاصيل الأساسية لمساعدتك على البدء. وإذا احتجت إلى مساعدة إضافية، لا تتردد في التواصل معنا.">Whether you’re looking to improve your English skills or prepare for an international exam, EACC provides all the essential details to help you get started. If you need further assistance, feel free to contact us.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-intro">
+    <div class="container intro-grid">
+      <div class="intro-copy">
+        <span class="breadcrumb" data-en="Working at home" data-ar="الاستعداد من المنزل">Working at home</span>
+        <h2 data-en="Frequently asked questions" data-ar="أسئلة متكررة">Frequently asked questions</h2>
+        <p data-en="Find clear answers about TOEFL iBT, IELTS, PTE, and OET structure, timing, scoring, score reports, and how EACC preparation helps you study with confidence." data-ar="اعثر على إجابات واضحة حول بنية اختبارات TOEFL iBT وIELTS وPTE وOET والمدة والتقييم وتقارير الدرجات وكيف تساعدك دورات EACC على الاستعداد بثقة.">Find clear answers about TOEFL iBT, IELTS, PTE, and OET structure, timing, scoring, score reports, and how EACC preparation helps you study with confidence.</p>
+      </div>
+      <div class="intro-image">
+        <img src="../assets/images/whoweare.avif" alt="EACC students learning">
+        <div class="intro-card">
+          <span data-en="Exam support" data-ar="دعم الاختبارات">Exam support</span>
+          <h3 data-en="Start prepared, not confused." data-ar="ابدأ مستعدًا وليس مرتبكًا.">Start prepared, not confused.</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-shell">
+    <div class="container">
+      <div class="faq-toolbar">
+        <label class="search-box" for="faqSearch">
+          <span>⌕</span>
+          <input id="faqSearch" type="search" placeholder="Looking for something?" data-en-placeholder="Looking for something?" data-ar-placeholder="تبحث عن شيء؟">
+        </label>
+        <div class="topic-tabs" role="tablist" aria-label="FAQ categories">
+          <button type="button" class="topic-tab active" data-panel="toefl" data-en="TOEFL iBT" data-ar="TOEFL iBT">TOEFL iBT</button>
+          <button type="button" class="topic-tab" data-panel="ielts" data-en="IELTS" data-ar="IELTS">IELTS</button>
+          <button type="button" class="topic-tab" data-panel="pte" data-en="PTE" data-ar="PTE">PTE</button>
+          <button type="button" class="topic-tab" data-panel="oet" data-en="OET" data-ar="OET">OET</button>
+        </div>
+      </div>
+
+      <div class="faq-layout">
+        <aside class="faq-side">
+          <h3 data-en="Looking for something?" data-ar="تبحث عن شيء؟">Looking for something?</h3>
+          <p data-en="Use the search field or jump to the test answers students ask about most." data-ar="استخدم مربع البحث أو انتقل مباشرة إلى أكثر أسئلة الاختبارات شيوعًا.">Use the search field or jump to the test answers students ask about most.</p>
+          <div class="quick-list">
+            <button type="button" data-scroll-panel="toefl" data-scroll-faq="1"><span data-en="TOEFL sections" data-ar="أقسام TOEFL">TOEFL sections</span><span>TOEFL</span></button>
+            <button type="button" data-scroll-panel="ielts" data-scroll-faq="3"><span data-en="IELTS types" data-ar="أنواع IELTS">IELTS types</span><span>IELTS</span></button>
+            <button type="button" data-scroll-panel="pte" data-scroll-faq="3"><span data-en="PTE scoring" data-ar="تقييم PTE">PTE scoring</span><span>PTE</span></button>
+            <button type="button" data-scroll-panel="pte" data-scroll-faq="11"><span data-en="PTE test day" data-ar="يوم اختبار PTE">PTE test day</span><span>PTE</span></button>
+            <button type="button" data-scroll-panel="oet" data-scroll-faq="2"><span data-en="OET recognition" data-ar="الاعتراف بـ OET">OET recognition</span><span>OET</span></button>
+            <button type="button" data-scroll-panel="oet" data-scroll-faq="7"><span data-en="OET format" data-ar="شكل OET">OET format</span><span>OET</span></button>
+          </div>
+        </aside>
+
+        <main>
+          <div class="faq-panel active" id="panel-toefl">
+            <div class="panel-heading">
+              <h2 data-en="TOEFL iBT" data-ar="TOEFL iBT">TOEFL iBT</h2>
+              <p data-en="Everything you need to know before preparing for TOEFL iBT with EACC." data-ar="كل ما تحتاج إلى معرفته قبل الاستعداد لاختبار TOEFL iBT مع EACC.">Everything you need to know before preparing for TOEFL iBT with EACC.</p>
+            </div>
+            <div class="empty-state" id="emptyState" data-en="No matching questions found. Try another keyword." data-ar="لا توجد أسئلة مطابقة. جرّب كلمة بحث أخرى.">No matching questions found. Try another keyword.</div>
+            <div class="faq-list" id="faqList">
+              <article class="faq-item" data-faq="1"><button class="faq-question" type="button"><span class="faq-number">01</span><strong data-en="What is the TOEFL iBT test, and what are its sections?" data-ar="ما هو اختبار TOEFL iBT وما أقسامه؟">What is the TOEFL iBT test, and what are its sections?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner" data-en="The TOEFL iBT test assesses English proficiency and consists of four sections: Reading, Listening, Speaking, and Writing." data-ar="يقيس اختبار TOEFL iBT مستوى إتقان اللغة الإنجليزية، ويتكوّن من أربعة أقسام: القراءة، والاستماع، والتحدث، والكتابة.">The TOEFL iBT test assesses English proficiency and consists of four sections: Reading, Listening, Speaking, and Writing.</div></div></article>
+              <article class="faq-item" data-faq="2"><button class="faq-question" type="button"><span class="faq-number">02</span><strong data-en="What is the structure of each section in the TOEFL iBT test?" data-ar="ما هي بنية كل قسم في اختبار TOEFL iBT؟">What is the structure of each section in the TOEFL iBT test?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="TOEFL iBT test consists of 4 main skills:" data-ar="يتكون اختبار TOEFL iBT من 4 مهارات رئيسية:">TOEFL iBT test consists of 4 main skills:</p><ul><li data-en="Reading: 35 minutes, 20 questions based on two passages." data-ar="القراءة: 35 دقيقة، 20 سؤالًا مبنيًا على مقطعين.">Reading: 35 minutes, 20 questions based on two passages.</li><li data-en="Listening: 36 minutes, 28 questions about lectures and conversations." data-ar="الاستماع: 36 دقيقة، 28 سؤالًا حول محاضرات ومحادثات.">Listening: 36 minutes, 28 questions about lectures and conversations.</li><li data-en="Speaking: 16 minutes, 4 tasks, including discussing a topic and responding to reading and listening materials." data-ar="التحدث: 16 دقيقة، 4 مهام تشمل مناقشة موضوع والرد على مواد قراءة واستماع.">Speaking: 16 minutes, 4 tasks, including discussing a topic and responding to reading and listening materials.</li><li data-en="Writing: 29 minutes, 2 tasks—one based on reading and listening, and one on expressing an opinion." data-ar="الكتابة: 29 دقيقة، مهمتان؛ واحدة مبنية على القراءة والاستماع، وأخرى للتعبير عن الرأي.">Writing: 29 minutes, 2 tasks—one based on reading and listening, and one on expressing an opinion.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="3"><button class="faq-question" type="button"><span class="faq-number">03</span><strong data-en="How long does the TOEFL iBT test take?" data-ar="كم يستغرق اختبار TOEFL iBT؟">How long does the TOEFL iBT test take?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner" data-en="The test takes just 2 hours to complete, but you should plan for 2.5 hours, including 30 minutes for check-in." data-ar="يستغرق الاختبار ساعتين فقط، لكن من الأفضل تخصيص ساعتين ونصف تقريبًا، بما في ذلك 30 دقيقة لإجراءات تسجيل الدخول.">The test takes just 2 hours to complete, but you should plan for 2.5 hours, including 30 minutes for check-in.</div></div></article>
+              <article class="faq-item" data-faq="4"><button class="faq-question" type="button"><span class="faq-number">04</span><strong data-en="Can I take notes during the Listening section?" data-ar="هل يمكنني تدوين الملاحظات أثناء قسم الاستماع؟">Can I take notes during the Listening section?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner" data-en="Yes, you can take notes during any audio segment to help answer the questions." data-ar="نعم، يمكنك تدوين الملاحظات أثناء أي مقطع صوتي لمساعدتك في الإجابة عن الأسئلة.">Yes, you can take notes during any audio segment to help answer the questions.</div></div></article>
+              <article class="faq-item" data-faq="5"><button class="faq-question" type="button"><span class="faq-number">05</span><strong data-en="How is the TOEFL iBT scored?" data-ar="كيف يتم تقييم TOEFL iBT؟">How is the TOEFL iBT scored?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner" data-en="Each section is scored separately, and the total score is out of 120. The Writing section is evaluated using AI and human raters." data-ar="يتم تقييم كل قسم بشكل منفصل، والدرجة الكلية من 120. ويتم تقييم قسم الكتابة باستخدام الذكاء الاصطناعي ومقيّمين بشريين.">Each section is scored separately, and the total score is out of 120. The Writing section is evaluated using AI and human raters.</div></div></article>
+              <article class="faq-item" data-faq="6"><button class="faq-question" type="button"><span class="faq-number">06</span><strong data-en="When will my TOEFL iBT scores be available?" data-ar="متى ستكون درجات TOEFL iBT متاحة؟">When will my TOEFL iBT scores be available?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="Your scores will be available in your ETS account 4–8 days after your test. The exact date you can expect to receive your official scores will be displayed at the end of your TOEFL iBT test." data-ar="ستكون درجاتك متاحة في حساب ETS الخاص بك بعد 4 إلى 8 أيام من الاختبار. وسيظهر التاريخ المتوقع لاستلام الدرجات الرسمية في نهاية اختبار TOEFL iBT.">Your scores will be available in your ETS account 4–8 days after your test. The exact date you can expect to receive your official scores will be displayed at the end of your TOEFL iBT test.</p><p data-en="A PDF version of your score report will be made available for download 24-48 hours after you receive your official scores." data-ar="سيكون إصدار PDF من تقرير الدرجات متاحًا للتنزيل بعد 24 إلى 48 ساعة من استلام الدرجات الرسمية.">A PDF version of your score report will be made available for download 24-48 hours after you receive your official scores.</p></div></div></article>
+              <article class="faq-item" data-faq="7"><button class="faq-question" type="button"><span class="faq-number">07</span><strong data-en="Where can I find my TOEFL iBT scores?" data-ar="أين يمكنني العثور على درجات TOEFL iBT؟">Where can I find my TOEFL iBT scores?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="At the end of the test, you will be able to view your unofficial Reading and Listening scores, to get an idea of how you performed on the test." data-ar="في نهاية الاختبار، ستتمكن من رؤية درجات القراءة والاستماع غير الرسمية لتكوين فكرة عن أدائك.">At the end of the test, you will be able to view your unofficial Reading and Listening scores, to get an idea of how you performed on the test.</p><p data-en="Your official scores will be posted in your ETS account 4–8 days after your test. The exact date you can expect to receive your official scores will be displayed at the end of your test." data-ar="سيتم نشر درجاتك الرسمية في حساب ETS الخاص بك بعد 4 إلى 8 أيام من الاختبار، وسيظهر التاريخ المتوقع في نهاية الاختبار.">Your official scores will be posted in your ETS account 4–8 days after your test. The exact date you can expect to receive your official scores will be displayed at the end of your test.</p><p data-en="If you requested a paper score report during registration, it will be mailed to you." data-ar="إذا طلبت تقرير درجات ورقيًا أثناء التسجيل، فسيتم إرساله إليك بالبريد.">If you requested a paper score report during registration, it will be mailed to you.</p></div></div></article>
+              <article class="faq-item" data-faq="8"><button class="faq-question" type="button"><span class="faq-number">08</span><strong data-en="Can I get a PDF version of my TOEFL iBT score report?" data-ar="هل يمكنني الحصول على نسخة PDF من تقرير درجات TOEFL iBT؟">Can I get a PDF version of my TOEFL iBT score report?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner" data-en="Yes, a PDF score report will be available for download 1 day after your official scores are posted." data-ar="نعم، سيكون تقرير الدرجات بصيغة PDF متاحًا للتنزيل بعد يوم واحد من نشر درجاتك الرسمية.">Yes, a PDF score report will be available for download 1 day after your official scores are posted.</div></div></article>
+              <article class="faq-item" data-faq="9"><button class="faq-question" type="button"><span class="faq-number">09</span><strong data-en="Why are the Reading and Listening scores shown at the end of the test unofficial in TOEFL iBT?" data-ar="لماذا تكون درجات القراءة والاستماع المعروضة في نهاية الاختبار غير رسمية؟">Why are the Reading and Listening scores shown at the end of the test unofficial in TOEFL iBT?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner" data-en="All TOEFL scores go through ETS quality checks before being officially released. The unofficial TOEFL iBT scores might change after statistical analysis." data-ar="تمر جميع درجات TOEFL بفحوصات جودة من ETS قبل إصدارها رسميًا. وقد تتغير الدرجات غير الرسمية بعد التحليل الإحصائي.">All TOEFL scores go through ETS quality checks before being officially released. The unofficial TOEFL iBT scores might change after statistical analysis.</div></div></article>
+              <article class="faq-item" data-faq="10"><button class="faq-question" type="button"><span class="faq-number">10</span><strong data-en="How long are TOEFL iBT scores valid? When do they expire?" data-ar="ما مدة صلاحية درجات TOEFL iBT؟ ومتى تنتهي؟">How long are TOEFL iBT scores valid? When do they expire?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner" data-en="TOEFL iBT scores are valid for 2 years from the test date. Scores will not be reported or sent by ETS after 2 years." data-ar="درجات TOEFL iBT صالحة لمدة عامين من تاريخ الاختبار. ولن تقوم ETS بالإبلاغ عن الدرجات أو إرسالها بعد مرور عامين.">TOEFL iBT scores are valid for 2 years from the test date. Scores will not be reported or sent by ETS after 2 years.</div></div></article>
+              <article class="faq-item" data-faq="11"><button class="faq-question" type="button"><span class="faq-number">11</span><strong data-en="How can I get my TOEFL iBT scores faster?" data-ar="كيف يمكنني الحصول على درجات TOEFL iBT بشكل أسرع؟">How can I get my TOEFL iBT scores faster?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner" data-en="Express shipping is available in several countries and territories for paper score reports sent to the test taker, for a fee. Express score reports are usually delivered 2–5 business days after test scores are confirmed or the additional score report is ordered. If express shipping is an option for your location, you will have the option to select it during test registration or when ordering an additional score report." data-ar="تتوفر خدمة الشحن السريع في عدة دول ومناطق لتقارير الدرجات الورقية المرسلة إلى المتقدم للاختبار مقابل رسوم. عادةً تصل التقارير السريعة خلال 2 إلى 5 أيام عمل بعد تأكيد الدرجات أو طلب تقرير إضافي. إذا كانت هذه الخدمة متاحة في موقعك، ستظهر لك أثناء التسجيل أو عند طلب تقرير درجات إضافي.">Express shipping is available in several countries and territories for paper score reports sent to the test taker, for a fee. Express score reports are usually delivered 2–5 business days after test scores are confirmed or the additional score report is ordered. If express shipping is an option for your location, you will have the option to select it during test registration or when ordering an additional score report.</div></div></article>
+              <article class="faq-item" data-faq="12"><button class="faq-question" type="button"><span class="faq-number">12</span><strong data-en="What information is on my TOEFL iBT score report?" data-ar="ما المعلومات الموجودة في تقرير درجات TOEFL iBT؟">What information is on my TOEFL iBT score report?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="Your test taker score report includes the total score and section scores from a single test date, and your MyBest scores, which are the highest section scores from all valid test dates, and the sum of those scores." data-ar="يتضمن تقرير درجات المتقدم الدرجة الكلية ودرجات الأقسام من تاريخ اختبار واحد، بالإضافة إلى درجات MyBest وهي أعلى درجات الأقسام من جميع تواريخ الاختبار الصالحة ومجموعها.">Your test taker score report includes the total score and section scores from a single test date, and your MyBest scores, which are the highest section scores from all valid test dates, and the sum of those scores.</p><p data-en="You can view additional score information in your ETS account, including:" data-ar="يمكنك عرض معلومات إضافية عن الدرجات في حساب ETS الخاص بك، وتشمل:">You can view additional score information in your ETS account, including:</p><ul><li data-en="Your proficiency level for each section of the test." data-ar="مستوى إتقانك في كل قسم من الاختبار.">Your proficiency level for each section of the test.</li><li data-en="Feedback on which Reading and Listening question types you’ve successfully demonstrated, and which are still developing." data-ar="ملاحظات حول أنواع أسئلة القراءة والاستماع التي أتقنتها والتي ما زالت بحاجة إلى تطوير.">Feedback on which Reading and Listening question types you’ve successfully demonstrated, and which are still developing.</li><li data-en="A closer look at your Speaking and Writing skills, with insights into your language use, grammar, mechanics and more." data-ar="نظرة أقرب على مهارات التحدث والكتابة مع ملاحظات حول استخدام اللغة والقواعد والآليات وغيرها.">A closer look at your Speaking and Writing skills, with insights into your language use, grammar, mechanics and more.</li><li data-en="Sample high-scoring Speaking and Writing responses with explanations to help you practice and improve." data-ar="نماذج لإجابات عالية الدرجة في التحدث والكتابة مع شروحات تساعدك على التدريب والتحسن.">Sample high-scoring Speaking and Writing responses with explanations to help you practice and improve.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="13"><button class="faq-question" type="button"><span class="faq-number">13</span><strong data-en="Can I use TOEFL iBT MyBest scores (superscores) when I apply to a university?" data-ar="هل يمكنني استخدام درجات TOEFL iBT MyBest عند التقديم للجامعة؟">Can I use TOEFL iBT MyBest scores (superscores) when I apply to a university?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner" data-en="Each institution sets its own score requirements, so it’s important to check with the institutions where you are applying, to confirm whether they accept MyBest scores." data-ar="تحدد كل مؤسسة متطلبات الدرجات الخاصة بها، لذلك من المهم مراجعة المؤسسات التي تقدم إليها للتأكد مما إذا كانت تقبل درجات MyBest.">Each institution sets its own score requirements, so it’s important to check with the institutions where you are applying, to confirm whether they accept MyBest scores.</div></div></article>
+              <article class="faq-item" data-faq="14"><button class="faq-question" type="button"><span class="faq-number">14</span><strong data-en="What is a good TOEFL iBT score?" data-ar="ما هي الدرجة الجيدة في TOEFL iBT؟">What is a good TOEFL iBT score?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="A good TOEFL iBT score for you is the score you need to meet the English-language requirements of the institutions where you are applying." data-ar="الدرجة الجيدة في TOEFL iBT هي الدرجة التي تحتاجها لتلبية متطلبات اللغة الإنجليزية لدى المؤسسات التي تتقدم إليها.">A good TOEFL iBT score for you is the score you need to meet the English-language requirements of the institutions where you are applying.</p><p data-en="Institutions’ requirements vary, so be sure to check the requirements with them directly." data-ar="تختلف متطلبات المؤسسات، لذلك تأكد من مراجعتها مباشرة.">Institutions’ requirements vary, so be sure to check the requirements with them directly.</p><p data-en="In general, elite universities may require a total score of 100 or more. Mid-tier universities may require around 80. Some programs have section score requirements in addition to a total score." data-ar="عمومًا، قد تتطلب الجامعات المرموقة درجة كلية 100 أو أكثر. وقد تتطلب الجامعات المتوسطة حوالي 80. بعض البرامج تضع متطلبات لدرجات الأقسام إلى جانب الدرجة الكلية.">In general, elite universities may require a total score of 100 or more. Mid-tier universities may require around 80. Some programs have section score requirements in addition to a total score.</p></div></div></article>
+              <article class="faq-item" data-faq="15"><button class="faq-question" type="button"><span class="faq-number">15</span><strong data-en="How do TOEFL iBT scores compare with IELTS scores or the Common European Framework of Reference for Languages (CEFR)?" data-ar="كيف تقارن درجات TOEFL iBT بدرجات IELTS أو الإطار الأوروبي CEFR؟">How do TOEFL iBT scores compare with IELTS scores or the Common European Framework of Reference for Languages (CEFR)?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="The table below gives a general comparison between TOEFL iBT and IELTS bands." data-ar="يوضح الجدول التالي مقارنة عامة بين درجات TOEFL iBT ودرجات IELTS.">The table below gives a general comparison between TOEFL iBT and IELTS bands.</p><table class="score-table"><thead><tr><th data-en="TOEFL iBT Score (0–120)" data-ar="درجة TOEFL iBT (0-120)">TOEFL iBT Score (0–120)</th><th data-en="IELTS Band (0–9)" data-ar="درجة IELTS (0-9)">IELTS Band (0–9)</th></tr></thead><tbody><tr><td>118</td><td>9</td></tr><tr><td>115</td><td>8.5</td></tr><tr><td>110</td><td>8</td></tr><tr><td>102</td><td>7.5</td></tr><tr><td>94</td><td>7</td></tr><tr><td>79</td><td>6.5</td></tr><tr><td>60</td><td>6</td></tr><tr><td>46</td><td>5.5</td></tr><tr><td>35</td><td>5</td></tr><tr><td>32</td><td>4.5</td></tr><tr><td>0-31</td><td>0-4</td></tr></tbody></table></div></div></article>
+              <article class="faq-item" data-faq="16"><button class="faq-question" type="button"><span class="faq-number">16</span><strong data-en="Can I appeal my TOEFL iBT scores?" data-ar="هل يمكنني الاعتراض على درجات TOEFL iBT؟">Can I appeal my TOEFL iBT scores?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="You can request a score review for your Speaking and/or Writing section up to 30 days after your test, for a fee." data-ar="يمكنك طلب مراجعة درجات قسم التحدث و/أو الكتابة حتى 30 يومًا بعد الاختبار مقابل رسوم.">You can request a score review for your Speaking and/or Writing section up to 30 days after your test, for a fee.</p><p data-en="You can’t request a score review if you have already requested that your scores be sent to any institution or agency." data-ar="لا يمكنك طلب مراجعة الدرجات إذا كنت قد طلبت بالفعل إرسال درجاتك إلى أي مؤسسة أو جهة.">You can’t request a score review if you have already requested that your scores be sent to any institution or agency.</p><p data-en="Reading and Listening scores cannot be reviewed or appealed." data-ar="لا يمكن مراجعة أو الاعتراض على درجات القراءة والاستماع.">Reading and Listening scores cannot be reviewed or appealed.</p></div></div></article>
+              <article class="faq-item" data-faq="17"><button class="faq-question" type="button"><span class="faq-number">17</span><strong data-en="What are the main objectives of a TOEFL preparation course at EACC?" data-ar="ما الأهداف الرئيسية لدورة التحضير لاختبار TOEFL في EACC؟">What are the main objectives of a TOEFL preparation course at EACC?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="EACC preparation course aims to:" data-ar="تهدف دورة التحضير في EACC إلى:">EACC preparation course aims to:</p><ul><li data-en="Familiarize you with the test format." data-ar="تعريفك بشكل الاختبار.">Familiarize you with the test format.</li><li data-en="Improve your reading, writing, speaking, and listening skills." data-ar="تحسين مهارات القراءة والكتابة والتحدث والاستماع.">Improve your reading, writing, speaking, and listening skills.</li><li data-en="Teach special tips and techniques to pass the exam." data-ar="تعليمك نصائح وتقنيات خاصة لاجتياز الاختبار.">Teach special tips and techniques to pass the exam.</li><li data-en="Help you boost your TOEFL score." data-ar="مساعدتك على رفع درجة TOEFL الخاصة بك.">Help you boost your TOEFL score.</li><li data-en="Provide strategies to manage test time effectively." data-ar="تزويدك باستراتيجيات لإدارة وقت الاختبار بفاعلية.">Provide strategies to manage test time effectively.</li><li data-en="Prepare you for the test day process." data-ar="إعدادك لإجراءات يوم الاختبار.">Prepare you for the test day process.</li></ul><p data-en="EACC provides a variety of mock tests to support your practice and boost your confidence for exams." data-ar="توفر EACC مجموعة متنوعة من الاختبارات التجريبية لدعم تدريبك وتعزيز ثقتك قبل الاختبارات.">EACC provides a variety of mock tests to support your practice and boost your confidence for exams.</p></div></div></article>
+            </div>
+          </div>
+
+          <div class="faq-panel" id="panel-ielts">
+            <div class="panel-heading">
+              <h2 data-en="IELTS" data-ar="IELTS">IELTS</h2>
+              <p data-en="Clear answers about IELTS Academic, General Training, UKVI, One Skill Retake, scoring, age requirements, and computer or paper test options." data-ar="إجابات واضحة حول IELTS Academic وGeneral Training وUKVI وOne Skill Retake والتقييم ومتطلبات العمر وخيارات الاختبار الورقي أو عبر الكمبيوتر.">Clear answers about IELTS Academic, General Training, UKVI, One Skill Retake, scoring, age requirements, and computer or paper test options.</p>
+            </div>
+            <div class="empty-state" data-en="No matching IELTS questions found. Try another keyword." data-ar="لا توجد أسئلة IELTS مطابقة. جرّب كلمة بحث أخرى.">No matching IELTS questions found. Try another keyword.</div>
+            <div class="faq-list" id="ieltsFaqList">
+              <article class="faq-item" data-faq="1"><button class="faq-question" type="button"><span class="faq-number">01</span><strong data-en="What is IELTS?" data-ar="ما هو اختبار IELTS؟">What is IELTS?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="The International English Language Testing System (IELTS) is an English language test designed to help you study, migrate, or work in a country where English is the native language." data-ar="نظام اختبار اللغة الإنجليزية الدولي (IELTS) هو اختبار لغة إنجليزية مصمم لمساعدتك على الدراسة أو الهجرة أو العمل في دولة تكون الإنجليزية فيها هي اللغة الأصلية.">The International English Language Testing System (IELTS) is an English language test designed to help you study, migrate, or work in a country where English is the native language.</p><p data-en="IELTS has two test types: IELTS Academic and IELTS General Training. Both assess your English language skills in listening, reading, writing, and speaking." data-ar="يتوفر IELTS بنوعين: IELTS Academic وIELTS General Training. ويقيّم كلاهما مهاراتك في الاستماع والقراءة والكتابة والتحدث.">IELTS has two test types: IELTS Academic and IELTS General Training. Both assess your English language skills in listening, reading, writing, and speaking.</p><p data-en="IELTS is jointly owned by the British Council, IDP: IELTS Australia, and Cambridge Assessment English." data-ar="يمتلك اختبار IELTS كل من المجلس الثقافي البريطاني وIDP: IELTS Australia وCambridge Assessment English.">IELTS is jointly owned by the British Council, IDP: IELTS Australia, and Cambridge Assessment English.</p></div></div></article>
+              <article class="faq-item" data-faq="2"><button class="faq-question" type="button"><span class="faq-number">02</span><strong data-en="Why take IELTS?" data-ar="لماذا تأخذ اختبار IELTS؟">Why take IELTS?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="You must be able to demonstrate a high level of English language proficiency if you want to work, live, or study in an English-speaking country." data-ar="إذا كنت ترغب في العمل أو المعيشة أو الدراسة في دولة ناطقة بالإنجليزية، فيجب أن تثبت مستوى عالياً من إتقان اللغة الإنجليزية.">You must be able to demonstrate a high level of English language proficiency if you want to work, live, or study in an English-speaking country.</p><p data-en="For people wishing to migrate to countries like Australia, New Zealand, Canada, and the UK, IELTS is the test of choice. More than 12,000 employers, universities, schools, and immigration organisations worldwide, including 3,400 institutions in the USA, recognise IELTS as proof of English language proficiency." data-ar="بالنسبة للراغبين في الهجرة إلى دول مثل أستراليا ونيوزيلندا وكندا والمملكة المتحدة، يعد IELTS من الاختبارات الأساسية. وتعترف به أكثر من 12,000 جهة عمل وجامعة ومدرسة ومنظمة هجرة حول العالم، منها 3,400 مؤسسة في الولايات المتحدة، كدليل على إتقان اللغة الإنجليزية.">For people wishing to migrate to countries like Australia, New Zealand, Canada, and the UK, IELTS is the test of choice. More than 12,000 employers, universities, schools, and immigration organisations worldwide, including 3,400 institutions in the USA, recognise IELTS as proof of English language proficiency.</p></div></div></article>
+              <article class="faq-item" data-faq="3"><button class="faq-question" type="button"><span class="faq-number">03</span><strong data-en="What are the types of IELTS?" data-ar="ما أنواع اختبار IELTS؟">What are the types of IELTS?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><h4 data-en="IELTS Academic" data-ar="IELTS Academic">IELTS Academic</h4><p data-en="IELTS Academic is ideal if you want to study at an English-speaking institution or university in higher education." data-ar="يعد IELTS Academic مناسباً إذا كنت ترغب في الدراسة في مؤسسة أو جامعة ناطقة بالإنجليزية في مرحلة التعليم العالي.">IELTS Academic is ideal if you want to study at an English-speaking institution or university in higher education.</p><p data-en="The test evaluates whether you are ready to start studying in English. It uses terminology common in academic contexts and can also be taken for professional registration purposes." data-ar="يقيم الاختبار مدى استعدادك لبدء الدراسة باللغة الإنجليزية، ويستخدم مصطلحات شائعة في السياقات الأكاديمية، ويمكن استخدامه أيضاً لأغراض التسجيل المهني.">The test evaluates whether you are ready to start studying in English. It uses terminology common in academic contexts and can also be taken for professional registration purposes.</p><p data-en="IELTS Academic can be taken either on paper or on computer." data-ar="يمكن أداء IELTS Academic ورقياً أو عبر الكمبيوتر.">IELTS Academic can be taken either on paper or on computer.</p><h4 data-en="IELTS General Training" data-ar="IELTS General Training">IELTS General Training</h4><p data-en="IELTS General Training is the best fit if you want to study below degree level, including studying at an English-speaking school or college. It can also be taken for work experience or employment training." data-ar="يناسب IELTS General Training من يرغب في الدراسة دون مستوى الدرجة الجامعية، بما في ذلك الدراسة في مدرسة أو كلية ناطقة بالإنجليزية. ويمكن استخدامه أيضاً لأغراض الخبرة العملية أو التدريب الوظيفي.">IELTS General Training is the best fit if you want to study below degree level, including studying at an English-speaking school or college. It can also be taken for work experience or employment training.</p><p data-en="IELTS General Training is required for migration to Australia, the UK, New Zealand, and Canada. The test covers common English language skills needed in social and professional settings." data-ar="يُطلب IELTS General Training للهجرة إلى أستراليا والمملكة المتحدة ونيوزيلندا وكندا. ويغطي مهارات اللغة الإنجليزية الشائعة المطلوبة في المواقف الاجتماعية والمهنية.">IELTS General Training is required for migration to Australia, the UK, New Zealand, and Canada. The test covers common English language skills needed in social and professional settings.</p><p data-en="You can take IELTS General Training on paper or on computer." data-ar="يمكن أداء IELTS General Training ورقياً أو عبر الكمبيوتر.">You can take IELTS General Training on paper or on computer.</p><p data-en="The place where you want to study, work, or migrate affects which exam you need. For example, if you want to go to the United Kingdom, you may need an IELTS for UK Visas and Immigration (UKVI) test, such as IELTS General Training for UKVI, IELTS Academic for UKVI, or IELTS Life Skills A1 or B1 depending on your purpose." data-ar="تؤثر الدولة أو الجهة التي ترغب في الدراسة أو العمل أو الهجرة إليها على نوع الاختبار المطلوب. على سبيل المثال، إذا كنت تريد الذهاب إلى المملكة المتحدة فقد تحتاج إلى اختبار IELTS for UK Visas and Immigration (UKVI)، مثل IELTS General Training for UKVI أو IELTS Academic for UKVI أو IELTS Life Skills A1 أو B1 حسب الغرض.">The place where you want to study, work, or migrate affects which exam you need. For example, if you want to go to the United Kingdom, you may need an IELTS for UK Visas and Immigration (UKVI) test, such as IELTS General Training for UKVI, IELTS Academic for UKVI, or IELTS Life Skills A1 or B1 depending on your purpose.</p></div></div></article>
+              <article class="faq-item" data-faq="4"><button class="faq-question" type="button"><span class="faq-number">04</span><strong data-en="What IELTS score do I need?" data-ar="ما درجة IELTS التي أحتاجها؟">What IELTS score do I need?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="The better your IELTS score, the more proficient your English communication skills are. Each immigration body, university, workplace, or institution sets its own IELTS score requirements." data-ar="كلما ارتفعت درجة IELTS، دل ذلك على مستوى أعلى في مهارات التواصل باللغة الإنجليزية. وتحدد كل جهة هجرة أو جامعة أو مكان عمل أو مؤسسة متطلبات درجات IELTS الخاصة بها.">The better your IELTS score, the more proficient your English communication skills are. Each immigration body, university, workplace, or institution sets its own IELTS score requirements.</p><p data-en="The score you need depends on what you plan to do in the country, such as work or study." data-ar="تعتمد الدرجة التي تحتاجها على هدفك في الدولة، مثل العمل أو الدراسة.">The score you need depends on what you plan to do in the country, such as work or study.</p></div></div></article>
+              <article class="faq-item" data-faq="5"><button class="faq-question" type="button"><span class="faq-number">05</span><strong data-en="Who accepts IELTS?" data-ar="من يقبل اختبار IELTS؟">Who accepts IELTS?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="IELTS is accepted by a wide range of organisations, including:" data-ar="يتم قبول IELTS من قبل مجموعة واسعة من الجهات، منها:">IELTS is accepted by a wide range of organisations, including:</p><ul><li data-en="Education: universities, schools, training colleges, and tertiary institutes." data-ar="التعليم: الجامعات والمدارس وكليات التدريب ومؤسسات التعليم العالي.">Education: universities, schools, training colleges, and tertiary institutes.</li><li data-en="Government departments and agencies." data-ar="الإدارات والهيئات الحكومية.">Government departments and agencies.</li><li data-en="Professional and industry bodies." data-ar="الهيئات المهنية والصناعية.">Professional and industry bodies.</li><li data-en="Companies and employers." data-ar="الشركات وأصحاب العمل.">Companies and employers.</li></ul><p data-en="Your results are presented as band scores, with each band reflecting a different level of English language proficiency from 1 to 9." data-ar="تظهر نتائجك في صورة درجات Band، وتمثل كل درجة مستوى مختلفاً من إتقان اللغة الإنجليزية من 1 إلى 9.">Your results are presented as band scores, with each band reflecting a different level of English language proficiency from 1 to 9.</p></div></div></article>
+              <article class="faq-item" data-faq="6"><button class="faq-question" type="button"><span class="faq-number">06</span><strong data-en="What is IELTS One Skill Retake?" data-ar="ما هو IELTS One Skill Retake؟">What is IELTS One Skill Retake?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="IELTS One Skill Retake lets you retake one part of the test: Listening, Reading, Writing, or Speaking, without redoing all four parts." data-ar="يتيح لك IELTS One Skill Retake إعادة جزء واحد فقط من الاختبار: الاستماع أو القراءة أو الكتابة أو التحدث، دون إعادة الأقسام الأربعة كلها.">IELTS One Skill Retake lets you retake one part of the test: Listening, Reading, Writing, or Speaking, without redoing all four parts.</p><p data-en="It can help you improve a specific skill score and get back on track toward your study, work, or migration goal." data-ar="يمكن أن يساعدك على تحسين درجة مهارة محددة والعودة إلى المسار الصحيح نحو هدف الدراسة أو العمل أو الهجرة.">It can help you improve a specific skill score and get back on track toward your study, work, or migration goal.</p></div></div></article>
+              <article class="faq-item" data-faq="7"><button class="faq-question" type="button"><span class="faq-number">07</span><strong data-en="Who is eligible to take IELTS One Skill Retake?" data-ar="من المؤهل لأداء IELTS One Skill Retake؟">Who is eligible to take IELTS One Skill Retake?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="You are eligible to book IELTS One Skill Retake after you have recently completed a full IELTS on computer test and received your IELTS test score from an eligible test centre." data-ar="تكون مؤهلاً لحجز IELTS One Skill Retake بعد إكمال اختبار IELTS كامل عبر الكمبيوتر مؤخراً واستلام درجتك من مركز اختبار مؤهل.">You are eligible to book IELTS One Skill Retake after you have recently completed a full IELTS on computer test and received your IELTS test score from an eligible test centre.</p><p data-en="You must book your IELTS One Skill Retake within 60 days of your original test date." data-ar="يجب حجز IELTS One Skill Retake خلال 60 يوماً من تاريخ اختبارك الأصلي.">You must book your IELTS One Skill Retake within 60 days of your original test date.</p></div></div></article>
+              <article class="faq-item" data-faq="8"><button class="faq-question" type="button"><span class="faq-number">08</span><strong data-en="Who accepts IELTS One Skill Retake?" data-ar="من يقبل IELTS One Skill Retake؟">Who accepts IELTS One Skill Retake?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="IELTS One Skill Retake is accepted by various universities and professional bodies. Always check the website of the organisation you intend to apply to for the latest eligibility requirements." data-ar="يتم قبول IELTS One Skill Retake من قبل عدة جامعات وهيئات مهنية. تحقق دائماً من موقع الجهة التي تنوي التقديم إليها لمعرفة أحدث متطلبات الأهلية.">IELTS One Skill Retake is accepted by various universities and professional bodies. Always check the website of the organisation you intend to apply to for the latest eligibility requirements.</p><p data-en="IELTS One Skill Retake is available worldwide in selected test locations. For specific availability, check with your test centre." data-ar="يتوفر IELTS One Skill Retake عالمياً في مواقع اختبار محددة. ولمعرفة الإتاحة الدقيقة، تحقق مع مركز الاختبار الخاص بك.">IELTS One Skill Retake is available worldwide in selected test locations. For specific availability, check with your test centre.</p></div></div></article>
+              <article class="faq-item" data-faq="9"><button class="faq-question" type="button"><span class="faq-number">09</span><strong data-en="What is IELTS One Skill Retake?" data-ar="ما هو IELTS One Skill Retake؟">What is IELTS One Skill Retake?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="IELTS One Skill Retake allows you to retake one of the four skills: Listening, Reading, Writing, or Speaking, if you need to improve in just one area." data-ar="يسمح لك IELTS One Skill Retake بإعادة إحدى المهارات الأربع: الاستماع أو القراءة أو الكتابة أو التحدث، إذا كنت تحتاج إلى تحسين مجال واحد فقط.">IELTS One Skill Retake allows you to retake one of the four skills: Listening, Reading, Writing, or Speaking, if you need to improve in just one area.</p><p data-en="If you feel you did not perform at your best in one part, One Skill Retake can help you get back on track." data-ar="إذا شعرت أنك لم تقدم أفضل أداء في أحد الأقسام، يمكن أن يساعدك هذا الخيار على تحسين النتيجة المطلوبة.">If you feel you did not perform at your best in one part, One Skill Retake can help you get back on track.</p></div></div></article>
+              <article class="faq-item" data-faq="10"><button class="faq-question" type="button"><span class="faq-number">10</span><strong data-en="Can I take one IELTS skill retake?" data-ar="هل يمكنني إعادة مهارة واحدة في IELTS؟">Can I take one IELTS skill retake?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="Yes, you can take IELTS One Skill Retake if:" data-ar="نعم، يمكنك أداء IELTS One Skill Retake إذا:">Yes, you can take IELTS One Skill Retake if:</p><ul><li data-en="You completed a full test at a centre that offers One Skill Retake." data-ar="أكملت اختباراً كاملاً في مركز يقدم خدمة One Skill Retake.">You completed a full test at a centre that offers One Skill Retake.</li><li data-en="Your full test was an eligible IELTS on computer test." data-ar="كان اختبارك الكامل من نوع IELTS عبر الكمبيوتر المؤهل لهذه الخدمة.">Your full test was an eligible IELTS on computer test.</li><li data-en="You sit your One Skill Retake within 60 days of your full IELTS test." data-ar="تؤدي One Skill Retake خلال 60 يوماً من اختبار IELTS الكامل.">You sit your One Skill Retake within 60 days of your full IELTS test.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="11"><button class="faq-question" type="button"><span class="faq-number">11</span><strong data-en="How much does IELTS One Skill Retake cost?" data-ar="كم تكلفة IELTS One Skill Retake؟">How much does IELTS One Skill Retake cost?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="The price for One Skill Retake is the same whether you retake IELTS Speaking, Listening, Reading, or Writing." data-ar="تكون تكلفة One Skill Retake نفسها سواء أعدت قسم التحدث أو الاستماع أو القراءة أو الكتابة.">The price for One Skill Retake is the same whether you retake IELTS Speaking, Listening, Reading, or Writing.</p><p data-en="There is no separate registration fee or payment processing fee, and there is no additional fee for last-minute bookings." data-ar="لا توجد رسوم تسجيل منفصلة أو رسوم معالجة دفع، ولا توجد رسوم إضافية للحجوزات المتأخرة.">There is no separate registration fee or payment processing fee, and there is no additional fee for last-minute bookings.</p></div></div></article>
+              <article class="faq-item" data-faq="12"><button class="faq-question" type="button"><span class="faq-number">12</span><strong data-en="What is the maximum time between my original IELTS test and IELTS One Skill Retake?" data-ar="ما أقصى مدة بين اختبار IELTS الأصلي وIELTS One Skill Retake؟">What is the maximum time between my original IELTS test and IELTS One Skill Retake?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="You can take IELTS One Skill Retake up to 60 days after your original IELTS test." data-ar="يمكنك أداء IELTS One Skill Retake خلال مدة تصل إلى 60 يوماً بعد اختبار IELTS الأصلي.">You can take IELTS One Skill Retake up to 60 days after your original IELTS test.</p></div></div></article>
+              <article class="faq-item" data-faq="13"><button class="faq-question" type="button"><span class="faq-number">13</span><strong data-en="What is IELTS General Training?" data-ar="ما هو IELTS General Training؟">What is IELTS General Training?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="IELTS General Training is for people who wish to study, live, or work abroad in an English-speaking country." data-ar="IELTS General Training مخصص للأشخاص الذين يرغبون في الدراسة أو المعيشة أو العمل بالخارج في دولة ناطقة بالإنجليزية.">IELTS General Training is for people who wish to study, live, or work abroad in an English-speaking country.</p><p data-en="It focuses on assessing proficiency, confidence, and comfort when communicating in English in daily situations you are likely to encounter in a native English-speaking environment." data-ar="يركز على تقييم الكفاءة والثقة والراحة عند التواصل باللغة الإنجليزية في مواقف يومية قد تواجهها في بيئة ناطقة بالإنجليزية.">It focuses on assessing proficiency, confidence, and comfort when communicating in English in daily situations you are likely to encounter in a native English-speaking environment.</p><p data-en="Take this test if you would like to:" data-ar="اختر هذا الاختبار إذا كنت ترغب في:">Take this test if you would like to:</p><ul><li data-en="Migrate to English-speaking countries such as Canada, Australia, New Zealand, or the UK." data-ar="الهجرة إلى دول ناطقة بالإنجليزية مثل كندا أو أستراليا أو نيوزيلندا أو المملكة المتحدة.">Migrate to English-speaking countries such as Canada, Australia, New Zealand, or the UK.</li><li data-en="Study or train below degree level." data-ar="الدراسة أو التدريب دون مستوى الدرجة الجامعية.">Study or train below degree level.</li><li data-en="Work in an English-speaking country or improve job opportunities in your own country." data-ar="العمل في دولة ناطقة بالإنجليزية أو تحسين فرص العمل في بلدك.">Work in an English-speaking country or improve job opportunities in your own country.</li><li data-en="Open doors to a new future." data-ar="فتح أبواب لمستقبل جديد.">Open doors to a new future.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="14"><button class="faq-question" type="button"><span class="faq-number">14</span><strong data-en="What are the components of the IELTS General Training test?" data-ar="ما مكونات اختبار IELTS General Training؟">What are the components of the IELTS General Training test?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="The General Training test looks at your English-language capabilities in a work or social environment. It may be needed if you plan to study in secondary education, enrol in vocational training, move abroad for work, or migrate to Canada, Australia, New Zealand, or the UK." data-ar="يقيس اختبار General Training قدراتك في اللغة الإنجليزية في بيئة العمل أو الحياة الاجتماعية. وقد تحتاجه إذا كنت تخطط للدراسة في التعليم الثانوي أو الالتحاق بتدريب مهني أو السفر للعمل أو الهجرة إلى كندا أو أستراليا أو نيوزيلندا أو المملكة المتحدة.">The General Training test looks at your English-language capabilities in a work or social environment. It may be needed if you plan to study in secondary education, enrol in vocational training, move abroad for work, or migrate to Canada, Australia, New Zealand, or the UK.</p><p data-en="The test assesses listening, reading, writing, and speaking. Listening and Speaking are the same as IELTS Academic, while Reading and Writing are different." data-ar="يقيم الاختبار مهارات الاستماع والقراءة والكتابة والتحدث. ويكون قسما الاستماع والتحدث مثل IELTS Academic، بينما يختلف قسما القراءة والكتابة.">The test assesses listening, reading, writing, and speaking. Listening and Speaking are the same as IELTS Academic, while Reading and Writing are different.</p><p data-en="The tasks reflect workplace and social situations, such as:" data-ar="تعكس المهام مواقف العمل والحياة الاجتماعية، مثل:">The tasks reflect workplace and social situations, such as:</p><ul><li data-en="Speaking: a face-to-face informal conversation with an examiner in a private, quiet room." data-ar="التحدث: محادثة غير رسمية وجهاً لوجه مع الممتحن في غرفة خاصة وهادئة.">Speaking: a face-to-face informal conversation with an examiner in a private, quiet room.</li><li data-en="Writing: writing a letter about a social situation and an essay responding to a topic." data-ar="الكتابة: كتابة خطاب حول موقف اجتماعي وكتابة مقال رداً على موضوع معين.">Writing: writing a letter about a social situation and an essay responding to a topic.</li><li data-en="Reading: up to four short passages from everyday texts such as adverts or news articles." data-ar="القراءة: حتى أربعة نصوص قصيرة من مواد يومية مثل الإعلانات أو المقالات الإخبارية.">Reading: up to four short passages from everyday texts such as adverts or news articles.</li><li data-en="Listening: listening to people discussing everyday topics." data-ar="الاستماع: الاستماع إلى أشخاص يناقشون موضوعات يومية.">Listening: listening to people discussing everyday topics.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="15"><button class="faq-question" type="button"><span class="faq-number">15</span><strong data-en="What is IELTS General Training Reading?" data-ar="ما هو قسم القراءة في IELTS General Training؟">What is IELTS General Training Reading?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="The General Training Reading test consists of three sections and 40 questions. It focuses on everyday life, work-related issues such as applying for a job, and topics of general interest." data-ar="يتكون اختبار القراءة في General Training من ثلاثة أقسام و40 سؤالاً. ويركز على مواقف الحياة اليومية والموضوعات المرتبطة بالعمل مثل التقديم لوظيفة وموضوعات عامة.">The General Training Reading test consists of three sections and 40 questions. It focuses on everyday life, work-related issues such as applying for a job, and topics of general interest.</p><p data-en="The extracts are taken from books, magazines, newspapers, notices, advertisements, company handbooks, and guidelines." data-ar="تؤخذ النصوص من كتب ومجلات وصحف وإعلانات وتنبيهات وكتيبات شركات وإرشادات.">The extracts are taken from books, magazines, newspapers, notices, advertisements, company handbooks, and guidelines.</p><ul><li data-en="Section 1 focuses on social survival skills through short texts relevant to everyday life." data-ar="القسم الأول يركز على مهارات التعامل الاجتماعي من خلال نصوص قصيرة مرتبطة بالحياة اليومية.">Section 1 focuses on social survival skills through short texts relevant to everyday life.</li><li data-en="Section 2 focuses on workplace survival skills using texts such as job descriptions, contracts, and training manuals." data-ar="القسم الثاني يركز على مهارات العمل من خلال نصوص مثل توصيفات الوظائف والعقود وأدلة التدريب.">Section 2 focuses on workplace survival skills using texts such as job descriptions, contracts, and training manuals.</li><li data-en="Section 3 includes a longer and more complex text on a topic of general interest." data-ar="القسم الثالث يتضمن نصاً أطول وأكثر تعقيداً حول موضوع عام.">Section 3 includes a longer and more complex text on a topic of general interest.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="16"><button class="faq-question" type="button"><span class="faq-number">16</span><strong data-en="What is IELTS General Training Writing?" data-ar="ما هو قسم الكتابة في IELTS General Training؟">What is IELTS General Training Writing?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="The General Training Writing test has two tasks: Writing Task 1 and Writing Task 2. The topics are of general interest." data-ar="يتكون اختبار الكتابة في General Training من مهمتين: Writing Task 1 وWriting Task 2، وتكون الموضوعات ذات اهتمام عام.">The General Training Writing test has two tasks: Writing Task 1 and Writing Task 2. The topics are of general interest.</p><p data-en="In Writing Task 1, you are given a situation and asked to write a letter requesting information or explaining a situation." data-ar="في Writing Task 1 تحصل على موقف معين وتُطلب منك كتابة خطاب لطلب معلومات أو شرح موقف.">In Writing Task 1, you are given a situation and asked to write a letter requesting information or explaining a situation.</p><p data-en="In Writing Task 2, you write an essay in response to a point of view, argument, or problem. You are assessed on your ability to present information, outline problems, suggest solutions, justify opinions, and evaluate ideas or evidence." data-ar="في Writing Task 2 تكتب مقالاً رداً على وجهة نظر أو حجة أو مشكلة. ويتم تقييم قدرتك على عرض المعلومات وتوضيح المشكلات واقتراح الحلول وتبرير الرأي وتقييم الأفكار أو الأدلة.">In Writing Task 2, you write an essay in response to a point of view, argument, or problem. You are assessed on your ability to present information, outline problems, suggest solutions, justify opinions, and evaluate ideas or evidence.</p></div></div></article>
+              <article class="faq-item" data-faq="17"><button class="faq-question" type="button"><span class="faq-number">17</span><strong data-en="What is IELTS General Training for UKVI?" data-ar="ما هو IELTS General Training for UKVI؟">What is IELTS General Training for UKVI?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="If you want to work, study, migrate, or seek vocational training in the UK, you might need to take IELTS for UKVI. It is a Secure English Language Test (SELT) approved by the UK Home Office for visa applications to the United Kingdom." data-ar="إذا كنت ترغب في العمل أو الدراسة أو الهجرة أو التدريب المهني في المملكة المتحدة، فقد تحتاج إلى IELTS for UKVI. وهو اختبار لغة إنجليزية آمن (SELT) معتمد من وزارة الداخلية البريطانية لطلبات التأشيرة إلى المملكة المتحدة.">If you want to work, study, migrate, or seek vocational training in the UK, you might need to take IELTS for UKVI. It is a Secure English Language Test (SELT) approved by the UK Home Office for visa applications to the United Kingdom.</p><p data-en="IELTS General Training for UKVI is the same as IELTS General Training in content, format, scoring, and level of difficulty, but it is available only at test centres that meet UK Home Office administrative requirements." data-ar="اختبار IELTS General Training for UKVI هو نفسه IELTS General Training من حيث المحتوى والشكل والتقييم ومستوى الصعوبة، لكنه متاح فقط في مراكز اختبار تستوفي المتطلبات الإدارية لوزارة الداخلية البريطانية.">IELTS General Training for UKVI is the same as IELTS General Training in content, format, scoring, and level of difficulty, but it is available only at test centres that meet UK Home Office administrative requirements.</p><p data-en="Your Test Report Form (TRF) will also look slightly different if you take an IELTS for UKVI test." data-ar="كما سيبدو نموذج تقرير النتيجة (TRF) مختلفاً قليلاً إذا أدّيت اختبار IELTS for UKVI.">Your Test Report Form (TRF) will also look slightly different if you take an IELTS for UKVI test.</p></div></div></article>
+              <article class="faq-item" data-faq="18"><button class="faq-question" type="button"><span class="faq-number">18</span><strong data-en="What is IELTS Academic?" data-ar="ما هو IELTS Academic؟">What is IELTS Academic?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="The IELTS Academic test assesses your English-language proficiency at an academic level to determine whether you are ready to study at undergraduate or postgraduate level, or work in a professional setting such as doctor, nurse, teacher, or lawyer." data-ar="يقيس IELTS Academic كفاءتك في اللغة الإنجليزية على المستوى الأكاديمي لتحديد ما إذا كنت مستعداً للدراسة في مرحلة البكالوريوس أو الدراسات العليا أو العمل في بيئة مهنية مثل الطب أو التمريض أو التدريس أو القانون.">The IELTS Academic test assesses your English-language proficiency at an academic level to determine whether you are ready to study at undergraduate or postgraduate level, or work in a professional setting such as doctor, nurse, teacher, or lawyer.</p><p data-en="The Academic test assesses Listening, Reading, Writing, and Speaking. Listening and Speaking are the same for Academic and General Training, while Reading and Writing are different." data-ar="يقيم الاختبار الأكاديمي مهارات الاستماع والقراءة والكتابة والتحدث. ويكون قسما الاستماع والتحدث متشابهين في Academic وGeneral Training، بينما يختلف قسما القراءة والكتابة.">The Academic test assesses Listening, Reading, Writing, and Speaking. Listening and Speaking are the same for Academic and General Training, while Reading and Writing are different.</p></div></div></article>
+              <article class="faq-item" data-faq="19"><button class="faq-question" type="button"><span class="faq-number">19</span><strong data-en="Who takes the IELTS Academic test?" data-ar="من يحتاج إلى IELTS Academic؟">Who takes the IELTS Academic test?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="If you plan to study in higher education or seek professional registration in an English-speaking country, you might need to take IELTS Academic." data-ar="إذا كنت تخطط للدراسة في التعليم العالي أو تسعى إلى التسجيل المهني في دولة ناطقة بالإنجليزية، فقد تحتاج إلى IELTS Academic.">If you plan to study in higher education or seek professional registration in an English-speaking country, you might need to take IELTS Academic.</p></div></div></article>
+              <article class="faq-item" data-faq="20"><button class="faq-question" type="button"><span class="faq-number">20</span><strong data-en="How can I take the IELTS Academic test?" data-ar="كيف يمكنني أداء IELTS Academic؟">How can I take the IELTS Academic test?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="You can choose IELTS on computer or IELTS on paper for both General Training and Academic tests." data-ar="يمكنك اختيار IELTS عبر الكمبيوتر أو IELTS الورقي لكل من اختباري General Training وAcademic.">You can choose IELTS on computer or IELTS on paper for both General Training and Academic tests.</p><p data-en="The test format, question types, time allocated, and content are the same for computer and paper tests. The only difference is the test day experience and delivery method." data-ar="شكل الاختبار وأنواع الأسئلة والوقت المخصص والمحتوى هي نفسها في الاختبار عبر الكمبيوتر والاختبار الورقي. والاختلاف الوحيد هو تجربة يوم الاختبار وطريقة الأداء.">The test format, question types, time allocated, and content are the same for computer and paper tests. The only difference is the test day experience and delivery method.</p></div></div></article>
+              <article class="faq-item" data-faq="21"><button class="faq-question" type="button"><span class="faq-number">21</span><strong data-en="What is IELTS Academic test format?" data-ar="ما شكل اختبار IELTS Academic؟">What is IELTS Academic test format?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="For Academic and General Training, you take the same Listening and Speaking tests but different Reading and Writing tests. Make sure you prepare for the correct test type." data-ar="في Academic وGeneral Training، تؤدي نفس اختباري الاستماع والتحدث، لكن اختباري القراءة والكتابة يختلفان. تأكد من التحضير للنوع الصحيح من الاختبار.">For Academic and General Training, you take the same Listening and Speaking tests but different Reading and Writing tests. Make sure you prepare for the correct test type.</p><p data-en="Listening, Reading, and Writing are completed on the same day with no breaks in between. The Speaking test may be scheduled up to a week before or after the other parts. The total time for Listening, Reading, and Writing is 2 hours and 45 minutes." data-ar="يتم أداء الاستماع والقراءة والكتابة في اليوم نفسه دون فواصل بينها. وقد يتم تحديد اختبار التحدث قبل أو بعد الأجزاء الأخرى بما يصل إلى أسبوع. وتبلغ المدة الإجمالية للاستماع والقراءة والكتابة ساعتين و45 دقيقة.">Listening, Reading, and Writing are completed on the same day with no breaks in between. The Speaking test may be scheduled up to a week before or after the other parts. The total time for Listening, Reading, and Writing is 2 hours and 45 minutes.</p><h4 data-en="IELTS Academic: Listening" data-ar="IELTS Academic: الاستماع">IELTS Academic: Listening</h4><p data-en="The Academic Listening test is identical to General Training Listening. It evaluates your ability to understand key points, details, opinions, goals, attitudes, and the development of ideas." data-ar="اختبار الاستماع في Academic مطابق لاختبار الاستماع في General Training. ويقيم قدرتك على فهم النقاط الرئيسية والتفاصيل والآراء والأهداف والمواقف وتطور الأفكار.">The Academic Listening test is identical to General Training Listening. It evaluates your ability to understand key points, details, opinions, goals, attitudes, and the development of ideas.</p><h4 data-en="IELTS Academic: Reading" data-ar="IELTS Academic: القراءة">IELTS Academic: Reading</h4><p data-en="Academic Reading assesses skills such as following an argument, recognising a writer’s opinion, attitude or purpose, understanding main ideas, details, opinions, implied meanings, skimming, scanning, and reading for detail." data-ar="يقيم قسم القراءة الأكاديمية مهارات مثل تتبع الحجة والتعرف على رأي الكاتب أو موقفه أو هدفه وفهم الأفكار الرئيسية والتفاصيل والآراء والمعاني الضمنية والقراءة السريعة والبحث عن المعلومات والقراءة التفصيلية.">Academic Reading assesses skills such as following an argument, recognising a writer’s opinion, attitude or purpose, understanding main ideas, details, opinions, implied meanings, skimming, scanning, and reading for detail.</p><p data-en="The Academic Reading test has three long texts from books, journals, magazines, and newspapers related to topics you may encounter in undergraduate, postgraduate, or professional registration contexts." data-ar="يتكون اختبار القراءة الأكاديمية من ثلاثة نصوص طويلة مأخوذة من كتب ودوريات ومجلات وصحف حول موضوعات قد تواجهها في الدراسة الجامعية أو الدراسات العليا أو التسجيل المهني.">The Academic Reading test has three long texts from books, journals, magazines, and newspapers related to topics you may encounter in undergraduate, postgraduate, or professional registration contexts.</p><h4 data-en="IELTS Academic: Writing" data-ar="IELTS Academic: الكتابة">IELTS Academic: Writing</h4><p data-en="Academic Writing has two tasks. The questions are different from those in General Training Writing." data-ar="يتكون قسم الكتابة الأكاديمية من مهمتين، وتختلف الأسئلة عن أسئلة الكتابة في General Training.">Academic Writing has two tasks. The questions are different from those in General Training Writing.</p><h4 data-en="IELTS Academic: Speaking" data-ar="IELTS Academic: التحدث">IELTS Academic: Speaking</h4><p data-en="The Speaking test is the same for Academic and General Training. It is a face-to-face test with an IELTS-certified examiner and is recorded for possible review." data-ar="اختبار التحدث هو نفسه في Academic وGeneral Training. ويتم وجهاً لوجه مع ممتحن معتمد من IELTS، ويتم تسجيله عند الحاجة للمراجعة.">The Speaking test is the same for Academic and General Training. It is a face-to-face test with an IELTS-certified examiner and is recorded for possible review.</p><p data-en="The Speaking test takes 11 to 14 minutes and has three parts covering a variety of topics." data-ar="يستغرق اختبار التحدث من 11 إلى 14 دقيقة ويتكون من ثلاثة أجزاء تناقش موضوعات متنوعة.">The Speaking test takes 11 to 14 minutes and has three parts covering a variety of topics.</p></div></div></article>
+              <article class="faq-item" data-faq="22"><button class="faq-question" type="button"><span class="faq-number">22</span><strong data-en="How is the IELTS Academic test marked?" data-ar="كيف يتم تقييم IELTS Academic؟">How is the IELTS Academic test marked?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="Your results are presented as band scores, with each band reflecting a different level of English proficiency from 1 to 9. You receive a band score for Listening, Reading, Writing, and Speaking, as well as an overall band score." data-ar="تظهر نتائجك في صورة درجات Band، وتمثل كل درجة مستوى مختلفاً من إتقان الإنجليزية من 1 إلى 9. وتحصل على درجة لكل من الاستماع والقراءة والكتابة والتحدث بالإضافة إلى درجة كلية.">Your results are presented as band scores, with each band reflecting a different level of English proficiency from 1 to 9. You receive a band score for Listening, Reading, Writing, and Speaking, as well as an overall band score.</p><p data-en="IELTS uses the same 9-band scoring system across all formats, with 1 being the lowest and 9 being the highest." data-ar="يستخدم IELTS نظام درجات موحداً من 1 إلى 9 في جميع الصيغ، حيث تمثل 1 أدنى درجة و9 أعلى درجة.">IELTS uses the same 9-band scoring system across all formats, with 1 being the lowest and 9 being the highest.</p></div></div></article>
+              <article class="faq-item" data-faq="23"><button class="faq-question" type="button"><span class="faq-number">23</span><strong data-en="How old do I have to be to take the IELTS test?" data-ar="كم يجب أن يكون عمري لأداء اختبار IELTS؟">How old do I have to be to take the IELTS test?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="The minimum age for IELTS varies by location. In most countries, there is no minimum or maximum age limit for the IELTS test." data-ar="يختلف الحد الأدنى للعمر لأداء IELTS حسب الدولة. وفي معظم الدول لا يوجد حد أدنى أو أقصى للعمر لأداء الاختبار.">The minimum age for IELTS varies by location. In most countries, there is no minimum or maximum age limit for the IELTS test.</p><p data-en="However, it is not recommended for anyone under 16 to sit the test. Test takers under 18 may be chaperoned to and from test rooms and during the Speaking test." data-ar="ومع ذلك، لا يُنصح بأن يؤدي الاختبار من هم دون سن 16 عاماً. وقد تتم مرافقة المتقدمين دون 18 عاماً إلى غرف الاختبار ومنها وأثناء اختبار التحدث.">However, it is not recommended for anyone under 16 to sit the test. Test takers under 18 may be chaperoned to and from test rooms and during the Speaking test.</p></div></div></article>
+              <article class="faq-item" data-faq="24"><button class="faq-question" type="button"><span class="faq-number">24</span><strong data-en="I am a native speaker. Why do I need to take the IELTS test?" data-ar="أنا متحدث أصلي للإنجليزية. لماذا أحتاج إلى IELTS؟">I am a native speaker. Why do I need to take the IELTS test?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="IELTS may be required for entry into your desired course at an educational institution. It is also used in many countries as part of migration assessment." data-ar="قد يكون IELTS مطلوباً للالتحاق بالدورة أو البرنامج الذي ترغب فيه داخل مؤسسة تعليمية. كما يُستخدم في دول كثيرة كجزء من تقييم الهجرة.">IELTS may be required for entry into your desired course at an educational institution. It is also used in many countries as part of migration assessment.</p><p data-en="If you are not sure why you need IELTS or what score you need, contact the organisation you are applying to." data-ar="إذا لم تكن متأكداً من سبب حاجتك إلى IELTS أو الدرجة المطلوبة، تواصل مع الجهة التي تقدم إليها.">If you are not sure why you need IELTS or what score you need, contact the organisation you are applying to.</p></div></div></article>
+              <article class="faq-item" data-faq="25"><button class="faq-question" type="button"><span class="faq-number">25</span><strong data-en="What is the IELTS paper-based test?" data-ar="ما هو اختبار IELTS الورقي؟">What is the IELTS paper-based test?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="You can take IELTS Academic and General Training on paper. The content, timing, question types, scoring, and results are the same as IELTS on computer, but the test day experience is different." data-ar="يمكنك أداء IELTS Academic وGeneral Training ورقياً. ويكون المحتوى والوقت وأنواع الأسئلة والتقييم والنتائج مثل IELTS عبر الكمبيوتر، لكن تجربة يوم الاختبار تختلف.">You can take IELTS Academic and General Training on paper. The content, timing, question types, scoring, and results are the same as IELTS on computer, but the test day experience is different.</p><p data-en="Test day staff give you booklets and answer sheets before each test part and collect them before moving to the next part." data-ar="يقوم موظفو يوم الاختبار بتسليمك كتيبات وأوراق إجابة قبل كل جزء وجمعها قبل الانتقال إلى الجزء التالي.">Test day staff give you booklets and answer sheets before each test part and collect them before moving to the next part.</p><p data-en="For IELTS on paper, Reading, Listening, and Writing are completed on paper. You may use a pen or HB pencil for Writing, but you must use an HB pencil for Listening and Reading answers on the answer sheet." data-ar="في IELTS الورقي، تؤدي القراءة والاستماع والكتابة على الورق. ويمكنك استخدام قلم أو قلم رصاص HB في الكتابة، لكن يجب استخدام قلم رصاص HB لإجابات الاستماع والقراءة على ورقة الإجابة.">For IELTS on paper, Reading, Listening, and Writing are completed on paper. You may use a pen or HB pencil for Writing, but you must use an HB pencil for Listening and Reading answers on the answer sheet.</p><p data-en="Writing, Reading, and Listening are completed on the same day with no breaks. Speaking is a face-to-face interview with an IELTS examiner and may be completed one week before or after your test date." data-ar="تُؤدى الكتابة والقراءة والاستماع في اليوم نفسه دون فواصل. أما التحدث فهو مقابلة وجهاً لوجه مع ممتحن IELTS وقد يتم قبل أو بعد تاريخ الاختبار بأسبوع.">Writing, Reading, and Listening are completed on the same day with no breaks. Speaking is a face-to-face interview with an IELTS examiner and may be completed one week before or after your test date.</p></div></div></article>
+              <article class="faq-item" data-faq="26"><button class="faq-question" type="button"><span class="faq-number">26</span><strong data-en="What is the IELTS computer-based test?" data-ar="ما هو اختبار IELTS عبر الكمبيوتر؟">What is the IELTS computer-based test?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="IELTS on Computer is available for both General Training and Academic tests. You complete the Reading, Listening, and Writing parts using a computer, and all answers are typed on the screen." data-ar="يتوفر IELTS عبر الكمبيوتر لكل من General Training وAcademic. وتؤدي أقسام القراءة والاستماع والكتابة باستخدام الكمبيوتر، وتكتب جميع الإجابات على الشاشة.">IELTS on Computer is available for both General Training and Academic tests. You complete the Reading, Listening, and Writing parts using a computer, and all answers are typed on the screen.</p><p data-en="You can also write notes on a notes sheet during the Listening test." data-ar="يمكنك أيضاً تدوين الملاحظات على ورقة ملاحظات أثناء اختبار الاستماع.">You can also write notes on a notes sheet during the Listening test.</p><p data-en="IELTS Speaking remains a face-to-face interview with an examiner and is completed either just before or just after the Reading, Listening, and Writing parts." data-ar="يبقى اختبار التحدث مقابلة وجهاً لوجه مع الممتحن، ويتم إجراؤه إما قبل أو بعد أقسام القراءة والاستماع والكتابة مباشرة.">IELTS Speaking remains a face-to-face interview with an examiner and is completed either just before or just after the Reading, Listening, and Writing parts.</p><p data-en="With IELTS on computer, your results are usually available within 1 to 5 days." data-ar="في IELTS عبر الكمبيوتر، تكون النتائج عادة متاحة خلال 1 إلى 5 أيام.">With IELTS on computer, your results are usually available within 1 to 5 days.</p></div></div></article>
+            </div>
+          </div>
+          <div class="faq-panel" id="panel-pte">
+            <div class="panel-heading">
+              <h2 data-en="PTE" data-ar="PTE">PTE</h2>
+              <p data-en="Answers about PTE test benefits, automated scoring, score levels, test day experience, Academic, Core, Home, UKVI options, and EACC preparation support." data-ar="إجابات حول مميزات اختبار PTE والتصحيح الآلي ومستويات الدرجات وتجربة يوم الاختبار وخيارات Academic وCore وHome وUKVI ودعم التحضير في EACC.">Answers about PTE test benefits, automated scoring, score levels, test day experience, Academic, Core, Home, UKVI options, and EACC preparation support.</p>
+            </div>
+            <div class="empty-state" data-en="No matching PTE questions found. Try another keyword." data-ar="لا توجد أسئلة PTE مطابقة. جرّب كلمة بحث أخرى.">No matching PTE questions found. Try another keyword.</div>
+            <div class="faq-list" id="pteFaqList">
+              <article class="faq-item" data-faq="1"><button class="faq-question" type="button"><span class="faq-number">01</span><strong data-en="What are the perks of taking PTE?" data-ar="ما مميزات أداء اختبار PTE؟">What are the perks of taking PTE?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><h4 data-en="No human examiners" data-ar="لا يوجد ممتحنون بشريون">No human examiners</h4><p data-en="Each test is fully computer-based and taken in a global test center, so you do not have to face a human examiner." data-ar="كل اختبار يتم بالكامل عبر الكمبيوتر داخل مركز اختبار معتمد، لذلك لا تحتاج إلى مواجهة ممتحن بشري.">Each test is fully computer-based and taken in a global test center, so you do not have to face a human examiner.</p><h4 data-en="Just one test" data-ar="اختبار واحد فقط">Just one test</h4><p data-en="Computer-based testing means you attend one two-hour test instead of two separate sessions to get the score you need." data-ar="يعني الاختبار عبر الكمبيوتر أنك تحضر اختباراً واحداً لمدة ساعتين بدلاً من جلستين منفصلتين للحصول على الدرجة المطلوبة.">Computer-based testing means you attend one two-hour test instead of two separate sessions to get the score you need.</p><h4 data-en="Faster" data-ar="أسرع">Faster</h4><p data-en="Automated scoring makes it quicker to book, quicker to receive scores, and easier to share scores for free with as many institutions as you choose." data-ar="يساعد التصحيح الآلي على سرعة الحجز واستلام النتائج ومشاركة الدرجات مجاناً مع عدد المؤسسات الذي تختاره.">Automated scoring makes it quicker to book, quicker to receive scores, and easier to share scores for free with as many institutions as you choose.</p></div></div></article>
+              <article class="faq-item" data-faq="2"><button class="faq-question" type="button"><span class="faq-number">02</span><strong data-en="How does automated scoring work?" data-ar="كيف يعمل التصحيح الآلي؟">How does automated scoring work?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="Automated scoring is designed to match the way an expert examiner would mark your test, but on a global scale that provides consistent, fast results for every test taker." data-ar="تم تصميم التصحيح الآلي ليحاكي طريقة تقييم الممتحن الخبير، ولكن على نطاق عالمي يوفر نتائج سريعة ومتسقة لكل متقدم.">Automated scoring is designed to match the way an expert examiner would mark your test, but on a global scale that provides consistent, fast results for every test taker.</p><p data-en="Building an accurate automated scoring system requires vast amounts of data. In 2020 alone, more than 678,000 examiner responses were fed into the algorithm, with more added every year." data-ar="يتطلب بناء نظام تصحيح آلي دقيق كميات ضخمة من البيانات. ففي عام 2020 وحده تم إدخال أكثر من 678,000 إجابة مصححة من ممتحنين إلى الخوارزمية، مع إضافة المزيد كل عام.">Building an accurate automated scoring system requires vast amounts of data. In 2020 alone, more than 678,000 examiner responses were fed into the algorithm, with more added every year.</p><p data-en="When you take your test, your answers are compared with millions of past responses and the combined knowledge of hundreds of examiners to produce an accurate, objective, consistent score." data-ar="عند أداء الاختبار، تتم مقارنة إجاباتك بملايين الإجابات السابقة وبخبرة مئات الممتحنين لإنتاج درجة دقيقة وموضوعية ومتسقة.">When you take your test, your answers are compared with millions of past responses and the combined knowledge of hundreds of examiners to produce an accurate, objective, consistent score.</p></div></div></article>
+              <article class="faq-item" data-faq="3"><button class="faq-question" type="button"><span class="faq-number">03</span><strong data-en="How is each PTE test scored?" data-ar="كيف يتم تقييم كل نوع من اختبارات PTE؟">How is each PTE test scored?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><h4 data-en="PTE Academic" data-ar="PTE Academic">PTE Academic</h4><p data-en="PTE Academic and PTE Academic UKVI include 20 question types that assess speaking, listening, reading, and writing. Scores are based on question complexity, and the overall score is graded between 10 and 90." data-ar="يتضمن PTE Academic وPTE Academic UKVI عشرين نوعاً من الأسئلة لتقييم التحدث والاستماع والقراءة والكتابة. تعتمد الدرجات على صعوبة السؤال، وتكون الدرجة الكلية من 10 إلى 90.">PTE Academic and PTE Academic UKVI include 20 question types that assess speaking, listening, reading, and writing. Scores are based on question complexity, and the overall score is graded between 10 and 90.</p><h4 data-en="PTE Core" data-ar="PTE Core">PTE Core</h4><p data-en="PTE Core includes 19 question types that assess speaking, listening, reading, and writing. Scores are based on question complexity, and the overall score is graded between 10 and 90." data-ar="يتضمن PTE Core تسعة عشر نوعاً من الأسئلة لتقييم التحدث والاستماع والقراءة والكتابة. تعتمد الدرجات على صعوبة السؤال، وتكون الدرجة الكلية من 10 إلى 90.">PTE Core includes 19 question types that assess speaking, listening, reading, and writing. Scores are based on question complexity, and the overall score is graded between 10 and 90.</p><h4 data-en="PTE Home" data-ar="PTE Home">PTE Home</h4><p data-en="PTE Home tests are two-skill tests that assess speaking and listening. You receive a pass or fail result." data-ar="اختبارات PTE Home تقيس مهارتي التحدث والاستماع فقط، وتكون النتيجة إما نجاحاً أو رسوباً.">PTE Home tests are two-skill tests that assess speaking and listening. You receive a pass or fail result.</p></div></div></article>
+              <article class="faq-item" data-faq="4"><button class="faq-question" type="button"><span class="faq-number">04</span><strong data-en="How is the PTE Academic test scored?" data-ar="كيف يتم تقييم اختبار PTE Academic؟">How is the PTE Academic test scored?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="Each PTE Academic test has 20 auto-scored question types. Multiple-choice answers are scored as right or wrong, while more complex responses such as essays are scored using several criteria." data-ar="يتضمن كل اختبار PTE Academic عشرين نوعاً من الأسئلة المصححة آلياً. يتم تقييم أسئلة الاختيار من متعدد كإجابة صحيحة أو خاطئة، بينما تُقيّم الإجابات الأكثر تعقيداً مثل المقالات وفق عدة معايير.">Each PTE Academic test has 20 auto-scored question types. Multiple-choice answers are scored as right or wrong, while more complex responses such as essays are scored using several criteria.</p><p data-en="Some responses may also be reviewed by a human expert before the automated score is finalised." data-ar="قد تتم مراجعة بعض الإجابات أيضاً من قبل خبير بشري قبل اعتماد الدرجة الآلية النهائية.">Some responses may also be reviewed by a human expert before the automated score is finalised.</p></div></div></article>
+              <article class="faq-item" data-faq="5"><button class="faq-question" type="button"><span class="faq-number">05</span><strong data-en="What are the expected PTE scores for students?" data-ar="ما الدرجات المتوقعة للطلاب في PTE؟">What are the expected PTE scores for students?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="Each institution sets its own required score. Always check with your institution, but typical minimum scores are:" data-ar="تحدد كل مؤسسة الدرجة المطلوبة الخاصة بها. تحقق دائماً من المؤسسة التي تقدم إليها، لكن الدرجات الدنيا الشائعة تكون كالتالي:">Each institution sets its own required score. Always check with your institution, but typical minimum scores are:</p><ul><li data-en="Foundation courses: minimum score between 36 and 50." data-ar="الدورات التأسيسية: درجة دنيا بين 36 و50.">Foundation courses: minimum score between 36 and 50.</li><li data-en="Undergraduate degrees: minimum score between 51 and 60." data-ar="مرحلة البكالوريوس: درجة دنيا بين 51 و60.">Undergraduate degrees: minimum score between 51 and 60.</li><li data-en="Postgraduate degrees: minimum score between 57 and 67." data-ar="الدراسات العليا: درجة دنيا بين 57 و67.">Postgraduate degrees: minimum score between 57 and 67.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="6"><button class="faq-question" type="button"><span class="faq-number">06</span><strong data-en="What are one of the highest PTE scores?" data-ar="ما أعلى مستويات درجات PTE؟">What are one of the highest PTE scores?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="A PTE Academic score of 85 to 90 is equivalent to CEFR C2. Universities or governments typically do not request scores this high." data-ar="درجة PTE Academic من 85 إلى 90 تعادل مستوى CEFR C2. وعادة لا تطلب الجامعات أو الحكومات درجات بهذا الارتفاع.">A PTE Academic score of 85 to 90 is equivalent to CEFR C2. Universities or governments typically do not request scores this high.</p><p data-en="This is the highest level of English ability measured by PTE. At this level, test takers are extremely comfortable engaging in academic and work activities at all levels." data-ar="هذا هو أعلى مستوى من القدرة اللغوية الذي يقيسه PTE. وفي هذا المستوى يكون المتقدم قادراً براحة كبيرة على المشاركة في الأنشطة الأكاديمية والمهنية على جميع المستويات.">This is the highest level of English ability measured by PTE. At this level, test takers are extremely comfortable engaging in academic and work activities at all levels.</p><ul><li data-en="Can understand with ease virtually everything heard or read." data-ar="يمكنه فهم كل ما يسمعه أو يقرأه تقريباً بسهولة.">Can understand with ease virtually everything heard or read.</li><li data-en="Can summarize information from spoken and written sources in a coherent presentation." data-ar="يمكنه تلخيص المعلومات من مصادر مسموعة ومكتوبة في عرض مترابط.">Can summarize information from spoken and written sources in a coherent presentation.</li><li data-en="Can express himself or herself spontaneously, very fluently, and precisely, even in complex situations." data-ar="يمكنه التعبير عن نفسه بتلقائية وطلاقة ودقة كبيرة حتى في المواقف المعقدة.">Can express himself or herself spontaneously, very fluently, and precisely, even in complex situations.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="7"><button class="faq-question" type="button"><span class="faq-number">07</span><strong data-en="What is required for an Australian Skilled Migration Visa?" data-ar="ما المطلوب لتأشيرة الهجرة الماهرة إلى أستراليا؟">What is required for an Australian Skilled Migration Visa?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="A PTE Academic score of 76 to 84 is equivalent to CEFR C1 and is commonly required for Australian Skilled Migration Visas." data-ar="درجة PTE Academic من 76 إلى 84 تعادل مستوى CEFR C1، وغالباً ما تكون مطلوبة لتأشيرات الهجرة الماهرة إلى أستراليا.">A PTE Academic score of 76 to 84 is equivalent to CEFR C1 and is commonly required for Australian Skilled Migration Visas.</p><p data-en="This represents a very high level of English proficiency and is generally not required for undergraduate courses." data-ar="يمثل ذلك مستوى عالياً جداً من إتقان الإنجليزية، وعادة لا يكون مطلوباً لبرامج البكالوريوس.">This represents a very high level of English proficiency and is generally not required for undergraduate courses.</p><ul><li data-en="Can understand a wide range of demanding, longer texts and recognize implicit meaning." data-ar="يمكنه فهم مجموعة واسعة من النصوص الطويلة والصعبة والتعرف على المعاني الضمنية.">Can understand a wide range of demanding, longer texts and recognize implicit meaning.</li><li data-en="Can express himself or herself fluently and spontaneously without much searching for expressions." data-ar="يمكنه التعبير عن نفسه بطلاقة وتلقائية دون بحث واضح عن الكلمات.">Can express himself or herself fluently and spontaneously without much searching for expressions.</li><li data-en="Can use language flexibly and effectively for social, academic, and professional purposes." data-ar="يمكنه استخدام اللغة بمرونة وفاعلية للأغراض الاجتماعية والأكاديمية والمهنية.">Can use language flexibly and effectively for social, academic, and professional purposes.</li><li data-en="Can produce clear, well-structured, detailed text on complex subjects." data-ar="يمكنه إنتاج نصوص واضحة ومنظمة ومفصلة حول موضوعات معقدة.">Can produce clear, well-structured, detailed text on complex subjects.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="8"><button class="faq-question" type="button"><span class="faq-number">08</span><strong data-en="What score is usually required at the academic level?" data-ar="ما الدرجة المطلوبة عادة للمستوى الأكاديمي؟">What score is usually required at the academic level?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="CEFR B2 is typically required to follow academic instruction and participate in academic education, including coursework and student life. It may be set for undergraduate or postgraduate entry, professional registration, employment, and Australian skilled migration visas." data-ar="غالباً ما يكون مستوى CEFR B2 مطلوباً لمتابعة التعليم الأكاديمي والمشاركة في الحياة الدراسية، بما في ذلك المقررات والحياة الطلابية. وقد يُطلب للالتحاق بالبكالوريوس أو الدراسات العليا أو التسجيل المهني أو العمل أو تأشيرات الهجرة الماهرة إلى أستراليا.">CEFR B2 is typically required to follow academic instruction and participate in academic education, including coursework and student life. It may be set for undergraduate or postgraduate entry, professional registration, employment, and Australian skilled migration visas.</p><ul><li data-en="Can understand the main ideas of complex text on concrete and abstract topics, including technical discussions in a field of specialization." data-ar="يمكنه فهم الأفكار الرئيسية في النصوص المعقدة حول موضوعات ملموسة ومجردة، بما في ذلك المناقشات الفنية في مجال التخصص.">Can understand the main ideas of complex text on concrete and abstract topics, including technical discussions in a field of specialization.</li><li data-en="Can interact with oral fluency and spontaneity that makes regular interaction with fluent speakers possible without strain." data-ar="يمكنه التفاعل بطلاقة وتلقائية تجعل التواصل المنتظم مع المتحدثين بطلاقة ممكناً دون صعوبة.">Can interact with oral fluency and spontaneity that makes regular interaction with fluent speakers possible without strain.</li><li data-en="Can produce clear, detailed text on a wide range of subjects and explain viewpoints with advantages and disadvantages." data-ar="يمكنه إنتاج نصوص واضحة ومفصلة حول مجموعة واسعة من الموضوعات وشرح وجهات النظر مع المزايا والعيوب.">Can produce clear, detailed text on a wide range of subjects and explain viewpoints with advantages and disadvantages.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="9"><button class="faq-question" type="button"><span class="faq-number">09</span><strong data-en="What score is usually required for undergraduate level study?" data-ar="ما الدرجة المطلوبة عادة للدراسة الجامعية؟">What score is usually required for undergraduate level study?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="A PTE Academic score of 43 to 58 is equivalent to CEFR B1 and may be required for undergraduate level study." data-ar="درجة PTE Academic من 43 إلى 58 تعادل مستوى CEFR B1، وقد تكون مطلوبة للدراسة في مرحلة البكالوريوس.">A PTE Academic score of 43 to 58 is equivalent to CEFR B1 and may be required for undergraduate level study.</p><ul><li data-en="Can understand the main points of clear standard input on familiar matters in work, school, leisure, and similar contexts." data-ar="يمكنه فهم النقاط الرئيسية في المدخلات الواضحة حول أمور مألوفة في العمل أو الدراسة أو أوقات الفراغ.">Can understand the main points of clear standard input on familiar matters in work, school, leisure, and similar contexts.</li><li data-en="Can deal with most situations likely to arise in an area where the language is spoken." data-ar="يمكنه التعامل مع معظم المواقف المتوقعة في مكان تُستخدم فيه اللغة.">Can deal with most situations likely to arise in an area where the language is spoken.</li><li data-en="Can produce simple connected text on familiar or personally interesting topics." data-ar="يمكنه إنتاج نص بسيط ومترابط حول موضوعات مألوفة أو ذات اهتمام شخصي.">Can produce simple connected text on familiar or personally interesting topics.</li><li data-en="Can describe experiences, events, dreams, hopes, and ambitions, and briefly give reasons and explanations for opinions and plans." data-ar="يمكنه وصف الخبرات والأحداث والأحلام والآمال والطموحات وتقديم أسباب وشروحات مختصرة للآراء والخطط.">Can describe experiences, events, dreams, hopes, and ambitions, and briefly give reasons and explanations for opinions and plans.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="10"><button class="faq-question" type="button"><span class="faq-number">10</span><strong data-en="What is the PTE test experience like?" data-ar="كيف تكون تجربة اختبار PTE؟">What is the PTE test experience like?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="PTE tests are taken on a computer at a test center. Usually, around 10 to 15 people take their test together." data-ar="تؤدى اختبارات PTE على الكمبيوتر داخل مركز اختبار. وعادة يؤدي حوالي 10 إلى 15 شخصاً الاختبار في الوقت نفسه.">PTE tests are taken on a computer at a test center. Usually, around 10 to 15 people take their test together.</p><p data-en="You should arrive 30 minutes before your test to complete secure check-in and get ready." data-ar="يجب الوصول قبل الاختبار بنحو 30 دقيقة لإتمام إجراءات الدخول الآمن والاستعداد للاختبار.">You should arrive 30 minutes before your test to complete secure check-in and get ready.</p></div></div></article>
+              <article class="faq-item" data-faq="11"><button class="faq-question" type="button"><span class="faq-number">11</span><strong data-en="What should I expect on PTE test day?" data-ar="ماذا أتوقع في يوم اختبار PTE؟">What should I expect on PTE test day?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><h4 data-en="When you arrive" data-ar="عند الوصول">When you arrive</h4><p data-en="A PTE Test Center Administrator will greet you, guide you through check-in, and make sure you understand the rules and procedures." data-ar="سيستقبلك مسؤول مركز اختبار PTE ويوجهك خلال إجراءات الدخول ويتأكد من فهمك للقواعد والإجراءات.">A PTE Test Center Administrator will greet you, guide you through check-in, and make sure you understand the rules and procedures.</p><ul><li data-en="They will check your ID details against your booking." data-ar="سيتحقق المسؤول من بيانات هويتك ومطابقتها للحجز.">They will check your ID details against your booking.</li><li data-en="They will take a digital photograph, digital signature, and palm scan." data-ar="سيتم التقاط صورة رقمية وتوقيع رقمي ومسح راحة اليد.">They will take a digital photograph, digital signature, and palm scan.</li><li data-en="They will provide a safe place for your personal items." data-ar="سيتم توفير مكان آمن لحفظ متعلقاتك الشخصية.">They will provide a safe place for your personal items.</li></ul><h4 data-en="During the test" data-ar="أثناء الاختبار">During the test</h4><p data-en="You will sit in a partitioned booth with a computer, QWERTY keyboard, audio headset, chair, notepad, and pencil. You may hear nearby test takers speaking, but microphones are designed not to pick up their responses." data-ar="ستجلس في مقصورة منفصلة تحتوي على كمبيوتر ولوحة مفاتيح QWERTY وسماعة وكرسي ودفتر ملاحظات وقلم. قد تسمع متقدمين آخرين يتحدثون، لكن الميكروفونات مصممة حتى لا تلتقط إجاباتهم.">You will sit in a partitioned booth with a computer, QWERTY keyboard, audio headset, chair, notepad, and pencil. You may hear nearby test takers speaking, but microphones are designed not to pick up their responses.</p><p data-en="PTE Academic, PTE Academic UKVI, and PTE Core take two hours. PTE Home takes 30 minutes." data-ar="تستغرق اختبارات PTE Academic وPTE Academic UKVI وPTE Core ساعتين. أما PTE Home فيستغرق 30 دقيقة.">PTE Academic, PTE Academic UKVI, and PTE Core take two hours. PTE Home takes 30 minutes.</p><h4 data-en="Acceptable ID" data-ar="الهوية المقبولة">Acceptable ID</h4><p data-en="Because PTE tests are taken in secure test centers, you must provide an acceptable ID, usually a valid passport. Refer to the PTE Pearson identification policy for details." data-ar="نظراً لأن اختبارات PTE تؤدى في مراكز آمنة، يجب تقديم وثيقة هوية مقبولة، وغالباً ما تكون جواز سفر سارياً. راجع سياسة التعريف الخاصة بـ PTE Pearson لمزيد من التفاصيل.">Because PTE tests are taken in secure test centers, you must provide an acceptable ID, usually a valid passport. Refer to the PTE Pearson identification policy for details.</p></div></div></article>
+              <article class="faq-item" data-faq="12"><button class="faq-question" type="button"><span class="faq-number">12</span><strong data-en="What types of questions are included in PTE Core?" data-ar="ما أنواع الأسئلة في PTE Core؟">What types of questions are included in PTE Core?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><h4 data-en="Part 1: Speaking and Writing" data-ar="الجزء الأول: التحدث والكتابة">Part 1: Speaking and Writing</h4><p data-en="This section is approximately 50 minutes long and includes everyday English speaking and writing tasks." data-ar="يستغرق هذا القسم حوالي 50 دقيقة ويتضمن مهام التحدث والكتابة باللغة الإنجليزية اليومية.">This section is approximately 50 minutes long and includes everyday English speaking and writing tasks.</p><ul><li data-en="Personal Introduction." data-ar="التعريف الشخصي.">Personal Introduction.</li><li data-en="Read Aloud." data-ar="القراءة بصوت عالٍ.">Read Aloud.</li><li data-en="Repeat Sentence." data-ar="تكرار الجملة.">Repeat Sentence.</li><li data-en="Describe Image." data-ar="وصف صورة.">Describe Image.</li><li data-en="Respond to a Situation." data-ar="الرد على موقف.">Respond to a Situation.</li><li data-en="Answer Short Question." data-ar="الإجابة عن سؤال قصير.">Answer Short Question.</li><li data-en="Summarize Written Text." data-ar="تلخيص نص مكتوب.">Summarize Written Text.</li><li data-en="Write Email." data-ar="كتابة بريد إلكتروني.">Write Email.</li></ul><h4 data-en="Part 2: Reading" data-ar="الجزء الثاني: القراءة">Part 2: Reading</h4><p data-en="This section is approximately 30 minutes long and includes five question types. Reading and Writing: Fill in the Blanks also assesses writing skills." data-ar="يستغرق هذا القسم حوالي 30 دقيقة ويتضمن خمسة أنواع من الأسئلة. كما يقيّم سؤال Reading and Writing: Fill in the Blanks مهارات الكتابة أيضاً.">This section is approximately 30 minutes long and includes five question types. Reading and Writing: Fill in the Blanks also assesses writing skills.</p><ul><li data-en="Reading and Writing: Fill in the Blanks." data-ar="القراءة والكتابة: ملء الفراغات.">Reading and Writing: Fill in the Blanks.</li><li data-en="Multiple Choice, Multiple Answers." data-ar="اختيار من متعدد بإجابات متعددة.">Multiple Choice, Multiple Answers.</li><li data-en="Reorder Paragraph." data-ar="إعادة ترتيب الفقرات.">Reorder Paragraph.</li><li data-en="Fill in the Blanks." data-ar="ملء الفراغات.">Fill in the Blanks.</li><li data-en="Multiple Choice, Single Answer." data-ar="اختيار من متعدد بإجابة واحدة.">Multiple Choice, Single Answer.</li></ul><h4 data-en="Part 3: Listening" data-ar="الجزء الثالث: الاستماع">Part 3: Listening</h4><ul><li data-en="Summarize Spoken Text." data-ar="تلخيص نص مسموع.">Summarize Spoken Text.</li><li data-en="Multiple Choice, Multiple Answers." data-ar="اختيار من متعدد بإجابات متعددة.">Multiple Choice, Multiple Answers.</li><li data-en="Fill in the Blanks." data-ar="ملء الفراغات.">Fill in the Blanks.</li><li data-en="Multiple Choice, Single Answer." data-ar="اختيار من متعدد بإجابة واحدة.">Multiple Choice, Single Answer.</li><li data-en="Select Missing Word." data-ar="اختيار الكلمة الناقصة.">Select Missing Word.</li><li data-en="Highlight Incorrect Words." data-ar="تحديد الكلمات غير الصحيحة.">Highlight Incorrect Words.</li><li data-en="Write from Dictation." data-ar="الكتابة من الإملاء.">Write from Dictation.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="13"><button class="faq-question" type="button"><span class="faq-number">13</span><strong data-en="What types of questions are included in PTE Academic?" data-ar="ما أنواع الأسئلة في PTE Academic؟">What types of questions are included in PTE Academic?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><h4 data-en="Part 1: Speaking and Writing" data-ar="الجزء الأول: التحدث والكتابة">Part 1: Speaking and Writing</h4><p data-en="This section takes 54 to 67 minutes and includes academic speaking and writing tasks." data-ar="يستغرق هذا القسم من 54 إلى 67 دقيقة ويتضمن مهام التحدث والكتابة في سياق أكاديمي.">This section takes 54 to 67 minutes and includes academic speaking and writing tasks.</p><ul><li data-en="Personal Introduction." data-ar="التعريف الشخصي.">Personal Introduction.</li><li data-en="Read Aloud." data-ar="القراءة بصوت عالٍ.">Read Aloud.</li><li data-en="Repeat Sentence." data-ar="تكرار الجملة.">Repeat Sentence.</li><li data-en="Describe Image." data-ar="وصف صورة.">Describe Image.</li><li data-en="Re-tell Lecture." data-ar="إعادة سرد محاضرة.">Re-tell Lecture.</li><li data-en="Answer Short Question." data-ar="الإجابة عن سؤال قصير.">Answer Short Question.</li><li data-en="Summarize Written Text." data-ar="تلخيص نص مكتوب.">Summarize Written Text.</li><li data-en="Essay." data-ar="مقال.">Essay.</li></ul><h4 data-en="Part 2: Reading" data-ar="الجزء الثاني: القراءة">Part 2: Reading</h4><p data-en="This section takes 29 to 30 minutes and includes five question types. Reading and Writing: Fill in the Blanks also assesses writing skills." data-ar="يستغرق هذا القسم من 29 إلى 30 دقيقة ويتضمن خمسة أنواع من الأسئلة. كما يقيّم سؤال Reading and Writing: Fill in the Blanks مهارات الكتابة أيضاً.">This section takes 29 to 30 minutes and includes five question types. Reading and Writing: Fill in the Blanks also assesses writing skills.</p><ul><li data-en="Reading and Writing: Fill in the Blanks." data-ar="القراءة والكتابة: ملء الفراغات.">Reading and Writing: Fill in the Blanks.</li><li data-en="Multiple Choice, Multiple Answer." data-ar="اختيار من متعدد بإجابات متعددة.">Multiple Choice, Multiple Answer.</li><li data-en="Re-order Paragraphs." data-ar="إعادة ترتيب الفقرات.">Re-order Paragraphs.</li><li data-en="Fill in the Blanks." data-ar="ملء الفراغات.">Fill in the Blanks.</li><li data-en="Multiple Choice, Single Answer." data-ar="اختيار من متعدد بإجابة واحدة.">Multiple Choice, Single Answer.</li></ul><h4 data-en="Part 3: Listening" data-ar="الجزء الثالث: الاستماع">Part 3: Listening</h4><p data-en="This section takes 30 to 43 minutes and includes eight question types based on audio or video clips. Each clip plays once, and you may take notes." data-ar="يستغرق هذا القسم من 30 إلى 43 دقيقة ويتضمن ثمانية أنواع من الأسئلة المعتمدة على مقاطع صوتية أو فيديو. يتم تشغيل كل مقطع مرة واحدة، ويمكنك تدوين الملاحظات.">This section takes 30 to 43 minutes and includes eight question types based on audio or video clips. Each clip plays once, and you may take notes.</p><ul><li data-en="Summarize Spoken Text." data-ar="تلخيص نص مسموع.">Summarize Spoken Text.</li><li data-en="Multiple Choice, Multiple Answers." data-ar="اختيار من متعدد بإجابات متعددة.">Multiple Choice, Multiple Answers.</li><li data-en="Fill in the Blanks." data-ar="ملء الفراغات.">Fill in the Blanks.</li><li data-en="Highlight Correct Summary." data-ar="تحديد الملخص الصحيح.">Highlight Correct Summary.</li><li data-en="Multiple Choice, Single Answer." data-ar="اختيار من متعدد بإجابة واحدة.">Multiple Choice, Single Answer.</li><li data-en="Select Missing Word." data-ar="اختيار الكلمة الناقصة.">Select Missing Word.</li><li data-en="Highlight Incorrect Words." data-ar="تحديد الكلمات غير الصحيحة.">Highlight Incorrect Words.</li><li data-en="Write from Dictation." data-ar="الكتابة من الإملاء.">Write from Dictation.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="14"><button class="faq-question" type="button"><span class="faq-number">14</span><strong data-en="If someone lives in the UK and needs an extension to an A1 visa, which PTE test should they take?" data-ar="إذا كان شخص يعيش في المملكة المتحدة ويحتاج إلى تمديد تأشيرة A1، فأي اختبار PTE يختار؟">If someone lives in the UK and needs an extension to an A1 visa, which PTE test should they take?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="If you are applying for a spouse visa or a parent-of-a-dependent visa, you can take PTE Home A1. If you already live in the UK and need an extension to your A1 visa, you can take PTE Home A2." data-ar="إذا كنت تتقدم للحصول على تأشيرة زوج/زوجة أو تأشيرة والد/والدة لمعال، يمكنك أداء PTE Home A1. وإذا كنت تعيش بالفعل في المملكة المتحدة وتحتاج إلى تمديد تأشيرة A1، يمكنك أداء PTE Home A2.">If you are applying for a spouse visa or a parent-of-a-dependent visa, you can take PTE Home A1. If you already live in the UK and need an extension to your A1 visa, you can take PTE Home A2.</p><h4 data-en="UK student visas" data-ar="تأشيرات الدراسة في المملكة المتحدة">UK student visas</h4><p data-en="For degree-level or higher courses at a UK Higher Education Institution, you can take PTE Academic. Choose PTE Academic UKVI if the course is below degree level or the institution is not a Higher Education Institution." data-ar="للدورات على مستوى الدرجة الجامعية أو أعلى في مؤسسة تعليم عالٍ بريطانية، يمكنك أداء PTE Academic. اختر PTE Academic UKVI إذا كانت الدورة دون مستوى الدرجة الجامعية أو كانت الجهة ليست مؤسسة تعليم عالٍ.">For degree-level or higher courses at a UK Higher Education Institution, you can take PTE Academic. Choose PTE Academic UKVI if the course is below degree level or the institution is not a Higher Education Institution.</p><p data-en="PTE Academic and PTE Academic UKVI are the same test, but PTE Academic UKVI provides a Unique Reference Number (URN) for your UK visa application. Always check the institution requirements." data-ar="اختبارا PTE Academic وPTE Academic UKVI هما نفس الاختبار، لكن PTE Academic UKVI يوفر رقم مرجعي فريد (URN) لطلب تأشيرة المملكة المتحدة. تحقق دائماً من متطلبات المؤسسة.">PTE Academic and PTE Academic UKVI are the same test, but PTE Academic UKVI provides a Unique Reference Number (URN) for your UK visa application. Always check the institution requirements.</p><h4 data-en="UK work visas" data-ar="تأشيرات العمل في المملكة المتحدة">UK work visas</h4><ul><li data-en="Choose PTE Academic UKVI for Skilled Worker, Start-up, Innovator, and Minister of Religion visas." data-ar="اختر PTE Academic UKVI لتأشيرات العامل الماهر وStart-up وInnovator ووزير الدين.">Choose PTE Academic UKVI for Skilled Worker, Start-up, Innovator, and Minister of Religion visas.</li><li data-en="Choose PTE Home A1 for Sportsperson and Representative of an Overseas Business visas." data-ar="اختر PTE Home A1 لتأشيرات الرياضي وممثل شركة أجنبية.">Choose PTE Home A1 for Sportsperson and Representative of an Overseas Business visas.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="15"><button class="faq-question" type="button"><span class="faq-number">15</span><strong data-en="Why EACC for PTE preparation?" data-ar="لماذا EACC لتحضير PTE؟">Why EACC for PTE preparation?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="Practice now and get instant feedback with our cutting-edge PTE platform. EACC supports you with expertly designed mock tests, personalized study plans, and goal-setting tools that help you stay on track, improve your skills, and reach your target score faster." data-ar="تدرّب الآن واحصل على ملاحظات فورية من خلال منصة PTE المتطورة لدينا. تدعمك EACC باختبارات تجريبية مصممة باحتراف وخطط دراسة مخصصة وأدوات تحديد أهداف تساعدك على الالتزام بالمسار وتحسين مهاراتك والوصول إلى درجتك المستهدفة بشكل أسرع.">Practice now and get instant feedback with our cutting-edge PTE platform. EACC supports you with expertly designed mock tests, personalized study plans, and goal-setting tools that help you stay on track, improve your skills, and reach your target score faster.</p></div></div></article>
+            </div>
+          </div>
+          <div class="faq-panel" id="panel-oet">
+            <div class="panel-heading">
+              <h2 data-en="OET" data-ar="OET">OET</h2>
+              <p data-en="Answers about OET recognition, healthcare-focused test design, profession-specific sections, eligibility, and the full test format." data-ar="إجابات حول الاعتراف باختبار OET وتصميمه المخصص للرعاية الصحية والأقسام الخاصة بالمهنة والأهلية وشكل الاختبار الكامل.">Answers about OET recognition, healthcare-focused test design, profession-specific sections, eligibility, and the full test format.</p>
+            </div>
+            <div class="empty-state" data-en="No matching OET questions found. Try another keyword." data-ar="لا توجد أسئلة OET مطابقة. جرّب كلمة بحث أخرى.">No matching OET questions found. Try another keyword.</div>
+            <div class="faq-list" id="oetFaqList">
+              <article class="faq-item" data-faq="1"><button class="faq-question" type="button"><span class="faq-number">01</span><strong data-en="Why choose OET?" data-ar="لماذا تختار OET؟">Why choose OET?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="OET is specifically tailored for healthcare professionals. It is developed with healthcare experts and backed by research to help candidates build the language skills needed for professional success." data-ar="تم تصميم OET خصيصاً لمتخصصي الرعاية الصحية. وقد تم تطويره بالتعاون مع خبراء الرعاية الصحية ومدعوماً بالأبحاث لمساعدة المتقدمين على بناء المهارات اللغوية اللازمة للنجاح المهني.">OET is specifically tailored for healthcare professionals. It is developed with healthcare experts and backed by research to help candidates build the language skills needed for professional success.</p><ul><li data-en="Recognized globally in the US, UK, Ireland, Australia, New Zealand, and beyond by healthcare regulators, educational institutions, and visa and immigration authorities." data-ar="معترف به عالمياً في الولايات المتحدة والمملكة المتحدة وأيرلندا وأستراليا ونيوزيلندا وغيرها من قبل الجهات المنظمة للرعاية الصحية والمؤسسات التعليمية وسلطات التأشيرات والهجرة.">Recognized globally in the US, UK, Ireland, Australia, New Zealand, and beyond by healthcare regulators, educational institutions, and visa and immigration authorities.</li><li data-en="Uses authentic healthcare scenarios relevant to your profession, helping you feel prepared and confident on exam day." data-ar="يستخدم مواقف رعاية صحية حقيقية مرتبطة بمهنتك، مما يساعدك على الاستعداد والثقة في يوم الاختبار.">Uses authentic healthcare scenarios relevant to your profession, helping you feel prepared and confident on exam day.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="2"><button class="faq-question" type="button"><span class="faq-number">02</span><strong data-en="Who recognises the OET test?" data-ar="من يعترف باختبار OET؟">Who recognises the OET test?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><ul><li data-en="Healthcare registration: use OET results to register as a healthcare professional in Australia, Canada, New Zealand, the UK, Ireland, and the US." data-ar="التسجيل الصحي: استخدم نتائج OET للتسجيل كمتخصص رعاية صحية في أستراليا وكندا ونيوزيلندا والمملكة المتحدة وأيرلندا والولايات المتحدة.">Healthcare registration: use OET results to register as a healthcare professional in Australia, Canada, New Zealand, the UK, Ireland, and the US.</li><li data-en="Visa and immigration: meet language requirements for visa and immigration applications in Australia, New Zealand, the UK, Ireland, and the US." data-ar="التأشيرات والهجرة: تلبية متطلبات اللغة لطلبات التأشيرة والهجرة في أستراليا ونيوزيلندا والمملكة المتحدة وأيرلندا والولايات المتحدة.">Visa and immigration: meet language requirements for visa and immigration applications in Australia, New Zealand, the UK, Ireland, and the US.</li><li data-en="Education: apply to colleges, universities, and healthcare institutions worldwide with OET results." data-ar="التعليم: التقديم إلى الكليات والجامعات ومؤسسات الرعاية الصحية حول العالم باستخدام نتائج OET.">Education: apply to colleges, universities, and healthcare institutions worldwide with OET results.</li><li data-en="Employment: OET helps build the healthcare communication skills needed for professional success beyond the test." data-ar="العمل: يساعدك OET على بناء مهارات التواصل الصحي اللازمة للنجاح المهني بعد الاختبار.">Employment: OET helps build the healthcare communication skills needed for professional success beyond the test.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="3"><button class="faq-question" type="button"><span class="faq-number">03</span><strong data-en="What is in the OET test?" data-ar="ما مكونات اختبار OET؟">What is in the OET test?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><ul><li data-en="Listening." data-ar="الاستماع.">Listening.</li><li data-en="Reading." data-ar="القراءة.">Reading.</li><li data-en="Writing." data-ar="الكتابة.">Writing.</li><li data-en="Speaking." data-ar="التحدث.">Speaking.</li></ul></div></div></article>
+              <article class="faq-item" data-faq="4"><button class="faq-question" type="button"><span class="faq-number">04</span><strong data-en="Why are some OET tests profession-specific?" data-ar="لماذا تكون بعض أجزاء OET خاصة بالمهنة؟">Why are some OET tests profession-specific?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="OET assesses English language proficiency, not medical knowledge. To keep the focus on language skills, areas where background medical knowledge could influence responses are minimized." data-ar="يقيم OET إتقان اللغة الإنجليزية وليس المعرفة الطبية. وللحفاظ على التركيز على المهارات اللغوية، يتم تقليل الجوانب التي قد تؤثر فيها المعرفة الطبية السابقة على الإجابات.">OET assesses English language proficiency, not medical knowledge. To keep the focus on language skills, areas where background medical knowledge could influence responses are minimized.</p><p data-en="Listening and Reading are not profession-specific. They are the same for all candidates and focus on general medical and healthcare topics while assessing language ability." data-ar="لا يكون قسما الاستماع والقراءة خاصين بالمهنة؛ فهما موحدان لجميع المتقدمين ويركزان على موضوعات طبية وصحية عامة مع تقييم القدرة اللغوية.">Listening and Reading are not profession-specific. They are the same for all candidates and focus on general medical and healthcare topics while assessing language ability.</p><p data-en="Writing and Speaking are profession-specific because they reflect real workplace scenarios for each healthcare profession, allowing candidates to show practical job-related communication skills." data-ar="أما قسما الكتابة والتحدث فهما خاصان بالمهنة لأنهما يعكسان مواقف عمل حقيقية لكل مهنة صحية، مما يسمح للمتقدم بإظهار مهارات التواصل العملية المرتبطة بالوظيفة.">Writing and Speaking are profession-specific because they reflect real workplace scenarios for each healthcare profession, allowing candidates to show practical job-related communication skills.</p><p data-en="Preparing for OET can improve workplace readiness and confidence in professional communication with patients and colleagues." data-ar="يمكن أن يساعد التحضير لاختبار OET على تحسين الاستعداد لبيئة العمل وزيادة الثقة في التواصل المهني مع المرضى والزملاء.">Preparing for OET can improve workplace readiness and confidence in professional communication with patients and colleagues.</p></div></div></article>
+              <article class="faq-item" data-faq="5"><button class="faq-question" type="button"><span class="faq-number">05</span><strong data-en="Does OET offer a generic test?" data-ar="هل يقدم OET اختباراً عاماً؟">Does OET offer a generic test?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="No. OET does not offer a generic test. The exam is contextualized and profession-specific for 12 healthcare fields: Dentistry, Dietetics, Medicine, Nursing, Occupational Therapy, Optometry, Pharmacy, Physiotherapy, Podiatry, Radiography, Speech Pathology, and Veterinary Science." data-ar="لا. لا يقدم OET اختباراً عاماً. فالاختبار مرتبط بالسياق ومخصص للمهنة في 12 مجالاً صحياً: طب الأسنان، التغذية العلاجية، الطب، التمريض، العلاج الوظيفي، البصريات، الصيدلة، العلاج الطبيعي، علاج القدم، الأشعة، علاج النطق، والطب البيطري.">No. OET does not offer a generic test. The exam is contextualized and profession-specific for 12 healthcare fields: Dentistry, Dietetics, Medicine, Nursing, Occupational Therapy, Optometry, Pharmacy, Physiotherapy, Podiatry, Radiography, Speech Pathology, and Veterinary Science.</p><p data-en="If your field is not listed, you may take the OET test that most closely aligns with your profession, but you should review sample materials and check with the relevant regulatory authority before registering." data-ar="إذا لم يكن مجالك مدرجاً، يمكنك اختيار اختبار OET الأقرب إلى مهنتك، لكن ينبغي مراجعة النماذج والمواد التدريبية والتأكد من الجهة التنظيمية المختصة قبل التسجيل.">If your field is not listed, you may take the OET test that most closely aligns with your profession, but you should review sample materials and check with the relevant regulatory authority before registering.</p></div></div></article>
+              <article class="faq-item" data-faq="6"><button class="faq-question" type="button"><span class="faq-number">06</span><strong data-en="Can I take the OET test if I am not a health professional?" data-ar="هل يمكنني أداء OET إذا لم أكن متخصصاً في الرعاية الصحية؟">Can I take the OET test if I am not a health professional?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><p data-en="If you are not a healthcare professional seeking registration in an English-speaking environment, OET may not be the most suitable English assessment for your needs." data-ar="إذا لم تكن متخصصاً في الرعاية الصحية وتسعى للتسجيل في بيئة ناطقة بالإنجليزية، فقد لا يكون OET هو الاختبار الأنسب لاحتياجاتك.">If you are not a healthcare professional seeking registration in an English-speaking environment, OET may not be the most suitable English assessment for your needs.</p><p data-en="OET is designed to assess the language and communication skills of healthcare professionals who plan to work in English-speaking healthcare settings." data-ar="تم تصميم OET لتقييم مهارات اللغة والتواصل لدى متخصصي الرعاية الصحية الذين يخططون للعمل في بيئات رعاية صحية ناطقة بالإنجليزية.">OET is designed to assess the language and communication skills of healthcare professionals who plan to work in English-speaking healthcare settings.</p><p data-en="Before registering, consult the relevant regulatory authorities to confirm whether OET is suitable and accepted for your purpose." data-ar="قبل التسجيل، استشر الجهات التنظيمية المختصة للتأكد مما إذا كان OET مناسباً ومقبولاً لغرضك.">Before registering, consult the relevant regulatory authorities to confirm whether OET is suitable and accepted for your purpose.</p></div></div></article>
+              <article class="faq-item" data-faq="7"><button class="faq-question" type="button"><span class="faq-number">07</span><strong data-en="What is the OET test format?" data-ar="ما شكل اختبار OET؟">What is the OET test format?</strong><span class="faq-icon">+</span></button><div class="faq-answer"><div class="answer-inner"><h4 data-en="Listening" data-ar="الاستماع">Listening</h4><p data-en="The Listening sub-test is about 40 minutes long. It has three parts and 42 question items. Topics are of general healthcare interest and accessible to candidates across all professions." data-ar="يستغرق قسم الاستماع حوالي 40 دقيقة، ويتكون من ثلاثة أجزاء و42 سؤالاً. وتكون الموضوعات عامة في مجال الرعاية الصحية ومناسبة لجميع المهن.">The Listening sub-test is about 40 minutes long. It has three parts and 42 question items. Topics are of general healthcare interest and accessible to candidates across all professions.</p><ul><li data-en="Part A: two recorded health professional-patient consultations, about five minutes each, where you complete notes." data-ar="الجزء A: استشارتان مسجلتان بين متخصص صحي ومريض، مدة كل منهما حوالي خمس دقائق، وتقوم بإكمال الملاحظات.">Part A: two recorded health professional-patient consultations, about five minutes each, where you complete notes.</li><li data-en="Part B: six short workplace extracts, about one minute each, with one multiple-choice question for each." data-ar="الجزء B: ستة مقاطع قصيرة من بيئة العمل، مدة كل منها حوالي دقيقة، مع سؤال اختيار من متعدد لكل مقطع.">Part B: six short workplace extracts, about one minute each, with one multiple-choice question for each.</li><li data-en="Part C: two presentation or interview extracts, about five minutes each, with six multiple-choice questions for each." data-ar="الجزء C: مقطعان من عرض أو مقابلة، مدة كل منهما حوالي خمس دقائق، مع ستة أسئلة اختيار من متعدد لكل مقطع.">Part C: two presentation or interview extracts, about five minutes each, with six multiple-choice questions for each.</li></ul><h4 data-en="Reading" data-ar="القراءة">Reading</h4><p data-en="The Reading sub-test has three parts, 42 questions, and takes 60 minutes. Topics are of general healthcare interest." data-ar="يتكون قسم القراءة من ثلاثة أجزاء و42 سؤالاً ويستغرق 60 دقيقة. وتكون الموضوعات عامة في مجال الرعاية الصحية.">The Reading sub-test has three parts, 42 questions, and takes 60 minutes. Topics are of general healthcare interest.</p><ul><li data-en="Part A: a 15-minute expeditious reading task using four short texts on one healthcare topic." data-ar="الجزء A: مهمة قراءة سريعة مدتها 15 دقيقة باستخدام أربعة نصوص قصيرة حول موضوع صحي واحد.">Part A: a 15-minute expeditious reading task using four short texts on one healthcare topic.</li><li data-en="Part B: six short workplace extracts such as policies, guidelines, manuals, emails, or memos, with one multiple-choice question each." data-ar="الجزء B: ستة مقتطفات قصيرة من بيئة العمل مثل السياسات أو الإرشادات أو الأدلة أو الرسائل الإلكترونية أو المذكرات، مع سؤال اختيار من متعدد لكل منها.">Part B: six short workplace extracts such as policies, guidelines, manuals, emails, or memos, with one multiple-choice question each.</li><li data-en="Part C: two longer professional development articles with eight multiple-choice questions for each. Parts B and C together take 45 minutes." data-ar="الجزء C: مقالتان أطول من نوع النصوص التي يقرأها المتخصصون للتطوير المهني، مع ثمانية أسئلة اختيار من متعدد لكل نص. وتستغرق الأجزاء B وC معاً 45 دقيقة.">Part C: two longer professional development articles with eight multiple-choice questions for each. Parts B and C together take 45 minutes.</li></ul><h4 data-en="Writing" data-ar="الكتابة">Writing</h4><p data-en="The Writing sub-test takes 45 minutes and is profession-specific. There is one task based on a typical workplace situation for your profession." data-ar="يستغرق قسم الكتابة 45 دقيقة ويكون خاصاً بالمهنة. توجد مهمة واحدة مبنية على موقف عملي شائع في مهنتك.">The Writing sub-test takes 45 minutes and is profession-specific. There is one task based on a typical workplace situation for your profession.</p><p data-en="The task is usually a referral letter, but may also be a transfer letter, discharge letter, advice or information letter, or a response to a complaint. You have five minutes to read case notes and 40 minutes to write." data-ar="عادة تكون المهمة كتابة خطاب إحالة، وقد تكون أيضاً خطاب تحويل أو خروج أو خطاب نصح أو معلومات أو رداً على شكوى. لديك خمس دقائق لقراءة الملاحظات و40 دقيقة للكتابة.">The task is usually a referral letter, but may also be a transfer letter, discharge letter, advice or information letter, or a response to a complaint. You have five minutes to read case notes and 40 minutes to write.</p><h4 data-en="Speaking" data-ar="التحدث">Speaking</h4><p data-en="The Speaking sub-test takes around 20 minutes and is profession-specific. It includes two role-play tasks based on typical workplace situations." data-ar="يستغرق قسم التحدث حوالي 20 دقيقة ويكون خاصاً بالمهنة. ويتضمن مهمتي تمثيل أدوار مبنيتين على مواقف عمل شائعة.">The Speaking sub-test takes around 20 minutes and is profession-specific. It includes two role-play tasks based on typical workplace situations.</p><p data-en="In each role play, you take the professional role while the interlocutor acts as a patient, client, relative, carer, or animal owner for Veterinary Science. Each role play includes three minutes to prepare and five minutes to perform." data-ar="في كل تمثيل دور، تؤدي أنت دور المتخصص بينما يؤدي المحاور دور المريض أو العميل أو القريب أو مقدم الرعاية أو مالك الحيوان في الطب البيطري. يشمل كل دور ثلاث دقائق للتحضير وخمس دقائق للأداء.">In each role play, you take the professional role while the interlocutor acts as a patient, client, relative, carer, or animal owner for Veterinary Science. Each role play includes three minutes to prepare and five minutes to perform.</p></div></div></article>
+            </div>
+          </div>
+
+          <div class="cta-strip">
+            <div>
+              <h3 data-en="Still need help?" data-ar="ما زلت تحتاج إلى مساعدة؟">Still need help?</h3>
+              <p data-en="Contact EACC and our admissions team will guide you to the right test preparation path." data-ar="تواصل مع EACC وسيساعدك فريق القبول في اختيار مسار التحضير المناسب للاختبار.">Contact EACC and our admissions team will guide you to the right test preparation path.</p>
+            </div>
+            <a class="btn" href="../contactus.html" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</a>
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+
+          <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-grid">
+        <div class="footer-brand-block">
+          <div class="footer-logo">
+            <img src="../assets/images/logo-white.png" alt="EACC White Logo">
+          </div>
+          <p>
+            Egyptian American Cultural Center offers premium language education,
+            preparation courses, camps, and international learning experiences.
+          </p>
+          <a class="footer-apply-link" href="../contactus.html#contact">Apply Now</a>
+        </div>
+
+        <div class="footer-col footer-office">
+          <h4>Office</h4>
+          <div class="footer-links">
+            <a href="https://www.google.com/maps/search/?api=1&query=117%20Ahmed%20Shawqi%2C%20Mustafa%20Kamel%20WA%20Bolkli%2C%20Sidi%20Gaber%2C%20Alexandria%20Governorate%205433141" target="_blank" rel="noopener">
+              117 Ahmed Shawqi, Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria
+            </a>
+            <a href="mailto:info_eacc@eacc-egy.com">info_eacc@eacc-egy.com</a>
+            <a href="tel:+201065533240">+20106 553 3240</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Links</h4>
+          <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../aboutus/who-we-are.html">About EACC</a>
+            <a href="../programs/language.html">Languages</a>
+            <a href="../programs/activities.html">Activities</a>
+            <a href="../contactus.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <div class="footer-links">
+            <a href="../terms-and-conditions.html">Terms &amp; Conditions</a>
+            <a href="../privacy-policy.html">Privacy Policy</a>
+            <a href="../aboutus/faqs.html">FAQs</a>
+          </div>
+        </div>
+
+        <div class="footer-col footer-follow">
+          <h4>Follow Us</h4>
+          <div class="footer-social-list">
+            <a href="https://www.facebook.com/Egyptian.American.Center/" target="_blank" rel="noopener" aria-label="Facebook">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/facebook.png" alt="" aria-hidden="true"></span>
+              <span>Facebook</span>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=%2B201065533240&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3Nzg4MzIwMTksInBob25lIjoiKzIwMTA2NTUzMzI0MCIsImNvbnRleHQiOiJBZmd6cl9sa2hzY2s2YW5ER1hFXzliY19YV0NXWDU2VWEzM2xnd2FaQUFxS2tUNlBteDM3c3VNcUFrdWNLMVNOUjFUTjBHNTE0UGhtSUlfNzVPTEpCWGZxY19CSUhGS2NFSk1OSVFUZVNKUFo5RV84c2RMck43aWhvUEZuV29XOEV5ZGpaRUlIdmh5ZG1OYTJ3LVBCOFZmWVNnIiwic291cmNlIjoiRkJfUGFnZSIsImFwcCI6ImZhY2Vib29rIiwiZW50cnlfcG9pbnQiOiJwYWdlX2N0YSJ9.03driferbSmPgKUHBgkwE-uBYVLX9fNVYLwOvG-JsnBPHSPSoiNt7ZKVUu05bq8cfjHnybXK52UrIH8BEmg2aQ&fbclid=IwY2xjawRyYI1leHRuA2FlbQIxMABicmlkETFTOE56aE00ZXBZQkxmN3FQc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHgdzut8C8wGbFJh3GQdN1xD6wtIJoTTCq2Tj9gHoOJRcAaAw_Amsg5us60ag_aem_YWdncwBlv9_nYufc6-AOw0JCkNrX&brid=YWdncwEHpdr5OyZQSOIvAJJPqTkm" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/whatsapp.png" alt="" aria-hidden="true"></span>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://www.instagram.com/EgyptianAmericanCenter/" target="_blank" rel="noopener" aria-label="Instagram">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/instagram-logo.png" alt="" aria-hidden="true"></span>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.youtube.com/@egyptianamericancentereacc" target="_blank" rel="noopener" aria-label="YouTube">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/youtube.png" alt="" aria-hidden="true"></span>
+              <span>YouTube</span>
+            </a>
+            <a href="https://www.tiktok.com/@eaccegy?_t=8sbRXLekzn5&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/tik-tok.png" alt="" aria-hidden="true"></span>
+              <span>TikTok</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 Egyptian American Cultural Center. All rights reserved.</span>
+        <span class="footer-bottom-links">
+          <a href="../terms-and-conditions.html">Terms</a>
+          <a href="../privacy-policy.html">Privacy</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script id="eacc-arabic-toggle-script">
+    const siteLoader = document.getElementById('siteLoader');
+    const header = document.querySelector('header');
+    const logoImg = document.querySelector('.logo img');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    const languageToggle = document.getElementById('languageToggle');
+    const languageToggleText = document.getElementById('languageToggleText');
+    const faqSearch = document.getElementById('faqSearch');
+    const faqList = document.getElementById('faqList');
+    const emptyState = document.getElementById('emptyState');
+
+    function getActiveFaqPanel() {
+      return document.querySelector('.faq-panel.active');
+    }
+    const storageKey = 'eacc-language';
+    let currentLanguage = 'en';
+
+    function updateHeaderState() {
+      const scrolled = window.scrollY > 30;
+      header.classList.toggle('scrolled', scrolled);
+      logoImg.src = scrolled ? '../assets/images/logo.png' : '../assets/images/logo-white.png';
+    }
+
+    function setAnswerHeight(item) {
+      const answer = item.querySelector('.faq-answer');
+      answer.style.maxHeight = item.classList.contains('open') ? answer.scrollHeight + 'px' : '0px';
+    }
+
+    function applyLanguage(language) {
+      currentLanguage = language === 'ar' ? 'ar' : 'en';
+      document.documentElement.lang = currentLanguage;
+      document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
+      document.querySelectorAll('[data-en][data-ar]').forEach((element) => {
+        element.innerHTML = element.dataset[currentLanguage];
+      });
+      document.querySelectorAll('[data-en-placeholder][data-ar-placeholder]').forEach((element) => {
+        element.placeholder = currentLanguage === 'ar' ? element.dataset.arPlaceholder : element.dataset.enPlaceholder;
+      });
+      languageToggleText.textContent = currentLanguage === 'ar' ? 'EN' : 'AR';
+      languageToggle.setAttribute('aria-label', currentLanguage === 'ar' ? 'Switch website language to English' : 'Switch website language to Arabic');
+      document.querySelectorAll('.faq-item.open').forEach(setAnswerHeight);
+      try { localStorage.setItem(storageKey, currentLanguage); } catch (error) {}
+    }
+
+    function filterFaqs() {
+      const panel = getActiveFaqPanel();
+      const list = panel ? panel.querySelector('.faq-list') : null;
+      const panelEmptyState = panel ? panel.querySelector('.empty-state') : null;
+      const query = faqSearch.value.trim().toLowerCase();
+
+      document.querySelectorAll('.empty-state').forEach((state) => {
+        state.style.display = 'none';
+      });
+
+      if (!list) return;
+
+      let visibleCount = 0;
+      list.querySelectorAll('.faq-item').forEach((item) => {
+        const text = item.innerText.toLowerCase();
+        const visible = !query || text.includes(query);
+        item.style.display = visible ? '' : 'none';
+        if (visible) visibleCount++;
+      });
+
+      if (panelEmptyState) {
+        panelEmptyState.style.display = visibleCount ? 'none' : 'block';
+      }
+    }
+
+    function activateFaqPanel(panelName) {
+      const targetTab = document.querySelector('[data-panel="' + panelName + '"]');
+      const targetPanel = document.getElementById('panel-' + panelName);
+      if (!targetTab || !targetPanel) return false;
+
+      document.querySelectorAll('.topic-tab').forEach((item) => item.classList.remove('active'));
+      document.querySelectorAll('.faq-panel').forEach((panel) => panel.classList.remove('active'));
+      targetTab.classList.add('active');
+      targetPanel.classList.add('active');
+      document.querySelectorAll('.faq-item.open').forEach((item) => {
+        item.classList.remove('open');
+        setAnswerHeight(item);
+      });
+      faqSearch.value = '';
+      filterFaqs();
+      return true;
+    }
+
+    function openFaqFromHash() {
+      const panelName = window.location.hash.replace('#', '').toLowerCase();
+      if (!panelName) return;
+      if (activateFaqPanel(panelName)) {
+        setTimeout(() => {
+          const targetPanel = document.getElementById('panel-' + panelName);
+          if (targetPanel) targetPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 80);
+      }
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        siteLoader.classList.add('hidden');
+        document.body.classList.remove('loading');
+      }, 550);
+    });
+
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+
+    mobileToggle.addEventListener('click', () => {
+      const active = navLinks.classList.toggle('active');
+      mobileToggle.classList.toggle('active', active);
+      mobileToggle.setAttribute('aria-expanded', String(active));
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.querySelectorAll('.faq-question').forEach((button) => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        item.classList.toggle('open');
+        setAnswerHeight(item);
+      });
+    });
+
+    document.querySelectorAll('.topic-tab').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        activateFaqPanel(tab.dataset.panel);
+        history.replaceState(null, '', '#' + tab.dataset.panel);
+      });
+    });
+
+    document.querySelectorAll('[data-scroll-faq]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const panelName = button.dataset.scrollPanel || 'toefl';
+        const targetTab = document.querySelector('[data-panel="' + panelName + '"]');
+        if (targetTab) targetTab.click();
+        const item = document.querySelector('#panel-' + panelName + ' [data-faq="' + button.dataset.scrollFaq + '"]');
+        if (!item) return;
+        item.classList.add('open');
+        setAnswerHeight(item);
+        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+
+    faqSearch.addEventListener('input', filterFaqs);
+    languageToggle.addEventListener('click', () => applyLanguage(currentLanguage === 'ar' ? 'en' : 'ar'));
+    window.addEventListener('hashchange', openFaqFromHash);
+
+    try { applyLanguage(localStorage.getItem(storageKey) === 'ar' ? 'ar' : 'en'); } catch (error) { applyLanguage('en'); }
+    openFaqFromHash();
+  </script>
+</body>
+</html>
+
+

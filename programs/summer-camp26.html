@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summer Camp 2026 | EACC</title>
+<meta name="description" content="MyVoice Summer Camp 2026 by Egyptian American Center: a premium summer journey for children aged 4-12, combining English communication, creativity, AI discovery, leadership, and global cultural experiences.">
+<link rel="icon" type="image/png" href="../assets/images/logo-crop.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --nv:#1a237e;--nv2:#283593;--rd:#f5a623;--gd:#ffd54f;--gd2:#f5a623;
+  --wh:#fff;--off:#f8f7f4;--lt:#eef1f9;--tx:#1a1a2e;--mu:#6b7280;
+  --nav-h:64px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--tx);background:var(--wh);overflow-x:hidden;transition:all .3s}
+body.loading{overflow:hidden}
+body{user-select:none;-webkit-user-select:none;}
+input,textarea,select,option{user-select:text;-webkit-user-select:text;}
+
+.site-loader{
+  position:fixed;inset:0;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at top,rgba(40,53,147,.92),#0d1457 58%);
+  color:var(--wh);
+  transition:opacity .55s ease,visibility .55s ease;
+}
+.site-loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-content{
+  width:min(360px,82vw);
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+}
+.loader-content img{width:138px;margin-bottom:24px}
+.loader-content h2{
+  font-family:'Playfair Display',serif;
+  font-size:30px;line-height:1.2;margin-bottom:24px;color:var(--wh);
+}
+.loader-bar{
+  position:relative;width:100%;height:4px;overflow:hidden;
+  border-radius:999px;background:rgba(255,255,255,.16);
+}
+.loader-bar::before{
+  content:'';position:absolute;inset:0;width:45%;border-radius:inherit;
+  background:linear-gradient(90deg,var(--gd2),var(--gd));
+  animation:loaderMove 1.2s ease-in-out infinite;
+}
+@keyframes loaderMove{0%{transform:translateX(-110%)}100%{transform:translateX(230%)}}
+
+/* ─── RTL SUPPORT ─── */
+[dir="rtl"] body{font-family:'DM Sans',sans-serif}
+[dir="rtl"] .nl span,[dir="rtl"] .heb,[dir="rtl"] .stag,[dir="rtl"] .tl,[dir="rtl"] .fl,[dir="rtl"] .cil{letter-spacing:0}
+[dir="rtl"] .stag::before,[dir="rtl"] .heb::before{margin-left:10px;margin-right:0}
+
+/* ─── NAVBAR ─── */
+nav{
+  background:var(--nv);
+  padding:0 48px;
+  height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:1000;
+  box-shadow:0 2px 24px rgba(0,0,0,.18);
+  transition:background .3s;
+}
+nav.nav-scrolled{
+  background:rgba(24,44,112,.95);
+  backdrop-filter:blur(12px);
+  box-shadow:0 4px 24px rgba(0,0,0,.22);
+}
+.nl{
+  font-family:'Playfair Display',serif;
+  font-size:30px;font-weight:900;color:var(--gd);
+  letter-spacing:-1px;line-height:1;
+  display:flex;align-items:center;gap:12px;
+  cursor:pointer;
+}
+.nl img{
+  width:58px;height:auto;display:block;
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,.2));
+}
+.nl-text{display:flex;flex-direction:column;gap:1px}
+.nl-main{display:block}
+.nl-sub{
+  color:rgba(255,255,255,.55);font-weight:400;
+  font-size:10px;letter-spacing:4px;
+  font-family:'DM Sans',sans-serif;text-transform:uppercase;
+}
+.nlinks{display:flex;gap:6px;align-items:center}
+.ndrop{position:relative}
+.ndrop-btn{
+  background:none;border:none;color:rgba(255,255,255,.7);
+  font-size:13.5px;font-weight:500;cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  display:flex;align-items:center;gap:5px;
+  padding:8px 14px;border-radius:8px;
+  transition:all .2s;
+}
+.ndrop-btn:hover,.ndrop-btn.active{color:#fff;background:rgba(255,255,255,.08)}
+.ndrop-btn svg{width:12px;height:12px;transition:transform .25s}
+.ndrop-btn.active svg{transform:rotate(180deg)}
+.ndrop-menu{
+  position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);
+  background:rgba(10,24,70,.97);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.1);border-radius:14px;
+  padding:8px;min-width:210px;
+  opacity:0;visibility:hidden;transform:translateX(-50%) translateY(-8px);
+  transition:all .25s;pointer-events:none;
+  box-shadow:0 20px 40px rgba(0,0,0,.4);
+}
+.ndrop.open .ndrop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:all}
+.ndrop.open .ndrop-btn{color:#fff}
+.ndrop-item{
+  display:block;padding:12px 16px;border-radius:9px;cursor:pointer;
+  transition:background .2s;
+}
+.ndrop-item:hover{background:rgba(255,255,255,.08)}
+.ndrop-item.active-link{background:rgba(255,255,255,.12)}
+.ndrop-item-t{font-size:13.5px;font-weight:600;color:#fff;margin-bottom:2px}
+.ndrop-item-s{font-size:12px;color:rgba(255,255,255,.45)}
+.nlink-plain{
+  background:none;border:none;color:rgba(255,255,255,.7);
+  font-size:13.5px;font-weight:500;cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  padding:8px 14px;border-radius:8px;
+  transition:all .2s;
+}
+.nlink-plain:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nlink-plain.active-link{color:#fff;background:rgba(255,255,255,.13)}
+.nav-home{
+  background:linear-gradient(180deg,rgba(247,201,72,.15),rgba(247,201,72,.08));
+  border:1px solid rgba(247,201,72,.32);color:#fff;
+  font-size:13.5px;font-weight:500;cursor:pointer;padding:8px 14px;
+  border-radius:8px;font-family:'DM Sans',sans-serif;
+  display:flex;align-items:center;gap:6px;transition:all .2s;
+  text-decoration:none;
+}
+.nav-home:hover{
+  background:linear-gradient(180deg,rgba(247,201,72,.25),rgba(247,201,72,.15));
+  border-color:rgba(247,201,72,.55);color:#fff;transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(247,201,72,.18);
+}
+.nav-home svg{width:15px;height:15px;transition:all .2s}
+.nav-home:hover svg{filter:drop-shadow(0 0 4px rgba(247,201,72,.4))}
+.nav-right{display:flex;align-items:center;gap:10px}
+
+/* ── Language pill toggle (desktop) ── */
+.lang-pill{
+  display:flex;align-items:center;
+  background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.05));
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:30px;padding:3px;gap:2px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 6px 16px rgba(0,0,0,.16);
+}
+.lang-pill-opt{
+  font-family:'DM Sans',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:.6px;
+  color:rgba(255,255,255,.5);
+  padding:5px 14px;border-radius:24px;
+  cursor:pointer;border:none;background:none;
+  transition:all .22s;line-height:1;
+}
+.lang-pill-opt.active{
+  background:var(--gd);color:var(--nv);
+  box-shadow:0 4px 12px rgba(247,201,72,.45),inset 0 -1px 0 rgba(0,0,0,.12);
+}
+.lang-pill-opt:not(.active):hover{color:#fff}
+
+.ncta{
+  background:var(--rd);color:#fff;
+  font-size:13.5px;font-weight:700;
+  padding:10px 24px;border-radius:30px;cursor:pointer;border:none;
+  font-family:'DM Sans',sans-serif;
+  transition:all .25s;
+  box-shadow:0 4px 16px rgba(212,43,43,.35);
+}
+.ncta:hover{background:#b71c1c;transform:translateY(-1px);box-shadow:0 6px 20px rgba(212,43,43,.45)}
+.ncta{animation:ctaPulse 4.2s ease-in-out infinite}
+
+/* ─── HAMBURGER ─── */
+.hamburger{
+  display:none;flex-direction:column;gap:4.5px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  cursor:pointer;padding:9px 10px;
+  border-radius:10px;transition:all .25s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.hamburger:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22)}
+.hamburger span{
+  display:block;width:20px;height:2px;
+  background:#fff;border-radius:2px;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  transform-origin:center;
+}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* ─── MOBILE NAV BACKDROP ─── */
+.mobile-nav-backdrop{
+  display:none;position:fixed;inset:var(--nav-h) 0 0 0;
+  background:rgba(4,10,30,.55);
+  backdrop-filter:blur(4px);
+  opacity:0;pointer-events:none;
+  transition:opacity .28s ease;
+  z-index:998;
+}
+.mobile-nav-backdrop.open{opacity:1;pointer-events:auto}
+
+/* ─── MOBILE NAV DRAWER ─── */
+.mobile-nav{
+  display:none;position:fixed;top:var(--nav-h);left:0;right:0;
+  height:calc(100dvh - var(--nav-h));
+  background:rgba(9,22,68,.98);backdrop-filter:blur(20px);
+  z-index:999;overflow-y:auto;overflow-x:hidden;
+  padding:0 0 32px;
+  transform:translateX(100%);
+  transition:transform .32s cubic-bezier(.4,0,.2,1);
+  -webkit-overflow-scrolling:touch;
+}
+.mobile-nav.open{transform:translateX(0)}
+
+/* Mobile nav inner scroll container */
+.mobile-nav-inner{
+  padding:12px 20px 20px;
+}
+
+/* Mobile nav section items */
+.mobile-nav-item{
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.mobile-nav-top{
+  font-size:15px;font-weight:600;color:rgba(255,255,255,.9);
+  display:flex;justify-content:space-between;align-items:center;
+  cursor:pointer;padding:14px 4px;
+  border-radius:8px;
+  transition:color .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.mobile-nav-top:hover{color:#fff}
+.mobile-nav-top .mob-arrow{
+  width:28px;height:28px;border-radius:7px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  transition:all .25s;
+}
+.mobile-nav-top .mob-arrow svg{
+  transition:transform .25s;
+  display:block;
+}
+.mobile-nav-item.open .mob-arrow{
+  background:rgba(247,201,72,.12);
+  border-color:rgba(247,201,72,.3);
+}
+.mobile-nav-item.open .mob-arrow svg{transform:rotate(180deg)}
+.mobile-nav-sub{
+  max-height:0;overflow:hidden;
+  transition:max-height .3s ease;
+  padding-left:4px;
+}
+.mobile-nav-item.open .mobile-nav-sub{max-height:300px}
+.mobile-nav-sub a{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 12px;margin-bottom:4px;
+  font-size:13.5px;color:rgba(255,255,255,.6);
+  cursor:pointer;transition:all .2s;
+  border-radius:8px;
+  text-decoration:none;
+}
+.mobile-nav-sub a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.mobile-nav-sub a::before{
+  content:'';width:5px;height:5px;border-radius:50%;
+  background:rgba(247,201,72,.5);flex-shrink:0;
+}
+.mobile-nav-plain{
+  font-size:15px;font-weight:600;color:rgba(255,255,255,.9);
+  display:block;padding:14px 4px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  cursor:pointer;
+  transition:color .2s;
+  text-decoration:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.mobile-nav-plain:hover{color:#fff}
+
+/* Mobile nav bottom actions */
+.mobile-nav-actions{
+  margin-top:20px;
+  display:flex;flex-direction:column;gap:10px;
+  padding-top:4px;
+}
+.mobile-enrol-btn{
+  width:100%;padding:14px;border-radius:30px;
+  font-size:15px;font-weight:700;cursor:pointer;
+  font-family:'DM Sans',sans-serif;transition:all .2s;
+  background:var(--rd);border:none;color:#fff;
+  box-shadow:0 4px 16px rgba(212,43,43,.3);
+  -webkit-tap-highlight-color:transparent;
+}
+.mobile-enrol-btn:hover{background:#b71c1c}
+.mobile-enrol-btn:active{transform:scale(.98)}
+
+/* Mobile home link in drawer */
+.mobile-home-link{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:12px;border-radius:12px;
+  font-size:14px;font-weight:500;color:rgba(255,255,255,.7);
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  cursor:pointer;
+  text-decoration:none;
+  transition:all .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.mobile-home-link:hover{color:#fff;background:rgba(255,255,255,.08)}
+.mobile-home-link svg{width:15px;height:15px;opacity:.7}
+
+/* ─── HERO ─── */
+.hero{
+  background:var(--nv);
+  min-height:calc(100vh - var(--nav-h));
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;text-align:center;
+  padding:60px 24px;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 80% 70% at 50% 40%, #2a4aa6 0%, #1a357f 55%, #122a68 100%);
+}
+.hero-bg::after{
+  content:'';
+  position:absolute;
+  width:44vw;height:44vw;max-width:420px;max-height:420px;
+  left:50%;top:46%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(247,201,72,.16) 0%,rgba(247,201,72,.05) 42%,rgba(10,24,70,0) 75%);
+  filter:blur(2px);
+  animation:heroGlow 8s ease-in-out infinite;
+}
+.hero-particles{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:none}
+.particle{
+  position:absolute;border-radius:50%;
+  animation:floatP linear infinite;
+  opacity:0;
+  will-change:transform,opacity;
+}
+@keyframes floatP{
+  0%{transform:translateY(100vh) scale(0);opacity:0}
+  10%{opacity:.6}
+  90%{opacity:.3}
+  100%{transform:translateY(-10vh) scale(1.2);opacity:0}
+}
+@keyframes floatPMobile{
+  0%{transform:translateY(80vh) scale(.2);opacity:0}
+  12%{opacity:.75}
+  88%{opacity:.45}
+  100%{transform:translateY(-8vh) scale(1);opacity:0}
+}
+@keyframes heroGlow{
+  0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.78}
+  50%{transform:translate(-50%,-50%) scale(1.08);opacity:.96}
+}
+.hero-illo{
+  position:absolute;inset:0;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;padding-top:0;
+  transform:translateY(-22px);
+}
+.hero-illo svg{width:100%;max-width:1100px;height:100%;opacity:.66;filter:blur(1.2px);}
+.bunting-line{position:absolute;top:0;left:0;right:0;z-index:2;pointer-events:none;}
+.hero-content{position:relative;z-index:3;max-width:820px;margin:0 auto;}
+.heb{
+  font-family:'Outfit',sans-serif;
+  font-size:11px;letter-spacing:2.4px;text-transform:uppercase;
+  color:rgba(255,255,255,.92);
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:22px;padding:9px 14px;border-radius:999px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(10px);
+}
+.heb::before,.heb::after{content:'';width:28px;height:1.5px;background:var(--gd);opacity:.7}
+h1.hh{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(62px,9vw,110px);font-weight:900;color:#fff;
+  line-height:.92;letter-spacing:-3px;margin-bottom:18px;
+  text-shadow:0 12px 40px rgba(0,0,0,.28);
+}
+h1.hh span{display:block}
+h1.hh em{
+  font-style:normal;display:block;
+  background:linear-gradient(90deg,#ffe28a 0%,#f7c948 35%,#fff2b3 70%,#f7c948 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 10px 24px rgba(247,201,72,.22));
+}
+h1.hh em::after{
+  content:'';display:block;
+  width:clamp(120px,18vw,170px);height:4px;margin:14px auto 0;border-radius:999px;
+  background:linear-gradient(90deg,rgba(247,201,72,.15) 0%,rgba(247,201,72,.95) 40%,rgba(255,242,179,.9) 60%,rgba(247,201,72,.15) 100%);
+  box-shadow:0 10px 26px rgba(247,201,72,.22);
+}
+.hsub{
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(16px,1.7vw,19px);font-weight:500;
+  color:rgba(255,255,255,.78);line-height:1.7;
+  max-width:540px;margin:0 auto 36px;
+}
+.hero-content .heb,.hero-content h1.hh span,.hero-content h1.hh em,.hero-content .hsub{
+  opacity:0;transform:translateY(12px);
+  animation:heroEnter .7s cubic-bezier(.2,.8,.2,1) forwards;
+}
+.hero-content .heb{animation-delay:.08s}
+.hero-content h1.hh span:nth-of-type(1){animation-delay:.16s}
+.hero-content h1.hh em{animation-delay:.24s}
+.hero-content h1.hh span:nth-of-type(2){animation-delay:.32s}
+.hero-content .hsub{animation-delay:.42s}
+@keyframes heroEnter{to{opacity:1;transform:translateY(0)}}
+.hbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.bprim{
+  background:var(--gd);color:var(--nv);
+  font-size:15px;font-weight:700;padding:15px 36px;
+  border-radius:50px;cursor:pointer;border:none;
+  font-family:'DM Sans',sans-serif;
+  transition:all .25s;box-shadow:0 8px 24px rgba(247,201,72,.35);
+  display:flex;align-items:center;gap:8px;
+}
+.bprim:hover{background:var(--gd2);transform:translateY(-2px);box-shadow:0 12px 32px rgba(247,201,72,.45)}
+.bprim{animation:ctaPulse 4.2s ease-in-out infinite .6s}
+.bghost{
+  background:transparent;color:#fff;
+  font-size:15px;font-weight:500;padding:15px 36px;
+  border-radius:50px;cursor:pointer;
+  border:1.5px solid rgba(255,255,255,.3);
+  font-family:'DM Sans',sans-serif;transition:all .25s;
+}
+.bghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.hstats{
+  display:flex;gap:0;justify-content:center;
+  border-top:1px solid rgba(255,255,255,.1);padding-top:36px;
+}
+.hs{flex:1;max-width:160px;padding:0 20px;border-right:1px solid rgba(255,255,255,.1);}
+.hs:last-child{border-right:none}
+.hs-num{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);font-weight:900;color:var(--gd);line-height:1;margin-bottom:6px;}
+.hs-lbl{font-size:11.5px;color:rgba(255,255,255,.45);letter-spacing:.5px}
+
+/* ─── TRUST BAR ─── */
+.trust{
+  background:radial-gradient(ellipse 80% 70% at 50% 40%, #2a4aa6 0%, #1a357f 55%, #122a68 100%);
+  padding:24px 48px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:14px;
+  border-top:1px solid rgba(255,255,255,.09);border-bottom:1px solid rgba(255,255,255,.06);
+}
+.tl{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.86);white-space:nowrap;font-weight:700;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 12px;}
+.tlogos{display:flex;flex-direction:column;gap:10px;align-items:flex-start;width:min(540px,100%);}
+.tlogo{font-size:12px;font-weight:700;color:#ffffff;display:flex;align-items:center;gap:7px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:10px 16px;transition:all .24s ease;text-decoration:none;width:100%;line-height:1.25;}
+.tlogo:link,.tlogo:visited,.tlogo:active{color:#fff !important}
+.tlogo::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gd);flex-shrink:0}
+.tsince{font-size:11px;color:rgba(255,255,255,.45);font-style:italic}
+
+/* ─── SECTIONS ─── */
+section{padding:88px 48px}
+.stag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--rd);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.stag::before{content:'';width:20px;height:2px;background:var(--rd)}
+.sh2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,44px);font-weight:700;color:var(--nv);line-height:1.12;margin-bottom:12px;letter-spacing:-.6px;}
+.slead{font-size:16px;color:var(--mu);line-height:1.85;max-width:540px;margin-bottom:40px;}
+
+/* ─── WHY ─── */
+.wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.wc{background:var(--off);border-radius:18px;padding:30px;border:1px solid rgba(13,31,92,.07);transition:all .3s;cursor:default;}
+.wc:hover{background:#fff;border-color:rgba(13,31,92,.15);transform:translateY(-3px);box-shadow:0 12px 40px rgba(13,31,92,.08)}
+.wn{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--gd);opacity:.22;line-height:1;margin-bottom:12px}
+.wt{font-size:16px;font-weight:600;color:var(--nv);margin-bottom:8px;letter-spacing:-.2px}
+.wd{font-size:13.5px;color:var(--mu);line-height:1.75}
+.wb{display:inline-block;font-size:10px;background:var(--lt);color:var(--nv2);padding:4px 11px;border-radius:10px;margin-top:12px;font-weight:600;letter-spacing:.3px}
+
+/* ─── PILLARS ─── */
+.pwrap{background:var(--nv);padding:88px 48px}
+.pwrap .stag{color:var(--gd)}.pwrap .stag::before{background:var(--gd)}
+.pwrap .sh2{color:#fff}.pwrap .slead{color:rgba(255,255,255,.5)}
+.ptabs{display:flex;gap:0;margin-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1);overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;}
+.ptabs::-webkit-scrollbar{display:none}
+html{scrollbar-width:none;-ms-overflow-style:none;}
+html::-webkit-scrollbar{display:none}
+.pt{font-size:13.5px;font-weight:500;color:rgba(255,255,255,.4);padding:12px 22px 14px;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;margin-bottom:-1px;white-space:nowrap;}
+.pt.on,.pt:hover{color:#fff;border-bottom-color:var(--gd)}
+.pnav-mobile{display:none;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;}
+.pnav-btn{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.pnav-btn:hover{background:rgba(255,255,255,.14)}
+.pnav-btn:disabled{opacity:.45;cursor:not-allowed}
+.pnav-status{flex:1;text-align:center;font-size:12px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:rgba(255,255,255,.78);}
+.pnav-progress{width:100%;height:4px;border-radius:999px;background:rgba(255,255,255,.12);margin-top:7px;overflow:hidden;}
+.pnav-progress > span{display:block;height:100%;width:25%;background:linear-gradient(90deg,var(--gd),#ffe28a);border-radius:999px;transition:width .25s ease;}
+.pcontent{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.pct{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#fff;margin-bottom:12px}
+.pcd{font-size:15px;color:rgba(255,255,255,.6);line-height:1.85;margin-bottom:20px}
+.pcpts{list-style:none}
+.pcpts li{font-size:13.5px;color:rgba(255,255,255,.68);padding:8px 0 8px 20px;position:relative;border-bottom:1px solid rgba(255,255,255,.05)}
+.pcpts li::before{content:'›';position:absolute;left:0;color:var(--gd);font-size:16px;font-weight:700}
+.pcr{background:rgba(255,255,255,.05);border-radius:16px;padding:26px;border:1px solid rgba(255,255,255,.08)}
+.pcrtag{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gd);margin-bottom:16px;font-weight:700}
+.pdi{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05);align-items:flex-start}
+.pdi:last-child{border-bottom:none}
+.pdi-ic{width:36px;height:36px;border-radius:9px;background:rgba(247,201,72,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.pdi-n{font-size:13.5px;font-weight:600;color:#fff;margin-bottom:3px}
+.pdi-s{font-size:12px;color:rgba(255,255,255,.42)}
+
+/* ─── JOURNEY ─── */
+.jsec{background:var(--off)}
+.jtrack{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px 12px;margin-top:44px;}
+.jn{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;cursor:pointer;padding:12px 10px;border-radius:14px;border:1px solid rgba(13,31,92,.08);background:#fff;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+.jn:hover,.jn.on{transform:translateY(-2px);border-color:rgba(13,31,92,.18);box-shadow:0 8px 24px rgba(13,31,92,.08);}
+.jnc{width:52px;height:52px;border-radius:50%;border:2px solid rgba(13,31,92,.15);background:var(--off);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--nv);margin-bottom:12px;transition:all .3s;}
+.jn:hover .jnc,.jn.on .jnc{background:var(--nv);color:var(--gd);border-color:var(--nv);box-shadow:0 4px 16px rgba(13,31,92,.2)}
+.jnl{font-size:12.5px;font-weight:700;color:var(--nv);margin-bottom:4px}
+.jns{font-size:11.5px;color:var(--mu);line-height:1.45;max-width:160px}
+.jnt{display:inline-block;font-size:10px;background:var(--lt);color:var(--nv2);padding:3px 9px;border-radius:9px;margin-top:7px;letter-spacing:.3px;font-weight:500}
+
+/* ─── EXPRESSION STUDIO ─── */
+.esec{background:#fff}
+.estudios{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px}
+.estudio{background:var(--off);border-radius:16px;padding:24px 16px;text-align:center;border:1px solid rgba(13,31,92,.07);transition:all .3s;cursor:default;}
+.estudio:hover{background:#fff;border-color:rgba(13,31,92,.15);transform:translateY(-3px);box-shadow:0 12px 32px rgba(13,31,92,.08)}
+.est-ic{font-size:32px;margin-bottom:12px}
+.est-n{font-size:13.5px;font-weight:700;color:var(--nv);margin-bottom:5px}
+.est-d{font-size:12px;color:var(--mu);line-height:1.5}
+.opt-badge{display:inline-block;background:#fdf8e6;color:var(--gd2);font-size:10.5px;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid rgba(224,168,0,.3);margin-bottom:22px;letter-spacing:.5px}
+
+/* ─── PARENTING CLUB ─── */
+.pcsec{background:var(--nv)}
+.pcsec .stag{color:var(--gd)}.pcsec .stag::before{background:var(--gd)}
+.pcsec .sh2{color:#fff}.pcsec .slead{color:rgba(255,255,255,.5)}
+.pcgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.pcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:15px;padding:26px;transition:all .25s;}
+.pcard:hover{background:rgba(247,201,72,.07);border-color:rgba(247,201,72,.3)}
+.pc-ic{font-size:24px;margin-bottom:12px}
+.pc-t{font-size:15px;font-weight:700;color:#fff;margin-bottom:7px}
+.pc-d{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7}
+
+/* ─── GAINS ─── */
+.ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.gain{background:var(--off);border-radius:15px;padding:24px;border:1px solid rgba(13,31,92,.07);display:flex;flex-direction:column;gap:10px;transition:all .25s}
+.gain:hover{background:#fff;box-shadow:0 8px 28px rgba(13,31,92,.08);transform:translateY(-2px)}
+.gic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.gt{font-size:14px;font-weight:700;color:var(--nv)}
+.gd{font-size:13px;color:var(--mu);line-height:1.7}
+
+/* ─── TESTIMONIALS ─── */
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.rc{background:var(--off);border-radius:15px;padding:24px;border:1px solid rgba(13,31,92,.07);transition:all .25s}
+.rc:hover{background:#fff;box-shadow:0 8px 28px rgba(13,31,92,.08)}
+.rcs{display:flex;gap:3px;margin-bottom:14px}
+.star{width:14px;height:14px;background:var(--gd);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.rct{font-size:13.5px;color:var(--tx);line-height:1.75;margin-bottom:16px;font-style:italic}
+.rca{display:flex;align-items:center;gap:10px}
+.rcav{width:36px;height:36px;border-radius:50%;background:var(--nv);display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;color:var(--gd)}
+.rcn{font-size:13.5px;font-weight:700;color:var(--nv)}
+.rcr{font-size:11.5px;color:var(--mu)}
+
+/* ─── ENROL ─── */
+.ensec{background:var(--nv);padding:88px 48px}
+.ensec .stag{color:var(--gd)}.ensec .stag::before{background:var(--gd)}
+.ensec .sh2{color:#fff}.ensec .slead{color:rgba(255,255,255,.5)}
+.engrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:12px}
+.enc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:30px;transition:all .25px}
+.enc:hover,.enc.ft{background:rgba(247,201,72,.08);border-color:rgba(247,201,72,.35)}
+.ecbadge{display:inline-block;background:var(--gd);color:var(--nv);font-size:10px;font-weight:800;padding:4px 12px;border-radius:10px;margin-bottom:14px;letter-spacing:.5px}
+.ect{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;color:#fff;margin-bottom:9px}
+.ecd{font-size:14px;color:rgba(255,255,255,.56);line-height:1.8;margin-bottom:20px}
+.ecpts{list-style:none;margin-bottom:26px}
+.ecpts li{font-size:13.5px;color:rgba(255,255,255,.68);padding:6px 0 6px 20px;position:relative;border-bottom:1px solid rgba(255,255,255,.05)}
+.ecpts li::before{content:'✓';position:absolute;left:0;color:var(--gd);font-size:12px}
+.ecca{width:100%;padding:13px;border-radius:30px;font-size:14.5px;font-weight:700;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;transition:all .25s}
+.ecca-p{background:var(--gd);color:var(--nv)}
+.ecca-p:hover{background:var(--gd2)}
+.ecca-g{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.ecca-g:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+
+/* ─── FAQ ─── */
+.faqsec{background:var(--off)}
+.faqgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 44px;margin-top:40px}
+.fqi{border-bottom:1px solid rgba(13,31,92,.08);padding:20px 0;cursor:pointer}
+.fqq{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.fqqt{font-size:14.5px;font-weight:600;color:var(--nv)}
+.fqic{width:26px;height:26px;border-radius:50%;background:var(--lt);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s;font-size:16px;color:var(--nv);font-weight:300;}
+.fqi.open .fqic{background:var(--nv);color:var(--gd);transform:rotate(45deg)}
+.fqa{font-size:13.5px;color:var(--mu);line-height:1.8;margin-top:10px;max-height:0;overflow:hidden;transition:max-height .35s ease}
+.fqi.open .fqa{max-height:300px}
+
+/* ─── CONTACT ─── */
+.ctsec{background:#fff;padding:88px 48px}
+.ctgrid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.fg{margin-bottom:16px}
+.fl{font-size:11px;font-weight:700;color:var(--nv);margin-bottom:6px;display:block;letter-spacing:.5px;text-transform:uppercase}
+.fi{width:100%;padding:13px 16px;border:1.5px solid rgba(13,31,92,.15);border-radius:10px;font-size:14.5px;font-family:'DM Sans',sans-serif;color:var(--tx);background:#fff;outline:none;transition:border-color .2s;}
+.fi:focus{border-color:var(--nv)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fs{width:100%;padding:13px 16px;border:1.5px solid rgba(13,31,92,.15);border-radius:10px;font-size:14.5px;font-family:'DM Sans',sans-serif;color:var(--tx);background:#fff;outline:none;}
+.fsb{width:100%;padding:14px;background:var(--nv);color:#fff;font-size:14.5px;font-weight:700;border-radius:30px;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;margin-top:8px;transition:all .25s;}
+.fsb:hover{background:var(--nv2);transform:translateY(-1px)}
+.cii{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid rgba(13,31,92,.07)}
+.cib{width:42px;height:42px;border-radius:11px;background:var(--lt);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cil{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--mu);font-weight:600;margin-bottom:4px}
+.civ{font-size:14px;font-weight:500;color:var(--nv);line-height:1.55}
+
+@keyframes ctaPulse{
+  0%,100%{transform:translateY(0)}
+  45%{transform:translateY(-1px)}
+  55%{transform:translateY(-2px)}
+}
+
+/* ─── FOOTER ─── */
+footer{background:var(--nv);padding:48px 48px 28px;border-top:1px solid rgba(255,255,255,.06)}
+.ftop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:36px;gap:28px;flex-wrap:wrap}
+.flog{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--gd)}
+.ftag{font-size:12px;color:rgba(255,255,255,.35);margin-top:6px;line-height:1.6}
+.flinks{display:flex;gap:48px;flex-wrap:wrap}
+.flg .flt{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:700;margin-bottom:12px}
+.flg ul{list-style:none}
+.flg li{font-size:13.5px;color:rgba(255,255,255,.5);padding:4px 0;cursor:pointer;transition:color .2s}
+.flg li:hover{color:#fff}
+.fbot{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fcp{font-size:11.5px;color:rgba(255,255,255,.28)}
+.ffl{display:flex;align-items:center;gap:8px;font-size:11.5px;color:rgba(255,255,255,.35)}
+
+/* ─── FORM VALIDATION ─── */
+.fi.error,.fs.error{border-color:#d42b2b;background:#fff8f8}
+.fi.success,.fs.success{border-color:#22c55e;background:#f0fdf4}
+.field-err{font-size:11.5px;color:#d42b2b;margin-top:5px;display:none;align-items:center;gap:5px;}
+.field-err.show{display:flex}
+.field-err svg{flex-shrink:0}
+.field-ok{font-size:11.5px;color:#22c55e;margin-top:5px;display:none;align-items:center;gap:5px;}
+.field-ok.show{display:flex}
+.fsb:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.toast{position:fixed;bottom:36px;left:50%;transform:translateX(-50%) translateY(80px);background:#0d1f5c;color:#fff;padding:16px 28px;border-radius:14px;font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:12px;box-shadow:0 12px 40px rgba(0,0,0,.25);z-index:9999;opacity:0;transition:all .4s cubic-bezier(.4,0,.2,1);max-width:90vw;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.success .toast-ic{color:#22c55e}
+.toast.error .toast-ic{color:#d42b2b}
+.toast-ic{font-size:20px;flex-shrink:0}
+.reveal-up{opacity:0;transform:translateY(22px);transition:opacity .28s ease,transform .28s cubic-bezier(.2,.7,.2,1);}
+.reveal-up.in-view{opacity:1;transform:translateY(0);}
+.fi:focus,.fs:focus{border-color:var(--nv);outline:none;box-shadow:0 0 0 3px rgba(13,31,92,.1)}
+.fi.error:focus{box-shadow:0 0 0 3px rgba(212,43,43,.12)}
+.tlogo{cursor:pointer}
+.tlogo:hover{color:#fff;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.24);transform:translateY(-1px);}
+.cii-link{cursor:pointer;transition:opacity .2s}
+.cii-link:hover{opacity:.75}
+button,[role="button"],.ndrop-item,.mobile-nav-sub a,.mobile-nav-plain,.flg li{-webkit-tap-highlight-color:transparent;}
+button{transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease,border-color .2s ease,opacity .2s ease;}
+button:active{transform:translateY(0)}
+button:focus-visible,.ndrop-item:focus-visible,.mobile-nav-sub a:focus-visible,.mobile-nav-plain:focus-visible,.flg li:focus-visible{outline:2px solid rgba(247,201,72,.92);outline-offset:2px;}
+
+/* ─── ARABIC RTL ADJUSTMENTS ─── */
+[dir="rtl"] .stag{flex-direction:row-reverse}
+[dir="rtl"] .stag::before{order:2}
+[dir="rtl"] .heb{flex-direction:row-reverse}
+[dir="rtl"] .tlogo::before{margin-left:7px;margin-right:0}
+[dir="rtl"] .pcpts li,[dir="rtl"] .ecpts li{padding-right:20px;padding-left:0;text-align:right}
+[dir="rtl"] .pcpts li::before,[dir="rtl"] .ecpts li::before{right:0;left:auto}
+[dir="rtl"] .fqq{flex-direction:row-reverse}
+[dir="rtl"] .rca{flex-direction:row-reverse}
+[dir="rtl"] nav{flex-direction:row-reverse}
+[dir="rtl"] .nlinks{flex-direction:row-reverse}
+[dir="rtl"] .nl{align-items:flex-end}
+[dir="rtl"] .cii{flex-direction:row-reverse;text-align:right}
+[dir="rtl"] .ndrop-btn{flex-direction:row-reverse}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — DESKTOP ADJUSTMENTS
+═══════════════════════════════════════════════ */
+@media(max-width:1024px){
+  .estudios{grid-template-columns:repeat(3,1fr)}
+  .rgrid{grid-template-columns:repeat(2,1fr)}
+  .pcontent{grid-template-columns:1fr}
+}
+
+/* ═══════════════════════════════════════════════
+   MOBILE — Complete rewrite for clean UX
+═══════════════════════════════════════════════ */
+@media(max-width:768px){
+
+  /* ── Nav container ── */
+  :root{--nav-h:60px;}
+  nav{
+    padding:0 16px;
+    height:var(--nav-h);
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    gap:0;
+  }
+
+  /* ── Logo – slightly smaller ── */
+  .nl{font-size:24px;gap:0}
+  .nl img{width:46px;margin-right:10px}
+  .nl-sub{font-size:9px;letter-spacing:3px}
+
+  /* ── Desktop nav links hidden ── */
+  .nlinks{display:none !important}
+
+  /* ── Mobile right cluster ── */
+  .mob-bar{
+    display:flex !important;
+    align-items:center;
+    gap:8px;
+  }
+
+  /* ── Compact lang pill for mobile ── */
+  .lang-pill-mobile{
+    display:flex !important;
+    align-items:center;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:20px;
+    padding:2px;
+    gap:1px;
+  }
+  .lang-pill-mobile .lpm-opt{
+    font-family:'DM Sans',sans-serif;
+    font-size:11px;font-weight:700;letter-spacing:.3px;
+    color:rgba(255,255,255,.45);
+    padding:5px 10px;border-radius:16px;
+    cursor:pointer;border:none;background:none;
+    transition:all .2s;line-height:1;
+    min-width:32px;text-align:center;
+  }
+  .lang-pill-mobile .lpm-opt.active{
+    background:var(--gd);color:var(--nv);
+    box-shadow:0 2px 8px rgba(247,201,72,.4);
+  }
+  .lang-pill-mobile .lpm-opt:not(.active):hover{color:#fff}
+
+  /* ── Hamburger refined ── */
+  .hamburger{
+    display:flex !important;
+    padding:8px 9px;
+    border-radius:9px;
+    gap:4px;
+  }
+  .hamburger span{width:18px}
+
+  /* ── Hide desktop-only nav-right inside .nlinks ── */
+  .nav-right{display:none !important}
+  /* But show the standalone #mobileRight hack — we don't use it anymore */
+  #mobileRight{display:none !important}
+
+  /* ── Mobile nav drawer polished ── */
+  .mobile-nav{display:block}
+  .mobile-nav-backdrop{display:block}
+
+  /* ── Mobile nav header bar inside drawer ── */
+  .mob-nav-header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 20px 12px;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    margin-bottom:4px;
+  }
+  .mob-nav-header-label{
+    font-size:10px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,.3);font-weight:700;
+  }
+  .mob-enrol-pill{
+    background:var(--rd);color:#fff;
+    font-size:12px;font-weight:700;
+    padding:6px 16px;border-radius:20px;
+    border:none;cursor:pointer;
+    font-family:'DM Sans',sans-serif;
+    -webkit-tap-highlight-color:transparent;
+    transition:all .2s;
+  }
+  .mob-enrol-pill:active{transform:scale(.97)}
+
+  /* Page content */
+  section,.ensec,.pwrap,.ctsec{padding:52px 18px}
+  .hero{padding:44px 18px;min-height:auto}
+  h1.hh{font-size:clamp(48px,12vw,74px);letter-spacing:-2px}
+  .heb{font-size:10px;letter-spacing:2px;padding:7px 11px}
+  .hstats{flex-wrap:wrap;gap:0}
+  .hs{min-width:50%;border-bottom:1px solid rgba(255,255,255,.08)}
+  .hs:nth-child(odd){border-right:1px solid rgba(255,255,255,.1)}
+  .hs:nth-child(even){border-right:none}
+  .hs:last-child,.hs:nth-last-child(2):nth-child(odd){border-bottom:none}
+  .wgrid,.pcgrid,.ggrid,.engrid,.faqgrid,.ctgrid,.pcontent,.rgrid{grid-template-columns:1fr}
+  .pnav-mobile{display:flex}
+  .ptabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;border-bottom:none;overflow:visible;margin-bottom:24px;}
+  .pt{white-space:normal;text-align:center;border:1px solid rgba(255,255,255,.14);border-radius:12px;margin-bottom:0;padding:10px 12px;background:rgba(255,255,255,.04);}
+  .pt.on,.pt:hover{border-bottom-color:var(--gd);border-color:rgba(247,201,72,.55);background:rgba(247,201,72,.08);}
+  .hbtns{margin-top:18px}
+  .bghost{margin-top:6px}
+  .ecca-p{margin-top:12px}
+  .trust{padding:16px 18px;gap:10px}
+  .tlogos{width:100%;gap:8px}
+  .tsince{display:none}
+  .estudios{grid-template-columns:repeat(2,1fr)}
+  footer .flinks{gap:28px}
+  .fr{grid-template-columns:1fr}
+  .jtrack{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  footer{padding:36px 18px 20px}
+  .ftop{flex-direction:column}
+  .flinks{gap:24px}
+  .hero-illo svg{filter:blur(.7px);opacity:.55}
+  .hero-particles{opacity:.9}
+  .particle{animation-name:floatPMobile}
+  .hero-bg::after{opacity:.9}
+  .reveal-up{opacity:1;transform:none;transition:none}
+}
+
+@media(max-width:480px){
+  .estudios{grid-template-columns:1fr}
+  .hbtns{flex-direction:column;align-items:center;margin-top:16px}
+  .bprim,.bghost{width:100%;max-width:280px;justify-content:center}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .bprim,.ncta{animation:none}
+  .particle{opacity:.35}
+  .hero-bg::after{animation:none;opacity:.85}
+  .reveal-up{opacity:1;transform:none;transition:none}
+}
+/* EACC responsive polish */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+body{min-width:0;overflow-x:hidden;}
+img,picture,video,canvas{max-width:100%;}
+img{height:auto;}
+a,button{touch-action:manipulation;}
+button,input,select,textarea{font:inherit;max-width:100%;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important;}
+  
+}
+@media (max-width:1100px){
+  .container,.nav-container,.hero-content,.section-header,.section-title,.footer-content{width:min(100% - 32px,1180px);max-width:100%;}
+  .hero-grid,.feature-grid,.camp-grid,.path-grid,.program-grid,.cards-grid,.footer-grid,.content-grid,.journey-grid,.related-grid,.faq-grid{grid-template-columns:1fr!important;}
+}
+@media (max-width:768px){
+  body{font-size:15px;}
+  section{overflow:hidden;}
+  .page-hero,.hero{background-attachment:scroll!important;}
+  .page-hero{min-height:auto!important;padding:118px 18px 68px!important;text-align:center;}
+  .page-hero h1,.hero h1,h1{font-size:clamp(34px,10vw,58px)!important;line-height:1.05!important;overflow-wrap:break-word;}
+  h2{font-size:clamp(26px,7vw,40px)!important;line-height:1.12!important;overflow-wrap:break-word;}
+  p,li{overflow-wrap:break-word;}
+  .btn,.button,.cta-button,.register-btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center;white-space:normal;text-align:center;}
+  .feature-card,.course-card,.program-card,.camp-card,.info-card,.path-card,.related-card,.faq-item{max-width:100%;min-width:0;}
+  .feature-card img,.course-card img,.program-card img,.camp-card img,.related-card img,.path-card img{width:100%;height:auto;object-fit:cover;}
+  
+}
+@media (max-width:520px){
+  .container,.nav-container,.hero-content,.section-header,.section-title,.footer-content{width:min(100% - 24px,1180px);}
+  .btn,.button,.cta-button,.register-btn{width:100%;max-width:340px;}
+  
+}
+/* Summer Camp mobile polish */
+@media (max-width:900px){
+  .hero{padding:104px 18px 64px!important;min-height:auto!important;}
+  .hero-content{width:100%;max-width:760px;}
+  .hstats{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;width:100%;}
+  .hs{min-width:0!important;}
+  .wgrid,.pcgrid,.ggrid,.rgrid,.engrid,.faqgrid,.ctgrid,.pcontent{grid-template-columns:1fr!important;}
+  .estudios{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .jtrack{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .ctgrid{gap:28px!important;}
+  .trust,.pbox,.enbox,.faqitem{max-width:100%;}
+}
+@media (max-width:520px){
+  nav{padding:0 14px!important;}
+  .nl{font-size:22px!important;gap:8px!important;}
+  .nl img{width:44px!important;}
+  .hero{padding-top:96px!important;}
+  .hstats,.estudios,.jtrack{grid-template-columns:1fr!important;}
+  .hs{border-right:0!important;}
+  .hbtns{width:100%;}
+  .bprim,.bghost{width:100%!important;max-width:320px!important;justify-content:center;}
+  .ptabs{grid-template-columns:1fr!important;}
+}
+
+/* Final responsive organization pass */
+section,.pwrap,.ensec,.ctsec{
+  padding-left:clamp(18px,5vw,64px);
+  padding-right:clamp(18px,5vw,64px);
+}
+section > .stag,
+section > .sh2,
+section > .slead,
+section > .wgrid,
+section > .jtrack,
+section > .estudios,
+section > .pcgrid,
+section > .ggrid,
+section > .rgrid,
+section > .faqgrid,
+.pwrap > .stag,
+.pwrap > .sh2,
+.pwrap > .slead,
+.pwrap > .pnav-mobile,
+.pwrap > .ptabs,
+.pwrap > .pcontent,
+.ensec > .stag,
+.ensec > .sh2,
+.ensec > .slead,
+.ensec > .engrid,
+.ctsec > div{
+  width:min(100%,1180px);
+  margin-left:auto;
+  margin-right:auto;
+}
+section > .slead,
+.pwrap > .slead,
+.ensec > .slead,
+.ctsec .slead{
+  max-width:680px;
+}
+.wgrid,.pcgrid,.ggrid,.rgrid,.engrid,.faqgrid,.ctgrid,.pcontent,.estudios,.jtrack{
+  align-items:stretch;
+}
+.wc,.pcard,.gain,.rc,.enc,.estudio,.jn{
+  height:100%;
+}
+.wc,.pcard,.gain,.rc,.enc,.estudio,.pcr,.jn{
+  overflow-wrap:anywhere;
+}
+.hero{
+  min-height:calc(100svh - var(--nav-h));
+  padding:clamp(56px,7vw,92px) clamp(18px,4vw,48px);
+}
+.hero-illo{
+  transform:none;
+  padding:0 clamp(10px,3vw,34px);
+}
+.hero-illo svg{
+  width:min(1100px,100%);
+  max-width:100%;
+  height:auto;
+  aspect-ratio:1100 / 560;
+  object-fit:contain;
+}
+
+@media(max-width:900px){
+  section,.pwrap,.ensec,.ctsec{
+    padding-top:64px!important;
+    padding-bottom:64px!important;
+  }
+  .hero{
+    min-height:calc(100svh - var(--nav-h))!important;
+    padding:92px 18px 58px!important;
+    display:grid;
+    align-items:center;
+  }
+  .hero-content{
+    max-width:560px;
+  }
+  .hero-illo{
+    align-items:center;
+    justify-content:center;
+    padding:0 14px;
+  }
+  .hero-illo svg{
+    width:min(100%,720px);
+    height:auto;
+    max-height:62svh;
+    opacity:.46;
+    filter:blur(.45px);
+  }
+  .heb{
+    max-width:100%;
+    justify-content:center;
+    text-align:center;
+    line-height:1.45;
+  }
+  .heb::before,.heb::after{
+    width:18px;
+    flex:0 0 18px;
+  }
+  h1.hh{
+    font-size:clamp(42px,12vw,64px)!important;
+    letter-spacing:0!important;
+    line-height:.98!important;
+    margin-bottom:16px;
+  }
+  .hsub{
+    font-size:15.5px;
+    line-height:1.7;
+    max-width:32rem;
+    margin-bottom:28px;
+  }
+  .hstats{
+    max-width:420px;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:18px;
+    overflow:hidden;
+    padding-top:0;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(8px);
+  }
+  .hs{
+    max-width:none;
+    min-height:92px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:16px 10px;
+  }
+  .trust{
+    padding:22px 18px;
+    align-items:center;
+    text-align:center;
+  }
+  .tlogos{
+    width:min(100%,520px);
+  }
+  .tlogo{
+    border-radius:14px;
+    justify-content:flex-start;
+    min-height:46px;
+  }
+  .stag{
+    justify-content:center;
+    text-align:center;
+    margin-bottom:14px;
+  }
+  .sh2,.slead{
+    text-align:center;
+  }
+  .slead{
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:30px;
+  }
+  .wgrid,.pcgrid,.ggrid,.rgrid,.engrid,.faqgrid,.ctgrid,.pcontent{
+    grid-template-columns:1fr!important;
+    gap:16px!important;
+  }
+  .estudios,.jtrack{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;
+  }
+  .wc,.pcard,.gain,.rc,.enc,.estudio,.jn,.pcr{
+    border-radius:16px;
+    padding:22px;
+  }
+  .wc,.gain,.rc,.estudio,.jn{
+    background:#fff;
+    box-shadow:0 10px 28px rgba(13,31,92,.07);
+  }
+  .pcontent{
+    max-width:680px;
+  }
+  .ptabs{
+    max-width:680px;
+  }
+  .pt{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    line-height:1.25;
+  }
+  .pcr{
+    background:rgba(255,255,255,.07);
+  }
+  .jn{
+    min-height:164px;
+    justify-content:flex-start;
+  }
+  .jns{
+    max-width:100%;
+  }
+  .engrid{
+    max-width:680px;
+  }
+  .enc{
+    padding:26px 22px;
+  }
+  .ecca{
+    min-height:48px;
+  }
+  .ctgrid{
+    max-width:680px;
+  }
+}
+
+@media(max-width:560px){
+  section,.pwrap,.ensec,.ctsec{
+    padding-left:16px!important;
+    padding-right:16px!important;
+  }
+  .hero{
+    padding-left:16px!important;
+    padding-right:16px!important;
+  }
+  .hero-illo svg{
+    width:100%;
+    max-height:58svh;
+  }
+  .hstats,.estudios,.jtrack{
+    grid-template-columns:1fr!important;
+  }
+  .hs{
+    min-height:82px;
+  }
+  .wc,.pcard,.gain,.rc,.enc,.estudio,.jn,.pcr{
+    padding:20px;
+  }
+  .fr{
+    grid-template-columns:1fr!important;
+  }
+  .toast{
+    width:calc(100% - 32px);
+    justify-content:center;
+    text-align:center;
+  }
+}
+</style>
+
+<style id="summer-saisei-motion-system">
+  :root{--saisei-ease:cubic-bezier(.16,1,.3,1);--saisei-dark:#050241;--saisei-navy:#0d1457;--saisei-gold:#ffd54f;--saisei-orange:#f5a623}
+  body.saisei-ready{background:#fff}.saisei-curtain{position:fixed;inset:0;z-index:9998;display:grid;place-items:center;background:#050241;color:#fff;pointer-events:none;transform:translateY(-100%);transition:transform 1s var(--saisei-ease)}body.loading .saisei-curtain{transform:translateY(0)}.saisei-curtain span{font-family:'Playfair Display',serif;font-size:clamp(42px,8vw,110px);line-height:1;color:#ffd54f;letter-spacing:-.03em}
+  .saisei-panel{position:relative;overflow:hidden}.saisei-panel:before{content:'';position:absolute;inset:0;background:var(--saisei-bg) center/cover no-repeat;opacity:.16;filter:saturate(1.05);transform:scale(1.08);transition:transform 1.2s var(--saisei-ease),opacity 1.2s var(--saisei-ease);pointer-events:none}.saisei-panel.saisei-inview:before{transform:scale(1);opacity:.22}.saisei-panel.dark:before{opacity:.24}.saisei-panel.dark.saisei-inview:before{opacity:.28}.saisei-panel>*{position:relative;z-index:1}
+  #why{--saisei-bg:url('../assets/images/summer/hero 4.avif')}#pillars{--saisei-bg:url('../assets/images/summer/summer-camp.avif')}#journey{--saisei-bg:url('../assets/images/summer/hero 4.avif')}#expression{--saisei-bg:url('../assets/images/summer/arts.avif')}#parenting{--saisei-bg:url('../assets/images/summer/kids.avif')}#what-gains{--saisei-bg:url('../assets/images/summer/summer-camp.avif')}#enrol{--saisei-bg:url('../assets/images/summer/hero 4.avif')}#faq{--saisei-bg:url('../assets/images/summer/kids.avif')}.ctsec{--saisei-bg:url('../assets/images/summer/summer-camp.avif')}
+  .saisei-card-media{height:170px;margin:-4px -4px 20px;border-radius:22px;overflow:hidden;background:#eef1f9;clip-path:inset(0 100% 0 0);transition:clip-path .9s var(--saisei-ease)}.saisei-inview .saisei-card-media{clip-path:inset(0)}.saisei-card-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--saisei-ease)}.wc:hover .saisei-card-media img,.gain:hover .saisei-card-media img,.estudio:hover .saisei-card-media img,.pcard:hover .saisei-card-media img,.enc:hover .saisei-card-media img{transform:scale(1.08)}
+  .wgrid.identity-system{align-items:center}.identity-system .wc{padding:18px!important}.identity-system .wc .wt,.identity-system .wc .wd,.identity-system .wc .wb,.identity-system .wc .wn{margin-left:8px;margin-right:8px}.identity-system .wc:nth-child(2),.identity-system .wc:nth-child(4){transform:translateY(34px)}.identity-system .wc:nth-child(1),.identity-system .wc:nth-child(3){transform:translateY(-14px)}
+  .pcard,.gain,.estudio,.enc,.wc{border-radius:30px!important}.pcard,.gain,.enc{padding:24px!important}.pcard:nth-child(even),.gain:nth-child(even),.enc:nth-child(even){transform:translateY(28px)}.pcard:hover,.gain:hover,.enc:hover,.wc:hover,.estudio:hover{transform:translateY(-10px)!important}
+  .ptabs{position:sticky;top:calc(var(--nav-h) + 16px);z-index:30}.pcontent{clip-path:inset(8% 0 8% 0);opacity:.001;transform:translateY(28px);transition:clip-path .9s var(--saisei-ease),opacity .9s var(--saisei-ease),transform .9s var(--saisei-ease)}.saisei-inview .pcontent,.pcontent.saisei-inview{clip-path:inset(0);opacity:1;transform:translateY(0)}
+  .jtrack.diagram-path .jn{clip-path:inset(0 0 100% 0);animation:none}.jsec.saisei-inview .jtrack.diagram-path .jn{animation:stageDrop .72s var(--saisei-ease) forwards}.jsec.saisei-inview .jtrack.diagram-path .jn:nth-child(2){animation-delay:.08s}.jsec.saisei-inview .jtrack.diagram-path .jn:nth-child(3){animation-delay:.16s}.jsec.saisei-inview .jtrack.diagram-path .jn:nth-child(4){animation-delay:.24s}.jsec.saisei-inview .jtrack.diagram-path .jn:nth-child(5){animation-delay:.32s}.jsec.saisei-inview .jtrack.diagram-path .jn:nth-child(6){animation-delay:.40s}.jsec.saisei-inview .jtrack.diagram-path .jn:nth-child(7){animation-delay:.48s}@keyframes stageDrop{to{clip-path:inset(0);transform:translateY(0)}}
+  .image-marquee{background:#050241!important;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}.image-marquee figure{position:relative}.image-marquee figure:after{content:'Summer 2026';position:absolute;left:16px;bottom:14px;color:#fff;font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:11px;text-shadow:0 10px 24px rgba(0,0,0,.4)}
+  .fsb,.ecca,.ncta{transition:transform .24s var(--saisei-ease),box-shadow .24s var(--saisei-ease)}.fsb:hover,.ecca:hover,.ncta:hover{transform:translateY(-4px);box-shadow:0 22px 48px rgba(245,166,35,.28)!important}
+  @media(max-width:1100px){.identity-system .wc:nth-child(n),.pcard:nth-child(n),.gain:nth-child(n),.enc:nth-child(n){transform:none}.ptabs{position:relative;top:auto}}
+  @media(max-width:640px){.saisei-card-media{height:150px}.pcard,.gain,.enc,.wc{padding:18px!important}}
+</style>
+
+
+<style id="summer-why-card-images">
+#why .why-card-media{height:188px;margin:-6px -6px 22px;border-radius:24px;background:linear-gradient(135deg,#eef1f9,#fff7df);box-shadow:inset 0 0 0 1px rgba(13,31,92,.08)}
+#why .why-card-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+#why .why-card-media-contain{padding:0;background:#fff}
+#why .why-card-media-contain img{object-fit:cover;object-position:center 52%;transform:scale(1.48);filter:contrast(1.08) brightness(1.08)}
+#why .wc:hover .why-card-media-contain img{transform:scale(1.58)}
+#why .wc:nth-child(2) .why-card-media img{object-position:center}
+#why .wc:nth-child(3) .why-card-media img{object-position:center 42%}
+#why .wc:nth-child(4) .why-card-media img{object-position:center 30%}
+@media(max-width:640px){#why .why-card-media{height:164px;margin:-2px -2px 18px;border-radius:20px}#why .why-card-media-contain{padding:0}#why .why-card-media-contain img{transform:scale(1.62)}}
+</style>
+
+<style id="summer-footer-expression-images">
+.footer-brand{display:flex;align-items:center;gap:16px;color:var(--gd)}
+.footer-brand img{width:86px;height:auto;display:block;filter:drop-shadow(0 10px 22px rgba(0,0,0,.24))}
+.footer-brand span{display:block}
+#expression .studio-card-media{height:150px;margin:-6px -6px 18px;border-radius:22px;background:#eef1f9}
+#expression .studio-card-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+#expression .estudio:nth-child(2) .studio-card-media img{object-position:center 38%}
+#expression .estudio:nth-child(4) .studio-card-media img{object-position:center 28%}
+#expression .estudio:nth-child(5) .studio-card-media img{object-position:center 40%}
+@media(max-width:640px){.footer-brand{gap:12px}.footer-brand img{width:74px}#expression .studio-card-media{height:142px;margin:-2px -2px 16px;border-radius:20px}}
+</style>
+
+<style id="summer-parenting-ai-image">
+#parenting .parenting-ai-media{height:170px;margin:-4px -4px 20px;border-radius:22px;background:#eef1f9;overflow:hidden}
+#parenting .parenting-ai-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+@media(max-width:640px){#parenting .parenting-ai-media{height:150px}}
+</style>
+</head>
+<body class="loading">
+<div class="site-loader" id="siteLoader" aria-label="Loading website">
+  <div class="loader-content">
+    <img src="../assets/images/logo-white.png" alt="EACC Logo">
+    <h2>Egyptian American Center</h2>
+    <div class="loader-bar"></div>
+  </div>
+</div>
+<!-- ─── NAVBAR ─── -->
+<nav id="mainNav">
+  <!-- Logo -->
+  <div class="nl" onclick="siteScrollTo({top:0,behavior:'smooth'})">
+    <img src="../assets/images/logo-white.png" alt="EACC Logo">
+    <span class="nl-text">
+      <span class="nl-main">MyVoice</span>
+      <span class="nl-sub" data-en="Summer Camp 2026" data-ar="المخيم الصيفي 2026">Summer Camp 2026</span>
+    </span>
+  </div>
+
+  <!-- Desktop nav links -->
+  <div class="nlinks">
+    <div class="ndrop" id="drop-about">
+      <button type="button" class="ndrop-btn" onclick="toggleDrop('drop-about')">
+        <span data-en="About" data-ar="عن البرنامج">About</span>
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+      </button>
+      <div class="ndrop-menu">
+        <div class="ndrop-item" onclick="siteScrollTo('#why')">
+          <div class="ndrop-item-t" data-en="Why MyVoice" data-ar="لماذا MyVoice">Why MyVoice</div>
+          <div class="ndrop-item-s" data-en="Our unique approach" data-ar="نهجنا الفريد">Our unique approach</div>
+        </div>
+        <div class="ndrop-item" onclick="siteScrollTo('#what-gains')">
+          <div class="ndrop-item-t" data-en="What your child gains" data-ar="ما يكسبه طفلك">What your child gains</div>
+          <div class="ndrop-item-s" data-en="Skills & confidence" data-ar="مهارات وثقة">Skills & confidence</div>
+        </div>
+        <div class="ndrop-item" onclick="siteScrollTo('#trust')">
+          <div class="ndrop-item-t" data-en="Our Partners" data-ar="شركاؤنا">Our Partners</div>
+          <div class="ndrop-item-s" data-en="Powered by experts" data-ar="بدعم من الخبراء">Powered by experts</div>
+        </div>
+      </div>
+    </div>
+    <div class="ndrop" id="drop-prog">
+      <button type="button" class="ndrop-btn" onclick="toggleDrop('drop-prog')">
+        <span data-en="Programme" data-ar="البرنامج">Programme</span>
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+      </button>
+      <div class="ndrop-menu">
+        <div class="ndrop-item" onclick="siteScrollTo('#pillars')">
+          <div class="ndrop-item-t" data-en="Four Pillars" data-ar="الأعمدة الأربعة">Four Pillars</div>
+          <div class="ndrop-item-s" data-en="Communicate · Innovate · Lead · Connect" data-ar="تواصل · ابتكر · قُد · تواصل">Communicate · Innovate · Lead · Connect</div>
+        </div>
+        <div class="ndrop-item" onclick="siteScrollTo('#expression')">
+          <div class="ndrop-item-t" data-en="Expression Studio" data-ar="استوديو التعبير">Expression Studio</div>
+          <div class="ndrop-item-s" data-en="Optional creative day" data-ar="يوم إبداعي اختياري">Optional creative day</div>
+        </div>
+      </div>
+    </div>
+    <div class="ndrop" id="drop-journey">
+      <button type="button" class="ndrop-btn" onclick="toggleDrop('drop-journey')">
+        <span data-en="Journey" data-ar="الرحلة">Journey</span>
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+      </button>
+      <div class="ndrop-menu">
+        <div class="ndrop-item" onclick="siteScrollTo('#journey')">
+          <div class="ndrop-item-t" data-en="6 Stages" data-ar="6 مراحل">6 Stages</div>
+          <div class="ndrop-item-s" data-en="From discovery to graduation" data-ar="من الاكتشاف إلى التخرج">From discovery to graduation</div>
+        </div>
+        <div class="ndrop-item" onclick="siteScrollTo('#journey')">
+          <div class="ndrop-item-t" data-en="Adventure Camp" data-ar="مخيم المغامرة">Adventure Camp</div>
+          <div class="ndrop-item-s" data-en="2 nights · 3 days" data-ar="ليلتان · 3 أيام">2 nights · 3 days</div>
+        </div>
+        <div class="ndrop-item" onclick="siteScrollTo('#journey')">
+          <div class="ndrop-item-t" data-en="MyVoice Showcase" data-ar="عرض MyVoice">MyVoice Showcase</div>
+          <div class="ndrop-item-s" data-en="Graduation event" data-ar="حفل التخرج">Graduation event</div>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="nlink-plain" onclick="siteScrollTo('#parenting')" data-en="Parenting Club" data-ar="نادي الوالدين">Parenting Club</button>
+    <button type="button" class="nlink-plain" onclick="siteScrollTo('#faq')" data-en="FAQ" data-ar="أسئلة شائعة">FAQ</button>
+    <div class="nav-right">
+      <a class="nav-home" href="../index.html" title="EACC home" aria-label="Go to EACC home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span data-en="Home" data-ar="الرئيسية">Home</span>
+      </a>
+      <div class="lang-pill" id="langPill">
+        <button type="button" class="lang-pill-opt active" id="langEN" onclick="setLang(false)">EN</button>
+        <button type="button" class="lang-pill-opt" id="langAR" onclick="setLang(true)">AR</button>
+      </div>
+      <button type="button" class="ncta" onclick="siteScrollTo('#enrol')" data-en="Enrol Now" data-ar="سجّل الآن">Enrol Now</button>
+    </div>
+  </div>
+
+  <!-- Mobile right bar: lang toggle + hamburger -->
+  <div class="mob-bar" id="mobBar" style="display:none">
+    <div class="lang-pill-mobile" id="langPillMob">
+      <button type="button" class="lpm-opt active" id="langENMob" onclick="setLang(false)">EN</button>
+      <button type="button" class="lpm-opt" id="langARMob" onclick="setLang(true)">AR</button>
+    </div>
+    <button type="button" class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile backdrop -->
+<div class="mobile-nav-backdrop" id="mobileNavBackdrop" onclick="closeMobile(false)"></div>
+
+<!-- ─── MOBILE NAV DRAWER ─── -->
+<div class="mobile-nav" id="mobileNav">
+  <!-- Mini header row -->
+  <div class="mob-nav-header">
+    <span class="mob-nav-header-label" data-en="Navigation" data-ar="القائمة">Navigation</span>
+    <button type="button" class="mob-enrol-pill" onclick="mobileNav('#enrol')" data-en="Enrol Now →" data-ar="سجّل الآن ←">Enrol Now →</button>
+  </div>
+
+  <div class="mobile-nav-inner">
+    <!-- About -->
+    <div class="mobile-nav-item" id="mob-about">
+      <div class="mobile-nav-top" onclick="toggleMobSub('mob-about')">
+        <span data-en="About" data-ar="عن البرنامج">About</span>
+        <div class="mob-arrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+        </div>
+      </div>
+      <div class="mobile-nav-sub">
+        <a href="#why" onclick="mobileNav('#why');return false;" data-en="Why MyVoice" data-ar="لماذا MyVoice">Why MyVoice</a>
+        <a href="#what-gains" onclick="mobileNav('#what-gains');return false;" data-en="What your child gains" data-ar="ما يكسبه طفلك">What your child gains</a>
+        <a href="#trust" onclick="mobileNav('#trust');return false;" data-en="Our Partners" data-ar="شركاؤنا">Our Partners</a>
+      </div>
+    </div>
+
+    <!-- Programme -->
+    <div class="mobile-nav-item" id="mob-prog">
+      <div class="mobile-nav-top" onclick="toggleMobSub('mob-prog')">
+        <span data-en="Programme" data-ar="البرنامج">Programme</span>
+        <div class="mob-arrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+        </div>
+      </div>
+      <div class="mobile-nav-sub">
+        <a href="#pillars" onclick="mobileNav('#pillars');return false;" data-en="Four Pillars" data-ar="الأعمدة الأربعة">Four Pillars</a>
+        <a href="#expression" onclick="mobileNav('#expression');return false;" data-en="Expression Studio" data-ar="استوديو التعبير">Expression Studio</a>
+      </div>
+    </div>
+
+    <!-- Journey -->
+    <div class="mobile-nav-item" id="mob-journey">
+      <div class="mobile-nav-top" onclick="toggleMobSub('mob-journey')">
+        <span data-en="Journey" data-ar="الرحلة">Journey</span>
+        <div class="mob-arrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+        </div>
+      </div>
+      <div class="mobile-nav-sub">
+        <a href="#journey" onclick="mobileNav('#journey');return false;" data-en="6 Stages" data-ar="6 مراحل">6 Stages</a>
+        <a href="#journey" onclick="mobileNav('#journey');return false;" data-en="Adventure Camp" data-ar="مخيم المغامرة">Adventure Camp</a>
+        <a href="#journey" onclick="mobileNav('#journey');return false;" data-en="MyVoice Showcase" data-ar="عرض MyVoice">MyVoice Showcase</a>
+      </div>
+    </div>
+
+    <a class="mobile-nav-plain" href="#parenting" onclick="mobileNav('#parenting');return false;" data-en="Parenting Club" data-ar="نادي الوالدين">Parenting Club</a>
+    <a class="mobile-nav-plain" href="#faq" onclick="mobileNav('#faq');return false;" data-en="FAQ" data-ar="أسئلة شائعة">FAQ</a>
+
+    <!-- Bottom actions -->
+    <div class="mobile-nav-actions">
+      <a class="mobile-home-link" href="../index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span data-en="Back to EACC Home" data-ar="العودة للرئيسية">Back to EACC Home</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── HERO ─── -->
+<div class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-illo">
+    <svg viewBox="0 0 1100 560" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <radialGradient id="fireGlow" cx="50%" cy="80%" r="50%">
+          <stop offset="0%" stop-color="#f7c948" stop-opacity=".55"/>
+          <stop offset="60%" stop-color="#d42b2b" stop-opacity=".18"/>
+          <stop offset="100%" stop-color="#0a1847" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff5c0"/>
+          <stop offset="100%" stop-color="#f7c948"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="550" cy="530" rx="580" ry="75" fill="#1a3a1a" opacity=".5"/>
+      <polygon points="370,520 550,180 730,520" fill="#d42b2b" opacity=".88"/>
+      <polygon points="392,520 550,205 708,520" fill="#b71c1c"/>
+      <path d="M518,520 Q518,460 550,455 Q582,460 582,520 Z" fill="#0a1847"/>
+      <rect x="527" y="192" width="48" height="30" fill="#012169"/>
+      <line x1="527" y1="192" x2="575" y2="222" stroke="white" stroke-width="4.5"/>
+      <line x1="575" y1="192" x2="527" y2="222" stroke="white" stroke-width="4.5"/>
+      <line x1="527" y1="192" x2="575" y2="222" stroke="#C8102E" stroke-width="3"/>
+      <line x1="575" y1="192" x2="527" y2="222" stroke="#C8102E" stroke-width="3"/>
+      <line x1="551" y1="192" x2="551" y2="222" stroke="white" stroke-width="8"/>
+      <line x1="527" y1="207" x2="575" y2="207" stroke="white" stroke-width="8"/>
+      <line x1="551" y1="192" x2="551" y2="222" stroke="#C8102E" stroke-width="4.5"/>
+      <line x1="527" y1="207" x2="575" y2="207" stroke="#C8102E" stroke-width="4.5"/>
+      <line x1="550" y1="180" x2="440" y2="370" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+      <line x1="550" y1="180" x2="660" y2="370" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+      <circle cx="900" cy="95" r="55" fill="url(#sunGrad)" opacity=".82"><animate attributeName="r" values="55;59;55" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".82;.9;.82" dur="5s" repeatCount="indefinite"/></circle>
+      <g stroke="#f7c948" stroke-width="3" opacity=".45"><line x1="900" y1="28" x2="900" y2="43"/><line x1="900" y1="147" x2="900" y2="162"/><line x1="833" y1="95" x2="848" y2="95"/><line x1="952" y1="95" x2="967" y2="95"/><line x1="852" y1="47" x2="863" y2="58"/><line x1="938" y1="133" x2="949" y2="144"/><line x1="948" y1="47" x2="937" y2="58"/><line x1="851" y1="133" x2="863" y2="122"/></g>
+      <polygon points="60,520 116,340 172,520" fill="#1a5c1a" opacity=".88"/>
+      <polygon points="70,450 116,300 162,450" fill="#2a7c2a" opacity=".85"/>
+      <rect x="108" y="490" width="16" height="32" fill="#5c3a1e"/>
+      <polygon points="140,520 185,360 230,520" fill="#1a5c1a" opacity=".78"/>
+      <polygon points="148,478 185,345 222,478" fill="#2a7c2a" opacity=".78"/>
+      <rect x="178" y="492" width="14" height="30" fill="#5c3a1e"/>
+      <polygon points="870,520 926,340 982,520" fill="#1a5c1a" opacity=".88"/>
+      <polygon points="878,478 926,322 974,478" fill="#2a7c2a" opacity=".85"/>
+      <rect x="918" y="490" width="16" height="32" fill="#5c3a1e"/>
+      <polygon points="916,520 956,360 996,520" fill="#1a5c1a" opacity=".78"/>
+      <polygon points="924,478 956,345 988,478" fill="#2a7c2a" opacity=".78"/>
+      <rect x="949" y="492" width="14" height="30" fill="#5c3a1e"/>
+      <ellipse cx="550" cy="520" rx="90" ry="22" fill="url(#fireGlow)"/>
+      <line x1="510" y1="518" x2="590" y2="510" stroke="#5c3a1e" stroke-width="9" stroke-linecap="round"/>
+      <line x1="515" y1="510" x2="585" y2="518" stroke="#4a2e15" stroke-width="9" stroke-linecap="round"/>
+      <ellipse cx="550" cy="514" rx="28" ry="8" fill="#f7c948" opacity=".5"/>
+      <ellipse cx="550" cy="514" rx="18" ry="5" fill="#ff6b00" opacity=".7"/>
+      <g opacity=".9">
+        <path d="M550,515 C540,505 534,488 542,472 C546,462 550,455 548,440 C555,450 558,460 555,472 C560,462 562,448 558,435 C564,448 568,465 562,480 C568,472 570,458 567,445 C574,458 574,476 566,490 C570,484 572,472 569,462 C574,474 572,494 564,504 C560,510 555,515 550,515Z" fill="#f7c948"><animate attributeName="d" dur="0.8s" repeatCount="indefinite" values="M550,515 C540,505 534,488 542,472 C546,462 550,455 548,440 C555,450 558,460 555,472 C560,462 562,448 558,435 C564,448 568,465 562,480 C568,472 570,458 567,445 C574,458 574,476 566,490 C570,484 572,472 569,462 C574,474 572,494 564,504 C560,510 555,515 550,515Z;M550,515 C542,507 536,490 544,474 C547,463 552,455 549,439 C557,450 559,461 556,473 C562,463 565,448 560,434 C566,447 569,466 563,481 C569,473 572,459 569,446 C575,459 575,477 568,492 C572,485 573,472 570,462 C576,474 573,495 565,505 C561,511 556,515 550,515Z;M550,515 C540,505 534,488 542,472 C546,462 550,455 548,440 C555,450 558,460 555,472 C560,462 562,448 558,435 C564,448 568,465 562,480 C568,472 570,458 567,445 C574,458 574,476 566,490 C570,484 572,472 569,462 C574,474 572,494 564,504 C560,510 555,515 550,515Z"/></path>
+        <path d="M550,515 C545,508 542,496 547,484 C549,476 552,470 550,460 C554,468 556,476 554,484 C557,476 558,467 556,458 C560,468 561,480 557,490 C560,485 561,476 559,468 C562,476 561,490 556,500 C553,507 551,514 550,515Z" fill="#ff8c00"/>
+        <path d="M550,515 C548,511 546,505 549,498 C550,493 551,489 550,483 C552,488 553,493 552,498 C554,492 554,487 553,482 C555,487 556,494 554,501 C556,497 556,491 555,485 C557,492 556,501 553,507 C551,511 550,514 550,515Z" fill="#fff5c0" opacity=".9"/>
+        <circle cx="543" cy="450" r="2" fill="#f7c948" opacity=".8"><animate attributeName="cy" values="450;420;390" dur="1.2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;.4;0" dur="1.2s" repeatCount="indefinite"/></circle>
+        <circle cx="558" cy="445" r="1.5" fill="#ff8c00" opacity=".7"><animate attributeName="cy" values="445;410;375" dur="1.5s" repeatCount="indefinite" begin="0.3s"/><animate attributeName="opacity" values=".7;.3;0" dur="1.5s" repeatCount="indefinite" begin="0.3s"/></circle>
+      </g>
+      <polyline points="0,42 1100,42" stroke="rgba(255,255,255,.28)" stroke-width="1.5" fill="none"/>
+      <polygon points="50,42 76,42 63,72" fill="#f7c948" opacity=".8"/><polygon points="126,42 152,42 139,72" fill="#d42b2b" opacity=".8"/><polygon points="202,42 228,42 215,72" fill="white" opacity=".55"/><polygon points="278,42 304,42 291,72" fill="#f7c948" opacity=".8"/><polygon points="354,42 380,42 367,72" fill="#d42b2b" opacity=".8"/><polygon points="430,42 456,42 443,72" fill="white" opacity=".55"/><polygon points="506,42 532,42 519,72" fill="#f7c948" opacity=".8"/><polygon points="582,42 608,42 595,72" fill="#d42b2b" opacity=".8"/><polygon points="658,42 684,42 671,72" fill="white" opacity=".55"/><polygon points="734,42 760,42 747,72" fill="#f7c948" opacity=".8"/><polygon points="810,42 836,42 823,72" fill="#d42b2b" opacity=".8"/><polygon points="886,42 912,42 899,72" fill="white" opacity=".55"/><polygon points="962,42 988,42 975,72" fill="#f7c948" opacity=".8"/><polygon points="1038,42 1064,42 1051,72" fill="#d42b2b" opacity=".8"/>
+      <circle cx="470" cy="508" r="14" fill="#f5c5a3"/><path d="M458,520 Q458,545 484,545 Q484,520 484,520Z" fill="#e53935"/>
+      <circle cx="415" cy="510" r="13" fill="#c68642"/><path d="M403,522 Q403,545 428,545 Q428,522 428,522Z" fill="#1976d2"/>
+      <circle cx="630" cy="508" r="14" fill="#f5c5a3"/><path d="M618,520 Q618,545 644,545 Q644,520 644,520Z" fill="#f7c948"/>
+      <circle cx="685" cy="510" r="13" fill="#c68642"/><path d="M673,522 Q673,545 698,545 Q698,522 698,522Z" fill="#4caf50"/>
+      <rect x="55" y="270" width="120" height="44" rx="11" fill="white" opacity=".07"/><text x="115" y="288" text-anchor="middle" font-size="13" fill="white" opacity=".8" font-family="sans-serif" font-weight="700">AI Discovery Lab</text><text x="115" y="306" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.5)" font-family="sans-serif">No coding needed</text>
+      <rect x="920" y="270" width="138" height="44" rx="11" fill="white" opacity=".07"/><text x="989" y="288" text-anchor="middle" font-size="13" fill="white" opacity=".8" font-family="sans-serif" font-weight="700">MyVoice Showcase</text><text x="989" y="306" text-anchor="middle" font-size="10.5" fill="rgba(255,255,255,.5)" font-family="sans-serif">Final presentation</text>
+      <circle cx="180" cy="90" r="2" fill="white" opacity=".5"/><circle cx="290" cy="55" r="1.5" fill="white" opacity=".4"/><circle cx="80" cy="160" r="2" fill="white" opacity=".35"/><circle cx="1020" cy="180" r="2" fill="white" opacity=".4"/><circle cx="760" cy="45" r="1.5" fill="white" opacity=".5"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="heb" data-en="British-Inspired · Alexandria, Egypt · Since 1998" data-ar="مستوحى من المنهج البريطاني · الإسكندرية، مصر · منذ 1998">British-Inspired · Alexandria, Egypt · Since 1998</div>
+    <h1 class="hh">
+      <span data-en="Find your" data-ar="اكتشف">Find your</span>
+      <em data-en="voice." data-ar="صوتك">voice.</em>
+      <span data-en="Shape your future." data-ar="اصنع مستقبلك">Shape your future.</span>
+    </h1>
+    <p class="hsub" data-en="A British-inspired journey into English, AI, Arts and Future Skills. Designed for children aged 4–12 by the Egyptian American Cultural Center." data-ar="رحلة مستوحاة من المنهج البريطاني في اللغة الإنجليزية والذكاء الاصطناعي والفنون ومهارات المستقبل. مصممة للأطفال من 4 إلى 12 عامًا.">A British-inspired journey into English, AI, Arts and Future Skills. Designed for children aged 4–12 by the Egyptian American Cultural Center.</p>
+    <div class="hstats">
+      <div class="hs"><div class="hs-num" data-en="4–12" data-ar="4-12">4–12</div><div class="hs-lbl" data-en="Ages welcome" data-ar="الأعمار المقبولة">Ages welcome</div></div>
+      <div class="hs"><div class="hs-num">3</div><div class="hs-lbl" data-en="Weeks · 25 hrs" data-ar="أسابيع · 25 ساعة">Weeks · 25 hrs</div></div>
+      <div class="hs"><div class="hs-num">4</div><div class="hs-lbl" data-en="Core pillars" data-ar="أعمدة أساسية">Core pillars</div></div>
+      <div class="hs"><div class="hs-num">10</div><div class="hs-lbl" data-en="stages" data-ar="مراحل الرحلة">stages</div></div>
+    </div>
+    <div class="hbtns">
+      <button type="button" class="bprim" onclick="siteScrollTo('#enrol')"><span data-en="Reserve a Place →" data-ar="احجز مكانًا ←">Reserve a Place →</span></button>
+      <button type="button" class="bghost" onclick="siteScrollTo('#why')"><span data-en="Learn More" data-ar="اعرف أكثر">Learn More</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TRUST BAR ─── -->
+<div class="trust" id="trust">
+  <div class="tl" data-en="Powered by" data-ar="بدعم من">Powered by</div>
+  <div class="tlogos">
+    <a class="tlogo" href="https://www.eacc-egy.com/english-for-adults" target="_blank" rel="noopener" data-en="Egyptian American Cultural Center" data-ar="المركز الثقافي المصري الأمريكي">Egyptian American Cultural Center</a>
+    <a class="tlogo" href="https://www.eton-university.us/" target="_blank" rel="noopener" data-en="Eton Academy UK" data-ar="أكاديمية إيتون المملكة المتحدة">Eton Academy UK</a>
+    <a class="tlogo" href="https://www.think-english.co.uk/" target="_blank" rel="noopener" data-en="Think English · Notting Hill College" data-ar="Think English · كلية نوتينج هيل">Think English · Notting Hill College</a>
+    <a class="tlogo" href="#parenting" onclick="siteScrollTo('#parenting');return false;" data-en="Mind Space Psychological Support" data-ar="Mind Space للدعم النفسي">Mind Space Psychological Support</a>
+  </div>
+  <div class="tsince" data-en="Educating people in Egypt since 1998" data-ar="نُعلّم في مصر منذ 1998">Educating people in Egypt since 1998</div>
+</div>
+
+<!-- ─── WHY ─── -->
+<section id="why" style="background:#fff">
+  <div class="stag" data-en="Why MyVoice" data-ar="لماذا MyVoice">Why MyVoice</div>
+  <h2 class="sh2" data-en="A purposeful camp.<br>A future-ready journey." data-ar="مخيم هادف.<br>ورحلة استعداد للمستقبل.">A purposeful camp.<br>A future-ready journey.</h2>
+  <p class="slead" data-en="MyVoice is a premium summer experience designed to help children discover their voice, build real confidence, and grow through English communication, creativity, technology, leadership, and cultural exploration." data-ar="MyVoice تجربة صيفية مميزة تساعد الأطفال على اكتشاف صوتهم وبناء ثقتهم من خلال التواصل باللغة الإنجليزية والإبداع والتكنولوجيا والقيادة والاستكشاف الثقافي.">MyVoice is a premium summer experience designed to help children discover their voice, build real confidence, and grow through English communication, creativity, technology, leadership, and cultural exploration.</p>
+  <div class="wgrid">
+    <div class="wc"><div class="saisei-card-media why-card-media why-card-media-contain"><img src="../assets/images/summer/mindspacelogo.png" alt="Mind Space psychological support" loading="lazy"></div><div class="wn">01</div><div class="wt" data-en="Personalized from the very first step" data-ar="تجربة شخصية من الخطوة الأولى">Personalized from the very first step</div><div class="wd" data-en="Before camp begins, every child completes an English placement test plus a personality and interests assessment with Mind Space, allowing the experience to match their level, strengths, and natural curiosity." data-ar="قبل بدء المخيم، يخضع كل طفل لاختبار تحديد مستوى اللغة الإنجليزية وتقييم الشخصية والاهتمامات مع Mind Space لتصميم تجربة تناسب مستواه ونقاط قوته وفضوله الطبيعي.">Before camp begins, every child completes an English placement test plus a personality and interests assessment with Mind Space, allowing the experience to match their level, strengths, and natural curiosity.</div><div class="wb" data-en="Mind Space partnership" data-ar="شراكة Mind Space">Mind Space partnership</div></div>
+    <div class="wc"><div class="saisei-card-media why-card-media"><img src="../assets/images/summer/British-inspired learning.jpg" alt="British-inspired learning" loading="lazy"></div><div class="wn">02</div><div class="wt" data-en="British-inspired English learning" data-ar="تعلم إنجليزي مستوحى من المنهج البريطاني">British-inspired English learning</div><div class="wd" data-en="The English track is built on Oxford Discover, published by Oxford University Press and aligned with CEFR. Children practise listening and speaking through meaningful communication instead of memorised grammar routines." data-ar="يعتمد مسار اللغة الإنجليزية على Oxford Discover من مطبعة جامعة أكسفورد والمتوافق مع CEFR، مع تركيز عملي على الاستماع والتحدث والتواصل الحقيقي.">The English track is built on Oxford Discover, published by Oxford University Press and aligned with CEFR. Children practise listening and speaking through meaningful communication instead of memorised grammar routines.</div><div class="wb" data-en="Oxford Discover · CEFR-aligned" data-ar="Oxford Discover · متوافق مع CEFR">Oxford Discover · CEFR-aligned</div></div>
+    <div class="wc"><div class="saisei-card-media why-card-media"><img src="../assets/images/hero 3.avif" alt="Children learning and exploring" loading="lazy"></div><div class="wn">03</div><div class="wt" data-en="Four pillars for whole-child growth" data-ar="أربعة أعمدة لنمو متكامل">Four pillars for whole-child growth</div><div class="wd" data-en="Communicate, innovate, lead, and connect. Each pillar strengthens a different part of the child, helping them leave with stronger confidence, practical skills, and a clearer sense of identity." data-ar="تواصل، ابتكر، قُد، وانفتح على العالم. كل محور ينمّي جانبًا مختلفًا من شخصية الطفل ليغادر بثقة أكبر ومهارات عملية ووعي أوضح بذاته.">Communicate, innovate, lead, and connect. Each pillar strengthens a different part of the child, helping them leave with stronger confidence, practical skills, and a clearer sense of identity.</div><div class="wb" data-en="4 core pillars" data-ar="4 أعمدة أساسية">4 core pillars</div></div>
+    <div class="wc"><div class="saisei-card-media why-card-media"><img src="../assets/images/summer/kids.avif" alt="Children enjoying summer activities" loading="lazy"></div><div class="wn">04</div><div class="wt" data-en="A final showcase with real pride" data-ar="عرض ختامي يفتخر به الأطفال">A final showcase with real pride</div><div class="wd" data-en="The journey ends with the MyVoice Showcase, where children present their final projects to families and educators and are celebrated for creativity, teamwork, leadership, and innovation." data-ar="تُختتم الرحلة بعرض MyVoice، حيث يقدم الأطفال مشاريعهم النهائية أمام العائلات والمعلمين ويتم الاحتفاء بإبداعهم والعمل الجماعي والقيادة والابتكار.">The journey ends with the MyVoice Showcase, where children present their final projects to families and educators and are celebrated for creativity, teamwork, leadership, and innovation.</div><div class="wb" data-en="Graduation event" data-ar="حفل التخرج">Graduation event</div></div>
+  </div>
+</section>
+
+<!-- ─── PILLARS ─── -->
+<div class="pwrap" id="pillars">
+  <div class="stag" data-en="The four pillars" data-ar="الأعمدة الأربعة">The four pillars</div>
+  <h2 class="sh2" data-en="Four pillars. One confident voice." data-ar="أربعة أعمدة. وصوت واثق واحد.">Four pillars. One confident voice.</h2>
+  <p class="slead" data-en="Every session is shaped around four essential dimensions: communication, innovation, leadership, and global connection. Each one helps children practise skills they can carry beyond summer." data-ar="كل جلسة مصممة حول أربعة أبعاد أساسية: التواصل والابتكار والقيادة والانفتاح على العالم، ليتعلم الأطفال مهارات تستمر معهم بعد الصيف.">Every session is shaped around four essential dimensions: communication, innovation, leadership, and global connection. Each one helps children practise skills they can carry beyond summer.</p>
+  <div class="pnav-mobile" id="pnavMobile">
+    <button type="button" class="pnav-btn" id="pPrev" aria-label="Previous pillar">‹</button>
+    <div class="pnav-status"><span id="pnavText">Pillar 1 of 4</span><div class="pnav-progress"><span id="pnavBar"></span></div></div>
+    <button type="button" class="pnav-btn" id="pNext" aria-label="Next pillar">›</button>
+  </div>
+  <div class="ptabs" id="ptabs">
+    <div class="pt on" data-p="0" data-en="My Voice – Communicate" data-ar="صوتي – التواصل">My Voice – Communicate</div>
+    <div class="pt" data-p="1" data-en="My Ideas – Innovate" data-ar="أفكاري – الابتكار">My Ideas – Innovate</div>
+    <div class="pt" data-p="2" data-en="My Impact – Lead" data-ar="تأثيري – القيادة">My Impact – Lead</div>
+    <div class="pt" data-p="3" data-en="My World – Connect" data-ar="عالمي – التواصل">My World – Connect</div>
+  </div>
+  <div id="pbody"></div>
+</div>
+
+<!-- ─── JOURNEY ─── -->
+<section class="jsec" id="journey">
+  <div class="stag" data-en="The programme journey" data-ar="رحلة البرنامج">The programme journey</div>
+  <h2 class="sh2" data-en="Six stages. One meaningful transformation." data-ar="ست مراحل. وتحول حقيقي واحد.">Six stages. One meaningful transformation.</h2>
+  <p class="slead" data-en="Each camp cycle runs for 3 weeks with 2 sessions per week, 5 hours each session, and 25 instructional hours in total. From the first assessment to the final showcase, every stage is intentional, active, and child-centered." data-ar="تمتد كل دورة لمدة 3 أسابيع، بجلستين أسبوعيًا و5 ساعات لكل جلسة، بإجمالي 25 ساعة تعليمية، ضمن رحلة واضحة من التقييم الأول حتى العرض النهائي.">Each camp cycle runs for <strong>3 weeks</strong> with 2 sessions per week, 5 hours each session, and <strong>25 instructional hours</strong> in total. From the first assessment to the final showcase, every stage is intentional, active, and child-centered.</p>
+  <div class="jtrack">
+    <div class="jn on" onclick="jActivate(this)"><div class="jnc">1</div><div class="jnl" data-en="Discover" data-ar="اكتشاف">Discover</div><div class="jns" data-en="English level, personality & interests" data-ar="مستوى اللغة والشخصية والاهتمامات">English level, personality & interests</div><div class="jnt" data-en="Pre-camp" data-ar="قبل المخيم">Pre-camp</div></div>
+    <div class="jn" onclick="jActivate(this)"><div class="jnc">2</div><div class="jnl" data-en="Explore" data-ar="استكشاف">Explore</div><div class="jns" data-en="Four-pillar learning cycle" data-ar="دورة تعلم عبر أربعة أعمدة">Four-pillar learning cycle</div><div class="jnt" data-en="Core programme" data-ar="البرنامج الأساسي">Core programme</div></div>
+    <div class="jn" onclick="jActivate(this)"><div class="jnc">3</div><div class="jnl" data-en="Express" data-ar="تعبير">Express</div><div class="jns" data-en="Creative studio pathways" data-ar="مسارات الاستوديو الإبداعية">Creative studio pathways</div><div class="jnt" data-en="Optional" data-ar="اختياري">Optional</div></div>
+    <div class="jn" onclick="jActivate(this)"><div class="jnc">4</div><div class="jnl" data-en="Create" data-ar="إبداع">Create</div><div class="jns" data-en="Team projects and prototypes" data-ar="مشاريع ونماذج جماعية">Team projects and prototypes</div><div class="jnt" data-en="Collaborative" data-ar="تعاوني">Collaborative</div></div>
+    <div class="jn" onclick="jActivate(this)"><div class="jnc">5</div><div class="jnl" data-en="Experience" data-ar="تجربة">Experience</div><div class="jns" data-en="Outdoor Adventure Camp" data-ar="مخيم مغامرة خارجي">Outdoor Adventure Camp</div><div class="jnt" data-en="End of season" data-ar="نهاية الموسم">End of season</div></div>
+    <div class="jn" onclick="jActivate(this)"><div class="jnc">6</div><div class="jnl" data-en="Celebrate" data-ar="احتفال">Celebrate</div><div class="jns" data-en="Final family showcase" data-ar="العرض النهائي أمام العائلة">Final family showcase</div><div class="jnt" data-en="Graduation" data-ar="التخرج">Graduation</div></div>
+  </div>
+</section>
+
+<!-- ─── EXPRESSION STUDIO ─── -->
+<section class="esec" id="expression">
+  <div class="stag" data-en="Expression Studio" data-ar="استوديو التعبير">Expression Studio</div>
+  <h2 class="sh2" data-en="Creative pathways for every kind of child." data-ar="مسارات إبداعية تناسب كل طفل.">Creative pathways for every kind of child.</h2>
+  <div class="opt-badge" data-en="Optional programme day" data-ar="يوم برنامج اختياري">Optional programme day</div>
+  <p class="slead" style="margin-bottom:0" data-en="The optional Expression Studio gives children a dedicated creative day to explore art, drama, music, movement, and making, helping them discover new interests and express themselves with confidence." data-ar="يمنح استوديو التعبير الاختياري الأطفال يومًا إبداعيًا لاستكشاف الفن والدراما والموسيقى والحركة والصناعة، بما يساعدهم على اكتشاف اهتمامات جديدة والتعبير بثقة.">The optional Expression Studio gives children a dedicated creative day to explore art, drama, music, movement, and making, helping them discover new interests and express themselves with confidence.</p>
+  <div class="estudios">
+    <div class="estudio"><div class="saisei-card-media studio-card-media"><img src="../assets/images/summer/arts.avif" alt="Art studio activities" loading="lazy"></div><div class="est-ic">🎨</div><div class="est-n" data-en="Art Studio" data-ar="استوديو الفن">Art Studio</div><div class="est-d" data-en="Drawing, color, craft, and visual storytelling" data-ar="الرسم والألوان والحِرف والسرد البصري">Drawing, color, craft, and visual storytelling</div></div>
+    <div class="estudio"><div class="saisei-card-media studio-card-media"><img src="../assets/images/summer/OIP (1).webp" alt="Drama studio activities" loading="lazy"></div><div class="est-ic">🎭</div><div class="est-n" data-en="Drama Studio" data-ar="استوديو الدراما">Drama Studio</div><div class="est-d" data-en="Confidence, performance, character, and story" data-ar="الثقة والأداء والشخصية والقصة">Confidence, performance, character, and story</div></div>
+    <div class="estudio"><div class="saisei-card-media studio-card-media"><img src="../assets/images/summer/music.avif" alt="Music studio activities" loading="lazy"></div><div class="est-ic">🎵</div><div class="est-n" data-en="Music Studio" data-ar="استوديو الموسيقى">Music Studio</div><div class="est-d" data-en="Rhythm, voice, listening, and creative sound" data-ar="الإيقاع والصوت والاستماع والصوت الإبداعي">Rhythm, voice, listening, and creative sound</div></div>
+    <div class="estudio"><div class="saisei-card-media studio-card-media"><img src="../assets/images/summer/Young Ballerinas.avif" alt="Movement studio ballet activities" loading="lazy"></div><div class="est-ic">🩰</div><div class="est-n" data-en="Movement Studio" data-ar="استوديو الحركة">Movement Studio</div><div class="est-d" data-en="Movement, rhythm, balance, and body expression" data-ar="الحركة والإيقاع والتوازن والتعبير الجسدي">Movement, rhythm, balance, and body expression</div></div>
+    <div class="estudio"><div class="saisei-card-media studio-card-media"><img src="../assets/images/summer/OIP.webp" alt="Creative makers activities" loading="lazy"></div><div class="est-ic">💡</div><div class="est-n" data-en="Creative Makers" data-ar="المبدعون الصانعون">Creative Makers</div><div class="est-d" data-en="Design thinking, making, building, and invention" data-ar="التفكير التصميمي والصناعة والبناء والابتكار">Design thinking, making, building, and invention</div></div>
+  </div>
+</section>
+
+<!-- ─── PARENTING CLUB ─── -->
+<section class="pcsec" id="parenting">
+  <div class="stag" data-en="MyVoice Parenting Club" data-ar="نادي الوالدين MyVoice">MyVoice Parenting Club</div>
+  <h2 class="sh2" data-en="A stronger child starts with a supported family." data-ar="الطفل الأقوى يبدأ من عائلة مدعومة.">A stronger child starts with a supported family.</h2>
+  <p class="slead" data-en="Because growth continues at home, the MyVoice Parenting Club offers specialist-led workshops by Mind Space to help families support confidence, bilingual development, emotional wellbeing, and healthy technology habits." data-ar="لأن النمو يستمر في البيت، يقدم نادي الوالدين MyVoice ورشًا متخصصة بقيادة Mind Space لدعم الثقة والتطور ثنائي اللغة والصحة النفسية والعادات الرقمية الصحية.">Because growth continues at home, the MyVoice Parenting Club offers specialist-led workshops by Mind Space to help families support confidence, bilingual development, emotional wellbeing, and healthy technology habits.</p>
+  <div class="pcgrid">
+    <div class="pcard"><div class="pc-ic">🧠</div><div class="pc-t" data-en="Confidence and self-expression at home" data-ar="الثقة والتعبير عن الذات في المنزل">Confidence and self-expression at home</div><div class="pc-d" data-en="Practical guidance for helping your child speak, share feelings, and express ideas with calm confidence." data-ar="إرشادات عملية لمساعدة طفلك على الكلام ومشاركة مشاعره والتعبير عن أفكاره بثقة وهدوء.">Practical guidance for helping your child speak, share feelings, and express ideas with calm confidence.</div></div>
+    <div class="pcard"><div class="pc-ic">🌐</div><div class="pc-t" data-en="Raising bilingual children" data-ar="تربية أطفال ثنائيي اللغة">Raising bilingual children</div><div class="pc-d" data-en="Simple, realistic routines that support English development while protecting Arabic identity and family communication." data-ar="روتينات بسيطة وواقعية تدعم تطور الإنجليزية مع الحفاظ على الهوية العربية والتواصل الأسري.">Simple, realistic routines that support English development while protecting Arabic identity and family communication.</div></div>
+    <div class="pcard"><div class="saisei-card-media parenting-ai-media"><img src="../assets/images/summer/ai.webp" alt="AI and digital parenting" loading="lazy"></div><div class="pc-ic">📱</div><div class="pc-t" data-en="Parenting in the AI era" data-ar="التربية في عصر الذكاء الاصطناعي">Parenting in the AI era</div><div class="pc-d" data-en="A balanced look at AI, screens, and digital learning so parents can guide children with confidence instead of fear." data-ar="نظرة متوازنة إلى الذكاء الاصطناعي والشاشات والتعلم الرقمي لمساعدة الآباء على التوجيه بثقة لا بخوف.">A balanced look at AI, screens, and digital learning so parents can guide children with confidence instead of fear.</div></div>
+    <div class="pcard"><div class="pc-ic">👦</div><div class="pc-t" data-en="Understanding Generation Alpha" data-ar="فهم جيل ألفا">Understanding Generation Alpha</div><div class="pc-d" data-en="A clear view of today&apos;s children, how they think, what motivates them, and how they learn best." data-ar="فهم أوضح لأطفال اليوم: كيف يفكرون، وما الذي يحفزهم، وكيف يتعلمون بأفضل صورة.">A clear view of today&apos;s children, how they think, what motivates them, and how they learn best.</div></div>
+  </div>
+</section>
+
+<!-- ─── WHAT CHILD GAINS ─── -->
+<section style="background:#fff" id="what-gains">
+  <div class="stag" data-en="What your child gains" data-ar="ما يكسبه طفلك">What your child gains</div>
+  <h2 class="sh2" data-en="Outcomes children carry beyond summer." data-ar="نتائج يحملها الأطفال بعد الصيف.">Outcomes children carry beyond summer.</h2>
+  <p class="slead" data-en="By the end of the programme, children leave with visible growth in communication, confidence, creativity, and self-awareness." data-ar="بنهاية البرنامج، يغادر الأطفال بنمو واضح في التواصل والثقة والإبداع والوعي بالذات.">By the end of the programme, children leave with visible growth in communication, confidence, creativity, and self-awareness.</p>
+  <div class="ggrid">
+    <div class="gain"><div class="gic" style="background:#e8edf7">🗣️</div><div class="gt" data-en="Confident self-expression" data-ar="تعبير واثق عن الذات">Confident self-expression</div><div class="gd" data-en="Children practise speaking up, sharing ideas, asking questions, and expressing themselves with confidence in English and beyond." data-ar="يتدرب الأطفال على التحدث ومشاركة الأفكار وطرح الأسئلة والتعبير عن أنفسهم بثقة بالإنجليزية وما بعدها.">Children practise speaking up, sharing ideas, asking questions, and expressing themselves with confidence in English and beyond.</div></div>
+    <div class="gain"><div class="gic" style="background:#fdecea">🌍</div><div class="gt" data-en="English communication skills" data-ar="مهارات التواصل باللغة الإنجليزية">English communication skills</div><div class="gd" data-en="Practical listening and speaking skills built through stories, role-play, discussions, field experiences, and short presentations." data-ar="مهارات عملية في الاستماع والتحدث من خلال القصص ولعب الأدوار والمناقشات والتجارب الميدانية والعروض القصيرة.">Practical listening and speaking skills built through stories, role-play, discussions, field experiences, and short presentations.</div></div>
+    <div class="gain"><div class="gic" style="background:#fdf8e6">🤖</div><div class="gt" data-en="Age-appropriate AI and innovation" data-ar="ذكاء اصطناعي وابتكار مناسب للعمر">Age-appropriate AI and innovation</div><div class="gd" data-en="A safe first step into future technology through AI storytelling, digital design, and creative innovation challenges." data-ar="خطوة آمنة نحو تكنولوجيا المستقبل من خلال سرد قصص بالذكاء الاصطناعي والتصميم الرقمي وتحديات الابتكار.">A safe first step into future technology through AI storytelling, digital design, and creative innovation challenges.</div></div>
+    <div class="gain"><div class="gic" style="background:#e3f0fb">🧭</div><div class="gt" data-en="Clearer self-awareness" data-ar="وعي أوضح بالذات">Clearer self-awareness</div><div class="gd" data-en="A stronger understanding of personal strengths, interests, and learning style, captured in the MyVoice Identity Profile." data-ar="فهم أقوى لنقاط القوة والاهتمامات وأسلوب التعلم، موثق داخل ملف هوية MyVoice.">A stronger understanding of personal strengths, interests, and learning style, captured in the MyVoice Identity Profile.</div></div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section style="background:var(--off)">
+  <div class="stag" data-en="Parent voices" data-ar="أصوات الآباء">Parent voices</div>
+  <h2 class="sh2" data-en="The kind of growth families notice." data-ar="النمو الذي تلاحظه العائلات.">The kind of growth families notice.</h2>
+  <div class="rgrid">
+    <div class="rc"><div class="rcs"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><p class="rct" data-en="&quot;My daughter came home every day with new ideas. By the first week, she was starting English conversations at dinner with confidence.&quot;" data-ar="&quot;عادت ابنتي كل يوم بأفكار جديدة. وبحلول الأسبوع الأول بدأت تتحدث بالإنجليزية على العشاء بثقة.&quot;">&quot;My daughter came home every day with new ideas. By the first week, she was starting English conversations at dinner with confidence.&quot;</p><div class="rca"><div class="rcav">NA</div><div><div class="rcn">Nour A.</div><div class="rcr" data-en="Parent · daughter aged 9" data-ar="والد · ابنة عمرها 9 سنوات">Parent · daughter aged 9</div></div></div></div>
+    <div class="rc"><div class="rcs"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><p class="rct" data-en="&quot;The AI sessions made technology feel creative and exciting. My son came home explaining what he learned in a way that made him feel proud.&quot;" data-ar="&quot;جعلت جلسات الذكاء الاصطناعي التكنولوجيا ممتعة وإبداعية. عاد ابني يشرح ما تعلمه بفخر وحماس.&quot;">&quot;The AI sessions made technology feel creative and exciting. My son came home explaining what he learned in a way that made him feel proud.&quot;</p><div class="rca"><div class="rcav">KM</div><div><div class="rcn">Karim M.</div><div class="rcr" data-en="Parent · son aged 8" data-ar="والد · ابن عمره 8 سنوات">Parent · son aged 8</div></div></div></div>
+    <div class="rc"><div class="rcs"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div><p class="rct" data-en="&quot;Seeing my shy child present a Smart City project at the Showcase was unforgettable. The confidence was real.&quot;" data-ar="&quot;رؤية طفلي الخجول يقدم مشروع المدينة الذكية في العرض النهائي كانت لحظة لا تُنسى. الثقة كانت حقيقية.&quot;">&quot;Seeing my shy child present a Smart City project at the Showcase was unforgettable. The confidence was real.&quot;</p><div class="rca"><div class="rcav">SR</div><div><div class="rcn">Sara R.</div><div class="rcr" data-en="Parent · daughter aged 11" data-ar="والد · ابنة عمرها 11 سنة">Parent · daughter aged 11</div></div></div></div>
+  </div>
+</section>
+
+<!-- ─── ENROL ─── -->
+<div class="ensec" id="enrol">
+  <div class="stag" data-en="Enrol today" data-ar="سجّل اليوم">Enrol today</div>
+  <h2 class="sh2" data-en="Secure your child&apos;s Summer 2026 place." data-ar="احجز مكان طفلك في صيف 2026.">Secure your child&apos;s Summer 2026 place.</h2>
+  <p class="slead" data-en="Each cycle has limited places to preserve quality and attention. Choose the pathway that fits your child, and our admissions team will guide you through assessment, placement, and enrolment." data-ar="الأماكن محدودة في كل دورة للحفاظ على الجودة والاهتمام بكل طفل. اختر المسار المناسب، وسيرشدك فريق القبول خلال التقييم وتحديد المستوى والتسجيل.">Each cycle has limited places to preserve quality and attention. Choose the pathway that fits your child, and our admissions team will guide you through assessment, placement, and enrolment.</p>
+  <div class="engrid">
+    <div class="enc">
+      <div class="ect" data-en="Full Programme" data-ar="البرنامج الكامل">Full Programme</div>
+      <div class="ecd" data-en="The complete MyVoice journey across all four pillars, including project work, the Adventure Camp, and the final Showcase." data-ar="رحلة MyVoice الكاملة عبر الأعمدة الأربعة، بما في ذلك المشاريع ومخيم المغامرة والعرض النهائي.">The complete MyVoice journey across all four pillars, including project work, the Adventure Camp, and the final Showcase.</div>
+      <ul class="ecpts">
+        <li data-en="Pre-camp: English placement + identity assessment with Mind Space" data-ar="قبل المخيم: تحديد مستوى الإنجليزية + تقييم الهوية مع Mind Space">Pre-camp: English placement + identity assessment with Mind Space</li>
+        <li data-en="3 weeks · 2 sessions per week · 5 hours each · 25 hrs total" data-ar="3 أسابيع · جلستان أسبوعيًا · 5 ساعات لكل جلسة · 25 ساعة إجمالًا">3 weeks · 2 sessions per week · 5 hours each · 25 hrs total</li>
+        <li data-en="All four programme pillars" data-ar="جميع الأعمدة الأربعة للبرنامج">All four programme pillars</li>
+        <li data-en="Project-based learning" data-ar="التعلم القائم على المشاريع">Project-based learning</li>
+        <li data-en="Educational field trips" data-ar="رحلات ميدانية تعليمية">Educational field trips</li>
+        <li data-en="MyVoice Adventure Camp — 2 nights, 3 days" data-ar="مخيم MyVoice للمغامرة — ليلتان، 3 أيام">MyVoice Adventure Camp — 2 nights, 3 days</li>
+        <li data-en="MyVoice Showcase graduation event" data-ar="حفل تخرج MyVoice Showcase">MyVoice Showcase graduation event</li>
+        <li data-en="MyVoice Identity Profile" data-ar="ملف هوية MyVoice">MyVoice Identity Profile</li>
+      </ul>
+      <button type="button" class="ecca ecca-g" onclick="siteScrollTo('#contact')" data-en="Enquire Now" data-ar="استفسر الآن">Enquire Now</button>
+    </div>
+    <div class="enc ft">
+      <div class="ecbadge" data-en="Most Popular" data-ar="الأكثر طلبًا">Most Popular</div>
+      <div class="ect" data-en="Full Programme + Expression Studio" data-ar="البرنامج الكامل + استوديو التعبير">Full Programme + Expression Studio</div>
+      <div class="ecd" data-en="The full MyVoice journey plus a dedicated Expression Studio day, where your child explores one of five creative pathways." data-ar="رحلة MyVoice الكاملة بالإضافة إلى يوم استوديو التعبير، حيث يستكشف طفلك واحدًا من خمسة مسارات إبداعية.">The full MyVoice journey plus a dedicated Expression Studio day, where your child explores one of five creative pathways.</div>
+      <ul class="ecpts">
+        <li data-en="Everything in Full Programme" data-ar="كل شيء في البرنامج الكامل">Everything in Full Programme</li>
+        <li data-en="Expression Studio optional day" data-ar="يوم استوديو التعبير الاختياري">Expression Studio optional day</li>
+        <li data-en="Choice of: Art · Drama · Music · Movement · Creative Makers" data-ar="الاختيار من: الفن · الدراما · الموسيقى · الحركة · الصانعون المبدعون">Choice of: Art · Drama · Music · Movement · Creative Makers</li>
+        <li data-en="Portfolio of creative studio work" data-ar="ملف أعمال الاستوديو الإبداعي">Portfolio of creative studio work</li>
+        <li data-en="Parenting Club access for families" data-ar="الوصول لنادي الوالدين للعائلات">Parenting Club access for families</li>
+        <li data-en="Extended MyVoice Identity Profile report" data-ar="تقرير ملف هوية MyVoice الموسّع">Extended MyVoice Identity Profile report</li>
+      </ul>
+      <button type="button" class="ecca ecca-p" onclick="siteScrollTo('#contact')" data-en="Reserve a Place" data-ar="احجز مكانًا">Reserve a Place</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FAQ ─── -->
+<section class="faqsec" id="faq">
+  <div class="stag" data-en="Common questions" data-ar="أسئلة شائعة">Common questions</div>
+  <h2 class="sh2" data-en="Clear answers for parents." data-ar="إجابات واضحة للآباء.">Clear answers for parents.</h2>
+  <div class="faqgrid" id="faqgrid"></div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<div class="ctsec" id="contact">
+  <div style="text-align:center;margin-bottom:52px">
+    <div class="stag" style="justify-content:center" data-en="Get in touch" data-ar="تواصل معنا">Get in touch</div>
+    <h2 class="sh2" style="text-align:center" data-en="Plan your child&apos;s MyVoice journey." data-ar="لنخطط رحلة طفلك مع MyVoice.">Plan your child&apos;s MyVoice journey.</h2>
+    <p class="slead" style="margin:0 auto;text-align:center" data-en="Send us your enquiry and our admissions team will contact you within 24 hours with the next steps for placement, availability, and enrolment." data-ar="أرسل استفسارك وسيتواصل معك فريق القبول خلال 24 ساعة لتوضيح خطوات تحديد المستوى والتوافر والتسجيل.">Send us your enquiry and our admissions team will contact you within 24 hours with the next steps for placement, availability, and enrolment.</p>
+  </div>
+  <div class="ctgrid">
+    <div>
+      <div class="fr">
+        <div class="fg">
+          <label class="fl" for="f-name" data-en="Parent name" data-ar="اسم الوالد">Parent name</label>
+          <input id="f-name" class="fi" type="text" data-en-placeholder="Your full name" data-ar-placeholder="اسمك الكامل" placeholder="Your full name" autocomplete="name">
+          <div class="field-err" id="err-name"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span data-en="Please enter your full name" data-ar="يرجى إدخال اسمك الكامل">Please enter your full name</span></div>
+        </div>
+        <div class="fg">
+          <label class="fl" for="f-phone" data-en="Phone number" data-ar="رقم الهاتف">Phone number</label>
+          <input id="f-phone" class="fi" type="tel" data-en-placeholder="e.g. +20 1xx xxx xxxx" data-ar-placeholder="مثال: 20 1xx xxx xxxx+" placeholder="e.g. +20 1xx xxx xxxx" autocomplete="tel">
+          <div class="field-err" id="err-phone"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span data-en="Enter a valid phone number (min 8 digits)" data-ar="أدخل رقم هاتف صحيح (8 أرقام على الأقل)">Enter a valid phone number (min 8 digits)</span></div>
+        </div>
+      </div>
+      <div class="fg">
+        <label class="fl" for="f-email" data-en="Email address" data-ar="البريد الإلكتروني">Email address</label>
+        <input id="f-email" class="fi" type="email" data-en-placeholder="your@email.com" data-ar-placeholder="بريدك@الإلكتروني.com" placeholder="your@email.com" autocomplete="email">
+        <div class="field-err" id="err-email"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span data-en="Enter a valid email address" data-ar="أدخل بريدًا إلكترونيًا صحيحًا">Enter a valid email address</span></div>
+      </div>
+      <div class="fr">
+        <div class="fg">
+          <label class="fl" for="f-age" data-en="Child's age" data-ar="عمر الطفل">Child's age</label>
+          <select id="f-age" class="fs"><option value="" data-en="Select age" data-ar="اختر العمر">Select age</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select>
+          <div class="field-err" id="err-age"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span data-en="Please select your child's age" data-ar="يرجى اختيار عمر طفلك">Please select your child's age</span></div>
+        </div>
+        <div class="fg">
+          <label class="fl" for="f-prog" data-en="Programme interest" data-ar="البرنامج المهتم به">Programme interest</label>
+          <select id="f-prog" class="fs"><option value="" data-en="Select" data-ar="اختر">Select</option><option value="full" data-en="Full Programme" data-ar="البرنامج الكامل">Full Programme</option><option value="full-studio" data-en="Full + Expression Studio" data-ar="الكامل + استوديو التعبير">Full + Expression Studio</option><option value="unsure" data-en="Not sure yet" data-ar="لست متأكدًا بعد">Not sure yet</option></select>
+          <div class="field-err" id="err-prog"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span data-en="Please select a programme" data-ar="يرجى اختيار برنامج">Please select a programme</span></div>
+        </div>
+      </div>
+      <div class="fg">
+        <label class="fl" for="f-msg" data-en="Message (optional)" data-ar="رسالة (اختياري)">Message (optional)</label>
+        <textarea id="f-msg" class="fi" rows="3" data-en-placeholder="Any questions for our team..." data-ar-placeholder="أي أسئلة لفريقنا..." placeholder="Any questions for our team..."></textarea>
+      </div>
+      <button type="button" class="fsb" id="formSubmitBtn" onclick="submitForm()" data-en="Send Enquiry →" data-ar="أرسل الاستفسار ←">Send Enquiry →</button>
+    </div>
+    <div>
+      <a class="cii cii-link" href="https://www.google.com/maps/search/117+Ahmed+Shawky+St+Roushdy+Alexandria" target="_blank" rel="noopener" style="text-decoration:none">
+        <div class="cib"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d1f5c" stroke-width="2.2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="cil" data-en="Address" data-ar="العنوان">Address</div><div class="civ" data-en="117 Ahmed Shawky St., Mohamed Mahfouz Tram Station<br>Roushdy, Alexandria" data-ar="117 شارع أحمد شوقي، محطة ترام محمد محفوظ<br>روشدي، الإسكندرية">117 Ahmed Shawky St., Mohamed Mahfouz Tram Station<br>Roushdy, Alexandria</div></div>
+      </a>
+      <a class="cii cii-link" href="tel:+20235427420" style="text-decoration:none">
+        <div class="cib"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d1f5c" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><div class="cil" data-en="Phone" data-ar="هاتف">Phone</div><div class="civ">+2 03 5427420<br>+20 106 553 3240</div></div>
+      </a>
+      <a class="cii cii-link" href="mailto:info_eacc@eacc-egy.com" style="text-decoration:none">
+        <div class="cib"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d1f5c" stroke-width="2.2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><div class="cil" data-en="Email" data-ar="البريد الإلكتروني">Email</div><div class="civ">info_eacc@eacc-egy.com</div></div>
+      </a>
+      <a class="cii cii-link" href="https://eacc-egy.com" target="_blank" rel="noopener" style="text-decoration:none">
+        <div class="cib"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d1f5c" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div><div class="cil" data-en="Website" data-ar="الموقع الإلكتروني">Website</div><div class="civ">eacc-egy.com</div></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="ftop">
+    <div>
+      <div class="flog footer-brand"><img src="../assets/images/summer/logo-white.png" alt="Egyptian American Center logo"><span>MyVoice</span></div>
+      <div class="ftag" data-en="Summer Camp · Egyptian American Cultural Center · Alexandria<br>Educating people in Egypt since 1998" data-ar="المخيم الصيفي · المركز الثقافي المصري الأمريكي · الإسكندرية<br>نُعلّم في مصر منذ 1998">Summer Camp · Egyptian American Cultural Center · Alexandria<br>Educating people in Egypt since 1998</div>
+    </div>
+    <div class="flinks">
+      <div class="flg">
+        <div class="flt" data-en="Programme" data-ar="البرنامج">Programme</div>
+        <ul>
+          <li onclick="siteScrollTo('#pillars')" data-en="Four Pillars" data-ar="الأعمدة الأربعة">Four Pillars</li>
+          <li onclick="siteScrollTo('#journey')" data-en="Journey Map" data-ar="خريطة الرحلة">Journey Map</li>
+          <li onclick="siteScrollTo('#expression')" data-en="Expression Studio" data-ar="استوديو التعبير">Expression Studio</li>
+          <li onclick="siteScrollTo('#journey')" data-en="Adventure Camp" data-ar="مخيم المغامرة">Adventure Camp</li>
+          <li onclick="siteScrollTo('#journey')" data-en="MyVoice Showcase" data-ar="عرض MyVoice">MyVoice Showcase</li>
+        </ul>
+      </div>
+      <div class="flg">
+        <div class="flt" data-en="Partners" data-ar="الشركاء">Partners</div>
+        <ul>
+          <li><a href="https://www.etoncollege.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Eton Academy UK</a></li>
+          <li><a href="#trust" onclick="siteScrollTo('#trust');return false;" style="color:inherit;text-decoration:none">Think English</a></li>
+          <li><a href="#trust" onclick="siteScrollTo('#trust');return false;" style="color:inherit;text-decoration:none">Mind Space</a></li>
+          <li><a href="https://elt.oup.com/catalogue/items/global/young_learners/oxford_discover/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Oxford Discover</a></li>
+        </ul>
+      </div>
+      <div class="flg">
+        <div class="flt" data-en="Families" data-ar="العائلات">Families</div>
+        <ul>
+          <li onclick="siteScrollTo('#parenting')" data-en="Parenting Club" data-ar="نادي الوالدين">Parenting Club</li>
+          <li onclick="siteScrollTo('#enrol')" data-en="Enrol Now" data-ar="سجّل الآن">Enrol Now</li>
+          <li onclick="siteScrollTo('#contact')" data-en="Call Us" data-ar="اتصل بنا">Call Us</li>
+          <li onclick="siteScrollTo('#contact')" data-en="Visit Us" data-ar="زرنا">Visit Us</li>
+          <li onclick="siteScrollTo('#faq')" data-en="FAQ" data-ar="أسئلة شائعة">FAQ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="fbot">
+    <div class="fcp" data-en="© 2026 Egyptian American Cultural Center. All rights reserved." data-ar="© 2026 المركز الثقافي المصري الأمريكي. جميع الحقوق محفوظة.">© 2026 Egyptian American Cultural Center. All rights reserved.</div>
+    <div class="ffl">
+      <svg width="20" height="13" viewBox="0 0 60 36"><rect width="60" height="36" fill="#012169"/><path d="M0,0 L60,36 M60,0 L0,36" stroke="white" stroke-width="5"/><path d="M0,0 L60,36 M60,0 L0,36" stroke="#C8102E" stroke-width="3"/><path d="M30,0 V36 M0,18 H60" stroke="white" stroke-width="9"/><path d="M30,0 V36 M0,18 H60" stroke="#C8102E" stroke-width="5"/></svg>
+      <span data-en="British-inspired programme" data-ar="برنامج مستوحى من المنهج البريطاني">British-inspired programme</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── TOAST ─── -->
+<div class="toast" id="toast">
+  <span class="toast-ic" id="toastIc">✓</span>
+  <span id="toastMsg"></span>
+</div>
+
+<script>
+// ─── SCROLL HELPER ───
+function siteScrollTo(id){
+  if(typeof id==='object'&&id!==null){window.scrollTo(id);return;}
+  if(typeof id!=='string') return;
+  var el=document.querySelector(id);
+  if(!el) return;
+  var nav=document.getElementById('mainNav');
+  var navOffset=nav?nav.offsetHeight:0;
+  var y=el.getBoundingClientRect().top+window.pageYOffset-navOffset+1;
+  window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+}
+
+// ─── MOBILE BAR VISIBILITY ───
+(function(){
+  var mq=window.matchMedia('(max-width:768px)');
+  function check(){
+    var mb=document.getElementById('mobBar');
+    if(mb) mb.style.display=mq.matches?'flex':'none';
+  }
+  check();
+  mq.addEventListener('change',check);
+})();
+
+// ─── DROPDOWN NAV ───
+var openDrop=null;
+function toggleDrop(id){
+  var d=document.getElementById(id);
+  if(openDrop&&openDrop!==d){openDrop.classList.remove('open');openDrop.querySelector('.ndrop-btn').classList.remove('active')}
+  d.classList.toggle('open');
+  d.querySelector('.ndrop-btn').classList.toggle('active');
+  openDrop=d.classList.contains('open')?d:null;
+}
+document.addEventListener('click',function(e){
+  if(openDrop&&!openDrop.contains(e.target)){openDrop.classList.remove('open');openDrop.querySelector('.ndrop-btn').classList.remove('active');openDrop=null}
+});
+
+// ─── MOBILE NAV ───
+var mobOpen=false;
+function closeMobile(forceCloseSubs){
+  mobOpen=false;
+  var hb=document.getElementById('hamburger');
+  var mn=document.getElementById('mobileNav');
+  var bd=document.getElementById('mobileNavBackdrop');
+  if(hb){hb.classList.remove('open');hb.setAttribute('aria-expanded','false')}
+  if(mn) mn.classList.remove('open');
+  if(bd) bd.classList.remove('open');
+  document.body.style.overflow='';
+  if(forceCloseSubs) document.querySelectorAll('.mobile-nav-item.open').forEach(function(el){el.classList.remove('open')});
+}
+function toggleMobile(){
+  if(mobOpen){closeMobile(false);return;}
+  mobOpen=true;
+  var hb=document.getElementById('hamburger');
+  var mn=document.getElementById('mobileNav');
+  var bd=document.getElementById('mobileNavBackdrop');
+  if(hb){hb.classList.add('open');hb.setAttribute('aria-expanded','true')}
+  if(mn) mn.classList.add('open');
+  if(bd) bd.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function mobileNav(id){
+  closeMobile(true);
+  setTimeout(function(){siteScrollTo(id)},200);
+}
+function toggleMobSub(id){
+  var el=document.getElementById(id);
+  if(!el) return;
+  var willOpen=!el.classList.contains('open');
+  document.querySelectorAll('.mobile-nav-item.open').forEach(function(x){x.classList.remove('open')});
+  if(willOpen) el.classList.add('open');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'&&mobOpen) closeMobile(false);
+});
+
+// ─── LANGUAGE TOGGLE ───
+var isArabic=false;
+function setLang(toArabic){
+  if(isArabic===toArabic) return;
+  isArabic=toArabic;
+  var lang=isArabic?'ar':'en';
+  document.documentElement.setAttribute('lang',isArabic?'ar':'en');
+  document.documentElement.setAttribute('dir',isArabic?'rtl':'ltr');
+  document.querySelectorAll('[data-en][data-ar]').forEach(function(el){
+    var val=el.getAttribute('data-'+lang);
+    if(val!==null) el.innerHTML=val;
+  });
+  document.querySelectorAll('[data-en-placeholder][data-ar-placeholder]').forEach(function(el){
+    el.placeholder=el.getAttribute('data-'+lang+'-placeholder');
+  });
+  // Sync desktop pills
+  ['langEN'].forEach(function(id){var b=document.getElementById(id);if(b)b.classList.toggle('active',!isArabic);});
+  ['langAR'].forEach(function(id){var b=document.getElementById(id);if(b)b.classList.toggle('active',isArabic);});
+  // Sync mobile pills
+  ['langENMob'].forEach(function(id){var b=document.getElementById(id);if(b)b.classList.toggle('active',!isArabic);});
+  ['langARMob'].forEach(function(id){var b=document.getElementById(id);if(b)b.classList.toggle('active',isArabic);});
+  renderPillar(currentPillar);
+  renderFAQs();
+}
+
+// ─── PARTICLES ───
+(function(){
+  var c=['#f7c948','#d42b2b','#fff','#1976d2','#4caf50'];
+  var p=document.getElementById('particles');
+  var isMobile=window.matchMedia('(max-width:768px)').matches;
+  var count=isMobile?14:22;
+  for(var i=0;i<count;i++){
+    var d=document.createElement('div');
+    d.className='particle';
+    var s=isMobile?(Math.random()*6+3):(Math.random()*8+4);
+    var dur=isMobile?(10+Math.random()*10):(8+Math.random()*12);
+    d.style.cssText='width:'+s+'px;height:'+s+'px;left:'+(Math.random()*100)+'%;background:'+c[Math.floor(Math.random()*c.length)]+';animation-duration:'+dur+'s;animation-delay:'+(-Math.random()*10)+'s;';
+    p.appendChild(d);
+  }
+})();
+
+// ─── SCROLL REVEAL ───
+(function(){
+  var targets=['#trust','#why','#pillars','#journey','#expression','#parenting','#what-gains','#enrol','#faq','#contact'];
+  targets.forEach(function(sel){var el=document.querySelector(sel);if(el)el.classList.add('reveal-up');});
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('in-view');});},{threshold:.01,rootMargin:'0px 0px 12% 0px'});
+  document.querySelectorAll('.reveal-up').forEach(function(el){io.observe(el)});
+})();
+
+// ─── NAV SCROLL STATE ───
+(function(){
+  var nav=document.getElementById('mainNav');
+  function onScroll(){if(nav)nav.classList.toggle('nav-scrolled',window.scrollY>18)}
+  onScroll();
+  window.addEventListener('scroll',onScroll,{passive:true});
+})();
+
+// ─── HERO STAT COUNTER ───
+(function(){
+  var stats=document.querySelectorAll('.hs-num');
+  var done=false;
+  function run(){
+    if(done) return;done=true;
+    stats.forEach(function(el){
+      var txt=(el.textContent||'').trim();
+      if(!/^\d+$/.test(txt)) return;
+      var end=+txt,dur=900,t0=performance.now();
+      function step(t){var p=Math.min(1,(t-t0)/dur);el.textContent=String(Math.round(end*(1-Math.pow(1-p,3))));if(p<1)requestAnimationFrame(step);}
+      requestAnimationFrame(step);
+    });
+  }
+  var hero=document.getElementById('hero');
+  if(!hero) return;
+  var obs=new IntersectionObserver(function(e){if(e[0]&&e[0].isIntersecting){run();obs.disconnect();}},{threshold:.45});
+  obs.observe(hero);
+})();
+
+// ─── PILLARS ───
+var pillarsData=[
+  {"en":{"name":"My Voice - Communicate","tag":"English Communication Lab","desc":"Children build the confidence to express ideas clearly in English through purposeful speaking, listening, storytelling, role-play, and guided discussion. The track is inspired by modern British learning practice and supported by Oxford Discover, with English used as a real tool for communication.","pts":["Confident English self-expression","Interactive listening and speaking practice","Role-play, storytelling, and short presentations","Group discussions with meaningful topics","Oxford Discover curriculum with CEFR alignment"],"details":[{"i":"🎤","n":"Oral expression","s":"Speak, present, and share ideas"},{"i":"📖","n":"Oxford Discover","s":"Structured CEFR-based learning"},{"i":"🌐","n":"UK connection","s":"Sessions with Eton Academy educators"},{"i":"🎭","n":"Communication practice","s":"Role-play, debate, and storytelling"}]},"ar":{"name":"صوتي - التواصل","tag":"مختبر التواصل باللغة الإنجليزية","desc":"يبني الأطفال الثقة في التعبير عن أفكارهم باللغة الإنجليزية من خلال التحدث والاستماع وسرد القصص ولعب الأدوار والمناقشات الموجهة. يعتمد المسار على ممارسات تعليمية بريطانية حديثة ويدعمه منهج Oxford Discover.","pts":["تعبير واثق باللغة الإنجليزية","تدريبات تفاعلية في الاستماع والتحدث","لعب أدوار وسرد قصص وعروض قصيرة","مناقشات جماعية بموضوعات هادفة","منهج Oxford Discover المتوافق مع CEFR"],"details":[{"i":"🎤","n":"التعبير الشفهي","s":"تحدث وقدم وشارك أفكارك"},{"i":"📖","n":"Oxford Discover","s":"تعلم منظم وفق CEFR"},{"i":"🌐","n":"تواصل مع المملكة المتحدة","s":"جلسات مع معلمي أكاديمية إيتون"},{"i":"🎭","n":"ممارسة التواصل","s":"لعب أدوار ونقاش وسرد قصص"}]}},
+  {"en":{"name":"My Ideas - Innovate","tag":"AI Discovery Lab","desc":"Children explore artificial intelligence and digital creativity in an age-appropriate way. The goal is not advanced coding; it is helping children understand how technology can support imagination, problem-solving, design, and original thinking.","pts":["Age-appropriate introduction to AI concepts","AI-assisted storytelling and idea development","Digital design and creative making","Innovation challenges and guided problem-solving","Technology used as a creative thinking tool"],"details":[{"i":"🤖","n":"AI basics","s":"How smart tools learn and respond"},{"i":"🎨","n":"Digital creativity","s":"Design and make with technology"},{"i":"💡","n":"Innovation challenges","s":"Turn ideas into solutions"},{"i":"🚀","n":"Future thinking","s":"Use technology with imagination"}]},"ar":{"name":"أفكاري - الابتكار","tag":"مختبر اكتشاف الذكاء الاصطناعي","desc":"يستكشف الأطفال الذكاء الاصطناعي والإبداع الرقمي بطريقة مناسبة للعمر. الهدف ليس البرمجة المتقدمة، بل فهم كيف يمكن للتكنولوجيا أن تدعم الخيال وحل المشكلات والتصميم والتفكير الأصيل.","pts":["مقدمة مناسبة للعمر لمفاهيم الذكاء الاصطناعي","سرد قصص وتطوير أفكار بمساعدة الذكاء الاصطناعي","تصميم رقمي وصناعة إبداعية","تحديات ابتكار وحل مشكلات موجه","استخدام التكنولوجيا كأداة للتفكير الإبداعي"],"details":[{"i":"🤖","n":"أساسيات الذكاء الاصطناعي","s":"كيف تتعلم الأدوات الذكية وتستجيب"},{"i":"🎨","n":"الإبداع الرقمي","s":"التصميم والصناعة بالتكنولوجيا"},{"i":"💡","n":"تحديات الابتكار","s":"تحويل الأفكار إلى حلول"},{"i":"🚀","n":"تفكير مستقبلي","s":"استخدام التكنولوجيا بخيال"}]}},
+  {"en":{"name":"My Impact - Lead","tag":"Leadership & Project Track","desc":"Through collaborative missions and project-based learning, children practise leadership, teamwork, responsibility, and problem-solving. They learn how to listen, contribute, take initiative, and build something meaningful with a team before presenting it at the Showcase.","pts":["Team missions and collaborative challenges","Leadership habits built through practice","Group projects with clear roles","Problem-solving and decision-making activities","Preparation for a confident Showcase presentation"],"details":[{"i":"⭐","n":"Team missions","s":"Structured challenges with purpose"},{"i":"🏙️","n":"Project themes","s":"Future School, Smart City, or Innovation Idea"},{"i":"🤝","n":"Collaboration","s":"Lead, support, listen, and build"},{"i":"📣","n":"Showcase prep","s":"Present to families and educators"}]},"ar":{"name":"تأثيري - القيادة","tag":"مسار القيادة والمشاريع","desc":"من خلال مهام تعاونية وتعلم قائم على المشاريع، يتدرب الأطفال على القيادة والعمل الجماعي والمسؤولية وحل المشكلات. يتعلمون الاستماع والمشاركة والمبادرة وبناء مشروع هادف مع الفريق قبل تقديمه في العرض النهائي.","pts":["مهام جماعية وتحديات تعاونية","عادات قيادية تبنى بالممارسة","مشاريع جماعية بأدوار واضحة","أنشطة حل مشكلات واتخاذ قرار","الاستعداد لعرض نهائي بثقة"],"details":[{"i":"⭐","n":"مهام الفريق","s":"تحديات منظمة وهادفة"},{"i":"🏙️","n":"موضوعات المشاريع","s":"مدرسة المستقبل أو المدينة الذكية أو فكرة ابتكارية"},{"i":"🤝","n":"التعاون","s":"قد وادعم واستمع وابن"},{"i":"📣","n":"التحضير للعرض","s":"التقديم أمام العائلات والمعلمين"}]}},
+  {"en":{"name":"My World - Connect","tag":"Global Cultural Experience","desc":"Children connect their learning to the wider world through cultural activities, educational field trips in English, and online sessions with Eton Academy educators in the United Kingdom. This pillar broadens perspective and makes English feel alive beyond the classroom.","pts":["Online sessions with Eton Academy, UK","Educational field trips conducted in English","Global cultural activities and discussion","International perspectives and British learning culture","Connecting local learning to the wider world"],"details":[{"i":"🌍","n":"Eton Academy UK","s":"Interactive online cultural sessions"},{"i":"🗺️","n":"Field experience","s":"English in real situations"},{"i":"🇬🇧","n":"British culture","s":"Learning traditions and perspectives"},{"i":"✈️","n":"Global mindset","s":"A wider view of the world"}]},"ar":{"name":"عالمي - التواصل مع العالم","tag":"التجربة الثقافية العالمية","desc":"يربط الأطفال تعلمهم بالعالم الأوسع من خلال الأنشطة الثقافية والرحلات التعليمية باللغة الإنجليزية والجلسات الإلكترونية مع معلمي أكاديمية إيتون في المملكة المتحدة. يوسع هذا المحور منظور الطفل ويجعل الإنجليزية حية خارج الصف.","pts":["جلسات إلكترونية مع أكاديمية إيتون في المملكة المتحدة","رحلات تعليمية باللغة الإنجليزية","أنشطة ومناقشات ثقافية عالمية","منظورات دولية وثقافة تعليمية بريطانية","ربط التعلم المحلي بالعالم الأوسع"],"details":[{"i":"🌍","n":"أكاديمية إيتون UK","s":"جلسات ثقافية تفاعلية عبر الإنترنت"},{"i":"🗺️","n":"تجربة ميدانية","s":"الإنجليزية في مواقف حقيقية"},{"i":"🇬🇧","n":"الثقافة البريطانية","s":"تقاليد تعليمية ومنظورات جديدة"},{"i":"✈️","n":"عقلية عالمية","s":"رؤية أوسع للعالم"}]}}
+];
+var currentPillar=0;
+function syncPillarUI(){
+  document.querySelectorAll('.pt').forEach(function(x){x.classList.toggle('on',+x.dataset.p===currentPillar);});
+  var total=pillarsData.length;
+  var txt=document.getElementById('pnavText');
+  var bar=document.getElementById('pnavBar');
+  var prev=document.getElementById('pPrev');
+  var next=document.getElementById('pNext');
+  if(txt) txt.textContent=(isArabic?'العمود ':'Pillar ')+(currentPillar+1)+(isArabic?' من ':' of ')+total;
+  if(bar) bar.style.width=((currentPillar+1)/total*100)+'%';
+  if(prev) prev.disabled=currentPillar<=0;
+  if(next) next.disabled=currentPillar>=total-1;
+}
+function renderPillar(i){
+  currentPillar=i;
+  var lang=isArabic?'ar':'en';
+  var p=pillarsData[i][lang];
+  document.getElementById('pbody').innerHTML='<div class="pcontent"><div><div class="pct">'+p.name+'</div><div class="pcd">'+p.desc+'</div><ul class="pcpts">'+p.pts.map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul></div><div class="pcr"><div class="pcrtag">'+p.tag+'</div>'+p.details.map(function(d){return'<div class="pdi"><div class="pdi-ic">'+d.i+'</div><div><div class="pdi-n">'+d.n+'</div><div class="pdi-s">'+d.s+'</div></div></div>'}).join('')+'</div></div>';
+  syncPillarUI();
+}
+renderPillar(0);
+document.getElementById('ptabs').addEventListener('click',function(e){var t=e.target.closest('.pt');if(!t)return;renderPillar(+t.dataset.p);});
+var pPrev=document.getElementById('pPrev');
+var pNext=document.getElementById('pNext');
+if(pPrev) pPrev.addEventListener('click',function(){if(currentPillar>0) renderPillar(currentPillar-1)});
+if(pNext) pNext.addEventListener('click',function(){if(currentPillar<pillarsData.length-1) renderPillar(currentPillar+1)});
+(function(){
+  var body=document.getElementById('pbody');if(!body) return;
+  var sx=0,sy=0;
+  body.addEventListener('touchstart',function(e){if(!e.touches||!e.touches[0])return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
+  body.addEventListener('touchend',function(e){if(!e.changedTouches||!e.changedTouches[0])return;var dx=e.changedTouches[0].clientX-sx;var dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)<40||Math.abs(dy)>Math.abs(dx))return;if(dx<0&&currentPillar<pillarsData.length-1)renderPillar(currentPillar+1);if(dx>0&&currentPillar>0)renderPillar(currentPillar-1);},{passive:true});
+})();
+
+// ─── JOURNEY ───
+function jActivate(el){document.querySelectorAll('.jn').forEach(function(n){n.classList.remove('on')});el.classList.add('on')}
+
+// ─── FAQS ───
+var faqsData=[
+  {"en":{"q":"What ages can attend MyVoice?","a":"MyVoice welcomes children aged 4 to 12. Children are grouped thoughtfully by age and English level, so every child can participate with the right level of support and challenge."},"ar":{"q":"ما الأعمار المناسبة لحضور MyVoice؟","a":"يرحب MyVoice بالأطفال من 4 إلى 12 عامًا. يتم تقسيم الأطفال بعناية حسب العمر ومستوى اللغة الإنجليزية حتى يحصل كل طفل على الدعم والتحدي المناسبين."}},
+  {"en":{"q":"Does my child need to speak English already?","a":"No. Every child completes an English placement test before camp begins. Groups range from beginners to confident speakers, and the Oxford Discover pathway supports different CEFR levels."},"ar":{"q":"هل يجب أن يكون طفلي متحدثًا بالإنجليزية مسبقًا؟","a":"لا. يخضع كل طفل لاختبار تحديد مستوى اللغة الإنجليزية قبل بدء المخيم. تشمل المجموعات مستويات من المبتدئين حتى المتحدثين بثقة، ويدعم منهج Oxford Discover مستويات CEFR المختلفة."}},
+  {"en":{"q":"What happens in the pre-camp assessment?","a":"Before the programme starts, your child completes an English placement test and a personality and interests discovery session. The result is a MyVoice Identity Profile that helps us understand strengths, interests, and learning style."},"ar":{"q":"ماذا يحدث في تقييم ما قبل المخيم؟","a":"قبل بدء البرنامج، يخضع طفلك لاختبار تحديد مستوى اللغة الإنجليزية وجلسة لاكتشاف الشخصية والاهتمامات. وتكون النتيجة ملف هوية MyVoice الذي يساعدنا على فهم نقاط القوة والاهتمامات وأسلوب التعلم."}},
+  {"en":{"q":"What is Mind Space and why is it part of the programme?","a":"Mind Space is the psychological support centre under the Egyptian American Cultural Center. Its specialists support the identity assessment and lead Parenting Club workshops focused on child development and family wellbeing."},"ar":{"q":"ما هو Mind Space ولماذا يشارك في البرنامج؟","a":"Mind Space هو مركز الدعم النفسي التابع للمركز الثقافي المصري الأمريكي. يدعم متخصصوه تقييم الهوية ويقودون ورش نادي الوالدين المتعلقة بنمو الطفل ورفاه الأسرة."}},
+  {"en":{"q":"How long is each camp cycle?","a":"Each camp cycle runs for 3 weeks, with 2 sessions per week and 5 hours per session, for a total of 25 instructional hours."},"ar":{"q":"كم تستغرق كل دورة من المخيم؟","a":"تمتد كل دورة لمدة 3 أسابيع، بجلستين أسبوعيًا و5 ساعات لكل جلسة، بإجمالي 25 ساعة تعليمية."}},
+  {"en":{"q":"What project themes can children work on?","a":"Children work in small teams on themes such as My Future School, My Smart City, My Story, or My Innovation Idea. Each project brings together English, creativity, teamwork, and future skills."},"ar":{"q":"ما موضوعات المشاريع التي يعمل عليها الأطفال؟","a":"يعمل الأطفال في فرق صغيرة على موضوعات مثل مدرستي المستقبلية أو مدينتي الذكية أو قصتي أو فكرتي الابتكارية. يجمع كل مشروع بين الإنجليزية والإبداع والعمل الجماعي ومهارات المستقبل."}},
+  {"en":{"q":"Is the Expression Studio required?","a":"No. Expression Studio is an optional creative programme day. Children can choose from Art Studio, Drama Studio, Music Studio, Movement Studio, or Creative Makers."},"ar":{"q":"هل استوديو التعبير إلزامي؟","a":"لا. استوديو التعبير يوم إبداعي اختياري. يمكن للأطفال الاختيار بين استوديو الفن أو الدراما أو الموسيقى أو الحركة أو الصانعين المبدعين."}},
+  {"en":{"q":"What is the MyVoice Adventure Camp?","a":"The Adventure Camp is a 2-night, 3-day outdoor experience at the end of the summer season. It gives children the chance to apply teamwork, leadership, and communication skills through collaborative challenges."},"ar":{"q":"ما هو مخيم MyVoice للمغامرة؟","a":"مخيم المغامرة تجربة خارجية لمدة ليلتين و3 أيام في نهاية موسم الصيف. يمنح الأطفال فرصة لتطبيق مهارات العمل الجماعي والقيادة والتواصل من خلال تحديات تعاونية."}},
+  {"en":{"q":"What is the MyVoice Showcase?","a":"The Showcase is the final graduation event where children present their projects to families and educators. It celebrates creativity, teamwork, leadership, communication, and innovation."},"ar":{"q":"ما هو عرض MyVoice النهائي؟","a":"العرض النهائي هو حفل التخرج الذي يقدم فيه الأطفال مشاريعهم أمام العائلات والمعلمين. يحتفي بالإبداع والعمل الجماعي والقيادة والتواصل والابتكار."}},
+  {"en":{"q":"What is the Parenting Club?","a":"The MyVoice Parenting Club offers workshops led by Mind Space specialists. Topics include confidence, bilingual development, parenting in the AI era, emotional wellbeing, and understanding Generation Alpha."},"ar":{"q":"ما هو نادي الوالدين؟","a":"يقدم نادي الوالدين MyVoice ورشًا بقيادة متخصصي Mind Space. تشمل الموضوعات الثقة والتطور ثنائي اللغة والتربية في عصر الذكاء الاصطناعي والصحة النفسية وفهم جيل ألفا."}}
+];
+function renderFAQs(){
+  var lang=isArabic?'ar':'en';
+  var fg=document.getElementById('faqgrid');
+  fg.innerHTML='';
+  var c1=document.createElement('div'),c2=document.createElement('div');
+  faqsData.forEach(function(f,i){
+    var item=f[lang];
+    var d=document.createElement('div');
+    d.className='fqi';
+    d.innerHTML='<div class="fqq"><span class="fqqt">'+item.q+'</span><div class="fqic">+</div></div><div class="fqa">'+item.a+'</div>';
+    d.addEventListener('click',function(){var was=d.classList.contains('open');document.querySelectorAll('.fqi').forEach(function(x){x.classList.remove('open')});if(!was)d.classList.add('open')});
+    (i<5?c1:c2).appendChild(d);
+  });
+  fg.appendChild(c1);fg.appendChild(c2);
+}
+renderFAQs();
+
+// ─── FORM VALIDATION ───
+function showErr(id,show){var el=document.getElementById(id);if(el)el.classList.toggle('show',show);}
+function setFieldState(el,state){el.classList.remove('error','success');if(state)el.classList.add(state);}
+function validateName(){var el=document.getElementById('f-name');var val=el?el.value.trim():'';var ok=val.length>=2;if(el)setFieldState(el,ok?'success':'error');showErr('err-name',!ok&&val!=='');return ok;}
+function validatePhone(){var el=document.getElementById('f-phone');var val=el?el.value.trim().replace(/[\s\-\(\)]/g,''):'';var ok=val.length>=8&&/^[+\d]{8,}$/.test(val);if(el)setFieldState(el,val===''?'':(ok?'success':'error'));showErr('err-phone',!ok&&val!=='');return ok;}
+function validateEmail(){var el=document.getElementById('f-email');var val=el?el.value.trim():'';var ok=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);if(el)setFieldState(el,val===''?'':(ok?'success':'error'));showErr('err-email',!ok&&val!=='');return ok;}
+function validateAge(){var el=document.getElementById('f-age');var ok=el&&el.value!=='';if(el)setFieldState(el,ok?'success':'error');showErr('err-age',!ok);return ok;}
+function validateProg(){var el=document.getElementById('f-prog');var ok=el&&el.value!=='';if(el)setFieldState(el,ok?'success':'error');showErr('err-prog',!ok);return ok;}
+(function(){
+  var pairs=[['f-name',validateName],['f-phone',validatePhone],['f-email',validateEmail],['f-age',validateAge],['f-prog',validateProg]];
+  pairs.forEach(function(p){var el=document.getElementById(p[0]);if(el){el.addEventListener('blur',p[1]);el.addEventListener('input',function(){if(el.classList.contains('error'))p[1]();});}});
+})();
+
+function showToast(msg,type){
+  var t=document.getElementById('toast');
+  var ic=document.getElementById('toastIc');
+  var m=document.getElementById('toastMsg');
+  t.className='toast '+(type||'success');
+  if(ic)ic.textContent=type==='error'?'✕':'✓';
+  if(m)m.textContent=msg;
+  t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show')},4500);
+}
+function submitForm(){
+  var nameEl=document.getElementById('f-name');
+  var phoneEl=document.getElementById('f-phone');
+  var emailEl=document.getElementById('f-email');
+  var ageEl=document.getElementById('f-age');
+  var progEl=document.getElementById('f-prog');
+  if(nameEl&&nameEl.value.trim()==='')setFieldState(nameEl,'error'),showErr('err-name',true);
+  if(phoneEl&&phoneEl.value.trim()==='')setFieldState(phoneEl,'error'),showErr('err-phone',true);
+  if(emailEl&&emailEl.value.trim()==='')setFieldState(emailEl,'error'),showErr('err-email',true);
+  var ok=validateName()&validatePhone()&validateEmail()&validateAge()&validateProg();
+  var btn=document.getElementById('formSubmitBtn');
+  if(!ok){
+    showToast(isArabic?'يرجى ملء جميع الحقول المطلوبة بشكل صحيح':'Please fill in all required fields correctly','error');
+    var first=document.querySelector('.fi.error,.fs.error');if(first)first.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  if(btn){btn.disabled=true;btn.innerHTML=isArabic?'جاري التحضير...':'Preparing...';}
+  var name=nameEl?nameEl.value.trim():'';
+  var phone=phoneEl?phoneEl.value.trim():'';
+  var email=emailEl?emailEl.value.trim():'';
+  var age=ageEl?ageEl.value:'';
+  var prog=progEl?progEl.options[progEl.selectedIndex].text:'';
+  var msgEl=document.getElementById('f-msg');
+  var message=msgEl?msgEl.value.trim():'';
+  var body='Name: '+name+'\nPhone: '+phone+'\nChild Age: '+age+'\nProgramme: '+prog+(message?'\n\nMessage:\n'+message:'');
+  var subject='MyVoice Summer Camp Enquiry – '+name;
+  window.location.href='mailto:info_eacc@eacc-egy.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  if(btn){btn.disabled=true;btn.innerHTML=isArabic?'تم الإرسال ✓':'Sent ✓';setTimeout(function(){btn.disabled=false;btn.innerHTML=isArabic?'أرسل الاستفسار ←':'Send Enquiry →';},5000);}
+  showToast(isArabic?'تم فتح تطبيق البريد الإلكتروني الخاص بك!':'Opening your email app — thank you!','success');
+  ['f-name','f-phone','f-email','f-msg'].forEach(function(id){var el=document.getElementById(id);if(el){el.value='';el.classList.remove('error','success');}});
+  ['f-age','f-prog'].forEach(function(id){var el=document.getElementById(id);if(el){el.value='';el.classList.remove('error','success');}});
+  ['err-name','err-phone','err-email','err-age','err-prog'].forEach(function(id){showErr(id,false)});
+}
+
+// ─── CLOSE DROPS ON SCROLL ───
+window.addEventListener('scroll',function(){
+  if(openDrop){openDrop.classList.remove('open');openDrop.querySelector('.ndrop-btn').classList.remove('active');openDrop=null}
+},{passive:true});
+</script>
+<script>
+(function(){
+  var siteLoader=document.getElementById('siteLoader');
+  if(!siteLoader) return;
+  window.addEventListener('load',function(){
+    setTimeout(function(){
+      siteLoader.classList.add('hidden');
+      document.body.classList.remove('loading');
+    },650);
+  });
+})();
+</script>
+
+<script id="summer-saisei-motion-system-script">
+(function(){
+  'use strict';
+  if (window.__summerSaiseiMotionSystem) return;
+  window.__summerSaiseiMotionSystem = true;
+  function ready(fn){ if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn); else fn(); }
+  ready(function(){
+    document.body.classList.add('saisei-ready');
+    if (!document.querySelector('.saisei-curtain')) {
+      var curtain = document.createElement('div');
+      curtain.className = 'saisei-curtain';
+      curtain.innerHTML = '<span>MyVoice</span>';
+      document.body.appendChild(curtain);
+    }
+    var panelSelectors = ['#why','#pillars','#journey','#expression','#parenting','#what-gains','#enrol','#faq','.ctsec'];
+    panelSelectors.forEach(function(sel){ var el=document.querySelector(sel); if(el) el.classList.add('saisei-panel'); });
+    ['#journey','#parenting','#enrol'].forEach(function(sel){ var el=document.querySelector(sel); if(el) el.classList.add('dark'); });
+
+    var mediaImages = [
+      '../assets/images/summer/kids.avif','../assets/images/summer/summer-camp.avif','../assets/images/summer/arts.avif','../assets/images/summer/hero 4.avif',
+      '../assets/images/summer/arts.avif','../assets/images/summer/kids.avif','../assets/images/summer/summer-camp.avif','../assets/images/summer/hero 4.avif'
+    ];
+    function addMedia(cards, offset){
+      Array.prototype.slice.call(cards).forEach(function(card, index){
+        if (card.querySelector('.saisei-card-media')) return;
+        var media = document.createElement('div');
+        media.className = 'saisei-card-media';
+        media.innerHTML = '<img src="' + mediaImages[(index + offset) % mediaImages.length] + '" alt="Summer camp visual" loading="lazy">';
+        card.insertBefore(media, card.firstChild);
+      });
+    }
+    addMedia(document.querySelectorAll('#why .wc'),0);
+    addMedia(document.querySelectorAll('#expression .estudio'),2);
+    addMedia(document.querySelectorAll('#parenting .pcard'),3);
+    addMedia(document.querySelectorAll('#what-gains .gain'),1);
+    addMedia(document.querySelectorAll('#enrol .enc'),0);
+
+    var reveal = document.querySelectorAll('.saisei-panel,.pcontent,.wc,.gain,.pcard,.estudio,.enc,.section-media-panel,.image-marquee');
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){ if(entry.isIntersecting) entry.target.classList.add('saisei-inview'); });
+    }, {threshold:.18, rootMargin:'0px 0px -80px 0px'});
+    reveal.forEach(function(el){ observer.observe(el); });
+  });
+})();
+</script>
+</body>
+</html>
+
+

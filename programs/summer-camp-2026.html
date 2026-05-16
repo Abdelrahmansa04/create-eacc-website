@@ -1,0 +1,3470 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyVoice Summer Camp 2026 | Egyptian American Cultural Center</title>
+  <meta name="description" content="MyVoice Summer Camp 2026 by EACC: a British-inspired journey into English, AI, creativity, teamwork, and future skills for children aged 4 to 12.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --eacc-navy-dark: #0d1457;
+      --eacc-navy: #1a237e;
+      --eacc-blue: #283593;
+      --eacc-gold: #f5a623;
+      --eacc-gold-light: #ffd54f;
+      --eacc-red: #ad1732;
+      --eacc-sky: #eaf5ff;
+      --eacc-light: #f7f8ff;
+      --eacc-white: #ffffff;
+      --eacc-text: #1a1d2e;
+      --eacc-muted: #68738f;
+      --eacc-border: rgba(13, 20, 87, 0.11);
+      --heading-font: "Playfair Display", Georgia, serif;
+      --body-font: "DM Sans", Arial, sans-serif;
+      --shadow-soft: 0 18px 48px rgba(13, 20, 87, 0.12);
+      --shadow-strong: 0 26px 70px rgba(13, 20, 87, 0.22);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--eacc-light);
+      color: var(--eacc-text);
+      font-family: var(--body-font);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body.loading { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, textarea, select { font: inherit; }
+
+    .container {
+      width: min(100% - 40px, 1180px);
+      margin-inline: auto;
+    }
+
+    .site-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--eacc-navy-dark);
+      transition: opacity 0.45s ease, visibility 0.45s ease;
+    }
+
+    .site-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-content {
+      width: min(360px, 82vw);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .loader-content img {
+      width: 138px;
+      margin-bottom: 24px;
+    }
+
+    .loader-content h2 {
+      font-family: var(--heading-font);
+      font-size: 30px;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      color: var(--eacc-white);
+    }
+
+    .loader-bar {
+      position: relative;
+      width: 100%;
+      height: 4px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+    }
+
+    .loader-bar::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 45%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--eacc-gold), var(--eacc-gold-light));
+      animation: loaderMove 1.2s ease-in-out infinite;
+    }
+
+    @keyframes loaderMove {
+      0% { transform: translateX(-110%); }
+      100% { transform: translateX(230%); }
+    }
+
+    .fa-solid, .fab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-style: normal;
+      font-variant: normal;
+      line-height: 1;
+      text-rendering: auto;
+    }
+    .fa-chevron-down::before { content: "\2304"; }
+    .fa-globe::before { content: "\25C9"; }
+    .fa-laptop::before { content: "\25AD"; }
+    .fa-check::before { content: "\2713"; }
+    .fa-xmark::before { content: "\00D7"; }
+    .fa-arrow-right::before { content: "\2192"; }
+    .fa-paper-plane::before { content: "\2708"; }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: 0.4s ease;
+    }
+
+    header.scrolled {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 14px 36px rgba(13,20,87,0.08);
+    }
+
+    header .navbar {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: height 0.35s ease;
+    }
+
+    header.scrolled .navbar { height: 72px; }
+    header .logo img { width: 120px; transition: 0.35s ease; }
+    header.scrolled .logo img { width: 98px; }
+
+    header nav.nav-links {
+      position: static;
+      height: auto;
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 6px;
+      overflow: visible;
+    }
+
+    header .nav-links a,
+    header .dropdown > a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      transition: 0.35s ease;
+      text-decoration: none;
+    }
+
+    header .nav-links a:hover,
+    header .dropdown:hover > a {
+      color: var(--eacc-gold-light);
+      transform: translateY(-2px);
+    }
+
+    header.scrolled .nav-links a,
+    header.scrolled .dropdown > a { color: var(--eacc-navy-dark); }
+    header .dropdown { position: relative; }
+
+    header .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 0;
+      min-width: 230px;
+      padding: 12px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid rgba(13,20,87,0.08);
+      box-shadow: 0 20px 40px rgba(13,20,87,0.14);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: 0.3s ease;
+      z-index: 1001;
+    }
+
+    header .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    header .dropdown-menu a {
+      display: block;
+      color: var(--eacc-navy-dark);
+      padding: 13px 15px;
+      border-radius: 12px;
+      font-weight: 800;
+      min-height: auto;
+    }
+
+    header .dropdown-menu a:hover {
+      background: #eef0f8;
+      color: var(--eacc-navy);
+      transform: none;
+    }
+
+    .nav-cta-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 4px;
+    }
+
+    header .nav-apply {
+      background: linear-gradient(135deg, var(--eacc-gold), var(--eacc-gold-light));
+      color: var(--eacc-navy-dark) !important;
+      box-shadow: 0 14px 32px rgba(245,166,35,0.28);
+    }
+
+    .nav-lms {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.3s ease;
+    }
+
+    .nav-lms:hover {
+      background: rgba(255,255,255,0.16);
+      color: var(--eacc-gold-light);
+      transform: translateY(-2px);
+    }
+
+    header.scrolled .nav-lms {
+      color: var(--eacc-navy-dark);
+      border-color: rgba(13,20,87,0.14);
+      background: rgba(13,20,87,0.05);
+    }
+
+    header .eacc-language-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-width: 46px;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 999px;
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      font-weight: 800;
+      font-size: .82rem;
+      letter-spacing: 0;
+      cursor: pointer;
+      transition: background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+    }
+
+    header.scrolled .eacc-language-toggle {
+      color: var(--eacc-navy-dark);
+      border-color: rgba(13,20,87,0.14);
+      background: rgba(13,20,87,0.05);
+    }
+
+    .mobile-toggle {
+      width: 46px;
+      height: 46px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .mobile-toggle-line {
+      width: 21px;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform 0.3s ease, opacity 0.22s ease, width 0.3s ease;
+    }
+
+    header.scrolled .mobile-toggle {
+      color: var(--eacc-navy-dark);
+      background: #fff;
+    }
+
+    .mobile-toggle.active {
+      background: linear-gradient(135deg, var(--eacc-gold), var(--eacc-gold-light));
+      color: var(--eacc-navy-dark);
+    }
+
+    .mobile-toggle.active .mobile-toggle-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mobile-toggle.active .mobile-toggle-line:nth-child(2) { opacity: 0; transform: scaleX(0.2); }
+    .mobile-toggle.active .mobile-toggle-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .summer-hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      padding: 126px 0 78px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(255,213,79,0.24), transparent 28%),
+        linear-gradient(135deg, rgba(13,20,87,0.98) 0%, rgba(26,35,126,0.94) 48%, rgba(13,20,87,0.98) 100%);
+      color: #fff;
+    }
+
+    .summer-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(13,20,87,0.92), rgba(13,20,87,0.66) 48%, rgba(13,20,87,0.82)),
+        url("../assets/images/summer-camp.avif") center / cover no-repeat;
+      opacity: 0.34;
+      filter: saturate(1.08) brightness(1.08);
+    }
+
+    .summer-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 120px;
+      background: linear-gradient(180deg, transparent, var(--eacc-light));
+    }
+
+    .summer-hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.78fr);
+      gap: clamp(34px, 6vw, 72px);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      margin-bottom: 18px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.20);
+      color: var(--eacc-gold-light);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--eacc-gold);
+      box-shadow: 0 0 0 6px rgba(245,166,35,0.18);
+    }
+
+    .summer-hero h1 {
+      max-width: 810px;
+      font-family: var(--heading-font);
+      font-size: clamp(50px, 7.4vw, 104px);
+      line-height: 0.96;
+      letter-spacing: 0;
+      margin-bottom: 24px;
+    }
+
+    .summer-hero h1 span {
+      display: block;
+    }
+
+    .hero-highlight {
+      color: var(--eacc-gold-light);
+      font-family: var(--body-font);
+      font-size: clamp(31px, 4.4vw, 62px);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-top: 12px;
+    }
+
+    .summer-hero p {
+      max-width: 760px;
+      color: rgba(255,255,255,0.88);
+      font-size: clamp(17px, 1.7vw, 22px);
+      line-height: 1.75;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 900;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--eacc-gold), var(--eacc-gold-light));
+      color: var(--eacc-navy-dark);
+      box-shadow: 0 16px 34px rgba(245,166,35,0.26);
+    }
+
+    .btn-ghost {
+      color: #fff;
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(255,255,255,0.22);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 42px rgba(13,20,87,0.18);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 760px;
+    }
+
+    .metric {
+      padding: 16px 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(14px);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--eacc-gold-light);
+      font-size: clamp(23px, 2.4vw, 36px);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      display: block;
+      color: rgba(255,255,255,0.76);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .hero-visual {
+      position: relative;
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: var(--shadow-strong);
+      border: 1px solid rgba(255,255,255,0.22);
+      background: transparent;
+      transform: none;
+      padding: 0;
+    }
+
+    .hero-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(1.04) brightness(1.02);
+      border-radius: 34px;
+      background: transparent;
+    }
+
+    .hero-visual-card {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.94);
+      color: var(--eacc-navy-dark);
+      box-shadow: 0 20px 46px rgba(13,20,87,0.18);
+    }
+
+    .hero-visual-card strong {
+      display: block;
+      color: var(--eacc-red);
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
+
+    .hero-visual-card span {
+      color: var(--eacc-muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .section {
+      padding: clamp(72px, 8vw, 112px) 0;
+      position: relative;
+    }
+
+    .section.alt { background: #fff; }
+    .section.navy {
+      color: #fff;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255,213,79,0.18), transparent 24%),
+        linear-gradient(135deg, var(--eacc-navy-dark), var(--eacc-navy));
+    }
+
+    .section-head {
+      max-width: 790px;
+      margin: 0 auto clamp(34px, 5vw, 54px);
+      text-align: center;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 14px;
+      margin-bottom: 14px;
+      border-radius: 999px;
+      background: rgba(245,166,35,0.13);
+      color: var(--eacc-red);
+      font-weight: 900;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .section.navy .section-kicker {
+      color: var(--eacc-gold-light);
+      background: rgba(255,255,255,0.10);
+    }
+
+    .section h2 {
+      font-family: var(--heading-font);
+      color: var(--eacc-navy-dark);
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      margin-bottom: 16px;
+    }
+
+    .section.navy h2 { color: #fff; }
+
+    .section-head p {
+      color: var(--eacc-muted);
+      font-size: clamp(16px, 1.6vw, 19px);
+    }
+
+    .section.navy .section-head p { color: rgba(255,255,255,0.78); }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(28px, 5vw, 62px);
+      align-items: center;
+    }
+
+    .intro-media {
+      position: relative;
+      border-radius: 32px;
+      overflow: hidden;
+      min-height: 440px;
+      background: var(--eacc-navy);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .intro-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .intro-media-mobile {
+      display: none;
+    }
+
+    .intro-badge {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 14px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 18px 42px rgba(13,20,87,0.14);
+    }
+
+    .intro-badge span {
+      display: grid;
+      place-items: center;
+      min-height: 48px;
+      border-radius: 16px;
+      background: var(--eacc-light);
+      color: var(--eacc-navy-dark);
+      font-weight: 900;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .intro-copy {
+      display: grid;
+      gap: 20px;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 18px;
+      padding: 22px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid var(--eacc-border);
+      box-shadow: 0 14px 34px rgba(13,20,87,0.07);
+    }
+
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--eacc-gold), var(--eacc-gold-light));
+      color: var(--eacc-navy-dark);
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .feature-row h3 {
+      color: var(--eacc-navy-dark);
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .feature-row p {
+      color: var(--eacc-muted);
+      margin: 0;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .pillar-card {
+      position: relative;
+      min-height: 430px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      border-radius: 28px;
+      background: var(--eacc-navy-dark);
+      box-shadow: var(--shadow-soft);
+      isolation: isolate;
+    }
+
+    .pillar-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.08) brightness(1.02);
+      transition: transform 0.45s ease;
+      z-index: -2;
+    }
+
+    .pillar-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13,20,87,0.02), rgba(13,20,87,0.62) 42%, rgba(13,20,87,0.92));
+      z-index: -1;
+    }
+
+    .pillar-card:hover img { transform: scale(1.05); }
+
+    .pillar-content {
+      padding: 28px;
+      color: #fff;
+    }
+
+    .pillar-number {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      background: var(--eacc-gold);
+      color: var(--eacc-navy-dark);
+      font-weight: 900;
+    }
+
+    .pillar-content h3 {
+      font-family: var(--heading-font);
+      font-size: clamp(34px, 3vw, 46px);
+      line-height: 0.98;
+      margin-bottom: 14px;
+      text-wrap: balance;
+    }
+
+    .pillar-content p,
+    .pillar-content h4 {
+      color: rgba(255,255,255,0.92);
+      margin: 0 0 18px;
+      font-family: var(--body-font);
+      font-size: clamp(17px, 1.45vw, 21px);
+      font-weight: 900;
+      line-height: 1.3;
+      text-wrap: balance;
+    }
+
+    .pillar-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .pillar-list li {
+      position: relative;
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: rgba(255,255,255,0.94);
+      font-size: 13.5px;
+      font-weight: 900;
+      line-height: 1.2;
+      backdrop-filter: blur(8px);
+    }
+
+    .pillar-list li::before {
+      content: none;
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .journey-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 240px;
+      padding: 28px;
+      border-radius: 28px;
+      background: #fff;
+      border: 1px solid var(--eacc-border);
+      box-shadow: 0 16px 40px rgba(13,20,87,0.08);
+    }
+
+    .journey-card::after {
+      content: attr(data-step);
+      position: absolute;
+      right: 22px;
+      bottom: -22px;
+      color: rgba(13,20,87,0.06);
+      font-size: 112px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .journey-card .chip {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(26,35,126,0.08);
+      color: var(--eacc-red);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .journey-card h3 {
+      color: var(--eacc-navy-dark);
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .journey-card p { color: var(--eacc-muted); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      grid-auto-rows: 220px;
+      gap: 18px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.07);
+      min-height: 220px;
+    }
+
+    .gallery-item.large { grid-row: span 2; }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.08) brightness(1.03);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 14px 20px;
+      border-radius: 0 0 28px 28px;
+      color: var(--eacc-navy-dark);
+      background: rgba(255,255,255,0.22);
+      border: 0;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        0 -8px 18px rgba(255,255,255,0.04);
+      backdrop-filter: blur(3px) saturate(1.02);
+      font-weight: 900;
+    }
+
+    .parents-section {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(78px, 8vw, 116px) 0;
+      background:
+        linear-gradient(180deg, #fff 0%, rgba(247,248,255,0.96) 100%);
+      color: var(--eacc-text);
+    }
+
+    .parents-section::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 280px;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(245,166,35,0.16), transparent 28%),
+        radial-gradient(circle at 82% 10%, rgba(26,35,126,0.10), transparent 26%);
+      pointer-events: none;
+    }
+
+    .parents-section .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .parents-head {
+      max-width: 850px;
+      margin-inline: auto;
+      margin-bottom: clamp(30px, 5vw, 54px);
+      text-align: center;
+    }
+
+    .parents-head h2 {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--eacc-navy-dark);
+      font-family: var(--heading-font);
+      font-size: clamp(38px, 5vw, 60px);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .parents-head p {
+      max-width: 760px;
+      margin-inline: auto;
+      color: var(--eacc-muted);
+      font-size: clamp(17px, 1.5vw, 20px);
+      line-height: 1.75;
+      font-weight: 700;
+    }
+
+    .parents-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .parents-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 250px;
+      padding: clamp(24px, 3vw, 32px);
+      border-radius: 28px;
+      background: #fff;
+      border: 1px solid var(--eacc-border);
+      box-shadow: var(--shadow-soft);
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+    }
+
+    .parents-card::before {
+      content: "";
+      width: 48px;
+      height: 5px;
+      margin-bottom: 22px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--eacc-gold), var(--eacc-gold-light));
+    }
+
+    .parents-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(245,166,35,0.42);
+      box-shadow: 0 24px 58px rgba(13,20,87,0.16);
+    }
+
+    .parents-card h3 {
+      margin-bottom: 14px;
+      color: var(--eacc-navy-dark);
+      font-family: var(--heading-font);
+      font-size: clamp(25px, 2.5vw, 34px);
+      line-height: 1.12;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .parents-card h3.accent {
+      color: var(--eacc-navy-dark);
+    }
+
+    .parents-card p {
+      color: var(--eacc-muted);
+      font-size: 16px;
+      line-height: 1.72;
+      font-weight: 700;
+    }
+
+    .partners-section {
+      padding: clamp(70px, 8vw, 104px) 0;
+      background:
+        linear-gradient(135deg, rgba(13,20,87,0.96), rgba(26,35,126,0.92));
+      color: #fff;
+    }
+
+    .partners-section .section-head h2 {
+      color: #fff;
+    }
+
+    .partners-section .section-head p {
+      color: rgba(255,255,255,0.78);
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .partner-card {
+      display: grid;
+      align-content: space-between;
+      min-height: 210px;
+      padding: 24px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 18px 48px rgba(0,0,0,0.14);
+      transition: transform .28s ease, background .28s ease, border-color .28s ease;
+    }
+
+    .partner-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,213,79,0.38);
+    }
+
+    .partner-logo {
+      display: flex;
+      width: 100%;
+      height: 86px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      padding: 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(255,255,255,0.20);
+    }
+
+    .partner-logo img {
+      max-width: 100%;
+      max-height: 58px;
+      object-fit: contain;
+    }
+
+    .partner-card h3 {
+      color: #fff;
+      font-family: var(--heading-font);
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .partner-card p {
+      color: rgba(255,255,255,0.76);
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .partner-card[href] {
+      cursor: pointer;
+    }
+
+    @media (max-width: 920px) {
+      .parents-grid,
+      .partners-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .parents-section {
+        padding: 54px 0 64px;
+      }
+
+      .parents-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .parents-card {
+        min-height: auto;
+      }
+
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .partner-card {
+        min-height: 170px;
+      }
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .program-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 4vw, 42px);
+      border-radius: 32px;
+      background: #fff;
+      border: 1px solid var(--eacc-border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .program-card.featured {
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(13,20,87,0.94), rgba(26,35,126,0.92)),
+        url("../assets/images/summer26/combine.png") center / cover no-repeat;
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .program-card h3 {
+      color: var(--eacc-navy-dark);
+      font-family: var(--heading-font);
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .program-card.featured h3 { color: #fff; }
+    .program-card p { color: var(--eacc-muted); margin-bottom: 22px; }
+    .program-card.featured p { color: rgba(255,255,255,0.82); }
+
+    .included-list {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+      margin-bottom: 26px;
+    }
+
+    .included-list li {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      color: var(--eacc-text);
+      font-weight: 800;
+    }
+
+    .program-card.featured .included-list li { color: rgba(255,255,255,0.9); }
+
+    .included-list li::before {
+      content: "\2713";
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(245,166,35,0.18);
+      color: var(--eacc-gold);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .activity-card {
+      overflow: hidden;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.96);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.12);
+      color: var(--eacc-navy-dark);
+      min-width: 0;
+    }
+
+    .activity-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 11;
+      object-fit: cover;
+      object-position: center;
+      background: rgba(13,20,87,0.04);
+    }
+
+    .activity-card-body {
+      padding: 18px 18px 20px;
+    }
+
+    .activity-card strong {
+      display: block;
+      color: var(--eacc-navy-dark);
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
+
+    .activity-card span {
+      color: var(--eacc-muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+      gap: 24px;
+      align-items: stretch;
+      padding: clamp(22px, 4vw, 36px);
+      border-radius: 36px;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--eacc-border);
+    }
+
+    .contact-card {
+      overflow: hidden;
+      border-radius: 28px;
+      background: var(--eacc-navy-dark);
+      color: #fff;
+    }
+
+    .contact-card img {
+      width: 100%;
+      height: 310px;
+      object-fit: cover;
+      filter: saturate(1.08) brightness(1.03);
+    }
+
+    .contact-card-content {
+      padding: 26px;
+    }
+
+    .contact-card-content h3 {
+      font-family: var(--heading-font);
+      font-size: 34px;
+      line-height: 1.08;
+      margin-bottom: 16px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .contact-list a {
+      color: rgba(255,255,255,0.84);
+      font-weight: 800;
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      align-content: start;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--eacc-navy-dark);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      min-height: 52px;
+      padding: 13px 14px;
+      border-radius: 16px;
+      border: 1px solid var(--eacc-border);
+      background: var(--eacc-light);
+      color: var(--eacc-text);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .field textarea {
+      min-height: 128px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: rgba(245,166,35,0.75);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(245,166,35,0.13);
+    }
+
+    .form-feedback {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(24,128,74,0.10), rgba(245,166,35,0.12));
+      border: 1px solid rgba(24,128,74,0.24);
+      color: var(--eacc-text);
+    }
+
+    .form-feedback.is-error {
+      background: linear-gradient(135deg, rgba(173,23,50,0.10), rgba(245,166,35,0.10));
+      border-color: rgba(173,23,50,0.24);
+    }
+
+    .form-feedback[hidden] { display: none; }
+
+    .form-feedback-icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: #18804a;
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .form-feedback.is-error .form-feedback-icon {
+      background: var(--eacc-red);
+    }
+
+    .form-feedback h4 {
+      color: var(--eacc-navy-dark);
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .form-feedback p { color: var(--eacc-muted); margin: 0; }
+
+    .contact-form .btn {
+      width: fit-content;
+      min-width: 230px;
+    }
+
+    .contact-form .btn[disabled] {
+      cursor: wait;
+      opacity: 0.78;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .site-footer {
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+      padding: clamp(56px,7vw,82px) 0 0;
+      background: var(--eacc-navy-dark);
+      color: #fff;
+    }
+
+    .footer-shell { position: relative; z-index: 1; }
+
+    .site-footer .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(260px,1.45fr) minmax(190px,1fr) minmax(140px,.72fr) minmax(145px,.72fr) minmax(190px,.9fr);
+      gap: clamp(24px,4vw,48px);
+      align-items: start;
+    }
+
+    .footer-logo img {
+      width: 122px;
+      margin-bottom: 22px;
+    }
+
+    .footer-brand-block p,
+    .site-footer .footer-links a,
+    .site-footer .footer-bottom {
+      color: rgba(255,255,255,0.76);
+    }
+
+    .footer-brand-block p {
+      max-width: 360px;
+      font-size: 15px;
+      line-height: 1.75;
+      margin: 0 0 22px;
+    }
+
+    .footer-apply-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--eacc-gold), var(--eacc-gold-light));
+      color: var(--eacc-navy-dark) !important;
+      font-weight: 900;
+      box-shadow: 0 14px 30px rgba(245,166,35,0.24);
+    }
+
+    .site-footer .footer-col h4 {
+      position: relative;
+      color: var(--eacc-gold);
+      margin: 0 0 24px;
+      font-family: var(--heading-font);
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .site-footer .footer-col h4::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 32px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--eacc-gold), var(--eacc-gold-light));
+    }
+
+    .site-footer .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .site-footer .footer-links a {
+      font-size: 14px;
+      line-height: 1.55;
+      transition: color .25s ease, transform .25s ease;
+    }
+
+    .site-footer .footer-links a:hover {
+      color: var(--eacc-gold);
+      transform: translateX(4px);
+    }
+
+    .footer-office .footer-links a:first-child { max-width: 250px; }
+
+    .footer-social-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .footer-social-list a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 42px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.88);
+      font-weight: 800;
+      line-height: 1.2;
+      transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+    }
+
+    .footer-social-list a:hover {
+      background: var(--eacc-gold);
+      border-color: transparent;
+      color: var(--eacc-navy-dark);
+      transform: translateX(4px);
+    }
+
+    .footer-social-icon-wrap {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+    }
+
+    .footer-social-icon-wrap img {
+      width: 17px;
+      height: 17px;
+      object-fit: contain;
+    }
+
+    .site-footer .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: clamp(42px,5vw,58px);
+      padding: 22px 0;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .footer-bottom-links {
+      display: inline-flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .footer-bottom-links a {
+      color: rgba(255,255,255,0.72);
+      font-weight: 800;
+    }
+
+    .footer-bottom-links a:hover { color: var(--eacc-gold); }
+
+    html[dir="rtl"] body { direction: rtl; }
+    html[dir="rtl"] .hero-actions,
+    html[dir="rtl"] .nav-cta-group,
+    html[dir="rtl"] header nav.nav-links { direction: rtl; }
+    html[dir="rtl"] header .dropdown-menu {
+      left: auto;
+      right: 0;
+      text-align: right;
+    }
+    html[dir="rtl"] .pillar-list li { padding-left: 0; padding-right: 18px; }
+    html[dir="rtl"] .pillar-list li::before { left: auto; right: 0; }
+    html[dir="rtl"] .site-footer .footer-col h4::after { left: auto; right: 0; }
+    html[dir="rtl"] .site-footer .footer-links a:hover,
+    html[dir="rtl"] .footer-social-list a:hover { transform: translateX(-4px); }
+    html[dir="rtl"] .journey-card::after { right: auto; left: 22px; }
+
+    @media (max-width: 1120px) {
+      .summer-hero-grid,
+      .intro-grid,
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        max-width: 560px;
+        margin-inline: auto;
+      }
+
+      .pillars-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .site-footer .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
+      .footer-follow { grid-column: span 2; }
+    }
+
+    @media (max-width: 860px) {
+      .hero-metrics,
+      .journey-grid,
+      .program-grid,
+      .activity-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 190px;
+      }
+
+      .gallery-item.large { grid-column: 1 / -1; grid-row: span 1; }
+      .contact-form { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .container { width: min(100% - 24px, 1180px); }
+
+      header .navbar { height: 78px; }
+      header .logo img,
+      header.scrolled .logo img { width: 92px; }
+      .mobile-toggle { display: flex; }
+
+      header nav.nav-links {
+        position: fixed;
+        top: 78px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 78px);
+        overflow-y: auto;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        padding: 32px 24px;
+        background: #fff;
+        transition: 0.35s ease;
+        box-shadow: none;
+      }
+
+      header nav.nav-links.active { right: 0; }
+      header.scrolled nav.nav-links {
+        top: 68px;
+        height: calc(100vh - 68px);
+      }
+
+      header .nav-links a,
+      header .dropdown > a,
+      header .eacc-language-toggle,
+      header .nav-apply,
+      header .nav-lms {
+        width: 100%;
+        justify-content: flex-start;
+        color: var(--eacc-navy-dark);
+        border-bottom: 1px solid rgba(13,20,87,0.08);
+      }
+
+      header .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: 0;
+        background: transparent;
+        padding: 4px 0 0 16px;
+      }
+
+      .nav-cta-group {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        margin: 0;
+      }
+
+      .summer-hero {
+        min-height: auto;
+        padding: 116px 0 68px;
+      }
+
+      .summer-hero h1 { font-size: clamp(44px, 13vw, 66px); }
+      .hero-highlight { font-size: clamp(28px, 8vw, 44px); }
+      .hero-actions .btn { width: 100%; }
+      .hero-metrics { gap: 10px; }
+      .metric { padding: 14px 12px; }
+      .intro-media,
+      .intro-media img { min-height: 330px; }
+      .intro-badge { grid-template-columns: 1fr; }
+      .pillars-grid,
+      .journey-grid,
+      .program-grid,
+      .activity-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pillar-card { min-height: 390px; }
+
+      .site-footer { padding-top: 48px; }
+      .site-footer .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 18px;
+      }
+      .footer-brand-block {
+        grid-column: 1 / -1;
+        padding-bottom: 26px;
+        border-bottom: 1px solid rgba(255,255,255,0.10);
+      }
+      .footer-brand-block p {
+        max-width: 100%;
+        margin-bottom: 18px;
+      }
+      .footer-office {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+        gap: 14px;
+        align-items: start;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(255,255,255,0.10);
+      }
+      .footer-office h4 { margin-bottom: 0; }
+      .footer-office .footer-links a:first-child { max-width: none; }
+      .site-footer .footer-col:not(.footer-office):not(.footer-follow) {
+        min-width: 0;
+        padding: 16px 14px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.045);
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+      .footer-follow {
+        grid-column: 1 / -1;
+        padding: 18px 14px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.045);
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+      .footer-social-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .footer-social-list a {
+        max-width: none;
+        min-height: 44px;
+        padding: 7px 9px;
+        gap: 9px;
+      }
+      .footer-social-icon-wrap {
+        width: 28px;
+        height: 28px;
+        flex-basis: 28px;
+      }
+      .site-footer .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 34px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-metrics { grid-template-columns: 1fr; }
+      .feature-row { grid-template-columns: 1fr; }
+      .contact-panel { padding: 14px; border-radius: 28px; }
+      .footer-social-list a span:last-child { font-size: 13px; }
+    }
+
+    /* Mobile polish layer for Summer Camp 2026 */
+    .summer-hero,
+    .section,
+    .site-footer {
+      overflow: hidden;
+    }
+
+    .summer-hero p,
+    .section-head p,
+    .feature-row p,
+    .journey-card p,
+    .program-card p,
+    .included-list li,
+    .contact-list a,
+    .footer-links a {
+      overflow-wrap: break-word;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 15.5px;
+      }
+
+      .container {
+        width: min(100% - 22px, 1180px);
+      }
+
+      header .navbar {
+        height: 74px;
+      }
+
+      header.scrolled .navbar {
+        height: 66px;
+      }
+
+      header nav.nav-links {
+        top: 74px;
+        height: calc(100dvh - 74px);
+        padding: 24px 18px 30px;
+        gap: 10px;
+      }
+
+      header.scrolled nav.nav-links {
+        top: 66px;
+        height: calc(100dvh - 66px);
+      }
+
+      header .dropdown-menu {
+        padding-left: 12px;
+      }
+
+      html[dir="rtl"] header .dropdown-menu {
+        padding-left: 0;
+        padding-right: 12px;
+      }
+
+      .summer-hero {
+        min-height: auto;
+        padding: 98px 0 44px;
+        align-items: start;
+      }
+
+      .summer-hero::before {
+        opacity: 0.28;
+        background-position: center top;
+        filter: saturate(1.12) brightness(1.12);
+      }
+
+      .summer-hero::after {
+        height: 72px;
+      }
+
+      .summer-hero-grid {
+        gap: 24px;
+      }
+
+      .summer-hero-copy {
+        display: grid;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .eyebrow {
+        max-width: 100%;
+        justify-content: center;
+        text-align: center;
+        font-size: 11px;
+        line-height: 1.35;
+        padding: 8px 12px;
+      }
+
+      .summer-hero h1 {
+        max-width: 12ch;
+        margin-inline: auto;
+        margin-bottom: 16px;
+        font-size: clamp(39px, 13.5vw, 58px);
+        line-height: 1;
+        text-align: center;
+      }
+
+      .hero-highlight {
+        margin-top: 8px;
+        font-size: clamp(25px, 8.2vw, 38px);
+        line-height: 1.08;
+      }
+
+      .summer-hero p {
+        max-width: 38rem;
+        margin-bottom: 20px;
+        font-size: 15.5px;
+        line-height: 1.68;
+      }
+
+      .hero-actions {
+        width: 100%;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .hero-actions .btn,
+      .contact-form .btn {
+        width: 100%;
+      }
+
+      .btn {
+        min-height: 48px;
+        padding: 0 18px;
+        border-radius: 18px;
+        white-space: normal;
+        text-align: center;
+      }
+
+      .hero-metrics {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .metric {
+        min-height: 86px;
+        display: grid;
+        align-content: center;
+        padding: 13px 10px;
+        border-radius: 18px;
+      }
+
+      .metric strong {
+        font-size: clamp(24px, 8vw, 34px);
+      }
+
+      .metric span {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .hero-visual-card {
+        position: static;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin: 0;
+        border-radius: 0;
+        padding: 15px 16px;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+
+      .section-head {
+        margin-bottom: 28px;
+      }
+
+      .section h2 {
+        font-size: clamp(30px, 9vw, 42px);
+        line-height: 1.12;
+      }
+
+      .section-head p {
+        font-size: 15.5px;
+        line-height: 1.7;
+      }
+
+      .intro-grid,
+      .contact-panel {
+        gap: 20px;
+      }
+
+      .intro-media {
+        min-height: auto;
+        border-radius: 24px;
+      }
+
+      #program.section.alt {
+        background:
+          linear-gradient(180deg, rgba(248,249,255,0.88), rgba(248,249,255,0.96)),
+          url("../assets/images/summer26/summer4.png") center top / cover no-repeat;
+      }
+
+      .intro-media-desktop {
+        display: none;
+      }
+
+      .intro-media-mobile {
+        display: block;
+        min-height: 0;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: center 28%;
+      }
+
+      #program .intro-grid > div:last-child {
+        padding: 22px 16px;
+        border-radius: 26px;
+        background: rgba(255,255,255,0.78);
+        border: 1px solid rgba(13,20,87,0.08);
+        box-shadow: 0 18px 42px rgba(13,20,87,0.10);
+        backdrop-filter: blur(10px);
+      }
+
+      .intro-badge {
+        position: static;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin: 10px;
+        padding: 10px;
+        border-radius: 18px;
+      }
+
+      .intro-badge span {
+        min-height: 42px;
+        padding: 8px;
+        font-size: 11.5px;
+        line-height: 1.25;
+      }
+
+      .feature-row {
+        grid-template-columns: 46px minmax(0, 1fr);
+        gap: 13px;
+        padding: 17px;
+        border-radius: 20px;
+      }
+
+      .feature-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 15px;
+        font-size: 17px;
+      }
+
+      .feature-row h3,
+      .journey-card h3 {
+        font-size: 19px;
+        line-height: 1.22;
+      }
+
+      .pillar-card {
+        min-height: 360px;
+        border-radius: 24px;
+      }
+
+      .pillar-card::before {
+        background: linear-gradient(180deg, rgba(13,20,87,0.08), rgba(13,20,87,0.92));
+      }
+
+      .pillar-content {
+        padding: 22px;
+      }
+
+      .pillar-content h3 {
+        font-size: 28px;
+      }
+
+      .pillar-content p,
+      .pillar-list li {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .journey-card {
+        min-height: 0;
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .journey-card::after {
+        font-size: 76px;
+        bottom: -14px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: auto;
+        gap: 12px;
+      }
+
+      .gallery-item {
+        min-height: 0;
+        aspect-ratio: 1 / 1;
+        border-radius: 22px;
+      }
+
+      .gallery-item.large {
+        grid-column: auto;
+        min-height: 0;
+        aspect-ratio: 1 / 1;
+      }
+
+      .gallery-item:nth-child(5) {
+        grid-column: 1 / -1;
+        aspect-ratio: 16 / 9;
+      }
+
+      .gallery-caption {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 11px 12px;
+        border-radius: 0 0 22px 22px;
+        font-size: 13.5px;
+      }
+
+      .program-card {
+        padding: 24px 18px;
+        border-radius: 24px;
+      }
+
+      .program-card h3 {
+        font-size: clamp(28px, 9vw, 38px);
+      }
+
+      .included-list {
+        gap: 10px;
+      }
+
+      .included-list li {
+        grid-template-columns: 25px minmax(0, 1fr);
+        gap: 9px;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .included-list li::before {
+        width: 25px;
+        height: 25px;
+      }
+
+      .activity-card {
+        border-radius: 20px;
+      }
+
+      .activity-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 14px;
+      }
+
+      .activity-card img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .activity-card-body {
+        padding: 14px 12px 16px;
+      }
+
+      .activity-card strong {
+        font-size: 15.5px;
+        line-height: 1.25;
+      }
+
+      .activity-card span {
+        font-size: 12.5px;
+        line-height: 1.45;
+      }
+
+      .contact-panel {
+        padding: 18px;
+        border-radius: 26px;
+      }
+
+      .contact-card {
+        border-radius: 22px;
+      }
+
+      .contact-card img {
+        height: auto;
+        aspect-ratio: 16 / 10;
+        object-position: center;
+      }
+
+      .contact-card-content {
+        padding: 20px;
+      }
+
+      .contact-card-content h3 {
+        font-size: 30px;
+      }
+
+      .contact-list a {
+        overflow-wrap: anywhere;
+      }
+
+      .field label {
+        font-size: 13px;
+      }
+
+      .field input,
+      .field textarea,
+      .field select {
+        min-height: 50px;
+        border-radius: 14px;
+      }
+
+      .field textarea {
+        min-height: 118px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 18px, 1180px);
+      }
+
+      .summer-hero {
+        padding-top: 92px;
+      }
+
+      .summer-hero h1 {
+        max-width: 11ch;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .gallery-item,
+      .gallery-item.large {
+        border-radius: 18px;
+      }
+
+      .gallery-item:nth-child(5) {
+        aspect-ratio: 16 / 9;
+      }
+
+      .gallery-caption {
+        padding: 9px 10px;
+        border-radius: 0 0 18px 18px;
+        font-size: 12px;
+        line-height: 1.25;
+      }
+
+      .intro-badge {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-row {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-icon {
+        margin-bottom: 2px;
+      }
+
+      .site-footer .footer-grid {
+        gap: 22px 10px;
+      }
+
+      .footer-office {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-social-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-social-list a {
+        min-height: 42px;
+        border-radius: 14px;
+      }
+
+      .activity-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px;
+      }
+
+      .activity-card {
+        border-radius: 18px;
+      }
+
+      .activity-card img {
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .summer-hero h1 {
+        font-size: 37px;
+      }
+
+      .hero-highlight {
+        font-size: 24px;
+      }
+
+      .hero-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .metric {
+        min-height: 78px;
+        padding: 10px 8px;
+      }
+
+      .activity-grid {
+        gap: 10px;
+      }
+
+      .activity-card-body {
+        padding: 12px 9px 14px;
+      }
+
+      .activity-card strong {
+        font-size: 14px;
+      }
+
+      .activity-card span {
+        font-size: 11.5px;
+      }
+
+      .footer-social-list a {
+        gap: 7px;
+        padding-inline: 7px;
+      }
+
+      .footer-social-icon-wrap {
+        width: 25px;
+        height: 25px;
+        flex-basis: 25px;
+      }
+    }
+    /* Final summer image sizing overrides. */
+    @media (min-width: 769px) {
+      .summer-hero-grid {
+        grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.52fr) !important;
+        gap: clamp(28px, 4.5vw, 56px) !important;
+      }
+
+      .hero-visual {
+        width: min(100%, 380px) !important;
+        justify-self: center !important;
+        border-radius: 28px !important;
+      }
+
+      .hero-visual img {
+        border-radius: 28px !important;
+      }
+
+      .intro-grid {
+        grid-template-columns: minmax(260px, 0.62fr) minmax(0, 1.28fr) !important;
+        gap: clamp(26px, 4vw, 54px) !important;
+      }
+
+      .intro-media {
+        width: min(100%, 390px) !important;
+        min-height: 360px !important;
+        justify-self: center !important;
+        border-radius: 28px !important;
+      }
+
+      .intro-media img {
+        min-height: 360px !important;
+      }
+    }
+
+    /* Final mobile summer image override. */
+    @media (max-width: 768px) {
+      .summer-hero::before {
+        background:
+          linear-gradient(90deg, rgba(13,20,87,0.92), rgba(13,20,87,0.66) 48%, rgba(13,20,87,0.82)),
+          url("../assets/images/summer-camp.avif") center / cover no-repeat !important;
+        opacity: 0.28 !important;
+        filter: saturate(1.12) brightness(1.12) !important;
+      }
+
+      .hero-visual {
+        display: none !important;
+      }
+
+      #program.section.alt {
+        background: #fff !important;
+      }
+
+      #program .intro-media {
+        display: block !important;
+        background: transparent !important;
+        box-shadow: 0 18px 42px rgba(13,20,87,0.16);
+        width: 100% !important;
+        min-height: 0 !important;
+        aspect-ratio: auto !important;
+        border-radius: 24px !important;
+      }
+
+      #program .intro-media-desktop {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        aspect-ratio: auto !important;
+        object-fit: contain !important;
+        object-position: center !important;
+      }
+
+      #program .intro-media-mobile {
+        display: none !important;
+      }
+
+      #pillars .pillars-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 14px !important;
+      }
+
+      #pillars .pillar-card {
+        min-height: 300px !important;
+        border-radius: 22px !important;
+      }
+
+      #pillars .pillar-content {
+        padding: 18px !important;
+      }
+
+      #pillars .pillar-content h3 {
+        font-size: clamp(25px, 7vw, 34px) !important;
+        line-height: 1 !important;
+        margin-bottom: 10px !important;
+      }
+
+      #pillars .pillar-content p,
+      #pillars .pillar-content h4 {
+        font-size: clamp(13.5px, 3.2vw, 17px) !important;
+        line-height: 1.25 !important;
+        margin-bottom: 12px !important;
+      }
+
+      #pillars .pillar-list li {
+        min-height: 30px !important;
+        padding: 6px 9px !important;
+        font-size: 11.5px !important;
+        line-height: 1.15 !important;
+      }
+    }
+
+    @media (max-width: 520px) {
+      #pillars .pillars-grid {
+        gap: 10px !important;
+      }
+
+      #pillars .pillar-card {
+        min-height: 260px !important;
+        border-radius: 18px !important;
+      }
+
+      #pillars .pillar-content {
+        padding: 14px !important;
+      }
+
+      #pillars .pillar-number {
+        width: 32px !important;
+        height: 32px !important;
+        margin-bottom: 9px !important;
+        border-radius: 10px !important;
+        font-size: 13px !important;
+      }
+
+      #pillars .pillar-content h3 {
+        font-size: clamp(22px, 6.4vw, 27px) !important;
+        margin-bottom: 8px !important;
+      }
+
+      #pillars .pillar-content p,
+      #pillars .pillar-content h4 {
+        font-size: 12.5px !important;
+        line-height: 1.24 !important;
+        margin-bottom: 10px !important;
+      }
+
+      #pillars .pillar-list {
+        display: flex !important;
+        gap: 5px !important;
+      }
+
+      #pillars .pillar-list li {
+        min-height: 26px !important;
+        padding: 5px 7px !important;
+        font-size: 10.5px !important;
+      }
+    }
+
+    /* Final pillar redesign */
+    #pillars .pillars-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: clamp(18px, 2.4vw, 28px) !important;
+    }
+
+    #pillars .pillar-card {
+      display: grid !important;
+      grid-template-columns: minmax(190px, 0.86fr) minmax(0, 1.14fr);
+      align-items: stretch !important;
+      min-height: 310px !important;
+      overflow: hidden;
+      border-radius: 26px !important;
+      background: #fff !important;
+      border: 1px solid rgba(13,20,87,0.10);
+      box-shadow: 0 22px 54px rgba(13,20,87,0.11), inset 0 0 0 1px rgba(255,255,255,0.72) !important;
+      color: var(--eacc-navy-dark) !important;
+      isolation: isolate;
+    }
+
+    #pillars .pillar-card::before {
+      content: none !important;
+    }
+
+    #pillars .pillar-card img {
+      position: static !important;
+      inset: auto !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 310px;
+      padding: 14px;
+      box-sizing: border-box;
+      object-fit: contain;
+      object-position: center;
+      background:
+        linear-gradient(135deg, rgba(248,249,255,0.98), rgba(238,240,248,0.96));
+      border-right: 1px solid rgba(13,20,87,0.08);
+      z-index: auto !important;
+      filter: saturate(1.05) brightness(1.02) !important;
+      transform: none !important;
+    }
+
+    #pillars .pillar-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(24px, 2.6vw, 34px) !important;
+      color: var(--eacc-navy-dark) !important;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,249,255,0.96));
+    }
+
+    #pillars .pillar-number {
+      width: fit-content !important;
+      height: auto !important;
+      min-height: 34px;
+      display: inline-flex !important;
+      align-items: center;
+      gap: 4px;
+      padding: 0 14px;
+      margin-bottom: 15px !important;
+      border-radius: 999px !important;
+      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(255,248,231,0.94)) !important;
+      border: 1px solid rgba(245,166,35,0.45);
+      box-shadow: 0 10px 22px rgba(245,166,35,0.12);
+      color: var(--eacc-red) !important;
+      font-family: var(--body-font);
+      font-size: 13px !important;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    #pillars .pillar-number::before {
+      content: "Pillar ";
+    }
+
+    #pillars .pillar-content h3 {
+      color: var(--eacc-navy-dark) !important;
+      font-family: var(--heading-font);
+      font-size: clamp(38px, 3.4vw, 56px) !important;
+      line-height: 0.98 !important;
+      margin: 0 0 12px !important;
+      letter-spacing: 0;
+    }
+
+    #pillars .pillar-content p,
+    #pillars .pillar-content h4 {
+      color: var(--eacc-muted) !important;
+      font-family: var(--body-font);
+      font-size: clamp(17px, 1.25vw, 20px) !important;
+      font-weight: 900 !important;
+      line-height: 1.36 !important;
+      margin: 0 0 18px !important;
+    }
+
+    #pillars .pillar-list {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: 8px !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    #pillars .pillar-list li {
+      min-height: 34px !important;
+      padding: 7px 11px !important;
+      border-radius: 999px;
+      background: rgba(13,20,87,0.055) !important;
+      border: 1px solid rgba(13,20,87,0.08) !important;
+      color: var(--eacc-navy-dark) !important;
+      font-size: 13px !important;
+      font-weight: 900 !important;
+      line-height: 1.18 !important;
+      backdrop-filter: none !important;
+    }
+
+    html[dir="rtl"] #pillars .pillar-number::before {
+      content: "\0645\062D\0648\0631 ";
+    }
+
+    @media (max-width: 860px) {
+      #pillars .pillar-card {
+        grid-template-columns: 1fr !important;
+        min-height: 0 !important;
+      }
+
+      #pillars .pillar-card img {
+        height: 190px !important;
+        min-height: 190px !important;
+        padding: 12px !important;
+        border-right: 0;
+        border-bottom: 1px solid rgba(13,20,87,0.08);
+      }
+    }
+
+    @media (max-width: 768px) {
+      #pillars .pillars-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+      }
+
+      #pillars .pillar-card {
+        border-radius: 18px !important;
+      }
+
+      #pillars .pillar-card img {
+        height: 122px !important;
+        min-height: 122px !important;
+        padding: 8px !important;
+      }
+
+      #pillars .pillar-content {
+        padding: 14px 12px 15px !important;
+      }
+
+      #pillars .pillar-number {
+        min-height: 26px !important;
+        padding: 0 9px !important;
+        margin-bottom: 9px !important;
+        font-size: 11px !important;
+      }
+
+      #pillars .pillar-content h3 {
+        font-size: clamp(25px, 7.2vw, 34px) !important;
+        margin-bottom: 8px !important;
+      }
+
+      #pillars .pillar-content p,
+      #pillars .pillar-content h4 {
+        font-size: 12.5px !important;
+        line-height: 1.28 !important;
+        margin-bottom: 10px !important;
+      }
+
+      #pillars .pillar-list {
+        gap: 5px !important;
+      }
+
+      #pillars .pillar-list li {
+        min-height: 25px !important;
+        padding: 5px 7px !important;
+        font-size: 10.5px !important;
+      }
+    }
+
+    @media (max-width: 420px) {
+      #pillars .pillar-card img {
+        height: 116px !important;
+        min-height: 116px !important;
+        padding: 7px !important;
+      }
+
+      #pillars .pillar-content {
+        padding: 12px 10px !important;
+      }
+
+      #pillars .pillar-list li:nth-child(n+3) {
+        display: none !important;
+      }
+    }
+
+    /* Use each pillar artwork in its natural full ratio. */
+    #pillars .pillar-card {
+      align-items: center !important;
+      min-height: 0 !important;
+    }
+
+    #pillars .pillar-card img {
+      width: 100% !important;
+      height: auto !important;
+      min-height: 0 !important;
+      aspect-ratio: auto !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      align-self: center !important;
+      padding: 14px !important;
+      background:
+        linear-gradient(135deg, rgba(248,249,255,0.98), rgba(238,240,248,0.96)) !important;
+    }
+
+    @media (max-width: 860px) {
+      #pillars .pillar-card img {
+        height: auto !important;
+        min-height: 0 !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #pillars .pillar-card img {
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 8px !important;
+      }
+    }
+
+    @media (max-width: 420px) {
+      #pillars .pillar-card img {
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 7px !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="loading">
+  <div class="site-loader" id="siteLoader" aria-label="Loading website">
+    <div class="loader-content">
+      <img src="../assets/images/logo-white.png" alt="EACC Logo">
+      <h2>Egyptian American Center</h2>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a href="../index.html" class="logo" aria-label="EACC Home">
+        <img src="../assets/images/logo-white.png" alt="EACC Logo">
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="../index.html"><span data-en="Home" data-ar="الرئيسية">Home</span></a>
+
+        <div class="dropdown">
+          <a href="../aboutus/who-we-are.html">
+            <span data-en="Who We Are" data-ar="من نحن">Who We Are</span>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="../aboutus/who-we-are.html" data-en="About EACC" data-ar="عن المركز">About EACC</a>
+            <a href="../aboutus/explore-our-camps.html" data-en="Explore Our Camps" data-ar="استكشف معسكراتنا">Explore Our Camps</a>
+            <a href="../aboutus/faqs.html" data-en="FAQs" data-ar="الأسئلة الشائعة">FAQs</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="../index.html#programs">
+            <span data-en="Our Courses" data-ar="برامجنا">Our Courses</span>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="../programs/summer-camp-2026.html" data-en="Summer Camp 2026" data-ar="المعسكر الصيفي 2026">Summer Camp 2026</a>
+            <a href="../programs/language.html" data-en="Languages" data-ar="اللغات">Languages</a>
+            <a href="../programs/activities.html" data-en="Activities" data-ar="الأنشطة">Activities</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="../index.html#test-prep">
+            <span data-en="Preparation Courses" data-ar="كورسات التحضير">Preparation Courses</span>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="../prep-courses/tofel.html">TOEFL</a>
+            <a href="../prep-courses/ielts.html">IELTS</a>
+            <a href="../prep-courses/oet.html">OET</a>
+            <a href="../prep-courses/pte.html">PTE</a>
+          </div>
+        </div>
+
+        <a href="../contactus.html"><span data-en="Contact" data-ar="تواصل معنا">Contact</span></a>
+
+        <button type="button" class="language-toggle eacc-language-toggle" id="languageToggle" aria-label="Switch website language to Arabic">
+          <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          <span id="languageToggleText">AR</span>
+        </button>
+
+        <div class="nav-cta-group">
+          <a href="../contactus.html#contact" class="nav-apply"><span data-en="Apply Now" data-ar="قدم الآن">Apply Now</span></a>
+          <a href="https://lms.eacc-egy.com/login.php" class="nav-lms" target="_blank" rel="noopener">
+            <i class="fa-solid fa-laptop" aria-hidden="true"></i>
+            <span data-en="LMS Login" data-ar="دخول المنصة">LMS Login</span>
+          </a>
+        </div>
+      </nav>
+
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="mobile-toggle-line"></span>
+        <span class="mobile-toggle-line"></span>
+        <span class="mobile-toggle-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="summer-hero" id="top">
+      <div class="container summer-hero-grid">
+        <div class="summer-hero-copy">
+          <h1>
+            <span data-en="MyVoice.">MyVoice.</span>
+            <span class="hero-highlight" data-en="Summer Camp 2026" >Summer Camp 2026</span>
+          </h1>
+          <p data-en="Find your voice, Shape your future"></p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#enroll"><span data-en="Register Interest" data-ar="سجل اهتمامك">Register Interest</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="btn btn-ghost" href="#program"><span data-en="Explore Program" data-ar="استكشف البرنامج">Explore Program</span></a>
+          </div>
+
+          <div class="hero-metrics" aria-label="Program highlights">
+            <div class="metric"><strong>4-12</strong><span data-en="Ages welcome" data-ar="الفئة العمرية">Ages welcome</span></div>
+            <div class="metric"><strong>25h</strong><span data-en="Learning hours" data-ar="ساعة تعليم">Learning hours</span></div>
+            <div class="metric"><strong>10</strong><span data-en="Stages" data-ar="مراحل">Stages</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Summer camp visual">
+          <img src="../assets/images/summer26/summermyvoice.png?v=desktop-2" alt="Children enjoying MyVoice Summer Camp">
+          <!-- <div class="hero-visual-card">
+            <strong data-en="Learn. Explore. Create." data-ar="تعلم. استكشف. ابتكر.">Learn. Explore. Create.</strong>
+            <span data-en="English • AI • Robotics • Creativity" data-ar="الإنجليزية • الذكاء الاصطناعي • الروبوتكس • الإبداع">English • AI • Robotics • Creativity</span>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="program">
+      <div class="container intro-grid">
+        <div class="intro-media">
+          <img class="intro-media-desktop" src="../assets/images/summer26/summer4.png?v=desktop-2" alt="Children learning robotics and future skills">
+          <img class="intro-media-mobile" src="../assets/images/summer26/summermyvoice.png?v=mobile-card-2" alt="MyVoice Summer Camp 2026 poster">
+        </div>
+
+        <div>
+          <div class="section-kicker" data-en="Not just a summer camp" data-ar="أكثر من مجرد مخيم صيفي">Not just a summer camp</div>
+          <h2 data-en="An identity discovery experience with real learning outcomes." data-ar="تجربة لاكتشاف الهوية بنتائج تعليمية حقيقية.">An identity discovery experience with real learning outcomes.</h2>
+          <div class="intro-copy">
+            <div class="feature-row">
+              <div class="feature-icon">01</div>
+              <div>
+                <h3 data-en="Personalised before camp starts" data-ar="تقييم شخصي قبل بداية المعسكر">Personalised before camp starts</h3>
+                <p data-en="The journey begins with English placement, personality, and interest discovery in collaboration with MindSpace so every child receives a MyVoice Identity Profile." data-ar="تبدأ الرحلة باختبار تحديد مستوى اللغة الإنجليزية وتقييم الشخصية والاهتمامات بالتعاون مع MindSpace ليحصل كل طفل على ملف MyVoice Identity Profile.">The journey begins with English placement, personality, and interest discovery in collaboration with MindSpace so every child receives a MyVoice Identity Profile.</p>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-icon">02</div>
+              <div>
+                <h3 data-en="Purposeful camp experience" data-ar="تجربة مخيم هادفة">Purposeful camp experience</h3>
+                <p data-en="Children learn across four pillars through age grouping and English proficiency, with project-based activities that build confidence, teamwork, and communication." data-ar="يتعلم الأطفال من خلال أربعة محاور حسب العمر ومستوى اللغة الإنجليزية، مع أنشطة قائمة على المشروعات لبناء الثقة والعمل الجماعي والتواصل.">Children learn across four pillars through age grouping and English proficiency, with project-based activities that build confidence, teamwork, and communication.</p>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-icon">03</div>
+              <div>
+                <h3 data-en="A confident final showcase" data-ar="عرض ختامي يعزز الثقة">A confident final showcase</h3>
+                <p data-en="The camp closes with a MyVoice Showcase where children present their projects to families and educators, with recognition for creativity, teamwork, leadership, and innovation." data-ar="يختتم المعسكر بفعالية MyVoice Showcase حيث يعرض الأطفال مشروعاتهم أمام العائلات والمدربين، مع تكريم الإبداع والعمل الجماعي والقيادة والابتكار.">The camp closes with a MyVoice Showcase where children present their projects to families and educators, with recognition for creativity, teamwork, leadership, and innovation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pillars">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker" data-en="Four pillars. One journey." data-ar="أربعة محاور. رحلة واحدة.">Four pillars. One journey.</span>
+          <h2 data-en="The MyVoice learning pillars" data-ar="محاور التعلم في MyVoice">The MyVoice learning pillars</h2>
+          <p data-en="Each pillar turns summer energy into practical language, creativity, leadership, and global awareness." data-ar="كل محور يحول طاقة الصيف إلى مهارات عملية في اللغة والإبداع والقيادة والانفتاح على العالم.">Each pillar turns summer energy into practical language, creativity, leadership, and global awareness.</p>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar-card">
+            <img src="../assets/images/summer26/summer2.png" alt="Children presenting together">
+            <div class="pillar-content">
+              <span class="pillar-number">1</span>
+              <h3 data-en="My Voice" data-ar="صوتي">My Voice</h3>
+              <h4 data-en="English Communication Lab for confident expression." data-ar="معمل تواصل باللغة الإنجليزية لبناء الثقة في التعبير.">English Communication Lab for confident expression.</h4>
+              <ul class="pillar-list">
+                <li data-en="Role-play and real conversations" data-ar="محادثات وتمثيل مواقف واقعية">Role-play and real conversations</li>
+                <li data-en="Storytelling and group discussion" data-ar="سرد قصصي ونقاش جماعي">Storytelling and group discussion</li>
+                <li data-en="Short presentations" data-ar="عروض قصيرة">Short presentations</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pillar-card">
+            <img src="../assets/images/summer26/Picture1.png" alt="Child building robotics project">
+            <div class="pillar-content">
+              <span class="pillar-number">2</span>
+              <h3 data-en="My Ideas" data-ar="أفكاري">My Ideas</h3>
+              <p data-en="AI Discovery Lab for creative future thinking." data-ar="معمل اكتشاف الذكاء الاصطناعي لتنمية التفكير الإبداعي للمستقبل.">AI Discovery Lab for creative future thinking.</p>
+              <ul class="pillar-list">
+                <li data-en="Age-appropriate AI concepts" data-ar="مفاهيم ذكاء اصطناعي مناسبة للعمر">Age-appropriate AI concepts</li>
+                <li data-en="Digital design and storytelling" data-ar="تصميم رقمي وسرد قصصي">Digital design and storytelling</li>
+                <li data-en="Innovation challenges" data-ar="تحديات ابتكار">Innovation challenges</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pillar-card">
+            <img src="../assets/images/summer26/Picture3.png" alt="Child holding robotics work">
+            <div class="pillar-content">
+              <span class="pillar-number">3</span>
+              <h3 data-en="My Impact" data-ar="أثري">My Impact</h3>
+              <p data-en="Leadership and teamwork through mission-based projects." data-ar="قيادة وعمل جماعي من خلال مشروعات وتحديات عملية.">Leadership and teamwork through mission-based projects.</p>
+              <ul class="pillar-list">
+                <li data-en="Teamwork challenges" data-ar="تحديات العمل الجماعي">Teamwork challenges</li>
+                <li data-en="Problem-solving skills" data-ar="مهارات حل المشكلات">Problem-solving skills</li>
+                <li data-en="Confidence in presenting ideas" data-ar="الثقة في عرض الأفكار">Confidence in presenting ideas</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pillar-card">
+            <img src="../assets/images/summer26/summer3.png" alt="Global cultural summer camp illustration">
+            <div class="pillar-content">
+              <span class="pillar-number">4</span>
+              <h3 data-en="My World" data-ar="عالمي">My World</h3>
+              <p data-en="Global cultural experiences with real-life English use." data-ar="تجارب ثقافية عالمية باستخدام اللغة الإنجليزية في مواقف حقيقية.">Global cultural experiences with real-life English use.</p>
+              <ul class="pillar-list">
+                <li data-en="Live UK educator sessions" data-ar="جلسات مباشرة مع معلمين من المملكة المتحدة">Live UK educator sessions</li>
+                <li data-en="Educational field trips" data-ar="رحلات تعليمية">Educational field trips</li>
+                <li data-en="Cultural curiosity" data-ar="فضول ثقافي وانفتاح">Cultural curiosity</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker" data-en="6 stages. One transformation." data-ar="6 مراحل. تحول واحد.">6 stages. One transformation.</span>
+          <h2 data-en="From first assessment to final celebration" data-ar="من أول تقييم إلى الاحتفال النهائي">From first assessment to final celebration</h2>
+          <p data-en="The brochure journey is redesigned here as a clear parent-friendly path." data-ar="تم تنظيم رحلة الكتيب هنا كمسار واضح ومريح لأولياء الأمور.">The brochure journey is redesigned here as a clear parent-friendly path.</p>
+        </div>
+
+        <div class="journey-grid">
+          <article class="journey-card" data-step="01">
+            <span class="chip" data-en="Discover" data-ar="اكتشاف">Discover</span>
+            <h3 data-en="Identity & language assessment" data-ar="تقييم الهوية واللغة">Identity & language assessment</h3>
+            <p data-en="English placement plus personality and interest discovery with MindSpace before the camp begins." data-ar="اختبار تحديد مستوى اللغة الإنجليزية واكتشاف الشخصية والاهتمامات بالتعاون مع MindSpace قبل بداية المعسكر.">English placement plus personality and interest discovery with MindSpace before the camp begins.</p>
+          </article>
+          <article class="journey-card" data-step="02">
+            <span class="chip" data-en="Explore" data-ar="استكشاف">Explore</span>
+            <h3 data-en="The camp experience" data-ar="تجربة المعسكر">The camp experience</h3>
+            <p data-en="Three weeks, two sessions per week, five hours each, across the four MyVoice pillars." data-ar="ثلاثة أسابيع، جلستان أسبوعيًا، خمس ساعات لكل جلسة، ضمن محاور MyVoice الأربعة.">Three weeks, two sessions per week, five hours each, across the four MyVoice pillars.</p>
+          </article>
+          <article class="journey-card" data-step="03">
+            <span class="chip" data-en="Express" data-ar="تعبير">Express</span>
+            <h3 data-en="Optional Expression Studio" data-ar="استوديو التعبير الاختياري">Optional Expression Studio</h3>
+            <p data-en="Children choose creative tracks such as art, drama, music, movement, and creative makers." data-ar="يختار الأطفال مسارات إبداعية مثل الفن والدراما والموسيقى والحركة وصناع الإبداع.">Children choose creative tracks such as art, drama, music, movement, and creative makers.</p>
+          </article>
+          <article class="journey-card" data-step="04">
+            <span class="chip" data-en="Create" data-ar="ابتكار">Create</span>
+            <h3 data-en="Team project development" data-ar="تطوير مشروع جماعي">Team project development</h3>
+            <p data-en="Small teams build a final project combining English, creativity, teamwork, and innovation." data-ar="فرق صغيرة تبني مشروعًا نهائيًا يجمع اللغة الإنجليزية والإبداع والعمل الجماعي والابتكار.">Small teams build a final project combining English, creativity, teamwork, and innovation.</p>
+          </article>
+          <article class="journey-card" data-step="05">
+            <span class="chip" data-en="Experience" data-ar="تجربة">Experience</span>
+            <h3 data-en="MyVoice Adventure Camp" data-ar="مخيم مغامرة MyVoice">MyVoice Adventure Camp</h3>
+            <p data-en="A two-night, three-day outdoor residential experience that brings every skill to life." data-ar="تجربة خارجية لمدة ليلتين وثلاثة أيام تطبق كل المهارات في بيئة واقعية مليئة بالتحدي.">A two-night, three-day outdoor residential experience that brings every skill to life.</p>
+          </article>
+          <article class="journey-card" data-step="06">
+            <span class="chip" data-en="Celebrate" data-ar="احتفال">Celebrate</span>
+            <h3 data-en="MyVoice Showcase Event" data-ar="فعالية MyVoice Showcase">MyVoice Showcase Event</h3>
+            <p data-en="The grand finale where children present their work to families and educators." data-ar="الاحتفال الختامي الذي يعرض فيه الأطفال أعمالهم أمام العائلات والمدربين.">The grand finale where children present their work to families and educators.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section navy">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker" data-en="Summer energy, professional structure" data-ar="طاقة صيفية بتنظيم احترافي">Summer energy, professional structure</span>
+          <h2 data-en="A visual camp experience" data-ar="تجربة مخيم نابضة بالحياة">A visual camp experience</h2>
+          <p data-en="Bright brochure visuals are paired with the EACC theme so the page feels playful, premium, and trustworthy." data-ar="استخدمنا صور الكتيب المشرقة مع هوية EACC ليظهر التصميم مرحًا واحترافيًا وموثوقًا.">Bright brochure visuals are paired with the EACC theme so the page feels playful, premium, and trustworthy.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item large">
+            <img src="../assets/images/summer26/eng.png" alt="MyVoice summer camp brochure artwork">
+            <figcaption class="gallery-caption" data-en="British-inspired summer learning" data-ar="تعلم صيفي مستوحى من التعليم البريطاني">British-inspired summer learning</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="../assets/images/summer26/Picture1.png" alt="Robotics activity">
+            <figcaption class="gallery-caption" data-en="Robotics & future lab" data-ar="الروبوتكس ومعمل المستقبل">Robotics & future lab</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="../assets/images/summer26/Picture2.png" alt="Child with robot">
+            <figcaption class="gallery-caption" data-en="Hands-on discovery" data-ar="اكتشاف عملي">Hands-on discovery</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="../assets/images/summer26/workshops.png" alt="AI learning for children">
+            <figcaption class="gallery-caption" data-en="AI for young learners" data-ar="ذكاء اصطناعي للأطفال">AI for young learners</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="../assets/images/summer26/Picture3.png" alt="Group activity">
+            <figcaption class="gallery-caption" data-en="Teamwork and confidence" data-ar="عمل جماعي وثقة">Teamwork and confidence</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker" data-en="Choose the right track" data-ar="اختر المسار المناسب">Choose the right track</span>
+          <h2 data-en="Program options for every child" data-ar="اختيارات البرنامج لكل طفل">Program options for every child</h2>
+          <p data-en="Families can choose the full MyVoice program or add a creative day through Expression Studio." data-ar="يمكن للعائلات اختيار برنامج MyVoice الكامل أو إضافة يوم إبداعي من خلال Expression Studio.">Families can choose the full MyVoice program or add a creative day through Expression Studio.</p>
+        </div>
+
+        <div class="program-grid">
+          <article class="program-card featured">
+            <h3 data-en="Full MyVoice Programme" data-ar="برنامج MyVoice الكامل">Full MyVoice Programme</h3>
+            <p data-en="The core camp journey: assessment, four learning pillars, team project, showcase, and certificate." data-ar="رحلة المعسكر الأساسية: التقييم، أربعة محاور تعليمية، مشروع جماعي، عرض ختامي، وشهادة.">The core camp journey: assessment, four learning pillars, team project, showcase, and certificate.</p>
+            <ul class="included-list">
+              <li data-en="3 weeks per level, 2 sessions per week" data-ar="3 أسابيع لكل مستوى، جلستان أسبوعيًا">3 weeks per level, 2 sessions per week</li>
+              <li data-en="5 hours per session, 25 instructional hours" data-ar="5 ساعات لكل جلسة، 25 ساعة تعليمية">5 hours per session, 25 instructional hours</li>
+              <li data-en="Age grouped and English proficiency grouped" data-ar="تقسيم حسب العمر ومستوى اللغة الإنجليزية">Age grouped and English proficiency grouped</li>
+              <li data-en="MyVoice Showcase and completion certificate" data-ar="عرض MyVoice الختامي وشهادة إتمام">MyVoice Showcase and completion certificate</li>
+            </ul>
+            <a class="btn btn-primary" href="#enroll" data-en="Ask About Availability" data-ar="اسأل عن الأماكن المتاحة">Ask About Availability</a>
+          </article>
+
+          <article class="program-card">
+            <h3 data-en="Expression Studio Add-on" data-ar="إضافة Expression Studio">Expression Studio Add-on</h3>
+            <p data-en="A creative day for children to discover talents, confidence, personal passions, and performance skills." data-ar="يوم إبداعي يساعد الأطفال على اكتشاف المواهب والثقة والاهتمامات الشخصية ومهارات الأداء.">A creative day for children to discover talents, confidence, personal passions, and performance skills.</p>
+            <ul class="included-list">
+              <li data-en="Robotics, mini sports, and talent discovery" data-ar="روبوتكس ورياضات مصغرة واكتشاف مواهب">Robotics, mini sports, and talent discovery</li>
+              <li data-en="Art: drawing, painting, crafts" data-ar="استوديو الفن: رسم وتلوين وأشغال يدوية">Art: drawing, painting, crafts</li>
+              <li data-en="Drama and stage confidence" data-ar="دراما وثقة على المسرح">Drama and stage confidence</li>
+              <li data-en="Music, movement, and creative makers" data-ar="موسيقى وحركة وصناع الإبداع">Music, movement, and creative makers</li>
+              
+            </ul>
+            <a class="btn btn-primary" href="#activities" data-en="View Activities" data-ar="عرض الأنشطة">View Activities</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section navy" id="activities">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker" data-en="8 activity tracks" data-ar="8 مسارات أنشطة">8 activity tracks</span>
+          <h2 data-en="One summer. Endless potential." data-ar="صيف واحد. إمكانات بلا حدود.">One summer. Endless potential.</h2>
+          <p data-en="Expression Studio turns hidden talents into visible confidence through creative, sports, and future-skills tracks." data-ar="يساعد Expression Studio الأطفال على تحويل المواهب الكامنة إلى ثقة واضحة من خلال مسارات الإبداع والرياضة ومهارات المستقبل.">Expression Studio turns hidden talents into visible confidence through creative, sports, and future-skills tracks.</p>
+        </div>
+
+        <div class="activity-grid">
+          <div class="activity-card">
+            <img src="../assets/images/summer26/Picture1.png" alt="Robotics and future lab activity" loading="lazy" decoding="async">
+            <div class="activity-card-body">
+              <strong data-en="Robotics & Future Lab" data-ar="الروبوتكس ومعمل المستقبل">Robotics & Future Lab</strong><span data-en="Creativity • Logical Thinking" data-ar="منطق برمجة • هندسة">Creativity • Logical Thinking</span>
+            </div>
+          </div>
+          <div class="activity-card">
+            <img src="../assets/images/activities/arts.avif" alt="Art activity" loading="lazy" decoding="async">
+            <div class="activity-card-body">
+              <strong data-en="Art" data-ar="الفن">Art</strong><span data-en="Drawing • Painting • Crafts" data-ar="رسم • تلوين • أشغال يدوية">Drawing • Painting • Crafts</span>
+            </div>
+          </div>
+          <div class="activity-card">
+            <img src="../assets/images/activities/music notes.jpg" alt="Music notes activity" loading="lazy" decoding="async">
+            <div class="activity-card-body">
+              <strong data-en="Music Notes" data-ar="النوتة المويسيقية ">Music Notes</strong><span data-en="Rhythm • Memory • Performance" data-ar="إيقاع • ذاكرة • أداء">Rhythm • Memory • Performance</span>
+            </div>
+          </div>
+          <div class="activity-card">
+            <img src="../assets/images/activities/mini-football.webp" alt="Mini football activity" loading="lazy" decoding="async">
+            <div class="activity-card-body">
+              <strong data-en="Mini Football" data-ar="كرة قدم مصغرة">Mini Football</strong><span data-en="Fitness • Teamwork • Leadership" data-ar="لياقة • فريق • قيادة">Fitness • Teamwork • Leadership</span>
+            </div>
+          </div>
+          <div class="activity-card">
+            <img src="../assets/images/activities/mini-basketball.webp" alt="Mini basketball activity" loading="lazy" decoding="async">
+            <div class="activity-card-body">
+              <strong data-en="Mini Basketball" data-ar="كرة سلة مصغرة">Mini Basketball</strong><span data-en="Coordination • Game awareness" data-ar="تناسق • فهم اللعبة">Coordination • Game awareness</span>
+            </div>
+          </div>
+          <div class="activity-card">
+            <img src="../assets/images/activities/fitness.jpg" alt="Fitness and Zumba activity" loading="lazy" decoding="async">
+            <div class="activity-card-body">
+              <strong data-en="Fitness & Zumba" data-ar="لياقة وزومبا">Fitness & Zumba</strong><span data-en="Energy • Body coordination" data-ar="طاقة • تناسق جسدي">Energy • Body coordination</span>
+            </div>
+          </div>
+          <div class="activity-card">
+            <img src="../assets/images/activities/Young Ballerinas.avif" alt="Ballet activity" loading="lazy" decoding="async">
+            <div class="activity-card-body">
+              <strong data-en="Ballet" data-ar="الباليه">Ballet</strong><span data-en="Posture • Balance • Grace" data-ar="قوام • توازن • رشاقة">Posture • Balance • Grace</span>
+            </div>
+          </div>
+          <div class="activity-card">
+            <img src="../assets/images/activities/drama.webp" alt="Stage and public speaking activity" loading="lazy" decoding="async">
+            <div class="activity-card-body">
+              <strong data-en="Stage & Public Speaking" data-ar="المسرح والتحدث أمام الجمهور">Stage & Public Speaking</strong><span data-en="Drama • Storytelling • Confidence" data-ar="دراما • سرد قصصي • ثقة">Drama • Storytelling • Confidence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section class="parents-section" id="why-parents">
+      <div class="container">
+        <div class="parents-head">
+          <h2 data-en="Why parents choose us?" data-ar="ليه الأهل بيختارونا؟">Why parents choose us?</h2>
+          <p data-en="A program built on expertise, global partnerships, and genuine care for every child's growth." data-ar="برنامج مبني على الخبرة وشراكات عالمية واهتمام حقيقي بنمو كل طفل.">A program built on expertise, global partnerships, and genuine care for every child's growth.</p>
+        </div>
+
+        <div class="parents-grid">
+          <article class="parents-card">
+            <h3 class="accent" data-en="British-inspired curriculum" data-ar="منهج بريطاني معتمد">British-inspired curriculum</h3>
+            <p data-en="Oxford Discover and CEFR standards, the same framework used by leading UK schools." data-ar="Oxford Discover ومعايير CEFR، نفس الإطار المستخدم في أفضل المدارس البريطانية.">Oxford Discover and CEFR standards, the same framework used by leading UK schools.</p>
+          </article>
+
+          <article class="parents-card">
+            <h3 data-en="Eton Academy UK" data-ar="شراكة Eton Academy UK">Eton Academy UK</h3>
+            <p data-en="Live sessions with international educators for a genuine global learning experience." data-ar="جلسات مباشرة مع معلمين دوليين لتجربة تعليمية عالمية حقيقية.">Live sessions with international educators for a genuine global learning experience.</p>
+          </article>
+
+          <article class="parents-card">
+            <h3 class="accent" data-en="Professional identity assessment" data-ar="تقييم هوية متخصص">Professional identity assessment</h3>
+            <p data-en="Mind Space child psychologists create a personalised profile for every child." data-ar="أخصائيون من Mind Space يقدمون ملفاً شخصياً لكل طفل قبل ما الكامب يبدأ.">Mind Space child psychologists create a personalised profile for every child.</p>
+          </article>
+
+          <article class="parents-card">
+            <h3 data-en="Project-based learning" data-ar="تعلم قائم على المشاريع">Project-based learning</h3>
+            <p data-en="Real deliverables, not just worksheets, presented at the MyVoice Showcase." data-ar="مشاريع حقيقية وليست مجرد أوراق، يتم عرضها في MyVoice Showcase.">Real deliverables, not just worksheets, presented at the MyVoice Showcase.</p>
+          </article>
+
+          <article class="parents-card">
+            <h3 class="accent" data-en="MyVoice Showcase event" data-ar="حفل MyVoice Showcase">MyVoice Showcase event</h3>
+            <p data-en="A grand finale celebrating creativity, confidence, and personal growth." data-ar="حفل ختامي يحتفل بإبداع الطفل وثقته ونموه الشخصي.">A grand finale celebrating creativity, confidence, and personal growth.</p>
+          </article>
+
+          <article class="parents-card">
+            <h3 data-en="Adventure Camp closing" data-ar="ختام Adventure Camp">Adventure Camp closing</h3>
+            <p data-en="A 2-night, 3-day outdoor experience that brings every skill to life." data-ar="معسكر خارجي بالإقامة ليلتين و3 أيام يجسد كل مهارة في الحياة الحقيقية.">A 2-night, 3-day outdoor experience that brings every skill to life.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners-section" id="partners">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker" data-en="Our partners" data-ar="شركاؤنا">Our partners</span>
+          <h2 data-en="Trusted learning partners behind MyVoice" data-ar="شركاء تعلم موثوقون خلف MyVoice">Trusted learning partners behind MyVoice</h2>
+          <p data-en="MyVoice brings together international curriculum, education partners, child development support, and EACC's local expertise." data-ar="يجمع MyVoice بين منهج دولي وشركاء تعليم ودعم نمو الطفل وخبرة EACC المحلية.">MyVoice brings together international curriculum, education partners, child development support, and EACC's local expertise.</p>
+        </div>
+
+        <div class="partners-grid">
+            <article class="partner-card">
+            <span class="partner-logo">
+              <img src="../assets/images/partners/image.png" alt="MindSpace logo">
+            </span>
+            <div>
+              <h3>MindSpace &middot; EACC</h3>
+              <p>Egyptian American Cultural Center</p>
+            </div>
+          </article>
+          
+          <a class="partner-card" href="https://www.eton-academy.uk/" target="_blank" rel="noopener">
+            <span class="partner-logo">
+              <img src="../assets/images/partners/Eton logo teal (1).avif" alt="Eton Academy logo">
+            </span>
+            <div>
+              <h3>Eton Academy</h3>
+              <p>UK education partner</p>
+            </div>
+          </a>
+
+          <a class="partner-card" href="https://www.think-english.co.uk/" target="_blank" rel="noopener">
+            <span class="partner-logo">
+              <img src="../assets/images/partners/Logo-CMYK-01.avif" alt="Think English logo">
+            </span>
+            <div>
+              <h3>Think English</h3>
+              <p>English learning partner</p>
+            </div>
+          </a>
+
+          <article class="partner-card">
+            <span class="partner-logo">
+              <img src="../assets/images/partners/oxford.png" alt="Oxford University Press logo">
+            </span>
+            <div>
+              <h3>Oxford University Press</h3>
+              <p>Oxford Discover Curriculum</p>
+            </div>
+          </article>
+
+        
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="enroll">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker" data-en="Register now" data-ar="سجل الآن">Register now</span>
+          <h2 data-en="Your child’s transformation begins here" data-ar="تبدأ رحلة تطور طفلك من هنا">Your child’s transformation begins here</h2>
+          <p data-en="Spots are limited. Send your details and the EACC team will help you choose the right level, schedule, and track." data-ar="الأماكن محدودة. أرسل بياناتك وسيساعدك فريق EACC في اختيار المستوى والموعد والمسار المناسب.">Spots are limited. Send your details and the EACC team will help you choose the right level, schedule, and track.</p>
+        </div>
+
+        <div class="contact-panel">
+          <aside class="contact-card">
+            <img src="../assets/images/contactus.avif" alt="Children celebrating summer camp learning">
+            <div class="contact-card-content">
+              <h3 data-en="Contact EACC" data-ar="تواصل مع EACC">Contact EACC</h3>
+              <ul class="contact-list">
+                <li><a href="https://www.google.com/maps/search/?api=1&query=117%20Ahmed%20Shawqi%2C%20Roushdy%2C%20Alexandria" target="_blank" rel="noopener" data-en="117 Ahmed Shawky St., Roushdy, Alexandria" data-ar="117 شارع أحمد شوقي، رشدي، الإسكندرية">117 Ahmed Shawky St., Roushdy, Alexandria</a></li>
+                <li><a href="tel:+2035427420">+2 03 5427420</a></li>
+                <li><a href="tel:+201065533240">+20 106 553 3240</a></li>
+                <li><a href="mailto:info_eacc@eacc-egy.com">info_eacc@eacc-egy.com</a></li>
+                <li><a href="https://eacc-egy.com" target="_blank" rel="noopener">eacc-egy.com</a></li>
+              </ul>
+            </div>
+          </aside>
+
+          <form class="contact-form" id="summerCampForm">
+            <div class="field">
+              <label for="parentName" data-en="Parent name" data-ar="اسم ولي الأمر">Parent name</label>
+              <input id="parentName" name="parentName" type="text" required data-en-placeholder="Your full name" data-ar-placeholder="الاسم بالكامل" placeholder="Your full name">
+            </div>
+
+            <div class="field">
+              <label for="phone" data-en="Phone number" data-ar="رقم الهاتف">Phone number</label>
+              <input id="phone" name="phone" type="tel" required data-en-placeholder="010..." data-ar-placeholder="010..." placeholder="010...">
+            </div>
+
+            <div class="field">
+              <label for="childName" data-en="Child name" data-ar="اسم الطفل">Child name</label>
+              <input id="childName" name="childName" type="text" required data-en-placeholder="Child full name" data-ar-placeholder="اسم الطفل بالكامل" placeholder="Child full name">
+            </div>
+
+            <div class="field">
+              <label for="childAge" data-en="Child age" data-ar="عمر الطفل">Child age</label>
+              <select id="childAge" name="childAge" required>
+                <option value="" data-en="Choose age" data-ar="اختر العمر">Choose age</option>
+                <option value="4-6" data-en="4-6 years" data-ar="من 4 إلى 6 سنوات">4-6 years</option>
+                <option value="7-9" data-en="7-9 years" data-ar="من 7 إلى 9 سنوات">7-9 years</option>
+                <option value="10-12" data-en="10-12 years" data-ar="من 10 إلى 12 سنة">10-12 years</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="track" data-en="Interested track" data-ar="المسار المطلوب">Interested track</label>
+              <select id="track" name="track" required>
+                <option value="" data-en="Choose track" data-ar="اختر المسار">Choose track</option>
+                <option value="Full Programme" data-en="Full MyVoice Programme" data-ar="برنامج MyVoice الكامل">Full MyVoice Programme</option>
+                <option value="Programme + Expression Studio" data-en="Full Programme + Expression Studio" data-ar="البرنامج الكامل + Expression Studio">Full Programme + Expression Studio</option>
+                <option value="Need guidance" data-en="I need guidance" data-ar="أحتاج إلى ترشيح مناسب">I need guidance</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="message" data-en="Message" data-ar="رسالة">Message</label>
+              <textarea id="message" name="message" data-en-placeholder="Tell us anything we should know about your child." data-ar-placeholder="اكتب أي تفاصيل تود مشاركتها عن طفلك." placeholder="Tell us anything we should know about your child."></textarea>
+            </div>
+
+            <div class="field full">
+              <button class="btn btn-primary" type="submit" id="summerSubmitButton">
+                <span data-en="Send Registration Interest" data-ar="إرسال طلب الاهتمام بالتسجيل">Send Registration Interest</span>
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <div class="form-feedback" id="formFeedback" aria-live="polite" hidden>
+              <div class="form-feedback-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
+              <div>
+                <h4 data-en="Thank you. Your registration interest was sent." data-ar="شكرًا لك. تم إرسال طلب الاهتمام بالتسجيل.">Thank you. Your registration interest was sent.</h4>
+                <p data-en="Your details have been received. Our admissions team will contact you to confirm availability, level placement, and the best track for your child." data-ar="تم استلام بياناتك. سيتواصل معك فريق القبول لتأكيد الأماكن المتاحة وتحديد المستوى والمسار الأنسب لطفلك.">Your details have been received. Our admissions team will contact you to confirm availability, level placement, and the best track for your child.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-grid">
+        <div class="footer-brand-block">
+          <div class="footer-logo">
+            <img src="../assets/images/logo-white.png" alt="EACC White Logo">
+          </div>
+          <p data-en="Egyptian American Cultural Center offers premium language education, preparation courses, camps, and international learning experiences." data-ar="يقدم المركز الثقافي المصري الأمريكي برامج متميزة في تعليم اللغات وكورسات التحضير والمعسكرات والتجارب التعليمية الدولية.">Egyptian American Cultural Center offers premium language education, preparation courses, camps, and international learning experiences.</p>
+          <a class="footer-apply-link" href="../contactus.html#contact" data-en="Apply Now" data-ar="قدم الآن">Apply Now</a>
+        </div>
+
+        <div class="footer-col footer-office">
+          <h4 data-en="Office" data-ar="المقر">Office</h4>
+          <div class="footer-links">
+            <a href="https://www.google.com/maps/search/?api=1&query=117%20Ahmed%20Shawqi%2C%20Mustafa%20Kamel%20WA%20Bolkli%2C%20Sidi%20Gaber%2C%20Alexandria%20Governorate%205433141" target="_blank" rel="noopener" data-en="117 Ahmed Shawqi, Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria" data-ar="117 أحمد شوقي، مصطفى كامل وبولكلي، سيدي جابر، الإسكندرية">117 Ahmed Shawqi, Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria</a>
+            <a href="mailto:info_eacc@eacc-egy.com">info_eacc@eacc-egy.com</a>
+            <a href="tel:+201065533240">+20106 553 3240</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-en="Links" data-ar="روابط">Links</h4>
+          <div class="footer-links">
+            <a href="../index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+            <a href="../aboutus/who-we-are.html" data-en="About EACC" data-ar="عن المركز">About EACC</a>
+            <a href="../programs/language.html" data-en="Languages" data-ar="اللغات">Languages</a>
+            <a href="../programs/activities.html" data-en="Activities" data-ar="الأنشطة">Activities</a>
+            <a href="../contactus.html" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-en="Legal" data-ar="قانوني">Legal</h4>
+          <div class="footer-links">
+            <a href="../terms-and-conditions.html" data-en="Terms & Conditions" data-ar="الشروط والأحكام">Terms &amp; Conditions</a>
+            <a href="../privacy-policy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+            <a href="../aboutus/faqs.html" data-en="FAQs" data-ar="الأسئلة الشائعة">FAQs</a>
+          </div>
+        </div>
+
+        <div class="footer-col footer-follow">
+          <h4 data-en="Follow Us" data-ar="تابعنا">Follow Us</h4>
+          <div class="footer-social-list">
+            <a href="https://www.facebook.com/Egyptian.American.Center/" target="_blank" rel="noopener" aria-label="Facebook">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/facebook.png" alt="" aria-hidden="true"></span>
+              <span>Facebook</span>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=%2B201065533240&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3Nzg4MzIwMTksInBob25lIjoiKzIwMTA2NTUzMzI0MCIsImNvbnRleHQiOiJBZmd6cl9sa2hzY2s2YW5ER1hFXzliY19YV0NXWDU2VWEzM2xnd2FaQUFxS2tUNlBteDM3c3VNcUFrdWNLMVNOUjFUTjBHNTE0UGhtSUlfNzVPTEpCWGZxY19CSUhGS2NFSk1OSVFUZVNKUFo5RV84c2RMck43aWhvUEZuV29XOEV5ZGpaRUlIdmh5ZG1OYTJ3LVBCOFZmWVNnIiwic291cmNlIjoiRkJfUGFnZSIsImFwcCI6ImZhY2Vib29rIiwiZW50cnlfcG9pbnQiOiJwYWdlX2N0YSJ9.03driferbSmPgKUHBgkwE-uBYVLX9fNVYLwOvG-JsnBPHSPSoiNt7ZKVUu05bq8cfjHnybXK52UrIH8BEmg2aQ&fbclid=IwY2xjawRyYI1leHRuA2FlbQIxMABicmlkETFTOE56aE00ZXBZQkxmN3FQc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHgdzut8C8wGbFJh3GQdN1xD6wtIJoTTCq2Tj9gHoOJRcAaAw_Amsg5us60ag_aem_YWdncwBlv9_nYufc6-AOw0JCkNrX&brid=YWdncwEHpdr5OyZQSOIvAJJPqTkm" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/whatsapp.png" alt="" aria-hidden="true"></span>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://www.instagram.com/EgyptianAmericanCenter/" target="_blank" rel="noopener" aria-label="Instagram">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/instagram-logo.png" alt="" aria-hidden="true"></span>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.youtube.com/@egyptianamericancentereacc" target="_blank" rel="noopener" aria-label="YouTube">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/youtube.png" alt="" aria-hidden="true"></span>
+              <span>YouTube</span>
+            </a>
+            <a href="https://www.tiktok.com/@eaccegy?_t=8sbRXLekzn5&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
+              <span class="footer-social-icon-wrap"><img src="../assets/icons/tik-tok.png" alt="" aria-hidden="true"></span>
+              <span>TikTok</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-en="© 2026 Egyptian American Cultural Center. All rights reserved." data-ar="© 2026 المركز الثقافي المصري الأمريكي. جميع الحقوق محفوظة.">&copy; 2026 Egyptian American Cultural Center. All rights reserved.</span>
+        <span class="footer-bottom-links">
+          <a href="../terms-and-conditions.html" data-en="Terms" data-ar="الشروط">Terms</a>
+          <a href="../privacy-policy.html" data-en="Privacy" data-ar="الخصوصية">Privacy</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const siteLoader = document.getElementById("siteLoader");
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        siteLoader.classList.add("hidden");
+        document.body.classList.remove("loading");
+      }, 650);
+    });
+
+    const header = document.querySelector("header");
+    const logoImg = document.querySelector(".logo img");
+    const defaultLogo = "../assets/images/logo.png";
+    const whiteLogo = "../assets/images/logo-white.png";
+
+    function updateHeader() {
+      const isScrolled = window.scrollY > 24;
+      header.classList.toggle("scrolled", isScrolled);
+      logoImg.src = isScrolled ? defaultLogo : whiteLogo;
+    }
+
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    updateHeader();
+
+    const navLinks = document.getElementById("navLinks");
+    const mobileToggle = document.getElementById("mobileToggle");
+    mobileToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("active");
+      mobileToggle.classList.toggle("active", isOpen);
+      mobileToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        mobileToggle.classList.remove("active");
+        mobileToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const languageToggle = document.getElementById("languageToggle");
+    const languageToggleText = document.getElementById("languageToggleText");
+    const translatableNodes = document.querySelectorAll("[data-en][data-ar]");
+    const placeholderNodes = document.querySelectorAll("[data-en-placeholder][data-ar-placeholder]");
+
+    function setLanguage(lang) {
+      const key = lang === "ar" ? "ar" : "en";
+      document.documentElement.lang = key;
+      document.documentElement.dir = key === "ar" ? "rtl" : "ltr";
+      translatableNodes.forEach((node) => {
+        node.innerHTML = node.dataset[key];
+      });
+      placeholderNodes.forEach((node) => {
+        node.placeholder = node.dataset[key + "Placeholder"];
+      });
+      languageToggleText.textContent = key === "ar" ? "EN" : "AR";
+      languageToggle.setAttribute(
+        "aria-label",
+        key === "ar" ? "Switch website language to English" : "Switch website language to Arabic"
+      );
+      localStorage.setItem("eacc-language", key);
+    }
+
+    languageToggle.addEventListener("click", () => {
+      const nextLang = document.documentElement.lang === "ar" ? "en" : "ar";
+      setLanguage(nextLang);
+    });
+
+    setLanguage(localStorage.getItem("eacc-language") || "en");
+
+
+  const form = document.getElementById("summerCampForm");
+  const feedback = document.getElementById("formFeedback");
+  const submitButton = document.getElementById("summerSubmitButton");
+  const submitLabel = submitButton.querySelector("span");
+
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw5eTwqnRVhtQUAE39uY7O8b31UtRGQ8N85dy7ama_ApTUuvoPVn_WjG2Ic5oTJz6jxYg/exec";
+
+  function setFormFeedback(type, title, message) {
+    feedback.hidden = false;
+    feedback.classList.toggle("is-error", type === "error");
+    feedback.querySelector("h4").textContent = title;
+    feedback.querySelector("p").textContent = message;
+    feedback.querySelector(".form-feedback-icon i").className =
+      type === "error" ? "fa-solid fa-xmark" : "fa-solid fa-check";
+  }
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const data = new FormData(form);
+    feedback.hidden = true;
+    feedback.classList.remove("is-error");
+    submitButton.disabled = true;
+    submitLabel.textContent = document.documentElement.lang === "ar" ? "جاري الإرسال..." : "Sending...";
+
+    const payload = {
+      parentName: data.get("parentName") || "",
+      phone: data.get("phone") || "",
+      childName: data.get("childName") || "",
+      childAge: data.get("childAge") || "",
+      track: data.get("track") || "",
+      message: data.get("message") || "",
+      source: "Summer Camp 2026 page",
+      submittedAt: new Date().toISOString()
+    };
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify(payload)
+      });
+
+      form.reset();
+      setFormFeedback(
+        "success",
+        document.documentElement.lang === "ar" ? "تم إرسال طلبك بنجاح." : "Your registration interest was sent.",
+        document.documentElement.lang === "ar"
+          ? "تم استلام بياناتك. سيتواصل معك فريق القبول لتأكيد التفاصيل والخطوة التالية."
+          : "Your details have been received. Our admissions team will contact you to confirm availability and the next step."
+      );
+    } catch (error) {
+      console.error(error);
+      setFormFeedback(
+        "error",
+        document.documentElement.lang === "ar" ? "لم يتم إرسال الطلب." : "We could not send the request.",
+        document.documentElement.lang === "ar"
+          ? "من فضلك حاول مرة أخرى، أو تواصل معنا مباشرة عبر الهاتف أو البريد الإلكتروني."
+          : "Please try again, or contact us directly by phone or email."
+      );
+    } finally {
+      submitButton.disabled = false;
+      submitLabel.textContent = document.documentElement.lang === "ar" ? submitLabel.dataset.ar : submitLabel.dataset.en;
+    }
+  });
+
+  </script>
+</body>
+</html>

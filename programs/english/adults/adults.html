@@ -1,0 +1,843 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adults English | EACC</title>
+  <meta name="description" content="English for Adults at EACC Alexandria: general communication, advanced conversation, private one-to-one courses, online learning, and placement support." />
+  <link rel="icon" type="image/png" href="../../../assets/images/logo-crop.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    .fa-solid,
+    .fab { display: inline-flex; align-items: center; justify-content: center; font-style: normal; font-variant: normal; line-height: 1; }
+    .fa-chevron-down::before { content: "\2304"; }
+    .fa-chevron-right::before { content: "\203A"; }
+    .fa-facebook-f::before { content: "f"; font-family: Arial, sans-serif; font-weight: 700; }
+    .fa-instagram::before { content: "\25CE"; }
+    .fa-youtube::before { content: "\25B6"; }
+    .fa-tiktok::before { content: "\266A"; }
+
+    :root {
+      --navy: #1a237e;
+      --navy-dark: #0d1457;
+      --gold: #f5a623;
+      --gold-light: #ffd54f;
+      --white: #ffffff;
+      --off-white: #f8f9ff;
+      --gray-light: #eef0f8;
+      --gray: #9096b0;
+      --text: #1a1d2e;
+      --heading-font: 'Playfair Display', serif;
+      --body-font: 'DM Sans', sans-serif;
+      --shadow: 0 20px 60px rgba(17, 25, 75, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body-font); color: var(--text); background: var(--off-white); overflow-x: hidden; }
+    body.loading { overflow: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(1180px, 92%); margin: auto; }
+    section { padding: 105px 0; }
+    h1, h2, h3, h4 { font-family: var(--heading-font); }
+
+    .site-loader { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top, rgba(40,53,147,0.92), var(--navy-dark) 58%); color: var(--white); transition: opacity 0.55s ease, visibility 0.55s ease; }
+    .site-loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .loader-content { width: min(360px, 82vw); display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .loader-content img { width: 138px; margin-bottom: 24px; }
+    .loader-content h2 { font-size: 30px; line-height: 1.2; margin-bottom: 24px; color: var(--white); }
+    .loader-bar { position: relative; width: 100%; height: 4px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,0.16); }
+    .loader-bar::before { content: ''; position: absolute; inset: 0; width: 45%; border-radius: inherit; background: linear-gradient(90deg, var(--gold), var(--gold-light)); animation: loaderMove 1.2s ease-in-out infinite; }
+    @keyframes loaderMove { 0% { transform: translateX(-110%); } 100% { transform: translateX(230%); } }
+
+    header { position: fixed; top: 0; left: 0; width: 100%; z-index: 999; background: transparent; border-bottom: 1px solid transparent; transition: 0.4s ease; }
+    header.scrolled { background: rgba(255,255,255,0.9); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(0,0,0,0.05); box-shadow: 0 14px 36px rgba(13,20,87,0.08); }
+    .navbar { height: 90px; display: flex; align-items: center; justify-content: space-between; transition: height 0.35s ease; }
+    header.scrolled .navbar { height: 72px; }
+    .logo img { width: 115px; transition: 0.35s ease; }
+    header.scrolled .logo img { width: 98px; }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a, .dropdown > a { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 12px 14px; border-radius: 999px; font-size: 14px; font-weight: 700; color: var(--white); transition: 0.35s ease; overflow: hidden; }
+    .nav-links a::before, .dropdown > a::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,35,126,0.08), rgba(245,166,35,0.12)); opacity: 0; transform: scale(0.8); border-radius: 999px; transition: 0.35s ease; }
+    .nav-links a:hover::before, .dropdown:hover > a::before, .nav-links a.active::before { opacity: 1; transform: scale(1); }
+    .nav-links a span, .dropdown > a span, .dropdown > a i { position: relative; z-index: 2; }
+    .nav-links a:hover, .dropdown:hover > a { color: var(--gold-light); transform: translateY(-2px); }
+    header.scrolled .nav-links a, header.scrolled .dropdown > a { color: var(--navy-dark); }
+    header.scrolled .nav-links a:hover, header.scrolled .dropdown:hover > a { color: var(--navy); }
+    .dropdown { position: relative; }
+    .dropdown-menu { position: absolute; top: calc(100% + 12px); left: 0; min-width: 240px; background: var(--white); border: 1px solid rgba(13,20,87,0.08); border-radius: 18px; padding: 12px; box-shadow: 0 20px 40px rgba(13,20,87,0.12); opacity: 0; visibility: hidden; transform: translateY(10px); transition: 0.35s ease; z-index: 999; }
+    .dropdown-menu a { display: block; padding: 13px 15px; border-radius: 12px; color: var(--navy-dark); font-size: 14px; font-weight: 700; transition: 0.3s ease; }
+    .dropdown-menu a::before { display: none; }
+    .dropdown-menu a:hover { background: var(--gray-light); color: var(--navy); transform: translateX(4px); }
+    .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav-apply { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy-dark) !important; box-shadow: 0 10px 24px rgba(245,166,35,0.24); }
+
+    .mobile-toggle { width: 46px; height: 46px; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 5px; padding: 0; border: 1px solid rgba(255,255,255,0.22); border-radius: 16px; background: rgba(255,255,255,0.1); color: var(--white); box-shadow: 0 12px 30px rgba(13,20,87,0.14); backdrop-filter: blur(14px); cursor: pointer; transition: 0.3s ease; }
+    header.scrolled .mobile-toggle { color: var(--navy-dark); background: rgba(255,255,255,0.88); border-color: rgba(13,20,87,0.08); }
+    .mobile-toggle-line { width: 21px; height: 2px; border-radius: 999px; background: currentColor; transition: transform 0.3s ease, opacity 0.22s ease, width 0.3s ease; }
+    .mobile-toggle-line:nth-child(2) { width: 17px; }
+    .mobile-toggle.active { color: var(--navy-dark); background: linear-gradient(135deg, var(--gold), var(--gold-light)); border-color: transparent; box-shadow: 0 16px 34px rgba(245,166,35,0.3); }
+    .mobile-toggle.active .mobile-toggle-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mobile-toggle.active .mobile-toggle-line:nth-child(2) { opacity: 0; transform: scaleX(0.2); }
+    .mobile-toggle.active .mobile-toggle-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .page-hero { position: relative; min-height: 72vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(to right, rgba(13,20,87,0.91), rgba(13,20,87,0.5)), url('../../../assets/images/adult-eng.jpg') center / cover no-repeat; color: var(--white); padding-top: 120px; }
+    .hero-content { max-width: 820px; }
+    .breadcrumb { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 10px 16px; border-radius: 999px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); margin-bottom: 24px; color: rgba(255,255,255,0.82); font-size: 14px; font-weight: 700; }
+    .breadcrumb a { color: var(--gold-light); }
+    .page-hero h1 { font-size: clamp(44px, 7vw, 76px); line-height: 1.05; margin-bottom: 22px; }
+    .page-hero p { max-width: 720px; color: rgba(255,255,255,0.88); font-size: 18px; line-height: 1.9; }
+    .hero-kicker { color: var(--gold-light); font-weight: 700; margin-bottom: 14px; }
+
+    .section-title { text-align: center; margin-bottom: 58px; }
+    .section-title h2 { font-size: 52px; color: var(--navy-dark); margin-bottom: 18px; }
+    .section-title p { color: var(--gray); font-size: 17px; max-width: 760px; margin: auto; line-height: 1.8; }
+    .split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: center; }
+    .media-card { overflow: hidden; border-radius: 30px; background: var(--white); box-shadow: var(--shadow); border: 1px solid rgba(13,20,87,0.06); }
+    .media-card img { width: 100%; height: 430px; object-fit: cover; }
+    .content-panel { background: var(--white); border: 1px solid rgba(13,20,87,0.06); border-radius: 30px; padding: 42px; box-shadow: var(--shadow); }
+    .eyebrow { display: inline-flex; padding: 8px 14px; border-radius: 999px; background: rgba(245,166,35,0.14); color: var(--navy-dark); font-size: 12px; font-weight: 700; margin-bottom: 18px; }
+    .content-panel h2 { color: var(--navy-dark); font-size: clamp(34px, 4.5vw, 54px); line-height: 1.08; margin-bottom: 18px; }
+    .content-panel h3 { color: var(--navy-dark); font-size: 30px; margin-bottom: 14px; }
+    .content-panel p { color: var(--gray); line-height: 1.85; margin-bottom: 18px; }
+    .stat-card { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 24px; }
+    .stat-item { padding: 22px; border-radius: 22px; background: var(--gray-light); }
+    .stat-item strong { display: block; color: var(--navy-dark); font-family: var(--heading-font); font-size: 34px; line-height: 1; margin-bottom: 8px; }
+    .stat-item span { color: var(--gray); font-size: 14px; font-weight: 700; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature-card, .course-card, .journey-card, .faq-card { background: var(--white); box-shadow: var(--shadow); border: 1px solid rgba(13,20,87,0.06); border-radius: 28px; transition: 0.35s ease; }
+    .feature-card { padding: 28px; }
+    .feature-card:hover, .course-card:hover, .journey-card:hover { transform: translateY(-6px); border-color: rgba(245,166,35,0.36); }
+    .feature-card h3 { color: var(--navy-dark); font-size: 24px; margin-bottom: 12px; }
+    .feature-card p, .feature-card li, .course-card p, .journey-card p, .faq-card p { color: var(--gray); line-height: 1.75; font-size: 14px; }
+    .feature-card ul, .course-list { display: grid; gap: 10px; margin-top: 10px; }
+    .feature-card li, .course-list li { list-style: none; display: flex; gap: 10px; align-items: flex-start; }
+    .feature-card li::before, .course-list li::before { content: '\2713'; flex: 0 0 22px; width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(245,166,35,0.16); color: var(--gold); font-size: 12px; }
+    .course-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .course-card { padding: 34px; }
+    .course-number { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; border-radius: 16px; color: var(--navy-dark); background: linear-gradient(135deg, var(--gold), var(--gold-light)); font-weight: 700; }
+    .course-card h3 { color: var(--navy-dark); font-size: 30px; margin-bottom: 14px; }
+    .highlight-band { background: linear-gradient(135deg, var(--gold), var(--gold-light)); padding: 58px 0; }
+    .program-heading { text-align: center; color: var(--navy-dark); }
+    .program-heading h2 { font-size: 42px; margin-bottom: 10px; }
+    .journey-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .journey-card { padding: 26px; }
+    .journey-card span { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px; border-radius: 16px; color: var(--navy-dark); background: linear-gradient(135deg, var(--gold), var(--gold-light)); font-weight: 700; }
+    .journey-card h3 { color: var(--navy-dark); font-size: 22px; margin-bottom: 10px; }
+    .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .faq-card { padding: 30px; }
+    .faq-card h3 { color: var(--navy-dark); font-size: 24px; margin-bottom: 14px; }
+    .related-title { margin-top: 70px; }
+    .path-grid { display: grid; grid-template-columns: repeat(2, minmax(260px, 360px)); gap: 24px; justify-content: center; }
+    .path-card { position: relative; min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; border-radius: 28px; background: var(--white); box-shadow: var(--shadow); border: 1px solid rgba(13,20,87,0.06); transition: 0.4s ease; }
+    .path-card:hover { transform: translateY(-8px); }
+    .path-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: 0.7s ease; }
+    .path-card:hover img { transform: scale(1.08); }
+    .path-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,20,87,0.96), rgba(13,20,87,0.16)); z-index: 1; }
+    .path-content { position: relative; z-index: 2; padding: 28px; color: var(--white); }
+    .path-content span { display: inline-flex; margin-bottom: 12px; padding: 7px 12px; border-radius: 999px; background: rgba(245,166,35,0.18); color: var(--gold-light); font-size: 12px; font-weight: 700; }
+    .path-content h3 { font-size: 30px; margin-bottom: 12px; }
+    .path-content p { color: rgba(255,255,255,0.82); line-height: 1.75; font-size: 14px; }
+    .cta-box { background: linear-gradient(135deg, var(--navy), var(--navy-dark)); border-radius: 34px; padding: 75px 40px; text-align: center; color: var(--white); }
+    .cta-box h2 { font-size: 46px; margin-bottom: 18px; }
+    .cta-box p { color: rgba(255,255,255,0.82); margin: 0 auto 32px; max-width: 680px; line-height: 1.8; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 16px 32px; border-radius: 999px; font-weight: 700; transition: 0.35s ease; }
+    .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy-dark); box-shadow: 0 14px 32px rgba(245,166,35,0.32); }
+    .btn-primary:hover { transform: translateY(-4px); }
+
+    footer { background: var(--navy-dark); color: var(--white); padding-top: 70px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 35px; }
+    .footer-logo img { width: 110px; margin-bottom: 20px; }
+    .footer-about p { color: rgba(255,255,255,0.76); line-height: 1.8; font-size: 15px; }
+    .footer-col h4 { color: var(--gold); margin-bottom: 18px; }
+    .footer-links { display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { color: rgba(255,255,255,0.76); transition: 0.3s ease; font-size: 14px; line-height: 1.6; }
+    .footer-links a:hover { color: var(--gold); }
+    .socials { display: flex; gap: 12px; margin-top: 24px; }
+    .socials a { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.08); transition: 0.35s ease; }
+    .socials a:hover { background: var(--gold); color: var(--navy-dark); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 50px; padding: 20px 0; text-align: center; color: rgba(255,255,255,0.6); font-size: 14px; }
+
+    @media(max-width:1100px) { .split-section, .feature-grid, .journey-grid, .faq-grid, .footer-grid { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:768px) {
+      section { padding: 78px 0; }
+      .navbar { height: 78px; }
+      header.scrolled .navbar { height: 68px; }
+      .logo img { width: 90px; }
+      header.scrolled .logo img { width: 82px; }
+      .mobile-toggle { display: flex; }
+      .nav-links { position: fixed; top: 78px; right: -100%; width: 100%; height: calc(100vh - 78px); background: var(--white); flex-direction: column; padding: 40px 30px; align-items: flex-start; transition: 0.4s ease; gap: 18px; overflow-y: auto; }
+      .nav-links.active { right: 0; }
+      header.scrolled .nav-links { top: 68px; height: calc(100vh - 68px); }
+      .nav-links a, .dropdown > a { width: 100%; color: var(--navy-dark); border-bottom: 1px solid rgba(0,0,0,0.06); padding: 0 0 16px; }
+      .dropdown { width: 100%; }
+      .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; background: transparent; padding: 6px 0 0 16px; display: flex; flex-direction: column; gap: 8px; }
+      .dropdown-menu a { padding: 10px 0; border: none; color: var(--gray); }
+      .page-hero { min-height: 72vh; text-align: center; }
+      .breadcrumb { justify-content: center; }
+      .section-title h2, .cta-box h2 { font-size: 38px; }
+      .split-section, .feature-grid, .course-grid, .journey-grid, .faq-grid, .path-grid, .footer-grid, .stat-card { grid-template-columns: 1fr; }
+      .media-card img { height: 320px; }
+      .content-panel { padding: 28px; }
+      .cta-box { padding: 55px 24px; }
+      .btn { width: 100%; }
+    }
+/* EACC responsive polish */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+body{min-width:0;overflow-x:hidden;}
+img,picture,video,canvas{max-width:100%;}
+img{height:auto;}
+a,button{touch-action:manipulation;}
+button,input,select,textarea{font:inherit;max-width:100%;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important;}
+  
+}
+@media (max-width:1100px){
+  .container,.nav-container,.hero-content,.section-header,.section-title,.footer-content{width:min(100% - 32px,1180px);max-width:100%;}
+  .hero-grid,.feature-grid,.camp-grid,.path-grid,.program-grid,.cards-grid,.footer-grid,.content-grid,.journey-grid,.related-grid,.faq-grid{grid-template-columns:1fr!important;}
+}
+@media (max-width:768px){
+  body{font-size:15px;}
+  section{overflow:hidden;}
+  .page-hero,.hero{background-attachment:scroll!important;}
+  .page-hero{min-height:auto!important;padding:118px 18px 68px!important;text-align:center;}
+  .page-hero h1,.hero h1,h1{font-size:clamp(34px,10vw,58px)!important;line-height:1.05!important;overflow-wrap:break-word;}
+  h2{font-size:clamp(26px,7vw,40px)!important;line-height:1.12!important;overflow-wrap:break-word;}
+  p,li{overflow-wrap:break-word;}
+  .btn,.button,.cta-button,.register-btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center;white-space:normal;text-align:center;}
+  .feature-card,.course-card,.program-card,.camp-card,.info-card,.path-card,.related-card,.faq-item{max-width:100%;min-width:0;}
+  .feature-card img,.course-card img,.program-card img,.camp-card img,.related-card img,.path-card img{width:100%;height:auto;object-fit:cover;}
+  
+}
+@media (max-width:520px){
+  .container,.nav-container,.hero-content,.section-header,.section-title,.footer-content{width:min(100% - 24px,1180px);}
+  .btn,.button,.cta-button,.register-btn{width:100%;max-width:340px;}
+  
+}
+</style>
+  <style id="eacc-arabic-toggle-style">
+  .eacc-language-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:46px;min-height:38px;padding:0 14px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.1);color:inherit;font:800 .82rem/1 inherit;letter-spacing:0;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease}.eacc-language-toggle:hover,.eacc-language-toggle:focus-visible{background:#fff;border-color:#fff;color:#0b1464;transform:translateY(-1px);outline:none}.eacc-language-toggle .eacc-lang-label{display:inline-block;min-width:20px;text-align:center}html[dir=rtl] body{direction:rtl}html[dir=rtl] .navbar,html[dir=rtl] .nav-links,html[dir=rtl] .nav-cta-group,html[dir=rtl] .footer-content,html[dir=rtl] .footer-links,html[dir=rtl] .footer-brand,html[dir=rtl] .contact-grid,html[dir=rtl] .programs-grid,html[dir=rtl] .camp-grid,html[dir=rtl] .cards-grid,html[dir=rtl] .study-grid,html[dir=rtl] .levels-grid,html[dir=rtl] .features-grid,html[dir=rtl] .stats-grid{direction:rtl}html[dir=rtl] .nav-dropdown{text-align:right}html[dir=rtl] .nav-dropdown-content{left:auto;right:0;text-align:right}html[dir=rtl] .footer-section,html[dir=rtl] .hero-content,html[dir=rtl] .section-header,html[dir=rtl] .contact-info,html[dir=rtl] .contact-form,html[dir=rtl] .about-content,html[dir=rtl] .program-card,html[dir=rtl] .study-card{text-align:right}html[dir=rtl] input,html[dir=rtl] textarea,html[dir=rtl] select{text-align:right}@media (max-width:768px){.nav-links .eacc-language-toggle{width:calc(100% - 32px);margin:10px 16px 4px;min-height:44px;background:rgba(255,255,255,.14)}html[dir=rtl] .nav-links{align-items:stretch;text-align:right}html[dir=rtl] .nav-dropdown-content{position:static;right:auto;text-align:right}}
+</style>
+  <style id="eacc-design-consistency">
+  :root{--eacc-navy:#1a237e;--eacc-navy-dark:#0d1457;--eacc-navy-mid:#283593;--eacc-gold:#f5a623;--eacc-gold-light:#ffd54f;--eacc-off-white:#f8f9ff;--eacc-text:#1a1d2e;--eacc-muted:#6f7897;--eacc-card:#ffffff;--eacc-shadow:0 20px 60px rgba(13,20,87,.10);--navy:var(--eacc-navy);--navy-dark:var(--eacc-navy-dark);--navy-mid:var(--eacc-navy-mid);--gold:var(--eacc-gold);--gold-light:var(--eacc-gold-light);--nv:var(--eacc-navy);--nv2:var(--eacc-navy-mid);--rd:var(--eacc-gold);--gd:var(--eacc-gold-light);--gd2:var(--eacc-gold);--off:var(--eacc-off-white);--tx:var(--eacc-text);--mu:var(--eacc-muted)}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}body{min-width:0;overflow-x:hidden;background:var(--eacc-off-white);color:var(--eacc-text)}img,picture,video,canvas{max-width:100%;height:auto}button,input,select,textarea{font:inherit;max-width:100%}a,button{touch-action:manipulation}.container,.nav-container,.ftop,.fbot{width:min(1180px,calc(100% - 32px));margin-inline:auto}section{padding-block:clamp(72px,8vw,105px)}
+  header{z-index:1000}.navbar{height:90px}.nav-links{gap:6px}.nav-links a,.dropdown>a,.nav-apply,.eacc-language-toggle{min-height:42px}.nav-apply,.ncta,.btn-primary,.cta-button,.register-btn,.fsb{background:linear-gradient(135deg,var(--eacc-gold),var(--eacc-gold-light))!important;color:var(--eacc-navy-dark)!important;box-shadow:0 14px 32px rgba(245,166,35,.28)!important;border-color:transparent!important}.nav-apply:hover,.ncta:hover,.btn-primary:hover,.cta-button:hover,.register-btn:hover,.fsb:hover{transform:translateY(-2px)}
+  #mainNav{background:var(--eacc-navy-dark)!important;min-height:78px;height:auto;padding-inline:clamp(16px,4vw,48px);box-shadow:0 14px 36px rgba(13,20,87,.18)}#mainNav.nav-scrolled{background:rgba(13,20,87,.96)!important}.nl{color:var(--eacc-gold-light)!important;letter-spacing:0}.ndrop-btn,.nlink-plain{border-radius:999px}.lang-pill{border-color:rgba(255,255,255,.24)}.lang-pill-opt.active,.lpm-opt.active{background:linear-gradient(135deg,var(--eacc-gold),var(--eacc-gold-light))!important;color:var(--eacc-navy-dark)!important}
+  .hero,.page-hero,.contact-hero{background-color:var(--eacc-navy-dark);color:#fff}.hero-content,.section-title,.section-header{max-width:980px}.section-title h2,.section-header h2,h1,h2,h3{letter-spacing:0}.section-title p,.section-header p,p{line-height:1.75}.breadcrumb,.hero-badge,.stag,.heb{border-radius:999px}.path-card,.course-card,.map-step,.program-card,.feature-card,.camp-card,.info-card,.related-card,.faq-item,.pillar,.journey-card,.art-card,.contact-card,.form-card{border-radius:24px!important;box-shadow:var(--eacc-shadow);border:1px solid rgba(13,20,87,.07)}.path-card:hover,.course-card:hover,.program-card:hover,.feature-card:hover,.camp-card:hover,.related-card:hover{transform:translateY(-6px)}
+  footer{background:var(--eacc-navy-dark)!important;color:#fff!important;padding-top:clamp(56px,7vw,76px)}footer .container,footer .ftop,footer .fbot{width:min(1180px,calc(100% - 32px));margin-inline:auto}.footer-grid,.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}.footer-col h4,.flt{color:var(--eacc-gold)!important;margin-bottom:18px}.footer-links,.flg ul{display:flex;flex-direction:column;gap:12px}.footer-links a,footer li,footer p,.ftag,.fcp,.ffl{color:rgba(255,255,255,.76)!important;line-height:1.7}.footer-links a:hover,footer li:hover{color:var(--eacc-gold)!important}.socials a{background:rgba(255,255,255,.08)}.socials a:hover{background:var(--eacc-gold)!important;color:var(--eacc-navy-dark)!important}.footer-bottom,.fbot{border-top:1px solid rgba(255,255,255,.10);margin-top:50px;padding:20px 0;text-align:center;color:rgba(255,255,255,.65)!important}
+  @media (max-width:1100px){.footer-grid,.ftop{grid-template-columns:1fr 1fr}.path-grid,.program-map,.course-grid,.feature-grid,.program-grid,.cards-grid,.content-grid,.journey-grid,.related-grid,.camp-grid{grid-template-columns:1fr!important}}
+  @media (max-width:768px){.container,.nav-container,.ftop,.fbot,footer .container{width:min(100% - 24px,1180px)}section{padding-block:72px}.navbar{height:78px}.logo img{max-width:92px}.nav-links{top:78px;padding:30px 24px;gap:14px}.nav-links a,.dropdown>a,.nav-apply,.eacc-language-toggle{width:100%;justify-content:flex-start;min-height:46px}.page-hero,.contact-hero,.hero{background-attachment:scroll!important;min-height:auto!important;padding:118px 18px 68px!important;text-align:center}.page-hero h1,.contact-hero h1,.hero h1,h1{font-size:clamp(34px,10vw,58px)!important;line-height:1.05!important;overflow-wrap:break-word}h2{font-size:clamp(26px,7vw,40px)!important;line-height:1.12!important;overflow-wrap:break-word}p,li{overflow-wrap:break-word}.footer-grid,.ftop{grid-template-columns:1fr;text-align:left}.btn,.button,.cta-button,.register-btn,.nav-apply,.ncta{white-space:normal;text-align:center}#mainNav{min-height:68px}.mobile-nav{top:68px;height:calc(100dvh - 68px)}}
+</style>
+  <style id="eacc-section-title-centering-fix">
+  .section-title,
+  .section-header,
+  .program-heading,
+  .related-title,
+  .panel-heading {
+    width: min(100%, 900px) !important;
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .section-title h1,
+  .section-title h2,
+  .section-title h3,
+  .section-header h1,
+  .section-header h2,
+  .section-header h3,
+  .program-heading h1,
+  .program-heading h2,
+  .program-heading h3,
+  .related-title h1,
+  .related-title h2,
+  .related-title h3,
+  .panel-heading h1,
+  .panel-heading h2,
+  .panel-heading h3,
+  .section-title p,
+  .section-header p,
+  .program-heading p,
+  .related-title p,
+  .panel-heading p {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .section-title p,
+  .section-header p,
+  .program-heading p,
+  .related-title p,
+  .panel-heading p {
+    max-width: 760px !important;
+  }
+
+  html[dir="rtl"] .section-title,
+  html[dir="rtl"] .section-header,
+  html[dir="rtl"] .program-heading,
+  html[dir="rtl"] .related-title,
+  html[dir="rtl"] .panel-heading,
+  html[dir="rtl"] .section-title h1,
+  html[dir="rtl"] .section-title h2,
+  html[dir="rtl"] .section-title h3,
+  html[dir="rtl"] .section-header h1,
+  html[dir="rtl"] .section-header h2,
+  html[dir="rtl"] .section-header h3,
+  html[dir="rtl"] .program-heading h1,
+  html[dir="rtl"] .program-heading h2,
+  html[dir="rtl"] .program-heading h3,
+  html[dir="rtl"] .related-title h1,
+  html[dir="rtl"] .related-title h2,
+  html[dir="rtl"] .related-title h3,
+  html[dir="rtl"] .panel-heading h1,
+  html[dir="rtl"] .panel-heading h2,
+  html[dir="rtl"] .panel-heading h3,
+  html[dir="rtl"] .section-title p,
+  html[dir="rtl"] .section-header p,
+  html[dir="rtl"] .program-heading p,
+  html[dir="rtl"] .related-title p,
+  html[dir="rtl"] .panel-heading p {
+    text-align: center !important;
+  }
+</style>
+<style id="eacc-shared-layout-polish">
+  .fa-solid, .fab { display: inline-flex; align-items: center; justify-content: center; font-style: normal; font-variant: normal; line-height: 1; text-rendering: auto; }
+  .fa-solid::before, .fab::before { display: inline-block; }
+  .fa-chevron-down::before { content: "\2304"; }
+  .fa-bars::before { content: "\2630"; }
+  .fa-globe::before { content: "\25C9"; }
+  .fa-laptop::before { content: "\25AD"; }
+  .fa-check::before { content: "\2713"; }
+  .fa-facebook-f::before { content: "f"; font-family: Arial, sans-serif; font-weight: 700; }
+  .fa-whatsapp::before { content: "W"; font-family: Arial, sans-serif; font-weight: 800; }
+  .fa-instagram::before { content: "\25CE"; }
+  .fa-youtube::before { content: "\25B6"; }
+  .fa-tiktok::before { content: "\266A"; }
+  header { position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; background: transparent; border-bottom: 1px solid transparent; transition: 0.4s ease; }
+  header.scrolled { background: rgba(255,255,255,0.9); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(0,0,0,0.05); box-shadow: 0 14px 36px rgba(13,20,87,0.08); }
+  header .navbar { height: 88px; display: flex; align-items: center; justify-content: space-between; transition: height 0.35s ease; }
+  header.scrolled .navbar { height: 72px; }
+  header .logo img { width: 120px; transition: 0.35s ease; }
+  header.scrolled .logo img { width: 98px; }
+  header nav.nav-links { position: static; height: auto; padding: 0; background: transparent; box-shadow: none; display: flex; align-items: center; justify-content: flex-start; gap: 6px; overflow: visible; }
+  header .nav-links a, header .dropdown > a { position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 12px 14px; border-radius: 999px; font-size: 14px; font-weight: 700; color: #fff; transition: 0.35s ease; text-decoration: none; }
+  header .nav-links a:hover, header .dropdown:hover > a { color: var(--gold-light, var(--gd, #ffd54f)); transform: translateY(-2px); }
+  header.scrolled .nav-links a, header.scrolled .dropdown > a { color: var(--navy-dark, var(--nv, #0d1457)); }
+  header .dropdown { position: relative; }
+  header .dropdown-menu { position: absolute; top: calc(100% + 12px); left: 0; min-width: 230px; padding: 12px; border-radius: 18px; background: #fff; border: 1px solid rgba(13,20,87,0.08); box-shadow: 0 20px 40px rgba(13,20,87,0.14); opacity: 0; visibility: hidden; transform: translateY(10px); transition: 0.3s ease; z-index: 1001; }
+  header .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  header .dropdown-menu a { display: block; color: var(--navy-dark, var(--nv, #0d1457)); padding: 13px 15px; border-radius: 12px; font-weight: 800; min-height: auto; }
+  header .dropdown-menu a:hover { background: var(--gray-light, var(--lt, #eef0f8)); color: var(--navy, var(--nv, #1a237e)); transform: none; }
+  .nav-cta-group { display: inline-flex; align-items: center; gap: 10px; margin-left: 4px; }
+  header .nav-apply { background: linear-gradient(135deg, var(--gold, var(--gd2, #f5a623)), var(--gold-light, var(--gd, #ffd54f))); color: var(--navy-dark, var(--nv, #0d1457)) !important; box-shadow: 0 14px 32px rgba(245,166,35,0.28); }
+  .nav-lms { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 0 16px; border: 1px solid rgba(255,255,255,0.22); border-radius: 999px; background: rgba(255,255,255,0.08); color: #fff; font-size: 14px; font-weight: 800; transition: 0.3s ease; }
+  .nav-lms:hover { background: rgba(255,255,255,0.16); color: var(--gold-light, var(--gd, #ffd54f)); transform: translateY(-2px); }
+  header.scrolled .nav-lms { color: var(--navy-dark, var(--nv, #0d1457)); border-color: rgba(13,20,87,0.14); background: rgba(13,20,87,0.05); }
+  header .eacc-language-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-width: 46px; min-height: 38px; padding: 0 14px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; background: rgba(255,255,255,.1); color: #fff; font: 800 .82rem/1 inherit; letter-spacing: 0; cursor: pointer; transition: background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease; }
+  header.scrolled .eacc-language-toggle { color: var(--navy-dark, var(--nv, #0d1457)); border-color: rgba(13,20,87,0.14); background: rgba(13,20,87,0.05); }
+  .mobile-toggle { width: 46px; height: 46px; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 5px; border: 1px solid rgba(255,255,255,0.22); border-radius: 16px; background: rgba(255,255,255,0.1); color: #fff; cursor: pointer; }
+  .mobile-toggle-line { width: 21px; height: 2px; border-radius: 999px; background: currentColor; transition: transform 0.3s ease, opacity 0.22s ease, width 0.3s ease; }
+  header.scrolled .mobile-toggle { color: var(--navy-dark, var(--nv, #0d1457)); background: #fff; }
+  .mobile-toggle.active { background: linear-gradient(135deg, var(--gold, var(--gd2, #f5a623)), var(--gold-light, var(--gd, #ffd54f))); color: var(--navy-dark, var(--nv, #0d1457)); }
+  .mobile-toggle.active .mobile-toggle-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .mobile-toggle.active .mobile-toggle-line:nth-child(2) { opacity: 0; transform: scaleX(0.2); }
+  .mobile-toggle.active .mobile-toggle-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .socials { flex-wrap: wrap; }
+  .socials a, .contact-socials a { flex: 0 0 auto; }
+  .form-feedback { display: flex; gap: 14px; align-items: flex-start; margin-top: 20px; padding: 18px 20px; border-radius: 22px; background: linear-gradient(135deg, rgba(24,128,74,0.10), rgba(245,166,35,0.12)); border: 1px solid rgba(24,128,74,0.24); box-shadow: 0 18px 42px rgba(13,20,87,0.08); color: var(--text, var(--tx, #1a1d2e)); }
+  .form-feedback[hidden] { display: none; }
+  .form-feedback-icon { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; border-radius: 14px; background: #18804a; color: #fff; font-weight: 900; }
+  .form-feedback h4 { margin: 0 0 4px; color: var(--navy-dark, var(--nv, #0d1457)); font-size: 20px; }
+  .form-feedback p { margin: 0; color: var(--gray, var(--mu, #75809d)); line-height: 1.6; }
+  .form-feedback.is-error { background: linear-gradient(135deg, rgba(181,54,54,0.10), rgba(245,166,35,0.10)); border-color: rgba(181,54,54,0.24); }
+  .form-feedback.is-error .form-feedback-icon { background: #b53636; }
+  @media (max-width: 768px) { header .navbar { height: 78px; } header .logo img, header.scrolled .logo img { width: 92px; } .mobile-toggle { display: flex; } header nav.nav-links { position: fixed; top: 78px; right: -100%; width: 100%; height: calc(100vh - 78px); overflow-y: auto; flex-direction: column; align-items: stretch; gap: 14px; padding: 32px 24px; background: #fff; transition: 0.35s ease; box-shadow: none; } header nav.nav-links.active { right: 0; } header.scrolled nav.nav-links { top: 68px; height: calc(100vh - 68px); } header .nav-links a, header .dropdown > a, header .eacc-language-toggle, header .nav-apply, header .nav-lms { width: 100%; justify-content: flex-start; color: var(--navy-dark, var(--nv, #0d1457)); border-bottom: 1px solid rgba(13,20,87,0.08); } header .dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: 0; background: transparent; padding: 4px 0 0 16px; } .nav-cta-group { width: 100%; flex-direction: column; align-items: stretch; margin: 0; } .nav-cta-group .nav-apply, .nav-cta-group .nav-lms { width: 100%; justify-content: flex-start; } .form-feedback { padding: 16px; } }
+
+  .footer-social-list { gap: 10px !important; }
+  .footer-social-list a { display: flex !important; align-items: center; gap: 12px; min-height: 44px; width: 100%; padding: 8px 10px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.055); color: rgba(255,255,255,0.86) !important; font-weight: 800; line-height: 1.2 !important; transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease; }
+  .footer-social-list a:hover { background: rgba(245,166,35,0.14); border-color: rgba(245,166,35,0.34); color: var(--eacc-gold-light, var(--gold-light, #ffd54f)) !important; transform: translateX(4px); }
+  .footer-social-icon-wrap { width: 30px; height: 30px; flex: 0 0 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 10px; background: rgba(255,255,255,0.10); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); }
+  .footer-social-icon-wrap img { width: 18px; height: 18px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.96; }
+  html[dir="rtl"] .footer-social-list a:hover { transform: translateX(-4px); }
+  @media (max-width: 768px) { .footer-social-list a { max-width: 320px; } }
+</style>
+<style id="eacc-premium-footer-style">
+  .site-footer { position: relative; overflow: hidden; margin-top: 0; padding: clamp(56px,7vw,82px) 0 0 !important; background: var(--eacc-navy-dark, var(--navy-dark, #0d1457)) !important; color: #fff !important; }
+  .footer-shell { position: relative; z-index: 1; }
+  .site-footer .footer-grid { display: grid !important; grid-template-columns: minmax(260px,1.45fr) minmax(190px,1fr) minmax(140px,.72fr) minmax(145px,.72fr) minmax(190px,.9fr) !important; gap: clamp(24px,4vw,48px) !important; align-items: start; }
+  .footer-brand-block p, .site-footer .footer-links a, .site-footer .footer-bottom { color: rgba(255,255,255,0.76) !important; }
+  .footer-logo img { width: 122px !important; margin-bottom: 22px !important; }
+  .footer-brand-block p { max-width: 360px; font-size: 15px; line-height: 1.75; margin: 0 0 22px; font-family: var(--body-font, var(--body, inherit)); }
+  .footer-apply-link { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 0 18px; border-radius: 999px; background: linear-gradient(135deg, var(--eacc-gold, var(--gold, #f5a623)), var(--eacc-gold-light, var(--gold-light, #ffd54f))); color: var(--eacc-navy-dark, var(--navy-dark, #0d1457)) !important; font-family: var(--body-font, var(--body, inherit)); font-weight: 900; box-shadow: 0 14px 30px rgba(245,166,35,0.24); }
+  .site-footer .footer-col h4 { position: relative; color: var(--eacc-gold, var(--gold, #f5a623)) !important; margin: 0 0 24px !important; font-family: var(--heading-font, var(--heading, inherit)); font-size: 18px; line-height: 1.2; }
+  .site-footer .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 32px; height: 3px; border-radius: 999px; background: linear-gradient(90deg, var(--eacc-gold, var(--gold, #f5a623)), var(--eacc-gold-light, var(--gold-light, #ffd54f))); }
+  .site-footer .footer-links { display: flex !important; flex-direction: column; gap: 11px !important; }
+  .site-footer .footer-links a { font-family: var(--body-font, var(--body, inherit)); font-size: 14px !important; line-height: 1.55 !important; transition: color .25s ease, transform .25s ease; }
+  .site-footer .footer-links a:hover { color: var(--eacc-gold, var(--gold, #f5a623)) !important; transform: translateX(4px); }
+  .footer-office .footer-links a:first-child { max-width: 250px; }
+  .footer-social-list { display: grid !important; grid-template-columns: 1fr; gap: 10px !important; }
+  .footer-social-list a { display: flex !important; align-items: center; gap: 12px; min-height: 42px; padding: 7px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.10); background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.88) !important; font-family: var(--body-font, var(--body, inherit)); font-weight: 800; line-height: 1.2 !important; transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease; }
+  .footer-social-list a:hover { background: var(--eacc-gold, var(--gold, #f5a623)); border-color: transparent; color: var(--eacc-navy-dark, var(--navy-dark, #0d1457)) !important; transform: translateX(4px); }
+  .footer-social-icon-wrap { width: 30px; height: 30px; flex: 0 0 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #fff; box-shadow: 0 10px 22px rgba(0,0,0,0.18); }
+  .footer-social-icon-wrap img { width: 17px; height: 17px; object-fit: contain; filter: none; opacity: 1; }
+  .site-footer .footer-bottom { display: flex !important; align-items: center; justify-content: space-between; gap: 18px; margin-top: clamp(42px,5vw,58px) !important; padding: 22px 0 !important; border-top: 1px solid rgba(255,255,255,0.10) !important; text-align: left !important; font-family: var(--body-font, var(--body, inherit)); font-size: 14px; }
+  .footer-bottom-links { display: inline-flex; gap: 16px; align-items: center; }
+  .footer-bottom-links a { color: rgba(255,255,255,0.72) !important; font-weight: 800; }
+  .footer-bottom-links a:hover { color: var(--eacc-gold, var(--gold, #f5a623)) !important; }
+  html[dir="rtl"] .site-footer .footer-col h4::after { left: auto; right: 0; }
+  html[dir="rtl"] .site-footer .footer-links a:hover, html[dir="rtl"] .footer-social-list a:hover { transform: translateX(-4px); }
+  @media (max-width: 1120px) { .site-footer .footer-grid { grid-template-columns: 1.4fr 1fr 1fr !important; } .footer-follow { grid-column: span 2; } }
+  @media (max-width: 768px) {
+    .site-footer { padding-top: 48px !important; }
+    .site-footer .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 30px 18px !important; }
+    .footer-brand-block { grid-column: 1 / -1; padding-bottom: 26px; border-bottom: 1px solid rgba(255,255,255,0.10); }
+    .footer-brand-block p { max-width: 100%; margin-bottom: 18px; }
+    .footer-office { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: 14px; align-items: start; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.10); }
+    .footer-office h4 { margin-bottom: 0 !important; }
+    .footer-office h4::after { bottom: -11px; }
+    .footer-office .footer-links a:first-child { max-width: none; }
+    .site-footer .footer-col:not(.footer-office):not(.footer-follow) { min-width: 0; padding: 16px 14px; border-radius: 18px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .footer-follow { grid-column: 1 / -1; padding: 18px 14px; border-radius: 18px; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); }
+    .footer-social-list { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+    .footer-social-list a { max-width: none; min-height: 44px; padding: 7px 9px; gap: 9px; }
+    .footer-social-icon-wrap { width: 28px; height: 28px; flex-basis: 28px; }
+    .footer-social-icon-wrap img { width: 16px; height: 16px; }
+    .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 34px !important; }
+  }
+  @media (max-width: 420px) {
+    .site-footer .footer-grid { gap: 24px 12px !important; }
+    .site-footer .footer-col:not(.footer-office):not(.footer-follow), .footer-follow { padding: 14px 12px; }
+    .site-footer .footer-links a { font-size: 13px !important; }
+    .footer-social-list a span:last-child { font-size: 13px; }
+  }
+</style>
+</head>
+
+<body class="loading">
+<div class="site-loader" id="siteLoader" aria-label="Loading website">
+    <div class="loader-content">
+      <img src="../../../assets/images/logo-white.png" alt="EACC Logo">
+      <h2>Egyptian American Center</h2>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+      <header>
+
+    <div class="container navbar">
+
+      <a href="../../../index.html" class="logo">
+        <img src="../../../assets/images/logo-white.png" alt="EACC Logo">
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+
+        <a href="../../../index.html">
+          <span>Home</span>
+        </a>
+
+        <div class="dropdown">
+
+          <a href="../../../aboutus/who-we-are.html">
+            <span>Who We Are </span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+
+            <a href="../../../aboutus/who-we-are.html">
+              About EACC
+            </a>
+
+            <a href="../../../aboutus/explore-our-camps.html">
+              Explore Our Camps
+            </a>
+
+            <a href="../../../aboutus/faqs.html">
+              FAQs
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="dropdown">
+
+          <a href="../../../index.html#programs">
+            <span>Our Courses</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="../../../programs/summer-camp-2026.html">Summer Camp 2026</a>
+            <a href="../../../programs/language.html">Languages</a>
+            <a href="../../../programs/activities.html">Activities</a>
+          </div>
+
+        </div>
+        <div class="dropdown">
+
+          <a href="../../../index.html#test-prep">
+            <span>Preparation Courses</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+
+          <div class="dropdown-menu">
+            <a href="../../../prep-courses/tofel.html">TOEFL</a>
+            <a href="../../../prep-courses/ielts.html">IELTS</a>
+            <a href="../../../prep-courses/oet.html">OET</a>
+            <a href="../../../prep-courses/pte.html">PTE</a>
+          </div>
+
+        </div>
+<a href="../../../contactus.html">
+          <span>Contact</span>
+        </a>
+
+        <button type="button" class="language-toggle eacc-language-toggle" id="languageToggle" aria-label="Switch website language to Arabic">
+          <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          <span id="languageToggleText">AR</span>
+        </button>
+
+        <div class="nav-cta-group">
+
+          <a href="../../../contactus.html#contact" class="nav-apply">
+            <span>Apply Now</span>
+          </a>
+
+          <a href="https://lms.eacc-egy.com/login.php" class="nav-lms" target="_blank" rel="noopener">
+            <i class="fa-solid fa-laptop" aria-hidden="true"></i>
+            <span>LMS Login</span>
+          </a>
+
+        </div>
+
+      </nav>
+
+      <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="mobile-toggle-line"></span>
+        <span class="mobile-toggle-line"></span>
+        <span class="mobile-toggle-line"></span>
+      </button>
+
+    </div>
+
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="../../../index.html">Home</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <a href="../../language.html">Languages</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <a href="../english.html">English</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Adults</span>
+        </div>
+        <h1>English For Adults</h1>
+        <p class="hero-kicker">Communicate with Confidence - English Courses at the Egyptian American Center Alexandria.</p>
+        <p>Our English for General Communication program helps you speak and understand English confidently in everyday life, whether at work, university, or while traveling.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container split-section">
+      <div class="media-card"><img src="../../../assets/images/adults.avif" alt="Adults studying English together"></div>
+      <div class="content-panel">
+        <span class="eyebrow">100k+ students throughout 25 years</span>
+        <h2>English For Adults</h2>
+        <p>At EACC, our most in-demand program is English for General Communication - designed to help you speak and understand English confidently in everyday life.</p>
+        <p>We believe in learning by doing. Our classes are dynamic, interactive, and tailored to your personal learning goals.</p>
+        <div class="stat-card">
+          <div class="stat-item"><strong>100k+</strong><span>Students throughout EACC</span></div>
+          <div class="stat-item"><strong>25</strong><span>Years of language experience</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>What Makes Our Courses At EACC Unique?</h2>
+        <p>With EACC, you build your speaking, listening, reading, and writing skills through real-life practice, lively discussions, and engaging topics that matter to you.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card"><h3>Learning By Doing</h3><p>Our classes are interactive and centered on communication, not passive memorization.</p></div>
+        <div class="feature-card"><h3>Real-Life Practice</h3><p>Lessons use real discussions, daily situations, workplace language, university needs, and travel communication.</p></div>
+        <div class="feature-card"><h3>CEFR-Aligned Levels</h3><p>Each level is carefully designed to match the internationally recognized CEFR framework, from beginner to advanced.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="highlight-band">
+    <div class="container program-heading">
+      <h2>Adults English Courses</h2>
+      <p>General Communication, Advanced Conversation, and Private One-to-One learning paths.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container course-grid">
+      <div class="course-card">
+        <div class="course-number">1</div>
+        <h3>Advanced Conversation</h3>
+        <p>A course designed by EACC for confident, advanced English learners. If you are aiming to boost your fluency, this course helps move you from intermediate toward advanced communication.</p>
+        <ul class="course-list">
+          <li>The course is divided into 8 levels.</li>
+          <li>Each sub-level includes 24 hours of practice.</li>
+          <li>Access to an LMS to track progress, complete exercises, and monitor improvement.</li>
+          <li>Interactive exercises including mini shadowing, role plays, discussions, and real-life situations.</li>
+        </ul>
+      </div>
+      <div class="course-card">
+        <div class="course-number">2</div>
+        <h3>Private One-to-One</h3>
+        <p>At the Egyptian American Center, we offer private English courses designed just for you, whether you want to improve speaking, writing, grammar, or pronunciation.</p>
+        <ul class="course-list">
+          <li>A tailored learning plan built around your goals and current level.</li>
+          <li>One-on-one sessions with a certified, experienced instructor.</li>
+          <li>Flexible scheduling to suit your lifestyle.</li>
+          <li>A dedicated LMS with materials, practice exercises, progress tracking, and teacher feedback.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container split-section">
+      <div class="content-panel">
+        <span class="eyebrow">Why learners trust EACC</span>
+        <h2>Why Thousands Of Learners Have Trusted EACC</h2>
+        <ul class="course-list">
+          <li>Small class sizes for focused learning.</li>
+          <li>Personalized feedback and continuous support.</li>
+          <li>Real-life communication practice, not just theory.</li>
+          <li>Fun, interactive lessons that keep you motivated.</li>
+          <li>Modern multimedia tools to boost all language skills.</li>
+          <li>Friendly, certified instructors with native-level English.</li>
+        </ul>
+      </div>
+      <div class="media-card"><img src="../../../assets/images/private course.avif" alt="Private English course at EACC"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>EACC English Learning Journey Step By Step</h2>
+        <p>A clear path from placement to course selection, schedule setup, and joining your classes.</p>
+      </div>
+      <div class="journey-grid">
+        <div class="journey-card"><span>01</span><h3>Take Your Placement Test</h3><p>Find out your current level in just a few minutes.</p></div>
+        <div class="journey-card"><span>02</span><h3>Choose Your Course</h3><p>Let us know your area of interest: general English, conversation, business, and more.</p></div>
+        <div class="journey-card"><span>03</span><h3>Set Your Schedule</h3><p>Pick the days and times that work best for you, usually 2 sessions per week, 2 hours each.</p></div>
+        <div class="journey-card"><span>04</span><h3>Start Your Classes</h3><p>Log in to your account and click Join Class when it is time for your lesson.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>F A Q</h2>
+        <p>Common questions for online, group, and private English courses.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-card"><h3>How do I learn online?</h3><p>Private online courses consist of one-to-one live sessions with a private instructor. Each session is 2 hours long through Zoom, with session material shared on screen and customized to your personal needs.</p></div>
+        <div class="faq-card"><h3>How do group sessions work?</h3><p>Group sessions are live and usually last 2 and a half hours. They are not recorded by default, but you can ask for a record.</p></div>
+        <div class="faq-card"><h3>Do I get a copy of the material?</h3><p>Yes, the material will be sent to you by email once you pay the required fees.</p></div>
+        <div class="faq-card"><h3>Is there a placement test?</h3><p>Yes, you receive a link to a computerized online test that assesses your level accurately and places you on the right track.</p></div>
+        <div class="faq-card"><h3>Are your certificates accredited?</h3><p>EACC certificates are internationally accredited by Notting Hill College, recognized by the British Accreditation Council.</p></div>
+        <div class="faq-card"><h3>What do I need for online learning?</h3><p>A stable internet connection with at least 2MB bandwidth and a relaxed, quiet environment fit for learning.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-box">
+        <h2>Register Now</h2>
+        <p>Whether you are starting from scratch or refining your fluency, the Egyptian American Center is your partner in reaching your English goals.</p>
+        <a href="../../../contactus.html" class="btn btn-primary">Register Now</a>
+      </div>
+      <div class="section-title related-title">
+        <h2>Explore Other English Paths</h2>
+        <p>Families can choose the English path that fits each learner's age and goal.</p>
+      </div>
+      <div class="path-grid">
+        <a href="../youth/youth.html" class="path-card">
+          <img src="../../../assets/images/Youth.avif" alt="English for Youth">
+          <div class="path-content"><span>Youths</span><h3>Youth English</h3><p>Structured English learning for teenagers aged 12 to 17.</p></div>
+        </a>
+        <a href="../kids/kids.html" class="path-card">
+          <img src="../../../assets/images/kids/Kids Play.avif" alt="English for Kids">
+          <div class="path-content"><span>Kids</span><h3>Kids English</h3><p>Foundational English learning for young learners.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+          <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-grid">
+        <div class="footer-brand-block">
+          <div class="footer-logo">
+            <img src="../../../assets/images/logo-white.png" alt="EACC White Logo">
+          </div>
+          <p>
+            Egyptian American Cultural Center offers premium language education,
+            preparation courses, camps, and international learning experiences.
+          </p>
+          <a class="footer-apply-link" href="../../../contactus.html#contact">Apply Now</a>
+        </div>
+
+        <div class="footer-col footer-office">
+          <h4>Office</h4>
+          <div class="footer-links">
+            <a href="https://www.google.com/maps/search/?api=1&query=117%20Ahmed%20Shawqi%2C%20Mustafa%20Kamel%20WA%20Bolkli%2C%20Sidi%20Gaber%2C%20Alexandria%20Governorate%205433141" target="_blank" rel="noopener">
+              117 Ahmed Shawqi, Mustafa Kamel WA Bolkli, Sidi Gaber, Alexandria
+            </a>
+            <a href="mailto:info_eacc@eacc-egy.com">info_eacc@eacc-egy.com</a>
+            <a href="tel:+201065533240">+20106 553 3240</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Links</h4>
+          <div class="footer-links">
+            <a href="../../../index.html">Home</a>
+            <a href="../../../aboutus/who-we-are.html">About EACC</a>
+            <a href="../../../programs/language.html">Languages</a>
+            <a href="../../../programs/activities.html">Activities</a>
+            <a href="../../../contactus.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <div class="footer-links">
+            <a href="../../../terms-and-conditions.html">Terms &amp; Conditions</a>
+            <a href="../../../privacy-policy.html">Privacy Policy</a>
+            <a href="../../../aboutus/faqs.html">FAQs</a>
+          </div>
+        </div>
+
+        <div class="footer-col footer-follow">
+          <h4>Follow Us</h4>
+          <div class="footer-social-list">
+            <a href="https://www.facebook.com/Egyptian.American.Center/" target="_blank" rel="noopener" aria-label="Facebook">
+              <span class="footer-social-icon-wrap"><img src="../../../assets/icons/facebook.png" alt="" aria-hidden="true"></span>
+              <span>Facebook</span>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=%2B201065533240&token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjEyNSJ9.eyJleHAiOjE3Nzg4MzIwMTksInBob25lIjoiKzIwMTA2NTUzMzI0MCIsImNvbnRleHQiOiJBZmd6cl9sa2hzY2s2YW5ER1hFXzliY19YV0NXWDU2VWEzM2xnd2FaQUFxS2tUNlBteDM3c3VNcUFrdWNLMVNOUjFUTjBHNTE0UGhtSUlfNzVPTEpCWGZxY19CSUhGS2NFSk1OSVFUZVNKUFo5RV84c2RMck43aWhvUEZuV29XOEV5ZGpaRUlIdmh5ZG1OYTJ3LVBCOFZmWVNnIiwic291cmNlIjoiRkJfUGFnZSIsImFwcCI6ImZhY2Vib29rIiwiZW50cnlfcG9pbnQiOiJwYWdlX2N0YSJ9.03driferbSmPgKUHBgkwE-uBYVLX9fNVYLwOvG-JsnBPHSPSoiNt7ZKVUu05bq8cfjHnybXK52UrIH8BEmg2aQ&fbclid=IwY2xjawRyYI1leHRuA2FlbQIxMABicmlkETFTOE56aE00ZXBZQkxmN3FQc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHgdzut8C8wGbFJh3GQdN1xD6wtIJoTTCq2Tj9gHoOJRcAaAw_Amsg5us60ag_aem_YWdncwBlv9_nYufc6-AOw0JCkNrX&brid=YWdncwEHpdr5OyZQSOIvAJJPqTkm" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <span class="footer-social-icon-wrap"><img src="../../../assets/icons/whatsapp.png" alt="" aria-hidden="true"></span>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://www.instagram.com/EgyptianAmericanCenter/" target="_blank" rel="noopener" aria-label="Instagram">
+              <span class="footer-social-icon-wrap"><img src="../../../assets/icons/instagram-logo.png" alt="" aria-hidden="true"></span>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.youtube.com/@egyptianamericancentereacc" target="_blank" rel="noopener" aria-label="YouTube">
+              <span class="footer-social-icon-wrap"><img src="../../../assets/icons/youtube.png" alt="" aria-hidden="true"></span>
+              <span>YouTube</span>
+            </a>
+            <a href="https://www.tiktok.com/@eaccegy?_t=8sbRXLekzn5&_r=1" target="_blank" rel="noopener" aria-label="TikTok">
+              <span class="footer-social-icon-wrap"><img src="../../../assets/icons/tik-tok.png" alt="" aria-hidden="true"></span>
+              <span>TikTok</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 Egyptian American Cultural Center. All rights reserved.</span>
+        <span class="footer-bottom-links">
+          <a href="../../../terms-and-conditions.html">Terms</a>
+          <a href="../../../privacy-policy.html">Privacy</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const siteLoader = document.getElementById('siteLoader');
+    window.addEventListener('load', () => { setTimeout(() => { siteLoader.classList.add('hidden'); document.body.classList.remove('loading'); }, 650); });
+    const header = document.querySelector('header');
+    const logoImg = document.querySelector('.logo img');
+    const defaultLogo = '../../../assets/images/logo.png';
+    const whiteLogo = '../../../assets/images/logo-white.png';
+    const updateHeaderState = () => { const isScrolled = window.scrollY > 30; header.classList.toggle('scrolled', isScrolled); logoImg.src = isScrolled ? defaultLogo : whiteLogo; };
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState);
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    const setMobileMenuState = (isOpen) => { navLinks.classList.toggle('active', isOpen); mobileToggle.classList.toggle('active', isOpen); mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); mobileToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu'); };
+    mobileToggle.addEventListener('click', () => { setMobileMenuState(!navLinks.classList.contains('active')); });
+    document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => setMobileMenuState(false)); });
+  </script>
+  <script id="eacc-arabic-toggle-script">
+(function(){
+  'use strict';
+  var storageKey='eacc-language';
+  var legacyStorageKey='eacc-preferred-language';
+  var dictionary={
+    "Home":"الرئيسية","About Us":"من نحن","Who We Are":"من نحن","Explore Camps":"استكشف المخيمات","Explore Our Camps":"استكشف مخيماتنا","FAQs":"الأسئلة الشائعة","Programs":"البرامج","Summer Camp 2026":"المخيم الصيفي 2026","Languages":"اللغات","Activities":"الأنشطة","Preparation Courses":"دورات التحضير","Contact":"تواصل معنا","Contact Us":"تواصل معنا","Contact Page":"صفحة التواصل","Apply Now":"قدّم الآن","Register Now":"سجّل الآن","Request More Information":"اطلب المزيد من المعلومات","Submit Request":"إرسال الطلب","Loading website":"جاري تحميل الموقع","Open menu":"فتح القائمة","Close menu":"إغلاق القائمة","Switch website language to Arabic":"تبديل لغة الموقع إلى العربية","Switch website language to English":"تبديل لغة الموقع إلى الإنجليزية",
+    "Egyptian American Center":"المركز المصري الأمريكي","Egyptian American Cultural Center":"المركز الثقافي المصري الأمريكي","Egyptian American Cultural Center (EACC)":"المركز الثقافي المصري الأمريكي (EACC)","Egyptian American Center Alexandria (EACC)":"المركز المصري الأمريكي بالإسكندرية (EACC)","About EACC":"عن EACC","EACC | Egyptian American Cultural Center":"EACC | المركز الثقافي المصري الأمريكي","Who We Are | EACC":"من نحن | EACC","Contact Us | EACC":"تواصل معنا | EACC","Languages | EACC":"اللغات | EACC","Activities Program | EACC":"برنامج الأنشطة | EACC","English Programs | EACC":"برامج اللغة الإنجليزية | EACC","Adults English | EACC":"إنجليزي للكبار | EACC","Kids English | EACC":"إنجليزي للأطفال | EACC","Youth English | EACC":"إنجليزي للشباب | EACC","EACC Logo":"شعار EACC","EACC White Logo":"شعار EACC الأبيض",
+    "Egyptian American Cultural Center offers premium language education, preparation courses, camps, and international learning experiences.":"يقدّم المركز الثقافي المصري الأمريكي تعليم لغات متميزاً، ودورات تحضيرية، ومخيمات، وتجارب تعليمية دولية.","Egyptian American Cultural Center offers premium language education, preparation courses, camps,":"يقدّم المركز الثقافي المصري الأمريكي تعليم لغات متميزاً، ودورات تحضيرية، ومخيمات،","and international learning experiences.":"وتجارب تعليمية دولية.","Egyptian American Cultural Center offers premium language education,":"يقدّم المركز الثقافي المصري الأمريكي تعليم لغات متميزاً،","language education, preparation courses, camps,":"تعليم لغات ودورات تحضيرية ومخيمات،","preparation courses, camps, and international learning experiences.":"ودورات تحضيرية ومخيمات وتجارب تعليمية دولية.","and preparation courses.":"ودورات تحضيرية.","courses, and international learning":"ودورات وتجارب تعليمية دولية",
+    "Excellence In Education":"التميّز في التعليم","International Language & Cultural Education":"تعليم لغوي وثقافي دولي","Discover Your Future With EACC":"اكتشف مستقبلك مع EACC","Unlock Your Future With Global Education Experiences":"افتح أبواب مستقبلك بتجارب تعليمية عالمية","Start Your Journey With EACC Today":"ابدأ رحلتك مع EACC اليوم","Ready To Start Learning?":"هل أنت مستعد لبدء التعلم؟","Learn More About EACC":"اعرف المزيد عن EACC","Explore Programs":"استكشف البرامج","Our Courses":"دوراتنا","Camps":"المخيمات","Summer Camp":"المخيم الصيفي","Winter Camp":"المخيم الشتوي","Summer & Winter Camps":"المخيمات الصيفية والشتوية","Summer And Winter Camps":"المخيمات الصيفية والشتوية","Kids Summer Camp":"مخيم الأطفال الصيفي","Kids Winter Camp":"مخيم الأطفال الشتوي",
+    "English":"الإنجليزية","English Program":"برنامج اللغة الإنجليزية","English Programs":"برامج اللغة الإنجليزية","English for Adults":"إنجليزي للكبار","English For Adults":"إنجليزي للكبار","English for Kids":"إنجليزي للأطفال","English for Youth":"إنجليزي للشباب","Adults English":"إنجليزي للكبار","Kids English":"إنجليزي للأطفال","Youth English":"إنجليزي للشباب","Adults":"الكبار","Kids":"الأطفال","Youth":"الشباب","Youths":"الشباب","Choose Your English Path":"اختر مسارك في اللغة الإنجليزية","Explore Other English Paths":"استكشف مسارات إنجليزية أخرى","Choose Your Adults Track":"اختر مسار الكبار","Adults English Courses":"دورات الإنجليزية للكبار","Adults English Tracks":"مسارات الإنجليزية للكبار","Youth English Course":"دورة الإنجليزية للشباب","Kids English Learning System":"نظام تعلم الإنجليزية للأطفال","General English":"الإنجليزية العامة","Conversational English":"إنجليزية المحادثة","Private One-to-One":"دروس فردية خاصة","Private Classroom":"فصل خاص","Private Online":"دروس أونلاين خاصة","Group Classroom":"فصل جماعي","Online Classes":"حصص أونلاين","Flexible Study Modes":"أنظمة دراسة مرنة","Flexible Learning":"تعلم مرن","Speaking Confidence":"ثقة في التحدث","Real-Life Practice":"تطبيق عملي واقعي",
+    "Language Programs":"برامج اللغات","Choose Your Language":"اختر لغتك","Choose Your Course":"اختر دورتك","German":"الألمانية","German Program":"برنامج الألمانية","French":"الفرنسية","French Program":"برنامج الفرنسية","Italian":"الإيطالية","Italian Program":"برنامج الإيطالية","Spanish":"الإسبانية","Spanish Program":"برنامج الإسبانية","Activities Program":"برنامج الأنشطة","Activities & Arts":"الأنشطة والفنون","Fine Arts":"الفنون الجميلة","Fine Arts Program":"برنامج الفنون الجميلة","Ballet":"باليه","Music":"موسيقى","Sports":"رياضة","Sports & Fitness":"رياضة ولياقة","Test Preparation":"تحضير الاختبارات","IELTS":"IELTS","TOEFL":"TOEFL","OET":"OET","PTE":"PTE",
+    "Our Mission & Vision":"رسالتنا ورؤيتنا","Our Mission":"رسالتنا","Our Vision":"رؤيتنا","Mission":"الرسالة","Vision":"الرؤية","100k+":"+100 ألف","Thousands of Students":"آلاف الطلاب","Years of language experience":"سنوات من الخبرة في اللغات","Why Students Choose EACC":"لماذا يختار الطلاب EACC","Why learners trust EACC":"لماذا يثق المتعلمون في EACC","What Makes Our Courses At EACC Unique?":"ما الذي يميز دوراتنا في EACC؟","Certified Programs":"برامج معتمدة","Global Opportunities":"فرص عالمية","International Experiences":"تجارب دولية","Placement Test":"اختبار تحديد المستوى","Take Your Placement Test":"ابدأ اختبار تحديد المستوى","CEFR-Aligned Levels":"مستويات متوافقة مع CEFR","Beginners":"مبتدئ","Elementary":"أساسي","Pre-Intermediate":"ما قبل المتوسط","Intermediate":"متوسط","Advanced":"متقدم","6 Stages":"6 مراحل","3 Sessions":"3 حصص","3 Weeks":"3 أسابيع",
+    "First Name":"الاسم الأول","Last Name":"اسم العائلة","WhatsApp Number":"رقم واتساب","Email":"البريد الإلكتروني","Message":"الرسالة","Call Us":"اتصل بنا","Follow Us":"تابعنا","Visit Our Center":"زر مركزنا","How Can We Help?":"كيف يمكننا مساعدتك؟","Select a program":"اختر برنامجاً","Course Interest":"البرنامج المطلوب","Open EACC address in Google Maps":"افتح عنوان EACC على خرائط Google","EACC location map":"خريطة موقع EACC","Alexandria, Egypt":"الإسكندرية، مصر","Facebook":"فيسبوك","Instagram":"إنستجرام","TikTok":"تيك توك","YouTube":"يوتيوب","Youtube":"يوتيوب","All rights reserved.":"جميع الحقوق محفوظة.","© 2025 Egyptian American Cultural Center. All rights reserved.":"© 2025 المركز الثقافي المصري الأمريكي. جميع الحقوق محفوظة.","? 2025 Egyptian American Cultural Center. All rights reserved.":"© 2025 المركز الثقافي المصري الأمريكي. جميع الحقوق محفوظة."
+  };
+  Object.assign(dictionary,{
+    "At the Egyptian American Center, young learners develop English through supportive classes that combine speaking practice, vocabulary growth, listening, reading, and guided interaction.":"في المركز المصري الأمريكي، يطوّر الصغار لغتهم الإنجليزية من خلال حصص داعمة تجمع بين تدريب التحدث وتنمية المفردات والاستماع والقراءة والتفاعل الموجّه.","At the Egyptian American Center, we understand that language learning begins at an early age. That is why we have developed a specially tailored course for pre-primary learners, focusing on creativity, interactivity, and foundational language development.":"في المركز المصري الأمريكي، نؤمن أن تعلم اللغة يبدأ من سن مبكرة. لذلك صممنا دورة خاصة لمرحلة ما قبل الابتدائي تركّز على الإبداع والتفاعل وبناء أساس لغوي قوي.","Our program is specifically designed for young learners in pre-primary education, helping them take their first confident steps in English in a joyful, child-centered environment.":"صُمم برنامجنا خصيصاً لصغار المتعلمين في مرحلة ما قبل الابتدائي، ليساعدهم على اتخاذ خطواتهم الأولى في الإنجليزية بثقة داخل بيئة ممتعة تركز على الطفل.","Target Learners: Pre-Primary Children":"الفئة المستهدفة: أطفال ما قبل الابتدائي","Early English Learning at Egyptian American Center":"تعلم الإنجليزية المبكر في المركز المصري الأمريكي","Creative Course Content":"محتوى تعليمي إبداعي","Interactive play-based activities":"أنشطة تفاعلية قائمة على اللعب","Digital storybooks":"قصص رقمية","Presentation tools for the classroom":"أدوات عرض داخل الفصل","Multimedia learning tools":"أدوات تعلم متعددة الوسائط","Creative English course":"دورة إنجليزية إبداعية","Kids learning together":"أطفال يتعلمون معاً","Primary children learning English":"أطفال المرحلة الابتدائية يتعلمون الإنجليزية","Child learning English":"طفل يتعلم الإنجليزية","Our young learner program combines structured language development, creativity, multimedia practice, and real-world classroom confidence.":"يجمع برنامج الصغار بين تطوير لغوي منظم، وإبداع، وتدريب متعدد الوسائط، وثقة عملية داخل الفصل.","The Kids Summer Camp program focuses on the four main language skills: reading, writing, listening, and speaking. Kids interact during classes in a fun atmosphere while singing, tracing, and doing unique art crafts.":"يركز مخيم الأطفال الصيفي على المهارات اللغوية الأربع: القراءة والكتابة والاستماع والتحدث. يتفاعل الأطفال داخل الحصص في أجواء ممتعة تشمل الغناء والتتبع والأعمال الفنية.","The Kids Winter Camp program keeps children connected to English during the winter season through reading, writing, listening, speaking, singing, tracing, and art craft activities.":"يحافظ مخيم الأطفال الشتوي على ارتباط الأطفال باللغة الإنجليزية خلال الشتاء من خلال القراءة والكتابة والاستماع والتحدث والغناء والتتبع والأنشطة الفنية.","All these activities help children build their language skills so they can speak English confidently. The program consists of four primary levels and includes a placement test so every child joins the most suitable level.":"تساعد هذه الأنشطة الأطفال على بناء مهاراتهم اللغوية حتى يتحدثوا الإنجليزية بثقة. يتكون البرنامج من أربعة مستويات أساسية ويشمل اختبار تحديد مستوى ليلتحق كل طفل بالمستوى الأنسب.","Our youth program gives teenagers a clear learning path with placement before joining, practical classroom activities, and an encouraging environment that helps students use English with more ease.":"يمنح برنامج الشباب المراهقين مسار تعلم واضحاً مع تحديد مستوى قبل الالتحاق، وأنشطة عملية داخل الفصل، وبيئة مشجعة تساعدهم على استخدام الإنجليزية بسهولة أكبر.","Lessons strengthen the English skills teenagers need for school tasks, presentations, exams, and future study goals.":"تقوّي الدروس مهارات الإنجليزية التي يحتاجها المراهقون للواجبات المدرسية والعروض والاختبارات وأهداف الدراسة المستقبلية.","Students practice discussion, classroom interaction, pronunciation, and everyday communication in a friendly setting.":"يتدرّب الطلاب على النقاش والتفاعل داخل الفصل والنطق والتواصل اليومي في بيئة ودودة.","Activities are built for youth learners, balancing structure, participation, and motivation across every level.":"صُممت الأنشطة للشباب مع توازن بين التنظيم والمشاركة والتحفيز في كل مستوى.","Ages 12 to 17":"الأعمار من 12 إلى 17","Advanced Conversation":"محادثة متقدمة","Communicate with Confidence - English Courses at the Egyptian American Center Alexandria.":"تواصل بثقة - دورات اللغة الإنجليزية في المركز المصري الأمريكي بالإسكندرية.","EACC English Learning Journey Step By Step":"رحلة تعلم الإنجليزية في EACC خطوة بخطوة","Start from all EACC center programs on the homepage.":"ابدأ من جميع برامج EACC في الصفحة الرئيسية.","Open Adults to choose General or Conversational English.":"افتح قسم الكبار لاختيار الإنجليزية العامة أو إنجليزية المحادثة.","Select English from the language options.":"اختر الإنجليزية من خيارات اللغات.","Choose Languages from the program families.":"اختر اللغات من مجموعات البرامج.","The path is simple and clear from the homepage to the exact course.":"المسار بسيط وواضح من الصفحة الرئيسية إلى الدورة المطلوبة.","A clear path from placement to course selection, schedule setup, and joining your classes.":"مسار واضح من تحديد المستوى إلى اختيار الدورة وتنسيق الجدول والالتحاق بالحصص.","Students take a placement test to determine their appropriate level.":"يخضع الطلاب لاختبار تحديد مستوى لتحديد المستوى المناسب لهم.","Find out your current level in just a few minutes.":"اعرف مستواك الحالي خلال دقائق قليلة.","Levels And International Standards":"المستويات والمعايير الدولية","Levels for All Ages and Abilities":"مستويات لكل الأعمار والقدرات","Level-based progression":"تقدم حسب المستوى","The program consists of 6 stages, and each stage includes 4 levels.":"يتكون البرنامج من 6 مراحل، وكل مرحلة تضم 4 مستويات.","The course is divided into 8 levels.":"تنقسم الدورة إلى 8 مستويات.","Each level is carefully designed to match the internationally recognized CEFR framework, from beginner to advanced.":"صُمم كل مستوى بعناية ليتوافق مع إطار CEFR المعترف به دولياً، من المبتدئ إلى المتقدم.","Each level is designed as a focused 3-week learning experience.":"صُمم كل مستوى كتجربة تعلم مركزة لمدة 3 أسابيع.","Each sub-level includes 24 hours of practice.":"يشمل كل مستوى فرعي 24 ساعة من التدريب.","Students attend 3 sessions per week for steady progress and practice.":"يحضر الطلاب 3 حصص أسبوعياً لتحقيق تقدم وتدريب مستمر."
+  });
+  Object.assign(dictionary,{
+    "Practice Beyond the Classroom":"تدريب خارج الفصل","Practice beyond the classroom":"تدريب خارج الفصل","Learning By Doing":"التعلم بالممارسة","Real-World Learning with CLIL":"تعلم واقعي بمنهج CLIL","Connected English Learning Path":"مسار تعلم إنجليزي مترابط","Connected English learning path":"مسار تعلم إنجليزي مترابط","Age-Aware Learning":"تعلم مناسب للعمر","Interactive and Multimedia Learning Tools":"أدوات تعلم تفاعلية ومتعددة الوسائط","Building Digital Literacy and Fine Motor Skills":"بناء الثقافة الرقمية والمهارات الحركية الدقيقة","Digital literacy for children":"ثقافة رقمية للأطفال","Academic Support":"دعم أكاديمي","Balanced language skills":"مهارات لغوية متوازنة","Modern multimedia tools to boost all language skills.":"أدوات وسائط حديثة لتعزيز جميع المهارات اللغوية.","Students benefit from a rich variety of learning materials.":"يستفيد الطلاب من مجموعة غنية ومتنوعة من المواد التعليمية.","A dedicated LMS with materials, practice exercises, progress tracking, and teacher feedback.":"منصة LMS مخصصة تضم مواد وتمارين ومتابعة للتقدم وملاحظات من المعلم.","A dedicated student practice app":"تطبيق مخصص لتدريب الطلاب","Access to an LMS to track progress, complete exercises, and monitor improvement.":"إمكانية استخدام منصة LMS لمتابعة التقدم وحل التمارين ومراقبة التحسن.","Interactive exercises including mini shadowing, role plays, discussions, and real-life situations.":"تمارين تفاعلية تشمل الترديد القصير وتمثيل الأدوار والنقاشات ومواقف الحياة الواقعية.","Our classes are interactive and centered on communication, not passive memorization.":"حصصنا تفاعلية وتتمحور حول التواصل، وليس الحفظ السلبي.","Fun, interactive lessons that keep you motivated.":"دروس ممتعة وتفاعلية تحافظ على حماسك.","Small class sizes for focused learning.":"مجموعات صغيرة لتعلم أكثر تركيزاً.","Friendly, certified instructors with native-level English.":"مدربون ودودون ومعتمدون بمستوى إنجليزي قريب من المتحدثين الأصليين.","Internationally recognized programs":"برامج معترف بها دولياً","Internationally recognized language":"لغة معترف بها دولياً","EACC certificates are internationally accredited by Notting Hill College, recognized by the British Accreditation Council.":"شهادات EACC معتمدة دولياً من Notting Hill College والمعترف بها من British Accreditation Council.","Are your certificates accredited?":"هل شهاداتكم معتمدة؟","Do I get a copy of the material?":"هل أحصل على نسخة من المادة؟","Is there a placement test?":"هل يوجد اختبار تحديد مستوى؟","How do group sessions work?":"كيف تعمل الحصص الجماعية؟","How do I learn online?":"كيف أتعلم أونلاين؟","What do I need for online learning?":"ماذا أحتاج للتعلم أونلاين؟","Common questions for online, group, and private English courses.":"أسئلة شائعة حول دورات الإنجليزية الأونلاين والجماعية والخاصة.","Yes, the material will be sent to you by email once you pay the required fees.":"نعم، سيتم إرسال المادة إليك بالبريد الإلكتروني بعد سداد الرسوم المطلوبة.","Yes, you receive a link to a computerized online test that assesses your level accurately and places you on the right track.":"نعم، ستحصل على رابط اختبار إلكتروني يقيّم مستواك بدقة ويضعك على المسار الصحيح.","Group sessions are live and usually last 2 and a half hours. They are not recorded by default, but you can ask for a record.":"الحصص الجماعية مباشرة وتستغرق عادة ساعتين ونصف. لا يتم تسجيلها تلقائياً، لكن يمكنك طلب التسجيل.","Private online courses consist of one-to-one live sessions with a private instructor. Each session is 2 hours long through Zoom, with session material shared on screen and customized to your personal needs.":"تتكون الدورات الخاصة أونلاين من حصص مباشرة فردية مع مدرب خاص. مدة كل حصة ساعتان عبر Zoom، مع عرض المادة على الشاشة وتخصيصها حسب احتياجاتك.","A stable internet connection with at least 2MB bandwidth and a relaxed, quiet environment fit for learning.":"اتصال إنترنت مستقر بسرعة لا تقل عن 2 ميجا وبيئة هادئة ومريحة مناسبة للتعلم.","Pick the days and times that work best for you, usually 2 sessions per week, 2 hours each.":"اختر الأيام والمواعيد الأنسب لك، عادة حصتان أسبوعياً مدة كل حصة ساعتان.","Log in to your account and click Join Class when it is time for your lesson.":"سجّل الدخول إلى حسابك واضغط Join Class عند موعد الحصة."
+  });
+  Object.assign(dictionary,{
+    "Tell us what you would like to study.":"أخبرنا بما ترغب في دراسته.","Let us know your area of interest: general English, conversation, business, and more.":"أخبرنا بمجال اهتمامك: الإنجليزية العامة، المحادثة، الأعمال، والمزيد.","Reach the Egyptian American Center team for admissions,":"تواصل مع فريق المركز المصري الأمريكي للقبول،","course guidance, camp registration, and visit directions":"والإرشاد حول الدورات، وتسجيل المخيمات، وتعليمات الزيارة","Leave your details and the EACC team will help you":"اترك بياناتك وسيساعدك فريق EACC","choose the course, schedule, or camp that fits your goals.":"على اختيار الدورة أو الجدول أو المخيم المناسب لأهدافك.","Contact EACC and our team will help you choose the right language,":"تواصل مع EACC وسيساعدك فريقنا على اختيار اللغة المناسبة،","level, and study mode for your goals.":"والمستوى ونظام الدراسة المناسب لأهدافك.","Speak with EACC admissions about courses, camps,":"تحدث مع قسم القبول في EACC عن الدورات والمخيمات،","preparation programs, and the right study path for you.":"والبرامج التحضيرية ومسار الدراسة الأنسب لك.","Contact EACC admissions and our team will guide you to General English or Conversational English based on your current level and goal.":"تواصل مع قسم القبول في EACC وسيرشدك فريقنا إلى الإنجليزية العامة أو إنجليزية المحادثة حسب مستواك الحالي وهدفك.","Contact EACC admissions to choose the right kids level, session schedule, and start date for your child.":"تواصل مع قسم القبول في EACC لاختيار مستوى الأطفال المناسب وجدول الحصص وموعد البدء لطفلك.","Contact EACC admissions to choose the right level, session schedule, and start date for your teenager.":"تواصل مع قسم القبول في EACC لاختيار المستوى المناسب وجدول الحصص وموعد البدء لابنك المراهق.","Contact EACC admissions to ask about age groups, schedules, and the right creative level.":"تواصل مع قسم القبول في EACC للاستفسار عن الفئات العمرية والجداول والمستوى الإبداعي المناسب.","Ask Admissions":"اسأل قسم القبول","Find EACC in Alexandria and open the exact location":"ابحث عن EACC في الإسكندرية وافتح الموقع الدقيق","directly in Google Maps.":"مباشرة على خرائط Google.","117 Ahmed Shawqi, Mustafa Kamel WA Bolkli,":"117 أحمد شوقي، مصطفى كامل وبولكلي،","Sidi Gaber, Alexandria Governorate 5433141":"سيدي جابر، محافظة الإسكندرية 5433141","Select the language path that fits your goals. Each program combines":"اختر مسار اللغة الذي يناسب أهدافك. يجمع كل برنامج بين","structured learning with practical speaking and communication practice.":"تعلم منظم وتدريب عملي على التحدث والتواصل.","Build real communication skills through focused language programs":"ابنِ مهارات تواصل حقيقية من خلال برامج لغوية مركزة","English, German, French, Italian, and Spanish programs for global communication.":"برامج الإنجليزية والألمانية والفرنسية والإيطالية والإسبانية للتواصل العالمي.","German pathways for study, work opportunities, travel, and cultural confidence.":"مسارات ألمانية للدراسة وفرص العمل والسفر والثقة الثقافية.","Modern French learning with immersive speaking practice and clear progression.":"تعلم فرنسي حديث مع تدريب مكثف على التحدث وتدرج واضح.","Elegant Italian courses with practical speaking sessions and cultural communication.":"دورات إيطالية راقية مع حصص تحدث عملية وتواصل ثقافي.","Dynamic Spanish programs for confident communication in real-life situations.":"برامج إسبانية حيوية للتواصل بثقة في مواقف الحياة الواقعية.","Fine Arts and creative learning paths":"الفنون الجميلة ومسارات التعلم الإبداعي","Creative and artistic programs at EACC, beginning with Fine Arts for students who want guided creative development.":"برامج إبداعية وفنية في EACC، تبدأ بالفنون الجميلة للطلاب الراغبين في تطوير إبداعي موجّه.","Creative learning experiences that help students express ideas, build confidence, and develop artistic discipline.":"تجارب تعلم إبداعية تساعد الطلاب على التعبير عن أفكارهم وبناء الثقة وتنمية الانضباط الفني.","Drawing, color, composition, creative thinking, and guided studio practice for students who want to grow artistically.":"رسم وألوان وتكوين وتفكير إبداعي وتدريب فني موجّه للطلاب الراغبين في النمو فنياً.","Creativity, performance, movement,":"إبداع وأداء وحركة،","and artistic expression for all ages.":"وتعبير فني لكل الأعمار.","Ask About Fine Arts":"اسأل عن الفنون الجميلة","Start With Fine Arts":"ابدأ بالفنون الجميلة","Achieve your target scores through premium preparation programs.":"حقق الدرجات المستهدفة من خلال برامج تحضيرية متميزة.","Prepare for study abroad,":"استعد للدراسة بالخارج،","career growth, and global communication.":"والتطور المهني والتواصل العالمي.","Apply for IELTS preparation":"قدّم لتحضير IELTS","Apply for TOEFL preparation":"قدّم لتحضير TOEFL","Apply for OET preparation":"قدّم لتحضير OET","Apply for PTE preparation":"قدّم لتحضير PTE"
+  });
+  Object.assign(dictionary,{
+    "EACC empowers students through premium language programs,":"يمكّن EACC الطلاب من خلال برامج لغوية متميزة،","international camps, test preparation courses,":"ومخيمات دولية ودورات تحضير للاختبارات،","and flexible educational experiences.":"وتجارب تعليمية مرنة.","Delivering innovative and accessible":"نقدّم تعليماً مبتكراً ومتاحاً","high-quality educational experiences":"وتجارب تعليمية عالية الجودة","that meet international standards":"تتوافق مع المعايير الدولية","and empower students to succeed":"وتمكّن الطلاب من النجاح","academically and professionally.":"أكاديمياً ومهنياً.","Creating global educational":"نصنع فرصاً تعليمية عالمية","opportunities for future generations.":"للأجيال القادمة.","We believe learning is a lifelong process,":"نؤمن أن التعلم رحلة مستمرة مدى الحياة،","and our mission is to provide innovative,":"ورسالتنا هي تقديم تعليم مبتكر،","adaptable modern learning methods.":"بأساليب تعلم حديثة ومرنة.","We are committed to delivering":"نلتزم بتقديم","educational experiences that help students":"تجارب تعليمية تساعد الطلاب","unlock opportunities worldwide.":"على فتح فرص حول العالم.","At EACC, we encourage students to":"في EACC، نشجع الطلاب على","participate in programs and projects":"المشاركة في برامج ومشروعات","that support continuing education,":"تدعم التعليم المستمر،","cultural understanding, and personal":"والفهم الثقافي والنمو الشخصي","growth in a modern global environment.":"داخل بيئة عالمية حديثة.","More than 25 years of excellence in language education,":"أكثر من 25 عاماً من التميز في تعليم اللغات،","preparation programs, and immersive":"وبرامج التحضير والتجارب التفاعلية","educational experiences.":"التعليمية.","100k+ students throughout 25 years":"+100 ألف طالب خلال 25 عاماً","Students throughout EACC":"طلاب في EACC","Trusted by learners from all age groups":"يثق بنا متعلمون من جميع الأعمار","Why Thousands Of Learners Have Trusted EACC":"لماذا وثق آلاف المتعلمين في EACC","Clear Program Navigation":"تنقّل واضح بين البرامج","Explore unforgettable educational journeys,":"استكشف رحلات تعليمية لا تُنسى،","cultural exchange experiences,":"وتجارب تبادل ثقافي،","and immersive learning opportunities.":"وفرص تعلم تفاعلية.","MyVoice summer experience for English,":"تجربة MyVoice الصيفية للغة الإنجليزية،","and immersive educational experiences designed":"وتجارب تعليمية تفاعلية مصممة","for future success.":"لنجاح المستقبل.","Join one of Egypt's leading educational":"انضم إلى إحدى المؤسسات التعليمية الرائدة في مصر","and language institutions.":"ومؤسسات اللغات.","is one of Egypt's leading educational":"هو أحد المؤسسات التعليمية الرائدة في مصر","institutions and experience premium":"والمؤسسات التي تقدم تجارب متميزة","language education, international programs,":"في تعليم اللغات والبرامج الدولية،","and immersive educational experiences.":"وتجارب تعليمية تفاعلية.","is one of the most reputable educational":"هو أحد أكثر المؤسسات التعليمية احتراماً","institutions offering international language":"التي تقدم برامج لغات دولية","and preparation courses.":"ودورات تحضيرية.","seeking premium education experiences.":"للباحثين عن تجارب تعليمية متميزة.","Study online or offline with":"ادرس أونلاين أو داخل المركز مع","adaptable modern learning methods.":"أساليب تعلم حديثة ومرنة.","Adapt your learning journey through modern":"شكّل رحلة تعلمك من خلال تجارب حديثة","and flexible educational experiences.":"ومرنة.","Explore EACC learning experiences, from summer camps to languages, activities, and creative programs.":"استكشف تجارب التعلم في EACC، من المخيمات الصيفية إلى اللغات والأنشطة والبرامج الإبداعية."
+  });  var skipTags={SCRIPT:1,STYLE:1,NOSCRIPT:1,IFRAME:1,VIDEO:1,CANVAS:1,SVG:1};
+  var textItems=[];
+  var attrItems=[];
+  var current='en';
+  function normalize(value){return String(value||'').replace(/\s+/g,' ').trim();}
+  function translation(value){return dictionary[normalize(value)]||null;}
+  function skip(node){var parent=node.parentElement;return !parent||skipTags[parent.tagName]||parent.closest('[data-no-translate]');}
+  function collectText(){var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(node){return skip(node)||!normalize(node.nodeValue)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;}});var node;while((node=walker.nextNode())){textItems.push({node:node,en:node.nodeValue,ar:translation(node.nodeValue)});}}
+  function collectAttrs(){var attrs=['placeholder','aria-label','title','alt'];document.querySelectorAll('*').forEach(function(el){if(skipTags[el.tagName]||el.closest('[data-no-translate]'))return;attrs.forEach(function(attr){var en=el.getAttribute(attr);var ar=translation(en);if(en&&ar)attrItems.push({el:el,attr:attr,en:en,ar:ar});});});}
+  function updateButtons(lang){document.querySelectorAll('.eacc-language-toggle').forEach(function(button){button.setAttribute('aria-label',lang==='ar'?'Switch website language to English':'Switch website language to Arabic');button.innerHTML='<span class="eacc-lang-label">'+(lang==='ar'?'EN':'AR')+'</span>';});}
+  function setLanguage(lang){current=lang==='ar'?'ar':'en';document.documentElement.lang=current;document.documentElement.dir=current==='ar'?'rtl':'ltr';document.body.classList.toggle('is-arabic',current==='ar');textItems.forEach(function(item){item.node.nodeValue=current==='ar'&&item.ar?item.ar:item.en;});attrItems.forEach(function(item){item.el.setAttribute(item.attr,current==='ar'?item.ar:item.en);});updateButtons(current);try{localStorage.setItem(storageKey,current);localStorage.removeItem(legacyStorageKey);}catch(error){}}
+  function init(){document.querySelectorAll('.language-toggle:not(.eacc-language-toggle)').forEach(function(button){button.classList.add('eacc-language-toggle');});collectText();collectAttrs();var saved='en';try{saved=localStorage.getItem(storageKey)==='ar'?'ar':'en';localStorage.removeItem(legacyStorageKey);}catch(error){}setLanguage(saved);}
+  document.addEventListener('click',function(event){var button=event.target.closest('.eacc-language-toggle');if(!button)return;event.preventDefault();event.stopPropagation();event.stopImmediatePropagation();setLanguage(current==='ar'?'en':'ar');},true);
+  try{localStorage.removeItem(legacyStorageKey);}catch(error){}
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
+})();
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
